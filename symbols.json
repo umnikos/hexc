@@ -1,0 +1,5262 @@
+[
+  {
+    "mod": "hex",
+    "name": "interop/pehkui/get",
+    "fullname": "Gulliver's Purification",
+    "signature": "entity → num",
+    "pattern": "aawawwawwa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Get the scale of the entity, as a proportion of their normal size. For most entities, this will be 1."
+  },
+  {
+    "mod": "hex",
+    "name": "interop/pehkui/set",
+    "fullname": "Alter Scale",
+    "signature": "entity, num →",
+    "pattern": "ddwdwwdwwd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Set the scale of the entity, passing in a proportion of their normal size. Costs about 1 Amethyst Shard."
+  },
+  {
+    "mod": "hex",
+    "name": "get_caster",
+    "fullname": "Mind's Reflection",
+    "signature": "→ entity | null",
+    "pattern": "qaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Adds me, the caster, to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "entity_pos/eye",
+    "fullname": "Compass' Purification",
+    "signature": "entity → vector",
+    "pattern": "aa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Transforms an entity on the stack into the position of its eyes. I should probably use this on myself."
+  },
+  {
+    "mod": "hex",
+    "name": "entity_pos/foot",
+    "fullname": "Compass' Purification II",
+    "signature": "entity → vector",
+    "pattern": "dd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Transforms an entity on the stack into the position it is standing. I should probably use this on other entities."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity_look",
+    "fullname": "Alidade's Purification",
+    "signature": "entity → vector",
+    "pattern": "wa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Transforms an entity on the stack into the direction it's looking in, as a unit vector."
+  },
+  {
+    "mod": "hex",
+    "name": "raycast",
+    "fullname": "Archer's Distillation",
+    "signature": "vector, vector → vector | null",
+    "pattern": "wqaawdd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Combines two vectors (a position and a direction) into the answer to the question: If I stood at the position and looked in the direction, what block would I be looking at? Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "raycast/axis",
+    "fullname": "Architect's Distillation",
+    "signature": "vector, vector → vector | null",
+    "pattern": "weddwaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Archer's Distillation, but instead returns a vector representing the answer to the question: Which *side* of the block am I looking at? Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "raycast/entity",
+    "fullname": "Scout's Distillation",
+    "signature": "vector, vector → entity | null",
+    "pattern": "weaqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Archer's Distillation, but instead returns the *entity* I am looking at. Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "print",
+    "fullname": "Reveal",
+    "signature": "any → any",
+    "pattern": "de",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Displays the top iota of the stack to me."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity_height",
+    "fullname": "Stadiometer's Prfn.",
+    "signature": "entity → num",
+    "pattern": "awq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Transforms an entity on the stack into its height."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity_velocity",
+    "fullname": "Pace Purification",
+    "signature": "entity → vector",
+    "pattern": "wq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Transforms an entity on the stack into the direction in which it's moving, with the speed of that movement as that direction's magnitude."
+  },
+  {
+    "mod": "hex",
+    "name": "add",
+    "fullname": "Additive Distillation",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "waaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Perform addition."
+  },
+  {
+    "mod": "hex",
+    "name": "sub",
+    "fullname": "Subtractive Distillation",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "wddw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Perform subtraction."
+  },
+  {
+    "mod": "hex",
+    "name": "mul",
+    "fullname": "Multiplicative Dstl.",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "waqaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Perform multiplication or the dot product."
+  },
+  {
+    "mod": "hex",
+    "name": "div",
+    "fullname": "Division Dstl.",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "wdedw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Perform division or the cross product."
+  },
+  {
+    "mod": "hex",
+    "name": "abs",
+    "fullname": "Length Purification",
+    "signature": "num|vec → number",
+    "pattern": "wqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Compute the absolute value or length."
+  },
+  {
+    "mod": "hex",
+    "name": "pow",
+    "fullname": "Power Distillation",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "wedew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Perform exponentiation or vector projection."
+  },
+  {
+    "mod": "hex",
+    "name": "floor",
+    "fullname": "Floor Purification",
+    "signature": "num|vec → num|vec",
+    "pattern": "ewq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "\"Floors\" a number, cutting off the fractional component and leaving an integer value. If passed a vector, instead floors each of its components."
+  },
+  {
+    "mod": "hex",
+    "name": "ceil",
+    "fullname": "Ceiling Purification",
+    "signature": "num|vec → num|vec",
+    "pattern": "qwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "\"Ceilings\" a number, raising it to the next integer value if it has a fractional component. If passed a vector, instead ceils each of its components."
+  },
+  {
+    "mod": "hex",
+    "name": "construct_vec",
+    "fullname": "Vector Exaltation",
+    "signature": "num, num, num → vector",
+    "pattern": "eqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Combine three numbers at the top of the stack into a vector's X, Y, and Z components (bottom to top)."
+  },
+  {
+    "mod": "hex",
+    "name": "deconstruct_vec",
+    "fullname": "Vector Disintegration",
+    "signature": "vector → num, num, num",
+    "pattern": "qeeeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Split a vector into its X, Y, and Z components (bottom to top)."
+  },
+  {
+    "mod": "hex",
+    "name": "modulo",
+    "fullname": "Modulus Distillation",
+    "signature": "num|vec, num|vec → num|vec",
+    "pattern": "addwaad",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes the modulus of two numbers. This is the amount *remaining* after division - for example, 5 % 2 is 1, and 5 % 3 is 2. When applied on vectors, performs the above operation elementwise."
+  },
+  {
+    "mod": "hex",
+    "name": "coerce_axial",
+    "fullname": "Axial Purification",
+    "signature": "vec|num → vec|num",
+    "pattern": "qqqqqaww",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "For a vector, coerce it to its nearest axial direction, a unit vector. For a number, return the sign of the number; 1 if positive, -1 if negative. In both cases, zero is unaffected."
+  },
+  {
+    "mod": "hex",
+    "name": "random",
+    "fullname": "Entropy Reflection",
+    "signature": "→ num",
+    "pattern": "eqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Creates a random number between 0 and 1."
+  },
+  {
+    "mod": "hex",
+    "name": "const/true",
+    "fullname": "True Reflection",
+    "signature": "→ bool",
+    "pattern": "aqae",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Adds True to the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/false",
+    "fullname": "False Reflection",
+    "signature": "→ bool",
+    "pattern": "dedq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Adds False to the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/null",
+    "fullname": "Nullary Reflection",
+    "signature": "→ null",
+    "pattern": "d",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Adds the Null influence to the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/vec/0",
+    "fullname": "Vector Reflection Zero",
+    "signature": "→ vector",
+    "pattern": "qqqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Adds [0, 0, 0] to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/vec/x",
+    "fullname": "Vector Rfln. +X/-X",
+    "signature": "→ vector",
+    "pattern": "qqqqqea",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "The left-hand counter-clockwise pattern adds [1, 0, 0] to the stack; the right-hand clockwise pattern adds [-1, 0, 0]."
+  },
+  {
+    "mod": "hex",
+    "name": "const/vec/y",
+    "fullname": "Vector Rfln. +Y/-Y",
+    "signature": "→ vector",
+    "pattern": "qqqqqew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "The left-hand counter-clockwise pattern adds [0, 1, 0] to the stack; the right-hand clockwise pattern adds [0, -1, 0]."
+  },
+  {
+    "mod": "hex",
+    "name": "const/vec/z",
+    "fullname": "Vector Rfln. +Z/-Z",
+    "signature": "→ vector",
+    "pattern": "qqqqqed",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "The left-hand counter-clockwise pattern adds [0, 0, 1]; the right-hand clockwise pattern adds [0, 0, -1]."
+  },
+  {
+    "mod": "hex",
+    "name": "const/double/tau",
+    "fullname": "Circle's Reflection",
+    "signature": "→ num",
+    "pattern": "eawae",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Adds τ, the radial representation of a complete circle, to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/double/pi",
+    "fullname": "Arc's Reflection",
+    "signature": "→ num",
+    "pattern": "qdwdq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Adds π, the radial representation of half a circle, to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "const/double/e",
+    "fullname": "Euler's Reflection",
+    "signature": "→ num",
+    "pattern": "aaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Adds *e*, the base of natural logarithms, to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "pseudo-novice",
+    "fullname": "Novice's Gambit",
+    "signature": "any →",
+    "pattern": "a",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Removes the first iota from the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "swap",
+    "fullname": "Jester's Gambit",
+    "signature": "any, any → any, any",
+    "pattern": "aawdd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Swaps the top two iotas of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "rotate",
+    "fullname": "Rotation Gambit",
+    "signature": "any, any, any → any, any, any",
+    "pattern": "aaeaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Yanks the iota third from the top of the stack to the top. [0, 1, 2] becomes [1, 2, 0]."
+  },
+  {
+    "mod": "hex",
+    "name": "rotate_reverse",
+    "fullname": "Rotation Gambit II",
+    "signature": "any, any, any → any, any, any",
+    "pattern": "ddqdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Yanks the top iota to the third position. [0, 1, 2] becomes [2, 0, 1]."
+  },
+  {
+    "mod": "hex",
+    "name": "duplicate",
+    "fullname": "Gemini Decomposition",
+    "signature": "any → any, any",
+    "pattern": "aadaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Duplicates the top iota of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "over",
+    "fullname": "Prospector's Gambit",
+    "signature": "any, any → any, any, any",
+    "pattern": "aaedd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Copy the second-to-last iota of the stack to the top. [0, 1] becomes [0, 1, 0]."
+  },
+  {
+    "mod": "hex",
+    "name": "tuck",
+    "fullname": "Undertaker's Gambit",
+    "signature": "any, any → any, any, any",
+    "pattern": "ddqaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Copy the top iota of the stack, then put it under the second iota. [0, 1] becomes [1, 0, 1]."
+  },
+  {
+    "mod": "hex",
+    "name": "duplicate_n",
+    "fullname": "Gemini Gambit",
+    "signature": "any, number → many",
+    "pattern": "aadaadaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Removes the number at the top of the stack, then copies the top iota of the stack that number of times. (A count of 2 results in two of the iota on the stack, not three.)"
+  },
+  {
+    "mod": "hex",
+    "name": "2dup",
+    "fullname": "Dioscuri Gambit",
+    "signature": "any, any → any, any, any, any",
+    "pattern": "aadadaaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Copy the top two iotas of the stack. [0, 1] becomes [0, 1, 0, 1]."
+  },
+  {
+    "mod": "hex",
+    "name": "stack_len",
+    "fullname": "Flock's Reflection",
+    "signature": "→ number",
+    "pattern": "qwaeawqaeaqa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes the size of the stack as a number to the top of the stack. (For example, a stack of [0, 1] will become [0, 1, 2].)"
+  },
+  {
+    "mod": "hex",
+    "name": "fisherman",
+    "fullname": "Fisherman's Gambit",
+    "signature": "number → any",
+    "pattern": "ddad",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Grabs the element in the stack indexed by the number and brings it to the top. If the number is negative, instead moves the top element of the stack down that many elements."
+  },
+  {
+    "mod": "hex",
+    "name": "fisherman/copy",
+    "fullname": "Fisherman's Gambit II",
+    "signature": "number → any",
+    "pattern": "aada",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Fisherman's Gambit, but instead of moving the iota, copies it."
+  },
+  {
+    "mod": "hex",
+    "name": "mask",
+    "fullname": "Bookkeeper's Gambit",
+    "signature": "many → many",
+    "pattern": "aeea",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "An infinite family of actions that keep or remove elements at the top of the stack based on the sequence of dips and lines."
+  },
+  {
+    "mod": "hex",
+    "name": "swizzle",
+    "fullname": "Swindler's Gambit",
+    "signature": "many, number → many",
+    "pattern": "qaawdde",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Rearranges the top elements of the stack based on the given numerical code, which is the index of the permutation wanted."
+  },
+  {
+    "mod": "hex",
+    "name": "bool_coerce",
+    "fullname": "Augur's Purification",
+    "signature": "any → bool",
+    "pattern": "aw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Convert an argument to a boolean. The number 0, Null, False, and the empty list become False; everything else becomes True."
+  },
+  {
+    "mod": "hex",
+    "name": "abs",
+    "fullname": "Length Purification",
+    "signature": "bool → number",
+    "pattern": "wqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Convert a boolean to a number; True becomes 1, and False becomes 0."
+  },
+  {
+    "mod": "hex",
+    "name": "not",
+    "fullname": "Negation Purification",
+    "signature": "bool → bool",
+    "pattern": "dw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "If the argument is True, return False; if it is False, return True."
+  },
+  {
+    "mod": "hex",
+    "name": "or",
+    "fullname": "Disjunction Distillation",
+    "signature": "bool, bool → bool",
+    "pattern": "waw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Returns True if at least one of the arguments are True; otherwise returns False."
+  },
+  {
+    "mod": "hex",
+    "name": "and",
+    "fullname": "Conjunction Distillation",
+    "signature": "bool, bool → bool",
+    "pattern": "wdw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns True if both arguments are true; otherwise returns False."
+  },
+  {
+    "mod": "hex",
+    "name": "xor",
+    "fullname": "Exclusion Distillation",
+    "signature": "bool, bool → bool",
+    "pattern": "dwa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Returns True if exactly one of the arguments is true; otherwise returns False."
+  },
+  {
+    "mod": "hex",
+    "name": "if",
+    "fullname": "Augur's Exaltation",
+    "signature": "bool, any, any → any",
+    "pattern": "awdd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "If the first argument is True, keeps the second and discards the third; otherwise discards the second and keeps the third."
+  },
+  {
+    "mod": "hex",
+    "name": "equals",
+    "fullname": "Equality Distillation",
+    "signature": "any, any → bool",
+    "pattern": "ad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "If the first argument equals the second (within a small tolerance), return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "not_equals",
+    "fullname": "Inequality Distillation",
+    "signature": "any, any → bool",
+    "pattern": "da",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "If the first argument does not equal the second (outside a small tolerance), return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "greater",
+    "fullname": "Maximus Distillation",
+    "signature": "number, number → bool",
+    "pattern": "e",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "If the first argument is greater than the second, return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "less",
+    "fullname": "Minimus Distillation",
+    "signature": "number, number → bool",
+    "pattern": "q",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "If the first argument is less than the second, return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "greater_eq",
+    "fullname": "Maximus Distillation II",
+    "signature": "number, number → bool",
+    "pattern": "ee",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "If the first argument is greater than or equal to the second, return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "less_eq",
+    "fullname": "Minimus Distillation II",
+    "signature": "number, number → bool",
+    "pattern": "qq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "If the first argument is less than or equal to the second, return True. Otherwise, return False."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity",
+    "fullname": "Entity Purification",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the entity at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity/animal",
+    "fullname": "Entity Prfn.: Animal",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqaawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the animal at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity/monster",
+    "fullname": "Entity Prfn.: Monster",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqaawq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the monster at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity/item",
+    "fullname": "Entity Prfn.: Item",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqaaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the dropped item at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity/player",
+    "fullname": "Entity Prfn.: Player",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqaawe",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the player at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "get_entity/living",
+    "fullname": "Entity Prfn.: Living",
+    "signature": "vector → entity or null",
+    "pattern": "qqqqqdaqaawd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the living creature at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/animal",
+    "fullname": "Zone Dstl.: Animal",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwdeddwa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of animals near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/not_animal",
+    "fullname": "Zone Dstl.: Non-Animal",
+    "signature": "vector, number → list",
+    "pattern": "eeeeewaqaawa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-animal entities near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/monster",
+    "fullname": "Zone Dstl.: Monster",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwdeddwq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of monsters near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/not_monster",
+    "fullname": "Zone Dstl.: Non-Monster",
+    "signature": "vector, number → list",
+    "pattern": "eeeeewaqaawq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-monster entities near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/item",
+    "fullname": "Zone Dstl.: Item",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwdeddww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of dropped items near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/not_item",
+    "fullname": "Zone Dstl.: Non-Item",
+    "signature": "vector, number → list",
+    "pattern": "eeeeewaqaaww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-dropped-item entities near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/player",
+    "fullname": "Zone Dstl.: Player",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwdeddwe",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of players near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/not_player",
+    "fullname": "Zone Dstl.: Non-Player",
+    "signature": "vector, number → list",
+    "pattern": "eeeeewaqaawe",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-player characters near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/living",
+    "fullname": "Zone Dstl.: Living",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwdeddwd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of living creatures near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity/not_living",
+    "fullname": "Zone Dstl.: Non-Living",
+    "signature": "vector, number → list",
+    "pattern": "eeeeewaqaawd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-living entities near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "zone_entity",
+    "fullname": "Zone Dstl.: Any",
+    "signature": "vector, number → list",
+    "pattern": "qqqqqwded",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of all entities near the position."
+  },
+  {
+    "mod": "hex",
+    "name": "index",
+    "fullname": "Selection Distillation",
+    "signature": "list, number → any",
+    "pattern": "deeed",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Remove the number at the top of the stack, then replace the list at the top with the nth element of that list (where n is the number you removed). Replaces the list with Null if the number is out of bounds."
+  },
+  {
+    "mod": "hex",
+    "name": "slice",
+    "fullname": "Selection Exaltation",
+    "signature": "list, num, num → list",
+    "pattern": "qaeaqwded",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Remove the two numbers at the top of the stack, then take a sublist of the list at the top of the stack between those indices, lower bound inclusive, upper bound exclusive. For example, the 0, 2 sublist of [0, 1, 2, 3, 4] would be [0, 1]."
+  },
+  {
+    "mod": "hex",
+    "name": "append",
+    "fullname": "Integration Distillation",
+    "signature": "list, any → list",
+    "pattern": "edqde",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove the top of the stack, then add it to the end of the list at the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "unappend",
+    "fullname": "Derivation Decomposition",
+    "signature": "list → list, any",
+    "pattern": "qaeaq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Remove the iota on the end of the list at the top of the stack, and add it to the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "add",
+    "fullname": "Additive Distillation",
+    "signature": "list, list → list",
+    "pattern": "waaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Remove the list at the top of the stack, then add all its elements to the end of the list at the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "empty_list",
+    "fullname": "Vacant Reflection",
+    "signature": "→ list",
+    "pattern": "qqaeaae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Push an empty list to the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "singleton",
+    "fullname": "Single's Purification",
+    "signature": "any → list",
+    "pattern": "adeeed",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove the top of the stack, then push a list containing only that element."
+  },
+  {
+    "mod": "hex",
+    "name": "abs",
+    "fullname": "Length Purification",
+    "signature": "list → num",
+    "pattern": "wqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Remove the list at the top of the stack, then push the number of elements in the list to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "reverse",
+    "fullname": "Retrograde Purification",
+    "signature": "list → list",
+    "pattern": "qqqaede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Reverse the list at the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "index_of",
+    "fullname": "Locator's Distillation",
+    "signature": "list, any → num",
+    "pattern": "dedqde",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove the iota at the top of the stack, then replace the list at the top with the first index of that iota within the list (starting from 0). Replaces the list with -1 if the iota doesn't exist in the list."
+  },
+  {
+    "mod": "hex",
+    "name": "remove_from",
+    "fullname": "Excisor's Distillation",
+    "signature": "list, num → list",
+    "pattern": "edqdewaqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove the number at the top of the stack, then remove the nth element of the list at the top of the stack (where n is the number you removed)."
+  },
+  {
+    "mod": "hex",
+    "name": "replace",
+    "fullname": "Surgeon's Exaltation",
+    "signature": "list, num, any → list",
+    "pattern": "wqaeaqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Remove the top iota of the stack and the number at the top, then set the nth element of the list at the top of the stack to that iota (where n is the number you removed). Does nothing if the number is out of bounds."
+  },
+  {
+    "mod": "hex",
+    "name": "last_n_list",
+    "fullname": "Flock's Gambit",
+    "signature": "many, num → list",
+    "pattern": "ewdqdwe",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove *num* elements from the stack, then add them to a list at the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "splat",
+    "fullname": "Flock's Disintegration",
+    "signature": "list → many",
+    "pattern": "qwaeawq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Remove the list at the top of the stack, then push its contents to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "construct",
+    "fullname": "Speaker's Distillation",
+    "signature": "list, any → list",
+    "pattern": "ddewedd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Remove the top iota, then add it as the first element to the list at the top of the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "deconstruct",
+    "fullname": "Speaker's Decomposition",
+    "signature": "list → list, any",
+    "pattern": "aaqwqaa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove the first iota from the list at the top of the stack, then push that iota to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "escape",
+    "fullname": "Consideration",
+    "signature": "",
+    "pattern": "qqqaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "To use Consideration, I draw it, then another arbitrary pattern. That second pattern is added to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "open_paren",
+    "fullname": "Introspection",
+    "signature": "",
+    "pattern": "qqq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Drawing Introspection makes my drawing of patterns act differently, for a time. Until I draw Retrospection, the patterns I draw are saved. Then, when I draw Retrospection, they are added to the stack as a list iota."
+  },
+  {
+    "mod": "hex",
+    "name": "close_paren",
+    "fullname": "Retrospection",
+    "signature": "",
+    "pattern": "eee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "If I draw another Introspection, it'll still be saved to the list, but I'll then have to draw *two* Retrospections to get back to normal casting."
+  },
+  {
+    "mod": "hex",
+    "name": "undo",
+    "fullname": "Evanition",
+    "signature": "",
+    "pattern": "eeedw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Finally, if I make a mistake while drawing patterns inside Intro- and Retrospection I can draw Evanition to remove the last pattern that I drew from the pattern list that is being constructed."
+  },
+  {
+    "mod": "hex",
+    "name": "read",
+    "fullname": "Scribe's Reflection",
+    "signature": "→ any",
+    "pattern": "aqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Copy the iota stored in the item in my other hand and add it to the stack."
+  },
+  {
+    "mod": "hex",
+    "name": "write",
+    "fullname": "Scribe's Gambit",
+    "signature": "any →",
+    "pattern": "deeeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove the top iota from the stack, and save it into the item in my other hand."
+  },
+  {
+    "mod": "hex",
+    "name": "read/entity",
+    "fullname": "Chronicler's Prfn.",
+    "signature": "entity → any",
+    "pattern": "wawqwqwqwqwqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Scribe's Reflection, but the iota is read out of an entity instead of my other hand."
+  },
+  {
+    "mod": "hex",
+    "name": "write/entity",
+    "fullname": "Chronicler's Gambit",
+    "signature": "entity, any →",
+    "pattern": "wdwewewewewew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Scribe's Gambit, but the iota is written to an entity instead of my other hand."
+  },
+  {
+    "mod": "hex",
+    "name": "readable",
+    "fullname": "Auditor's Reflection",
+    "signature": "→ bool",
+    "pattern": "aqqqqqe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "If the item in my other hand holds an iota I can read, returns True. Otherwise, returns False."
+  },
+  {
+    "mod": "hex",
+    "name": "readable/entity",
+    "fullname": "Auditor's Purification",
+    "signature": "entity → bool",
+    "pattern": "wawqwqwqwqwqwew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Auditor's Reflection, but the readability of an entity is checked instead of my other hand."
+  },
+  {
+    "mod": "hex",
+    "name": "writable",
+    "fullname": "Assessor's Reflection",
+    "signature": "→ bool",
+    "pattern": "deeeeeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "If I could save an iota into the item in my other hand, returns True. Otherwise, returns False."
+  },
+  {
+    "mod": "hex",
+    "name": "writable/entity",
+    "fullname": "Assessor's Purification",
+    "signature": "entity → bool",
+    "pattern": "wdwewewewewewqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Like Assessor's Reflection, but the writability of an entity is checked instead of my other hand."
+  },
+  {
+    "mod": "hex",
+    "name": "local",
+    "fullname": "The Ravenmind",
+    "signature": "",
+    "pattern": "eqqwawqaaw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes the top iota from the stack, and saves it to my ravenmind, storing it there until I stop casting the Hex."
+  },
+  {
+    "mod": "hex",
+    "name": "read/local",
+    "fullname": "Muninn's Reflection",
+    "signature": "→ any",
+    "pattern": "qeewdweddw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Copy the iota out of my ravenmind, which I likely just wrote with Huginn's Gambit."
+  },
+  {
+    "mod": "hex",
+    "name": "sin",
+    "fullname": "Sine Purification",
+    "signature": "num → num",
+    "pattern": "qqqqqaa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes the sine of an angle in radians, yielding the vertical component of that angle drawn on a unit circle. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "cos",
+    "fullname": "Cosine Purification",
+    "signature": "num → num",
+    "pattern": "qqqqqad",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes the cosine of an angle in radians, yielding the horizontal component of that angle drawn on a unit circle. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "tan",
+    "fullname": "Tangent Purification",
+    "signature": "num → num",
+    "pattern": "wqqqqqadq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Takes the tangent of an angle in radians, yielding the slope of that angle drawn on a circle. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "arcsin",
+    "fullname": "Inverse Sine Prfn.",
+    "signature": "num → num",
+    "pattern": "ddeeeee",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes the inverse sine of a value with absolute value 1 or less, yielding the angle whose sine is that value. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "arccos",
+    "fullname": "Inverse Cosine Prfn.",
+    "signature": "num → num",
+    "pattern": "adeeeee",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes the inverse cosine of a value with absolute value 1 or less, yielding the angle whose cosine is that value. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "arctan",
+    "fullname": "Inverse Tangent Prfn.",
+    "signature": "num → num",
+    "pattern": "eadeeeeew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes the inverse tangent of a value, yielding the angle whose tangent is that value. Related to the values of π and τ."
+  },
+  {
+    "mod": "hex",
+    "name": "arctan2",
+    "fullname": "Inverse Tan. Prfn. II",
+    "signature": "num, num → num",
+    "pattern": "deadeeeeewd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes the inverse tangent of a Y and X value, yielding the angle between the X-axis and a line from the origin to that point."
+  },
+  {
+    "mod": "hex",
+    "name": "logarithm",
+    "fullname": "Logarithmic Distillation",
+    "signature": "num, num → num",
+    "pattern": "eqaqe",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes the number at the top of the stack, then takes the logarithm of the number at the top using the other number as its base. Related to the value of <a href=\"#patterns/consts@hexcasting:const/double/e\"><span style=\"color: #8d6acc\">*e*</span></a>."
+  },
+  {
+    "mod": "hex",
+    "name": "or",
+    "fullname": "Disjunction Distillation",
+    "signature": "(num, num)|(list, list) → num|list",
+    "pattern": "waw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Unifies two sets."
+  },
+  {
+    "mod": "hex",
+    "name": "and",
+    "fullname": "Conjunction Distillation",
+    "signature": "(num, num)|(list, list) → num|list",
+    "pattern": "wdw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes the intersection of two sets."
+  },
+  {
+    "mod": "hex",
+    "name": "xor",
+    "fullname": "Exclusion Distillation",
+    "signature": "(num, num)|(list, list) → num|list",
+    "pattern": "dwa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes the exclusive disjunction of two sets."
+  },
+  {
+    "mod": "hex",
+    "name": "not",
+    "fullname": "Negation Purification",
+    "signature": "num → num",
+    "pattern": "dw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes the inversion of a bitset, changing all \"on\" bits to \"off\" and vice versa. In my experience, this will take the form of that number negated and decreased by one. For example, 0 will become -1, and -100 will become 99."
+  },
+  {
+    "mod": "hex",
+    "name": "unique",
+    "fullname": "Uniqueness Purification",
+    "signature": "list → list",
+    "pattern": "aweaqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Removes duplicate entries from a list."
+  },
+  {
+    "mod": "hex",
+    "name": "eval",
+    "fullname": "Hermes' Gambit",
+    "signature": "[pattern] | pattern → many",
+    "pattern": "deaqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my Staff (until a Charon's Gambit is encountered). If an iota is escaped with Consideration or its ilk, it will be pushed to the stack. Otherwise, non-patterns will fail."
+  },
+  {
+    "mod": "hex",
+    "name": "eval/cc",
+    "fullname": "Iris' Gambit",
+    "signature": "[pattern] | pattern → many",
+    "pattern": "qwaqde",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Cast a pattern or list of patterns from the stack exactly like Hermes' Gambit, except that a unique \"Jump\" iota is pushed to the stack beforehand. "
+  },
+  {
+    "mod": "hex",
+    "name": "for_each",
+    "fullname": "Thoth's Gambit",
+    "signature": "list of patterns, list → list",
+    "pattern": "dadad",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list."
+  },
+  {
+    "mod": "hex",
+    "name": "halt",
+    "fullname": "Charon's Gambit",
+    "signature": "",
+    "pattern": "aqdee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "This pattern forcibly halts a Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff."
+  },
+  {
+    "mod": "hex",
+    "name": "thanatos",
+    "fullname": "Thanatos' Reflection",
+    "signature": "→ number",
+    "pattern": "qqaed",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Adds the number of patterns a Hex is still capable of evaluating to the stack. This is reduced by one for each pattern cast by the Hex."
+  },
+  {
+    "mod": "hex",
+    "name": "circle/impetus_pos",
+    "fullname": "Waystone Reflection",
+    "signature": "→ vector",
+    "pattern": "eaqwqae",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Returns the position of the Impetus of this spell circle."
+  },
+  {
+    "mod": "hex",
+    "name": "circle/impetus_dir",
+    "fullname": "Lodestone Reflection",
+    "signature": "→ vector",
+    "pattern": "eaqwqaewede",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Returns the direction the Impetus of this spell circle is facing as a unit vector."
+  },
+  {
+    "mod": "hex",
+    "name": "circle/bounds/min",
+    "fullname": "Lesser Fold Reflection",
+    "signature": "→ vector",
+    "pattern": "eaqwqaewdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Returns the position of the lower-north-west corner of the bounds of this spell circle."
+  },
+  {
+    "mod": "hex",
+    "name": "circle/bounds/max",
+    "fullname": "Greater Fold Reflection",
+    "signature": "→ vector",
+    "pattern": "aqwqawaaqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns the position of the upper-south-east corner of the bounds of this spell circle."
+  },
+  {
+    "mod": "hex",
+    "name": "akashic/read",
+    "fullname": "Akasha's Distillation",
+    "signature": "vector, pattern → any",
+    "pattern": "qqqwqqqqqaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Read the iota associated with the given pattern out of the Akashic Library with its Record at the given position. This has no range limit. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "akashic/write",
+    "fullname": "Akasha's Gambit",
+    "signature": "vector, pattern, any →",
+    "pattern": "eeeweeeeede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Associate the iota with the given pattern in the Akashic Library with its Record at the given position. This *does* have a range limit. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "explode",
+    "fullname": "Explosion",
+    "signature": "vector, number →",
+    "pattern": "aawaawaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a number and vector from the stack, then create an explosion at the given location with the given power."
+  },
+  {
+    "mod": "hex",
+    "name": "explode/fire",
+    "fullname": "Fireball",
+    "signature": "vector, number →",
+    "pattern": "ddwddwdd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a number and vector from the stack, then create a fiery explosion at the given location with the given power."
+  },
+  {
+    "mod": "hex",
+    "name": "add_motion",
+    "fullname": "Impulse",
+    "signature": "entity, vector →",
+    "pattern": "awqqqwaqw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove an entity and direction from the stack, then give a shove to the given entity in the given direction. The strength of the impulse is determined by the length of the vector.<br />Costs units of Amethyst Dust equal to the square of the length of the vector, plus one for every Impulse except the first targeting an entity."
+  },
+  {
+    "mod": "hex",
+    "name": "blink",
+    "fullname": "Blink",
+    "signature": "entity, number →",
+    "pattern": "awqqqwaq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove an entity and length from the stack, then teleport the given entity along its look vector by the given length.<br />Costs about one Amethyst Shard per two blocks travelled."
+  },
+  {
+    "mod": "hex",
+    "name": "beep",
+    "fullname": "Make Note",
+    "signature": "vector, number, number →",
+    "pattern": "adaa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Remove a vector and two numbers from the stack. Plays an instrument defined by the first number at the given location, with a note defined by the second number. Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "place_block",
+    "fullname": "Place Block",
+    "signature": "vector →",
+    "pattern": "eeeeede",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove a location from the stack, then pick a block item and place it at the given location.<br />Costs about an eighth of one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "break_block",
+    "fullname": "Break Block",
+    "signature": "vector →",
+    "pattern": "qaqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a location from the stack, then break the block at the given location. This spell can break nearly anything a Diamond Pickaxe can break.<br />Costs about an eighth of one Amethyst Dust, or a negligible amount if breaking a <span style=\"color: #b0b\"></span>Conjured Block or Conjured Light."
+  },
+  {
+    "mod": "hex",
+    "name": "create_water",
+    "fullname": "Create Water",
+    "signature": "vector →",
+    "pattern": "aqawqadaq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Summon a block of water (or insert up to a bucket's worth) into a block at the given position. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "destroy_water",
+    "fullname": "Destroy Liquid",
+    "signature": "vector →",
+    "pattern": "dedwedade",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Drains either a liquid container at, or a body of liquid around, the given position. Costs about two Charged Amethyst."
+  },
+  {
+    "mod": "hex",
+    "name": "conjure_block",
+    "fullname": "Conjure Block",
+    "signature": "vector →",
+    "pattern": "qqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Conjure an ethereal, but solid, block that sparkles with my pigment at the given position. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "conjure_light",
+    "fullname": "Conjure Light",
+    "signature": "vector →",
+    "pattern": "qqd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Conjure a magical light that softly glows with my pigment at the given position. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "bonemeal",
+    "fullname": "Overgrow",
+    "signature": "vector →",
+    "pattern": "wqaqwawqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Encourage a plant or sapling at the target position to grow, as if Bonemeal was applied. Costs a bit more than one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "edify",
+    "fullname": "Edify Sapling",
+    "signature": "vector →",
+    "pattern": "wqaqwd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Forcibly infuse media into the sapling at the target position, causing it to grow into an Edified Tree. Costs about one Charged Amethyst."
+  },
+  {
+    "mod": "hex",
+    "name": "ignite",
+    "fullname": "Ignite",
+    "signature": "entity | vector →",
+    "pattern": "aaqawawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Start a fire on top of the given location, as if a Fire Charge was applied, or sets fire to a creature. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "extinguish",
+    "fullname": "Extinguish Area",
+    "signature": "vector →",
+    "pattern": "ddedwdwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Extinguish blocks in a large area. Costs about six Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/weakness",
+    "fullname": "White Sun's Nadir",
+    "signature": "entity, number, number →",
+    "pattern": "qqqqqaqwawaw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Inflicts weakness. Base cost is one Amethyst Dust per 10 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/levitation",
+    "fullname": "Blue Sun's Nadir",
+    "signature": "entity, number →",
+    "pattern": "qqqqqawwawawd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Inflicts levitation. Base cost is one Amethyst Dust per 5 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/wither",
+    "fullname": "Black Sun's Nadir",
+    "signature": "entity, number, number →",
+    "pattern": "qqqqqaewawawe",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Inflicts withering. Base cost is one Amethyst Dust per second."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/poison",
+    "fullname": "Red Sun's Nadir",
+    "signature": "entity, number, number →",
+    "pattern": "qqqqqadwawaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Inflicts poison. Base cost is one Amethyst Dust per 3 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/slowness",
+    "fullname": "Green Sun's Nadir",
+    "signature": "entity, number, number →",
+    "pattern": "qqqqqadwawaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Inflicts slowness. Base cost is one Amethyst Dust per 5 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "craft/cypher",
+    "fullname": "Craft Cypher",
+    "signature": "entity, [pattern] →",
+    "pattern": "waqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Costs about one Charged Amethyst."
+  },
+  {
+    "mod": "hex",
+    "name": "craft/trinket",
+    "fullname": "Craft Trinket",
+    "signature": "entity, [pattern] →",
+    "pattern": "wwaqqqqqeaqeaeqqqeaeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Costs about five Charged Amethysts."
+  },
+  {
+    "mod": "hex",
+    "name": "craft/artifact",
+    "fullname": "Craft Artifact",
+    "signature": "entity, [pattern] →",
+    "pattern": "wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Costs about ten Charged Amethysts."
+  },
+  {
+    "mod": "hex",
+    "name": "recharge",
+    "fullname": "Recharge Item",
+    "signature": "entity →",
+    "pattern": "qqqqqwaeaeaeaeaea",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Recharge a media-containing item in my other hand. Costs about one Amethyst Shard."
+  },
+  {
+    "mod": "hex",
+    "name": "erase",
+    "fullname": "Erase Item",
+    "signature": "",
+    "pattern": "qdqawwaww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Clear a Hex-containing item in my other hand. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/create",
+    "fullname": "Summon Sentinel",
+    "signature": "vector →",
+    "pattern": "waeawae",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Summons my sentinel at the given position. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/destroy",
+    "fullname": "Banish Sentinel",
+    "signature": "",
+    "pattern": "qdwdqdw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Banish my sentinel, and remove it from the world. Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/get_pos",
+    "fullname": "Locate Sentinel",
+    "signature": "→ vector",
+    "pattern": "waeawaede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Add the position of my sentinel to the stack, or Null if it isn't summoned. Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/wayfind",
+    "fullname": "Wayfind Sentinel",
+    "signature": "vector → vector",
+    "pattern": "waeawaedwa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Transform the position vector on the top of the stack into a unit vector pointing from that position to my sentinel, or Null if it isn't summoned. Costs a negligible amount of media."
+  },
+  {
+    "mod": "hex",
+    "name": "colorize",
+    "fullname": "Internalize Pigment",
+    "signature": "",
+    "pattern": "awddwqawqwawq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "I must be holding a Pigment in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind's coloration (at least, until I cast the spell again). Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "cycle_variant",
+    "fullname": "Caster's Glamour",
+    "signature": "",
+    "pattern": "dwaawedwewdwe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Certain items I create seem oddly receptive to the influence of media. By holding a Cypher, Trinket, Artifact, Focus, or Spellbook in my other hand, I can use this spell to change the appearance of the item. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "flight/range",
+    "fullname": "Anchorite's Flight",
+    "signature": "entity, number →",
+    "pattern": "awawaawq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "A flight limited in its range."
+  },
+  {
+    "mod": "hex",
+    "name": "flight/time",
+    "fullname": "Wayfarer's Flight",
+    "signature": "entity, number →",
+    "pattern": "dwdwdewq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "A flight limited in its duration."
+  },
+  {
+    "mod": "hex",
+    "name": "flight/can_fly",
+    "fullname": "Aviator's Purification",
+    "signature": "entity → boolean",
+    "pattern": "dwdwdeweaqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns whether the given player is under the effects of Anchorite's or Wayfarer's Flight."
+  },
+  {
+    "mod": "hex",
+    "name": "create_lava",
+    "fullname": "Create Lava",
+    "signature": "vector →",
+    "pattern": "eaqawqadaqd",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Summon a block of lava (or insert up to a bucket's worth) into a block at the given position. Costs about one Charged Amethyst."
+  },
+  {
+    "mod": "hex",
+    "name": "lightning",
+    "fullname": "Summon Lightning",
+    "signature": "vector →",
+    "pattern": "waadwawdaaweewq",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "I command the heavens! This spell will summon a bolt of lightning to strike the earth where I direct it. Costs about three Amethyst Shards."
+  },
+  {
+    "mod": "hex",
+    "name": "summon_rain",
+    "fullname": "Summon Rain",
+    "signature": "",
+    "pattern": "wwweeewwweewdawdwad",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "I control the clouds! This spell will summon rain across the world I cast it upon. Costs about one Charged Amethyst. Does nothing if it is already raining."
+  },
+  {
+    "mod": "hex",
+    "name": "dispel_rain",
+    "fullname": "Dispel Rain",
+    "signature": "",
+    "pattern": "eeewwweeewwaqqddqdqd",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "A counterpart to summoning rain. This spell will dispel rain across the world I cast it upon. Costs about one Amethyst Shard. Does nothing if the skies are already clear."
+  },
+  {
+    "mod": "hex",
+    "name": "flight",
+    "fullname": "Altiora",
+    "signature": "player →",
+    "pattern": "eawwaeawawaa",
+    "direction": "NORTH_WEST",
+    "perworld": true,
+    "description": "Summon a sheaf of media about me in the shape of wings, endowed with enough substance to allow gliding."
+  },
+  {
+    "mod": "hex",
+    "name": "teleport/great",
+    "fullname": "Greater Teleport",
+    "signature": "entity, vector →",
+    "pattern": "wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Far more powerful than Blink, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is *much* greater than the normal radius of influence I am used to."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/regeneration",
+    "fullname": "White Sun's Zenith",
+    "signature": "entity, number, number →",
+    "pattern": "qqqqaawawaedd",
+    "direction": "NORTH_WEST",
+    "perworld": true,
+    "description": "Bestows regeneration. Base cost is one Amethyst Dust per second."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/night_vision",
+    "fullname": "Blue Sun's Zenith",
+    "signature": "entity, number →",
+    "pattern": "qqqaawawaeqdd",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Bestows night vision. Base cost is one Amethyst Dust per 5 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/absorption",
+    "fullname": "Black Sun's Zenith",
+    "signature": "entity, number, number →",
+    "pattern": "qqaawawaeqqdd",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Bestows absorption. Base cost is one Amethyst Dust per second."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/haste",
+    "fullname": "Red Sun's Zenith",
+    "signature": "entity, number, number →",
+    "pattern": "qaawawaeqqqdd",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Bestows haste. Base cost is one Amethyst Dust per 3 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/strength",
+    "fullname": "Green Sun's Zenith",
+    "signature": "entity, number, number →",
+    "pattern": "aawawaeqqqqdd",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Bestows strength. Base cost is one Amethyst Dust per 3 seconds."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/create/great",
+    "fullname": "Summon Greater Sentinel",
+    "signature": "vector →",
+    "pattern": "waeawaeqqqwqwqqwq",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Summon a greater version of my Sentinel. Costs about two Amethyst Dust."
+  },
+  {
+    "mod": "hex",
+    "name": "craft/battery",
+    "fullname": "Craft Phial",
+    "signature": "entity →",
+    "pattern": "aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Infuse a bottle with media to form a Phial."
+  },
+  {
+    "mod": "hex",
+    "name": "brainsweep",
+    "fullname": "Flay Mind",
+    "signature": "entity, vector →",
+    "pattern": "qeqwqwqwqwqeqaeqeaqeqaeqaqded",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "I cannot make heads or tails of this spell... To be honest, I'm not sure I want to know what it does."
+  },
+  {
+    "mod": "hexal",
+    "name": "interop/fabric_only/phase_block",
+    "fullname": "Phase Block",
+    "signature": "vec, num →",
+    "pattern": "daqqqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes a position and a number, and phases the block at that position out for that many seconds. Costs one ten-thousandth of an Amethyst Dust times the square of the time to phase out for."
+  },
+  {
+    "mod": "hexal",
+    "name": "current_tick",
+    "fullname": "Timekeeper's Reflection",
+    "signature": "→ number",
+    "pattern": "ddwaa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Adds a number to the stack which seems to be related to how Nature represents time; If I cast the pattern, then cast the same pattern a second later, the number it adds has increased by 20."
+  },
+  {
+    "mod": "hexal",
+    "name": "remaining_evals",
+    "fullname": "Thanatos' Reflection",
+    "signature": "→ number",
+    "pattern": "qqaed",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Adds the number of evaluations a hex is still capable of to the stack. This is reduced by Hermes' Gambit and Thoth's Gambit."
+  },
+  {
+    "mod": "hexal",
+    "name": "breath",
+    "fullname": "Diver's Purification",
+    "signature": "entity → num",
+    "pattern": "aqawdwaqawd",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes a Living entity from the stack and returns how much breath it has left (i.e., how close it is to drowning)."
+  },
+  {
+    "mod": "hexal",
+    "name": "health",
+    "fullname": "Nurse's Purification",
+    "signature": "entity → num",
+    "pattern": "aqwawqa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes a Living entity from the stack and returns how much health it has left (i.e., how close it is to dying)."
+  },
+  {
+    "mod": "hexal",
+    "name": "armour",
+    "fullname": "Squire's Purification",
+    "signature": "entity → num",
+    "pattern": "wqqqqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes a Living entity from the stack and returns how much armour it has."
+  },
+  {
+    "mod": "hexal",
+    "name": "toughness",
+    "fullname": "Boxer's Purification",
+    "signature": "entity → num",
+    "pattern": "aeqqqqea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Removes a Living entity from the stack and returns how much toughness it has (another property of armour)."
+  },
+  {
+    "mod": "hexal",
+    "name": "light_level",
+    "fullname": "Lamplighter's Purification",
+    "signature": "vec → num",
+    "pattern": "qedqde",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Removes a position vector from the stack and returns the light level at that position."
+  },
+  {
+    "mod": "hexal",
+    "name": "factorial",
+    "fullname": "Factorial Purification",
+    "signature": "num → num",
+    "pattern": "wawdedwaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes a number from the stack and computes its factorial, for example inputting 4 would return 4*3*2*1=24."
+  },
+  {
+    "mod": "hexal",
+    "name": "running/sum",
+    "fullname": "Running Sum Purification",
+    "signature": "[num] → [num]",
+    "pattern": "aea",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes a list from the stack and computes its running sum, for example inputting [1,2,5] would return [1,3,8]."
+  },
+  {
+    "mod": "hexal",
+    "name": "running/mul",
+    "fullname": "Running Product Purification",
+    "signature": "[num] → [num]",
+    "pattern": "qaawaaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a list from the stack and computes its running product, for example inputting [1,2,5] would return [1,2,10]."
+  },
+  {
+    "mod": "hexal",
+    "name": "type/iota",
+    "fullname": "Classifier's Purification",
+    "signature": "any → iotatype",
+    "pattern": "awd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove an iota from the stack, and adds the type of that iota to the stack."
+  },
+  {
+    "mod": "hexal",
+    "name": "type/entity",
+    "fullname": "Physician's Purification",
+    "signature": "entity → entitytype",
+    "pattern": "qawde",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Remove an entity from the stack, and adds the type of the entity at that location to the stack."
+  },
+  {
+    "mod": "hexal",
+    "name": "type/block_item",
+    "fullname": "Sorter's Purification",
+    "signature": "itemtypable → itemtype",
+    "pattern": "qaqqaea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a location, mote, item entity, or item frame from the stack, and adds the type of the block at that location, or type of that item, to the stack (e.g. Grass, Stone, Stick, etc.)."
+  },
+  {
+    "mod": "hexal",
+    "name": "type/item_held",
+    "fullname": "Sorter's Reflection",
+    "signature": "→ itemtype",
+    "pattern": "edeedqd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Adds the type of the item in the caster's offhand to the stack if there is one present, or the type of the casting hand otherwise."
+  },
+  {
+    "mod": "hexal",
+    "name": "get_entity/type",
+    "fullname": "Entity Distillation: Type",
+    "signature": "entitytype, pos → entity | null",
+    "pattern": "dadqqqqqdad",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Remove an entity type and a position from the stack, and returns an entity of that type at that position if one exists."
+  },
+  {
+    "mod": "hexal",
+    "name": "zone_entity/type",
+    "fullname": "Zone Exaltation: Type",
+    "signature": "entitytype, pos, num → [entity]",
+    "pattern": "waweeeeewaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Remove an entity type, a position, and a radius from the stack, and returns a list of all entities of that type within that radius of that position."
+  },
+  {
+    "mod": "hexal",
+    "name": "zone_entity/not_type",
+    "fullname": "Zone Exaltation: Not-Type",
+    "signature": "entitytype, pos, num → [entity]",
+    "pattern": "wdwqqqqqwdw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Remove an entity type, a position, and a radius from the stack, and returns a list of all entities not of that type within that radius of that position"
+  },
+  {
+    "mod": "hexal",
+    "name": "everbook/read",
+    "fullname": "Mnemosyne's Gambit",
+    "signature": "vector, pattern →",
+    "pattern": "eweeewedqdeddw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes the position of an Akashic Record, as well as a Pattern as a key, and retrieves the iota at that key from your Everbook, storing it in the given Akashic Record if able."
+  },
+  {
+    "mod": "hexal",
+    "name": "everbook/write",
+    "fullname": "Elysium's Gambit",
+    "signature": "vector, pattern →",
+    "pattern": "qwqqqwqaeaqaaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes the position of an Akashic Record, as well as a Pattern as a key, and stores the iota in that record at that key to your Everbook at the same key."
+  },
+  {
+    "mod": "hexal",
+    "name": "everbook/delete",
+    "fullname": "Lethe's Gambit",
+    "signature": "pattern →",
+    "pattern": "qwqqqwqaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes a pattern and removes the entry with that pattern key from your Everbook."
+  },
+  {
+    "mod": "hexal",
+    "name": "everbook/toggle_macro",
+    "fullname": "Brigh's Gambit",
+    "signature": "pattern →",
+    "pattern": "eweeewedww",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Takes a pattern and marks that entry of your Everbook as a Pattern that when drawn by your hand will be treated as any other of Nature's patterns."
+  },
+  {
+    "mod": "hexal",
+    "name": "smelt",
+    "fullname": "Smelt",
+    "signature": "vec | entity | mote →",
+    "pattern": "wqqqwqqadad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a location, item entity, or mote from the stack, then either smelt the block at the location or smelt all the items in the item entity or mote."
+  },
+  {
+    "mod": "hexal",
+    "name": "freeze",
+    "fullname": "Freeze",
+    "signature": "vec →",
+    "pattern": "weeeweedada",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Freezes the block at a block location. For example, turns water into ice, and ice into packed ice. Costs one Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "falling_block",
+    "fullname": "Falling Block",
+    "signature": "vec →",
+    "pattern": "wqwawqwqwqwqwqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Remove a location from the stack, and force the block there to fall as if it were sand or gravel. Costs one and a half Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "place_type",
+    "fullname": "Place Block II",
+    "signature": "(itemtype | mote), vec →",
+    "pattern": "eeeeedeeeee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts an item type or mote and a location, and attempts to place a block of that item type at that location. If a mote was passed it will instead place from the record referenced by that mote. Costs an eighth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "particles",
+    "fullname": "Particles",
+    "signature": "vec | [vec] →",
+    "pattern": "eqqqqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Accepts a location or a list of locations, and either creates a particle at the location, or creates lines of particles between the locations in the list. Costs two thousandths of an Amethyst Dust per location."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/summon/projectile",
+    "fullname": "Summon Projectile Wisp",
+    "signature": "[pattern], vec, vec, number →",
+    "pattern": "aqaeqeeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This wisp is summoned and launched like an arrow, casting its hex on whatever it hits. The initial stack when it executes will be a reference to itself, then a reference to what it hit."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/summon/ticking",
+    "fullname": "Summon Cyclic Wisp",
+    "signature": "[pattern], vec, number →",
+    "pattern": "aqaweewaqawee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Similar to Summon Projectile Wisp, but with only one vector input for the position to summon the wisp. Cyclic wisps are unmoving once summoned, instead executing their hex up to 20 times each second."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/self",
+    "fullname": "Identity Reflection",
+    "signature": "→ entity",
+    "pattern": "dedwqqwdedwqqaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Add a reference to the casting wisp to the stack. This must be cast by a wisp; trying to cast it through a staff will fail rather spectacularly."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/media",
+    "fullname": "Reservoir Reflection",
+    "signature": "→ num",
+    "pattern": "aqaweewaqaweedw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Add the amount of media in the wisp's reservoir to the stack. This must be cast by a wisp; trying to cast it through a staff will fail rather spectacularly."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/hex",
+    "fullname": "Manager's Purification",
+    "signature": "entity → [pattern]",
+    "pattern": "aweewaqaweewaawww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Removes a reference to a wisp from the stack, and replaces it with the wisp's contained hex. Must be a wisp you summoned, or a wisp that has allowed transfer with the caster or caster's owner."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/owner",
+    "fullname": "Allegiance Distillation",
+    "signature": "entity, entity → bool",
+    "pattern": "dwqqwdedwqqwddwww",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Removes a reference to a wisp and an entity from the stack, and returns true if that entity owns that wisp, and false otherwise."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/move/target/set",
+    "fullname": "Pathfinder's Gambit",
+    "signature": "vec →",
+    "pattern": "awqwawqaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Removes a position vector from the stack; The Cyclic Wisp that executed this pattern will move in a straight line towards that position (colliding with terrain in its path) until it reaches it."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/move/target/get",
+    "fullname": "Pathfinder's Reflection",
+    "signature": "→ vec",
+    "pattern": "ewdwewdew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Adds to the stack the position vector that the executing Cyclic Wisp is currently moving towards."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/move/speed/set",
+    "fullname": "Haste",
+    "signature": "num →",
+    "pattern": "aeawqqqae",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Removes a number from the stack, and sets the executing Cyclic Wisp's maximum speed to that number."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/move/speed/get",
+    "fullname": "Speedometer's Reflection",
+    "signature": "→ num",
+    "pattern": "eeewdqdee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Gets the executing Cyclic Wisp's current maximum speed."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/transfer/allow",
+    "fullname": "Allow Transfer",
+    "signature": "num →",
+    "pattern": "qqqqqewwqeeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "When two wisps are linked together, they transfer media between each other until they are balanced. By default this only happens between wisps with the same owner. This takes an index, and explicitly allows the wisp to exchange media with the linkable at that index."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/transfer/disallow",
+    "fullname": "Disallow Transfer",
+    "signature": "num →",
+    "pattern": "qqqqqeqdeddweqqqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Correspondingly, this takes an index and disallows the wisp from exchanging media with the linkable at that index."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/transfer/others/allow",
+    "fullname": "Allow Transfer Others",
+    "signature": "wisp, num →",
+    "pattern": "eeeeeqwweqqqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "This takes a wisp that you own and an index, and allows the wisp to exchange media with the linkable at that index."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/transfer/others/disallow",
+    "fullname": "Disallow Transfer Others",
+    "signature": "wisp, num →",
+    "pattern": "eeeeeqeaqaawqeeeee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "This takes a wisp that you own and an index, and disallows the wisp from exchanging media with the linkable at that index."
+  },
+  {
+    "mod": "hexal",
+    "name": "get_entity/wisp",
+    "fullname": "Entity Purification: Wisp",
+    "signature": "vec → entity | null",
+    "pattern": "qqwdedwqqdaqaaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the wisp at that location (or Null if there isn't one)."
+  },
+  {
+    "mod": "hexal",
+    "name": "zone_entity/wisp",
+    "fullname": "Zone Distillation: Wisp",
+    "signature": "vec, num → [entity]",
+    "pattern": "qqwdedwqqwdeddww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of wisps near the position."
+  },
+  {
+    "mod": "hexal",
+    "name": "zone_entity/not_wisp",
+    "fullname": "Zone Distillation: Non-Wisp",
+    "signature": "vec, num → [entity]",
+    "pattern": "eewaqaweewaqaaww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and maximum distance on the stack, and combine them into a list of non-wisp entities near the position."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/trigger/tick",
+    "fullname": "Delay Wisp",
+    "signature": "number →",
+    "pattern": "aqawded",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes an integer from the stack, then delays the wisp's next cast until at least that many twentieth's of a second have passed. This and other triggers like it will halve the wisp's upkeep cost while it isn't casting."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/trigger/comm",
+    "fullname": "Listen",
+    "signature": "",
+    "pattern": "aqqqqqwdeddw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "The wisp's next cast will not occur until it has received at least one communication."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/trigger/move",
+    "fullname": "Wander",
+    "signature": "",
+    "pattern": "eqwawqwaqww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "The wisp's next cast will not occur until it has reached the position it is navigating towards."
+  },
+  {
+    "mod": "hexal",
+    "name": "link",
+    "fullname": "Link",
+    "signature": "linkable →",
+    "pattern": "eaqaaeqqqqqaweaqaaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Links the caster to the entity removed from the stack, which must be linkable. This costs one Amethyst Shard."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/others",
+    "fullname": "Link Others",
+    "signature": "linkable, linkable →",
+    "pattern": "eqqqqqawqeeeeedww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "May be evaluated by any casting instrument. Links two entities, which must be linkable. This costs one Amethyst Shard."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/unlink",
+    "fullname": "Unlink",
+    "signature": "num →",
+    "pattern": "qdeddqeeeeedwqdeddw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Removes the link at the given index from the caster's links. This costs two Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/unlink/others",
+    "fullname": "Unlink Others",
+    "signature": "linkable, linkable →",
+    "pattern": "qeeeeedweqqqqqaww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes two linkables and unlinks them if they are linked. This costs two Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/get",
+    "fullname": "Phonebook Purification",
+    "signature": "num → linkable",
+    "pattern": "eqqqqqaww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Removes an index from the stack, and adds the entity connected to the link at that index to the stack."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/get_index",
+    "fullname": "Recognition Purification",
+    "signature": "linkable → num",
+    "pattern": "aeqqqqqawwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Removes an entity from the stack, and adds the index to the link to that entity to the stack (or -1 if the caster isn't linked to that entity)."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/num",
+    "fullname": "Popularity Reflection",
+    "signature": "→ num",
+    "pattern": "qeeeeedww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Adds the number of links to the wisp to the stack."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/send",
+    "fullname": "Send Iota",
+    "signature": "num, any →",
+    "pattern": "qqqqqwdeddw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Removes an iota from the stack, then removes an index from the stack and sends the iota along the link at the given index.  This costs one hundredth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/read",
+    "fullname": "Recitation Reflection",
+    "signature": "→ any",
+    "pattern": "weeeeew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "When something receives an iota along a link it is added to a queue. This pattern adds the first iota in the queue to the stack, removing it from the queue."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/num",
+    "fullname": "Postmaster's Reflection",
+    "signature": "→ num",
+    "pattern": "aweeeeewaa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Adds to the stack the number of unread iota in the caster's received iota queue."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/clear",
+    "fullname": "Unclogging Gambit",
+    "signature": "",
+    "pattern": "aweeeeewa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Removes all unread iota from the caster's received iota queue."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/open_transmit",
+    "fullname": "Open Transmit",
+    "signature": "num →",
+    "pattern": "qwdedwq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Similar to Introspection, until drawing a Close Transmit all patterns I draw are sent along the link whose index is at the top of the stack."
+  },
+  {
+    "mod": "hexal",
+    "name": "link/comm/close_transmit",
+    "fullname": "Close Transmit",
+    "signature": "",
+    "pattern": "ewaqawe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "When drawn after Open Transmit I stop transmitting drawn patterns. If either Open Transmit or Close Transmit are executed by an intermediary caster such as a wisp, they will mishap."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/bind",
+    "fullname": "Bind Storage",
+    "signature": "vec →",
+    "pattern": "qaqwqaqwqaq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Target a Mote Nexus block in the world and bind yourself to it, meaning all items you mediafy will be added to that nexus' capacity. Targeting any other block will unbind you from your currently bound nexus. Costs 32 Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/bind/temp",
+    "fullname": "Bind Storage - Temporary",
+    "signature": "vec →",
+    "pattern": "edewedewede",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Target a Mote Nexus block in the world and bind to it for the remainder of this cast, temporarily overriding your primary binding. Costs one thousandth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/contained_type/get",
+    "fullname": "Stocktake Reflection",
+    "signature": "→ [itemtype]",
+    "pattern": "dwqqqqqwddww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Gets all the types of motes contained in the currently bound Mote Nexus."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/contained/get",
+    "fullname": "Stocktake Purification",
+    "signature": "mote | itemtype → [mote]",
+    "pattern": "aweeeeewaaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Gets all the mote records from the currently bound Mote Nexus that match the passed item type or could be combined with the passed mote."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/remaining_capacity/get",
+    "fullname": "Capacity Reflection",
+    "signature": "→ int",
+    "pattern": "awedqdewa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Gets the remaining capacity of the bound Mote Nexus."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/contains",
+    "fullname": "Containment Distillation",
+    "signature": "vec, (itemtype | mote) → bool",
+    "pattern": "dwqaeaqwd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns true if the Mote Nexus at the given position contains a mote of the given type, or that would stack with the given mote, and false otherwise."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/make",
+    "fullname": "Mediafy Item",
+    "signature": "item | item, mote → mote",
+    "pattern": "eaqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Convert an item in the world (either an item entity or an item frame) into a mote on your stack. If passed an existing mote instead adds the items from the entity to the mote. Mediafying an item costs a tenth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/return",
+    "fullname": "Return Item",
+    "signature": "mote, vec | mote, vec, num →",
+    "pattern": "qded",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Returns all the items from a mote to the world at the location of your choosing. If passed a number returns at most that many items. Costs a tenth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/count/get",
+    "fullname": "Weighing Purification",
+    "signature": "mote → int",
+    "pattern": "qqqqwqqqqqaa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Accepts a mote and returns the number of items in the record referenced by that mote."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/combine",
+    "fullname": "Stacking Distillation",
+    "signature": "mote, mote → mote",
+    "pattern": "aqaeqded",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Combines two motes into one, merging the mote records they point to. Any pointers to the second mote will become null, any pointers to the first will remain. This can make motes holding many more items than I could carry in a stack naturally!"
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/combinable",
+    "fullname": "Stacking Distillation II",
+    "signature": "mote, (mote | item) → bool",
+    "pattern": "dedqeaqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Returns true if the first mote can be combined with the items in the second argument (which can be a mote, item entity, or item frame), and false otherwise."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/split",
+    "fullname": "Splitting Gambit",
+    "signature": "mote, int → mote, mote",
+    "pattern": "eaqaaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Splits the specified number of items off of the passed mote, creating a new mote pointing to a new mote record."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/get",
+    "fullname": "Depot Purification",
+    "signature": "mote → vec",
+    "pattern": "qqqqqaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Get the position of the Mote Nexus that contains the passed mote."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/storage/set",
+    "fullname": "Depot Gambit",
+    "signature": "mote, vec → mote",
+    "pattern": "eeeeedw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Move the record referenced by the passed mote to the Mote Nexus at the passed position. This returns a new mote pointing to that record, and invalidates all previous motes pointing to that record."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/craft",
+    "fullname": "Craft",
+    "signature": "mote | [mote] | [[mote]] → [mote]",
+    "pattern": "wwawdedwawdewwdwaqawdwwedwawdedwaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Takes a mote, list of motes, or list of list of motes. returns a list containing the results of crafting with those items. For example, the input Stone x128 would return [Stone Button x128]."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/villager/level/get",
+    "fullname": "Seniority Purification",
+    "signature": "villager → int",
+    "pattern": "qqwdedwqqaww",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Accepts a villager, returns a number representing that villager's seniority and skill at their craft."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/trade/get",
+    "fullname": "Offering Purification",
+    "signature": "villager → [complicated!]",
+    "pattern": "awdedwaawwqded",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a villager and returns all of the trades that villager is offering. This is a list of lists of lists. Each trade comprises two lists, the cost, and the returned items. The returned items is a list containing the type of item, and the number of items."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/trade",
+    "fullname": "Trade",
+    "signature": "villager, [mote], int? → item",
+    "pattern": "awdedwaeqded",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Accepts a villager, a list of motes to trade with to villager, and optionally an int for which of that villager's trades to attempt. (int? above means that you can pass 2 or 3 arguments, the optional 3rd being an int)."
+  },
+  {
+    "mod": "hexal",
+    "name": "mote/use_on",
+    "fullname": "Use Item On",
+    "signature": "mote, (entity | vec, vec) →",
+    "pattern": "qqqwqqqqaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a mote, and either an entity, or a target block and a normal vector. Uses the item on the entity/block. The mote must either only have one item in it, or the items contained must be extremely simple (no NBT data)."
+  },
+  {
+    "mod": "hexal",
+    "name": "tick",
+    "fullname": "Accelerate",
+    "signature": "vec →",
+    "pattern": "wwwdwdwwwawqqeqwqqwqeqwqq",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Causes the block at the passed vector to perform its normal actions faster in the instant that this spell is cast."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/consume",
+    "fullname": "Consume Wisp",
+    "signature": "entity →",
+    "pattern": "wawqwawwwewwwewwwawqwawwwewwwewdeaweewaqaweewaawwww",
+    "direction": "NORTH_WEST",
+    "perworld": true,
+    "description": "Remove a wisp from the stack, and disassemble the wisp. The patterns contained are lost, but the media that it contained can be repurposed if this spell is cast by another wisp."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/seon/set",
+    "fullname": "Bind Wisp",
+    "signature": "entity →",
+    "pattern": "aqweewqaeaqweewqaqwww",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Bind one of my wisps closer to me; I may only have one bound wisp at a time, but whichever wisp is bound costs significantly less upkeep and increased range."
+  },
+  {
+    "mod": "hexal",
+    "name": "wisp/seon/get",
+    "fullname": "Familiar's Reflection",
+    "signature": "→ entity | null",
+    "pattern": "daqweewqaeaqweewqaqwwww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Returns my currently bound wisp. A new wisp can only be bound when this returns null. (This is not a great spell, I have simply placed it here for convenience.)"
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/make",
+    "fullname": "Gate's Reflection",
+    "signature": "null | vec | vec, entity → gate",
+    "pattern": "qwqwqwqwqwqqeaeaeaeaeae",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Adds a new gate iota to the stack. Any copy of this iota will point to the same numbered gate. Costs 32 Charged Amethyst. If passed null, makes a Drifting Gate. If passed a vector, makes a Location Anchored Gate, If passed a vector and an entity, makes an Entity Anchored Gate."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/mark",
+    "fullname": "Gate's Opening",
+    "signature": "gate, entity →",
+    "pattern": "qaqeede",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Consumes a gate iota and an entity. Marks that entity to be teleported the next time that gate is closed. Costs one twentieth of an Amethyst Dust."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/unmark",
+    "fullname": "Gate's Dismissal",
+    "signature": "gate, entity →",
+    "pattern": "edeqqaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Consumes a gate iota and an entity. Unmarks that entity so that if it was marked with  Gate's Opening it will no longer be teleported the next time that gate is closed."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/mark/num/get",
+    "fullname": "Marked Purification",
+    "signature": "gate → num",
+    "pattern": "qawwaqqqaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Consumes a gate iota, returns how many entities are marked by that gate."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/mark/get",
+    "fullname": "Marked Distillation",
+    "signature": "gate, entity → bool",
+    "pattern": "edwwdeeede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Consumes a gate iota and an entity, returns whether that entity is marked by that gate."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/close",
+    "fullname": "Gate's Closing",
+    "signature": "gate | gate, vec →",
+    "pattern": "qqqwwqqqwqqawdedw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Consumes a non-drifing gate iota, or a drifting gate iota and a position. Transports all the entities marked with the passed gate to the stored or given position, as relevant. Costs half an Amethyst Shard, plus an Amethyst Dust per metre transported per entity, if the gate was drifting."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "enqueue",
+    "fullname": "Enqueue",
+    "signature": "list, number, any →",
+    "pattern": "qeqwqwqwqwqeqaweqqqqqwweeweweewqdwwewewwewweweww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Enqueues a Hex to cast after that many twentieths of a second. It takes an iota to use as the label for the cassette."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "dequeue",
+    "fullname": "Dequeue",
+    "signature": "any →",
+    "pattern": "eqeweweweweqedwqeeeeewwqqwqwqqweawwqwqwwqwwqwqww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "I can also automate killing cassettes with this pattern. It takes an iota and dequeues the cassette with that label if it exists."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "killall",
+    "fullname": "Disqueue",
+    "signature": "",
+    "pattern": "eqeweweweweqedwqeeeeewwqqwqwqqw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Terminates all cassettes, similar to the effects of the Parallel Processing mishap."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "specs",
+    "fullname": "Threading Reflection",
+    "signature": "→ number",
+    "pattern": "qeqwqwqwqwqeqaweqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the total number of cassettes slots that I currently have."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "free",
+    "fullname": "Threading Reflection II",
+    "signature": "→ number",
+    "pattern": "qeqwqwqwqwqeqaweqqqqqwweeweweew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the number of non-busy cassette slots that I currently have."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "inspect",
+    "fullname": "Program Purification",
+    "signature": "any → null/list of patterns",
+    "pattern": "eqeweweweweqedwqeeeee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes null if I do not have an active cassette with that label, or the cassette's Hex if I do. I hear rumors of this being used for iota storage and passing information between Hexes."
+  },
+  {
+    "mod": "hexcassettes",
+    "name": "foretell",
+    "fullname": "Program Purification II",
+    "signature": "any → null/number",
+    "pattern": "eqeweweweweqedwqeeeeedww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes null if I do not have an active cassette with that label, or how many twentieths of a second until that cassette fires if I do."
+  },
+  {
+    "mod": "hexcellular",
+    "name": "create_property",
+    "fullname": "Schrödinger's Refl.",
+    "signature": "→ property",
+    "pattern": "aawe",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes a reference to a random property. Costs one charged amethyst to burn this property into the universe."
+  },
+  {
+    "mod": "hexcellular",
+    "name": "observe_property",
+    "fullname": "Observation Purif.",
+    "signature": "property → any",
+    "pattern": "aawd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Observes the current value of the property iota. Free to use."
+  },
+  {
+    "mod": "hexcellular",
+    "name": "set_property",
+    "fullname": "Schrödinger's Gambit",
+    "signature": "property, any →",
+    "pattern": "aawq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Sets the property iota. Costs about a tenth of a dust. All future observations of the property iota return the new value."
+  },
+  {
+    "mod": "hexdebug",
+    "name": "const/debugging",
+    "fullname": "Debugger's Reflection",
+    "signature": "→ bool",
+    "pattern": "qqqqqewaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Adds True to the top of the stack if executed by a Debugger, or False otherwise."
+  },
+  {
+    "mod": "hexdebug",
+    "name": "breakpoint/before",
+    "fullname": "Set Breakpoint Before",
+    "signature": "",
+    "pattern": "awqdeew",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pauses the Debugger before executing this pattern."
+  },
+  {
+    "mod": "hexdebug",
+    "name": "breakpoint/after",
+    "fullname": "Set Breakpoint After",
+    "signature": "",
+    "pattern": "wqqaewd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pauses the Debugger after executing this pattern (ie. before executing the next pattern)."
+  },
+  {
+    "mod": "hexdebug",
+    "name": "craft/debugger",
+    "fullname": "Craft Debugger",
+    "signature": "entity, [pattern] →",
+    "pattern": "aaewwwwwaqwawqwadawqwwwawwwqwwwaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Creates a Debugger that casts a Hex, similar to certain other patterns I've used in the past."
+  },
+  {
+    "mod": "hexical",
+    "name": "write_grimoire",
+    "fullname": "Write Grimoire",
+    "signature": "pattern, list →",
+    "pattern": "aqwqaeaqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Associates a pattern to a list of patterns in the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexical",
+    "name": "erase_grimoire",
+    "fullname": "Erase Grimoire",
+    "signature": "pattern →",
+    "pattern": "aqwqaqded",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Erases any associations for a pattern that may exist in the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexical",
+    "name": "index_grimoire",
+    "fullname": "Archivist Reflection",
+    "signature": "→ list of patterns",
+    "pattern": "aqaeaqwqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Gets a list of all patterns modified by the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexical",
+    "name": "age_scroll",
+    "fullname": "Age Scroll",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqeqqqwqeaeaeaeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Yellows the parchment of an Animated Scroll, making it bear striking semblance to some ancient scrolls I've been finding."
+  },
+  {
+    "mod": "hexical",
+    "name": "color_scroll",
+    "fullname": "Dye Ink",
+    "signature": "animated scroll entity, vector →",
+    "pattern": "waeqqqqewqqwqqeqeqqwqqeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Changes the color of an Animated Scroll's ink to the color specified by the vector, with the components being 0 to 1 values of red, green, and blue respectively."
+  },
+  {
+    "mod": "hexical",
+    "name": "glow_scroll",
+    "fullname": "Illuminate Ink",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqedeqdqdqdqeqdwwd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Causes the ink of an Animated Scroll to brightly glow, regardless of lighting conditions."
+  },
+  {
+    "mod": "hexical",
+    "name": "vanish_scroll",
+    "fullname": "Vanish Scroll",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqedeqeeweeqewee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Causes the Animated Scroll to become invisible leaving only the pattern, making it appear as though the pattern were magically etched into the surface the scroll is on."
+  },
+  {
+    "mod": "hexical",
+    "name": "wish",
+    "fullname": "Wish",
+    "signature": "list of patterns →",
+    "pattern": "eweweweweweewedeaqqqd",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Wish the genie to cast a Hex for me. Because I am *teaching* a mind rather than *etching* a casting device, I can freely reteach the genie a new Hex any time without losing media."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_position",
+    "fullname": "Genie Refl.: Spatial",
+    "signature": "→ vector",
+    "pattern": "qwddedqdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original position when I began using the lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_rotation",
+    "fullname": "Genie Refl.: Rotational",
+    "signature": "→ vector",
+    "pattern": "qwddedadw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original rotation when I began using the lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_velocity",
+    "fullname": "Genie Refl.: Kinetic",
+    "signature": "→ vector",
+    "pattern": "qwddedqew",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original velocity when I began using the lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_use_time",
+    "fullname": "Genie Refl.: Temporal",
+    "signature": "→ number",
+    "pattern": "qwddedqwddwa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many times the lamp has cast since I began using the lamp. I can divide by by 20 to convert to seconds."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_media",
+    "fullname": "Genie Refl.: Media",
+    "signature": "→ number",
+    "pattern": "qwddedaeeeee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the remaining media of the lamp, in units of dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "set_hand_lamp_storage",
+    "fullname": "Genie Gambit",
+    "signature": "any →",
+    "pattern": "qwddedqedeeeee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Asks the genie to remember an iota for me. Strangely, the genie seems able to bypass the Transgress Others mishap, perhaps because it requires my active concentration to use this lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hand_lamp_storage",
+    "fullname": "Genie Refl.: Memory",
+    "signature": "→ any",
+    "pattern": "qwddedqwaqqqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Requests the iota I had saved to the genie to be pushed to the top of the stack. If I had not previously saved anything, the genie pushes Null."
+  },
+  {
+    "mod": "hexical",
+    "name": "lamp_finale",
+    "fullname": "Finale Reflection",
+    "signature": "→ boolean",
+    "pattern": "aaddaddad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "The instant I let go of my lamp, it casts an additional time. I can use this pattern to recognize whether a cast is that finale, and react accordingly."
+  },
+  {
+    "mod": "hexical",
+    "name": "recharge_lamp",
+    "fullname": "Make Genie",
+    "signature": "entity, number →",
+    "pattern": "qaqwawqwqqwqwqwqwqwqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "*Borrow* the experiences and memory of a villager and transforms it into a genie to serve the lamp in my offhand. The spell itself costs about one Charged Amethyst, plus the media I'm giving the lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "promote_lamp",
+    "fullname": "Promote Lamp",
+    "signature": "entity →",
+    "pattern": "qweedeqeedeqdqdwewewwewewwewe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "If just a sliver of a mind is capable of such power, how about the whole body? Hold the lamp in my other hand and cast. Costs about ten Charged Amethyst."
+  },
+  {
+    "mod": "hexical",
+    "name": "has_arch_lamp",
+    "fullname": "Archgenie Purification",
+    "signature": "entity → boolean",
+    "pattern": "qaqwddedqeed",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a player currently has an active arch lamp."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_position",
+    "fullname": "Arch. Refl.: Spatial",
+    "signature": "→ vector",
+    "pattern": "qaqwddedqdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original position when the arch lamp started casting."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_rotation",
+    "fullname": "Arch. Refl.: Rotational",
+    "signature": "→ vector",
+    "pattern": "qaqwddedadw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original rotation when the arch lamp started casting."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_velocity",
+    "fullname": "Arch. Refl.: Kinetic",
+    "signature": "→ vector",
+    "pattern": "qaqwddedqew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original velocity when the arch lamp started casting."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_use_time",
+    "fullname": "Arch. Refl.: Temporal",
+    "signature": "→ number",
+    "pattern": "qaqwddedqwddwa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many times the arch lamp has cast since its activation. I can divide by by 20 to convert to seconds."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_media",
+    "fullname": "Arch. Refl.: Media",
+    "signature": "→ number",
+    "pattern": "qaqwddedaeeeee",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the remaining amount of media left in the arch lamp, in units of dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "set_arch_lamp_storage",
+    "fullname": "Archgenie Gambit",
+    "signature": "any →",
+    "pattern": "qaqwddedqedeeeee",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Can be cast by a casting device, Staff, or within the arch lamp to remember an iota. Unlike hand lamps, this is subject to Transgress Others mishap."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_arch_lamp_storage",
+    "fullname": "Arch. Refl.: Memory",
+    "signature": "→ any",
+    "pattern": "qaqwddedqwaqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Can be cast by a casting device, Staff, or within the arch lamp to push the stored iota."
+  },
+  {
+    "mod": "hexical",
+    "name": "lamp_finale",
+    "fullname": "Finale Reflection",
+    "signature": "→ boolean",
+    "pattern": "aaddaddad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "When an archgenie lamp is turned off, it casts an additional time. I can use this pattern to recognize when whether a cast is that last burst of energy."
+  },
+  {
+    "mod": "hexical",
+    "name": "am_enlightened",
+    "fullname": "Epiphany Purification",
+    "signature": "player entity → boolean",
+    "pattern": "awqaqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the given player has achieved enlightenment like I have."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_brainswept",
+    "fullname": "Sentience Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqqaqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether an entity \"has been magically relieved of its mind\". I feel this is strongly related to Flay Mind somehow..."
+  },
+  {
+    "mod": "hexical",
+    "name": "garbage",
+    "fullname": "Garbage Reflection",
+    "signature": "→ garbage",
+    "pattern": "aqawde",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes Garbage to my stack. I am unsure why I would ever want this pattern but it exists."
+  },
+  {
+    "mod": "hexical",
+    "name": "swap_one_three",
+    "fullname": "Reflecting Gambit",
+    "signature": "any, any, any → any, any, any",
+    "pattern": "ddwqaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Reflects the order of the top three iota, turning A, B, C into C, B, A. Essentially swaps the top and the third-from-the-top iota."
+  },
+  {
+    "mod": "hexical",
+    "name": "swap_two_three",
+    "fullname": "Bubbling Gambit",
+    "signature": "any, any, any → any, any, any",
+    "pattern": "aawede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Causes the third-from-the-top iota to bubble up over the second-from-the-top iota, essentially swapping them."
+  },
+  {
+    "mod": "hexical",
+    "name": "dup_many",
+    "fullname": "Dioscuri Gambit II",
+    "signature": "many, number → many",
+    "pattern": "waadadaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Takes a number and duplicates that many elements of the stack while preserving order."
+  },
+  {
+    "mod": "hexical",
+    "name": "congruent",
+    "fullname": "Congruence Distillation",
+    "signature": "pattern, pattern → boolean",
+    "pattern": "aaqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether two patterns have the same shape and orientation."
+  },
+  {
+    "mod": "hexical",
+    "name": "serialize_pattern",
+    "fullname": "Chirographer's Purif.",
+    "signature": "pattern → list of numbers",
+    "pattern": "wqaedeqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Turns a pattern into a list of numbers for my splitting, analysis, and dissection."
+  },
+  {
+    "mod": "hexical",
+    "name": "deserialize_pattern",
+    "fullname": "Calligrapher's Purif.",
+    "signature": "list of numbers → pattern",
+    "pattern": "wqqqaqwd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Turns a list of numbers back into a pattern. Applies a strange remainder effect to numbers outside of the 0-5 range to coerce it into a useable form. This is the inverse of Chirographer's Purification."
+  },
+  {
+    "mod": "hexical",
+    "name": "draw_pattern",
+    "fullname": "Handwriting Distillation",
+    "signature": "pattern → list of vectors",
+    "pattern": "eadqqqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a pattern and transforms it into a normalized list of vectors. I feel this may be useful for artistic spells."
+  },
+  {
+    "mod": "hexical",
+    "name": "shuffle_pattern",
+    "fullname": "Glyphmaker's Dstl.",
+    "signature": "pattern, number → pattern",
+    "pattern": "aqqqdae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes in a pattern and a number and produces a pattern of the same shape, but different stroke order. My notes reveal that ancient Hexcasters used this for some *grand library*."
+  },
+  {
+    "mod": "hexical",
+    "name": "perlin",
+    "fullname": "Perlin Distillation",
+    "signature": "vector, number → number",
+    "pattern": "qawedqdq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Measures the concentration of ambient at that point in space and time, normalized between 0 and 1."
+  },
+  {
+    "mod": "hexical",
+    "name": "fluid_raycast",
+    "fullname": "Naval Distillation",
+    "signature": "vector, vector → vector/null",
+    "pattern": "wqqaqwede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Archer's Distillation but targets only liquids, piercing through all other blocks."
+  },
+  {
+    "mod": "hexical",
+    "name": "fluid_surface_raycast",
+    "fullname": "Lilypad Distillation",
+    "signature": "vector, vector → vector/null",
+    "pattern": "weedewqaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Architect's Distillation but targets only liquids, piercing through all other blocks."
+  },
+  {
+    "mod": "hexical",
+    "name": "piercing_raycast",
+    "fullname": "Railgun Exaltation",
+    "signature": "vec, vec, id → vec/null",
+    "pattern": "wqqddqeqddq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Archer's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
+  },
+  {
+    "mod": "hexical",
+    "name": "piercing_surface_raycast",
+    "fullname": "Laser Exaltation",
+    "signature": "vec, vec, id → vec/null",
+    "pattern": "weeaaeqeaae",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Architect's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_telepathy",
+    "fullname": "Telepathic Reflection",
+    "signature": "→ number",
+    "pattern": "wqqadaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "By focusing on a particular image, I can detect that concentration via this pattern. Pushes how many twentieths of a second I've been intending to Call Telepathy, or -1 if I am not."
+  },
+  {
+    "mod": "hexical",
+    "name": "send_telepathy",
+    "fullname": "Send Thought",
+    "signature": "any →",
+    "pattern": "qqqqwaqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Momentarily displays an iota above my hotbar. If cast repeatedly, each cast overwrites the previous instantly."
+  },
+  {
+    "mod": "hexical",
+    "name": "shout_telepathy",
+    "fullname": "Shout Thought",
+    "signature": "any →",
+    "pattern": "daqqqqwa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Grandly flahes an iota across my vision. It obstructs my vision and takes some time to fade in, so I shall only use it sparingly."
+  },
+  {
+    "mod": "hexical",
+    "name": "pling",
+    "fullname": "Hallucinate Pling",
+    "signature": "",
+    "pattern": "eqqqada",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes me to hear a pling that is inaudible to other players."
+  },
+  {
+    "mod": "hexical",
+    "name": "click",
+    "fullname": "Hallucinate Click",
+    "signature": "",
+    "pattern": "eqqadaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes me to hear a click that is inaudible to other players."
+  },
+  {
+    "mod": "hexical",
+    "name": "moving_up",
+    "fullname": "Charge Reflection",
+    "signature": "→ number",
+    "pattern": "aqaddq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Walk Forwards, or -1 if I am not."
+  },
+  {
+    "mod": "hexical",
+    "name": "moving_down",
+    "fullname": "Retreat Reflection",
+    "signature": "→ number",
+    "pattern": "dedwdq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Walk Backwards, or -1 if I am not."
+  },
+  {
+    "mod": "hexical",
+    "name": "moving_left",
+    "fullname": "Dodge Reflection",
+    "signature": "→ number",
+    "pattern": "edead",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Strafe Left, or -1 if I am not. Can be differentiated from Evade Reflection because d comes to the left of e."
+  },
+  {
+    "mod": "hexical",
+    "name": "moving_right",
+    "fullname": "Evade Reflection",
+    "signature": "→ number",
+    "pattern": "qaqda",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Strafe Right, or -1 if I am not. Can be differentiated from Dodge Reflection because e comes to the right of d."
+  },
+  {
+    "mod": "hexical",
+    "name": "jumping",
+    "fullname": "Leaping Reflection",
+    "signature": "→ number",
+    "pattern": "qaqdaqqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Jump, or -1 if I am not."
+  },
+  {
+    "mod": "hexical",
+    "name": "sneaking",
+    "fullname": "Stealthy Reflection",
+    "signature": "→ number",
+    "pattern": "wede",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Sneak, or -1 if I am not."
+  },
+  {
+    "mod": "hexical",
+    "name": "soroban_increment",
+    "fullname": "Soroban Reflection",
+    "signature": "→ number",
+    "pattern": "wdeaqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes soroban's current value and then increases it. The soroban starts at 0."
+  },
+  {
+    "mod": "hexical",
+    "name": "soroban_decrement",
+    "fullname": "Soroban Reflection II",
+    "signature": "→ number",
+    "pattern": "waqdee",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes soroban's current value and then decreases it."
+  },
+  {
+    "mod": "hexical",
+    "name": "soroban_reset",
+    "fullname": "Soroban Gambit",
+    "signature": "",
+    "pattern": "qdeeaae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Resets the soroban to 0."
+  },
+  {
+    "mod": "hexical",
+    "name": "janus",
+    "fullname": "Janus' Gambit",
+    "signature": "",
+    "pattern": "aadee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Instantly terminates the Hex regardless of current circumstances, breaking even through Thoth's and Hermes' Gambit unlike Charon's Gambit."
+  },
+  {
+    "mod": "hexical",
+    "name": "nephthys",
+    "fullname": "Nephthys's Gambit",
+    "signature": "pattern/list → varies",
+    "pattern": "deaqqd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pops a pattern or pattern list and dives down an amount corresponding to the tail length to cast the pattern list. Useful for surgery-like operations."
+  },
+  {
+    "mod": "hexical",
+    "name": "sekhmet",
+    "fullname": "Sehkmet's Gambit",
+    "signature": "→ varies",
+    "pattern": "qaqdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Voids the entire stack except for the top n iota, determined by tail length. In the examples above, zero, one, and two iota are left untouched respectively. *Not* a meta-evaluation on its own."
+  },
+  {
+    "mod": "hexical",
+    "name": "atalanta",
+    "fullname": "Atalanta's Gambit",
+    "signature": "",
+    "pattern": "aqdea",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Should only be run inside Thoth's or Sisyphus' Gambit. Acts similarly to Charon's Gambit except does not end the iterator, only skips the rest of the current iteration."
+  },
+  {
+    "mod": "hexical",
+    "name": "castor",
+    "fullname": "Castor's Gambit",
+    "signature": "any →",
+    "pattern": "adadee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Should only be run within a Thoth's. Details on the next page. Beware of triggering the Delve Too Deep mishap."
+  },
+  {
+    "mod": "hexical",
+    "name": "pollux",
+    "fullname": "Pollux's Gambit",
+    "signature": "any →",
+    "pattern": "dadaqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Sibling pattern to Castor's Gambit, this pattern schedules the additional iteration for the end instead. Carries the same risk of encountering the Delve Too Deep mishap."
+  },
+  {
+    "mod": "hexical",
+    "name": "sisyphus",
+    "fullname": "Sisyphus' Gambit",
+    "signature": "list →",
+    "pattern": "qaqwede",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a pattern list and casts it over and over forever until it encounters either a Charon's Gambit or a Janus' Gambit."
+  },
+  {
+    "mod": "hexical",
+    "name": "themis",
+    "fullname": "Themis' Gambit",
+    "signature": "list, pattern/list → list",
+    "pattern": "dwaad",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes a list and a pattern or pattern list which is used to sort the list by casting over every iota similar to Thoth's Gambit."
+  },
+  {
+    "mod": "hexical",
+    "name": "tutu",
+    "fullname": "Tutu's Gambit",
+    "signature": "",
+    "pattern": "eedqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Does nothing."
+  },
+  {
+    "mod": "hexical",
+    "name": "key_shelf",
+    "fullname": "Librarian's Purification",
+    "signature": "vector → pattern/null",
+    "pattern": "qaqqadaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Reads the pattern key of an akashic bookshelf."
+  },
+  {
+    "mod": "hexical",
+    "name": "read_shelf",
+    "fullname": "Librarian's Purif. II",
+    "signature": "vector → any",
+    "pattern": "qaqqqada",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Reads the iota from an akashic bookshelf."
+  },
+  {
+    "mod": "hexical",
+    "name": "write_shelf",
+    "fullname": "Librarian's Gambit",
+    "signature": "vector, pattern, any →",
+    "pattern": "edeeedad",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Writes an iota under a pattern key to an akashic bookshelf."
+  },
+  {
+    "mod": "hexical",
+    "name": "clear_shelf",
+    "fullname": "Librarian's Gambit II",
+    "signature": "vector →",
+    "pattern": "edeedade",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Clears an akashic bookshelf."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_mage_block",
+    "fullname": "Conjure Mage Block",
+    "signature": "vector →",
+    "pattern": "dee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Conjures a mage block at the location. Costs about three Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_bouncy",
+    "fullname": "Bouncy",
+    "signature": "vector →",
+    "pattern": "deeqa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block delightfully fun to bounce on! It returns more force to me than regular slime blocks and I notice even if I sneak, the block bounces me regardless."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_energized",
+    "fullname": "Energized",
+    "signature": "vector, number →",
+    "pattern": "deewad",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block emit a Redstone signal, with the number corresponding to the power level of the output."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_ephemeral",
+    "fullname": "Ephemeral",
+    "signature": "vector, number →",
+    "pattern": "deewwaawd",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier takes in a number in addition to a position and shatters the block after many twentieths of a second. Subsequent casts can lengthen or shorten the duration."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_invisible",
+    "fullname": "Invisible",
+    "signature": "vector →",
+    "pattern": "deeqedeaqqqwqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier prevents the block from emitting the telltale particles that accompany my casting, even when being stood on."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_replaceable",
+    "fullname": "Replaceable",
+    "signature": "vector →",
+    "pattern": "deewqaqqqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier is useful for construction! With this modifier applied, I find I can easily place another block in the place of the mage block."
+  },
+  {
+    "mod": "hexical",
+    "name": "modify_block_volatile",
+    "fullname": "Volatile",
+    "signature": "vector →",
+    "pattern": "deewedeeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block break other mage blocks it's touching. Notably, if it breaks another volatile block, that block breaks and so on until every volatile block shatters."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_dye",
+    "fullname": "Chromatic Purification",
+    "signature": "id/vector/entity → dye/null",
+    "pattern": "weedwa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Gets the dye of a block, entity, or block/item identifier."
+  },
+  {
+    "mod": "hexical",
+    "name": "dye",
+    "fullname": "Dye",
+    "signature": "vector/entity, dye →",
+    "pattern": "dwaqqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Dyes a dyeable block or entity. Costs about an eighth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "translate_dye",
+    "fullname": "Vision Purification",
+    "signature": "dye → vector",
+    "pattern": "wdwwaawwewdwwewwdwwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Translates a dye color into a vector, where each component is from 0 to 1 and represents the red, green, and blueness of the dye respectively."
+  },
+  {
+    "mod": "hexical",
+    "name": "magic_missile",
+    "fullname": "Magic Missile",
+    "signature": "vector, vector →",
+    "pattern": "qaqww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Conjures a small silver of amethyst that always deals a full heart of damage and forces the target backwards. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "to_pigment",
+    "fullname": "Pigment Purification",
+    "signature": "dye/entity → pigment",
+    "pattern": "aqwedeweeeewweeew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes a colored dye iota and transforms it into a pigment, takes a player and returns their pigment, or takes an item containing a pigment and returns its pigment."
+  },
+  {
+    "mod": "hexical",
+    "name": "sample_pigment",
+    "fullname": "Pigment Exaltation",
+    "signature": "pigment, vec, num → vec",
+    "pattern": "edewqaqqqqqwqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Samples the pigment at a certain place and time as a vector, where each component is from 0 to 1 and represents the red, green, and blueness respectively."
+  },
+  {
+    "mod": "hexical",
+    "name": "take_on_pigment",
+    "fullname": "Internalize Pigment II",
+    "signature": "pigment →",
+    "pattern": "weeeweeqeeeewqaqweeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Internalizes a pigment iota."
+  },
+  {
+    "mod": "hexical",
+    "name": "prestidigitation",
+    "fullname": "Prestidigitation",
+    "signature": "entity/vector →",
+    "pattern": "wedewedew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes a small magical effect on the block or entity, usually not too distinct from the original nature or function of the block or entity. Costs about a tenth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "can_prestidigitate",
+    "fullname": "Alteration Purification",
+    "signature": "entity/vector → boolean",
+    "pattern": "wqaqwqaqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether an entity or location is able to be manipulated with Prestidigitation."
+  },
+  {
+    "mod": "hexical",
+    "name": "wristpocket",
+    "fullname": "Wristpocket",
+    "signature": "",
+    "pattern": "aaqqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "This spell vanishes the stack of items in my other hand, or conjures it back, swapping if my other hand is holding something. Costs about a eighth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "wristpocket_item",
+    "fullname": "Pocket Reflection",
+    "signature": "→ identifier/null",
+    "pattern": "aaqqada",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns the identifier of the item in my wristpocket, or Null if it is empty."
+  },
+  {
+    "mod": "hexical",
+    "name": "wristpocket_count",
+    "fullname": "Pocket Reflection II",
+    "signature": "→ number",
+    "pattern": "aaqqaaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns how many items I have in my wristpocket, or 0 if it is empty."
+  },
+  {
+    "mod": "hexical",
+    "name": "sleight",
+    "fullname": "Sleight",
+    "signature": "item entity/vector →",
+    "pattern": "aaqqadeeeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Performs an act of magical sleight of hand to steal items into my wristpocket or expel my wristpocket back into the world. Costs about a fourth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "mage_hand",
+    "fullname": "Mage Hand",
+    "signature": "entity/vector →",
+    "pattern": "aaqqaeea",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Conjures a magical hand that uses my wristpocketed item to interact with the world. If my wristpocket is empty, acts as though I had interacted with the world."
+  },
+  {
+    "mod": "hexical",
+    "name": "mage_mouth",
+    "fullname": "Mage Mouth",
+    "signature": "",
+    "pattern": "aaqqadaa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Makes me eat my wristpocketed item, nourishing me or applying potions to me. Costs about one Amethyst Dust and mishaps if the item is not edible."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_speck",
+    "fullname": "Conjure Speck",
+    "signature": "any, vector, vector → entity",
+    "pattern": "ade",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Conjures a speck with the iota, position, and rotation. Costs a negligible amount of media. Pushes the speck iota to the stack."
+  },
+  {
+    "mod": "hexical",
+    "name": "move_specklike",
+    "fullname": "Move Speck",
+    "signature": "speck entity, vector →",
+    "pattern": "adeqaa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Moves a speck entity to the position."
+  },
+  {
+    "mod": "hexical",
+    "name": "rotate_specklike",
+    "fullname": "Rotate Speck",
+    "signature": "speck entity, vector →",
+    "pattern": "adeaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Rotates a speck entity to face the vector."
+  },
+  {
+    "mod": "hexical",
+    "name": "roll_specklike",
+    "fullname": "Roll Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeqqqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts a number between 0 and 1, representing a fraction of a full rotation, and rotates the speck's image by that amount."
+  },
+  {
+    "mod": "hexical",
+    "name": "iota_speck",
+    "fullname": "Alter Speck",
+    "signature": "speck entity, any →",
+    "pattern": "adeeaqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Changes the speck's iota."
+  },
+  {
+    "mod": "hexical",
+    "name": "lifetime_specklike",
+    "fullname": "Time Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeqqaawdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Commands the speck to disappear after that many twentieths of a second."
+  },
+  {
+    "mod": "hexical",
+    "name": "size_specklike",
+    "fullname": "Resize Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeeqed",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Scales the speck, can range from 0 to 10. Represents size in blocks and is zero by default."
+  },
+  {
+    "mod": "hexical",
+    "name": "thickness_specklike",
+    "fullname": "Thicken Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeeqw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Changes the stroke thickness of a pattern speck, can range from 0 to 10. Represents twentieths of a block, and is zero by default."
+  },
+  {
+    "mod": "hexical",
+    "name": "pigment_specklike",
+    "fullname": "Paint Speck",
+    "signature": "speck entity, pigment →",
+    "pattern": "adeqqaq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Splashes a pigment iota onto the speck, changing its color after creation."
+  },
+  {
+    "mod": "hexical",
+    "name": "kill_specklike",
+    "fullname": "Dismiss Speck",
+    "signature": "speck entity →",
+    "pattern": "adeaqde",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Forces a speck to disappear."
+  },
+  {
+    "mod": "hexical",
+    "name": "zone_specklike",
+    "fullname": "Zone Dstl.: Specklike",
+    "signature": "vector, number → list of entities",
+    "pattern": "qqqqqwdeddwqde",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Returns specks similarly to other zone distillation patterns."
+  },
+  {
+    "mod": "hexical",
+    "name": "autograph",
+    "fullname": "Autograph",
+    "signature": "",
+    "pattern": "wwqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Permanently autographs the item in my offhand with my name and pigment. Free and can only be done with my staff, as a proof of care."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_hexburst",
+    "fullname": "Conjure Hexburst",
+    "signature": "vector, any →",
+    "pattern": "aadaadqaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a Hexburst at the location with the given iota. Costs about one Amethyst Dust and is subject to the Transgress Others mishap."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_hextito",
+    "fullname": "Conjure Hextito",
+    "signature": "vector, list of patterns →",
+    "pattern": "qaqdqaqdwawaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a Hextito at the location with the given Hex. Costs about two Amethyst Dust and is subject to the Transgress Others mishap."
+  },
+  {
+    "mod": "hexical",
+    "name": "ghast_fireball",
+    "fullname": "Conjure Fireball",
+    "signature": "vector →",
+    "pattern": "wqqqqqwaeaeaeaeae",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Conjures an explosive fireball that can be punched and damages blocks and leaves an entity reference at the top of the stack. Costs about three Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "llama_spit",
+    "fullname": "Spit",
+    "signature": "vector →",
+    "pattern": "dwqaqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a sticky low-damaging projectile. Costs about a fourth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "gasp",
+    "fullname": "Gasp",
+    "signature": "entity →",
+    "pattern": "aweeeeewaweeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Instantly replenishes a creature's air bubbles. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "myodesopsia",
+    "fullname": "Myodesopsia",
+    "signature": "list of patterns →",
+    "pattern": "wadawadawawaaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Conjures a swirl of patterns around me that I and nearby players can see, using the patterns from the list. Free."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_compass",
+    "fullname": "Conjure Compass",
+    "signature": "vector, vector →",
+    "pattern": "aqwawqwqqwqwq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Conjures a Conjured Compass at the location pointing towards the second vector, linked to the current dimension. Costs about three Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "spike",
+    "fullname": "Conjure Spike",
+    "signature": "vector, vector, number →",
+    "pattern": "qdqdqdqdww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a non-air position, an axis vector, and a delay in seconds up to ten seconds long and conjures a spike at that location. Costs about one Amethyst Shard."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_tchotchke",
+    "fullname": "Conjure Tchotchke",
+    "signature": "vec, num, num, list →",
+    "pattern": "wwwwwaqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Conjures a Tchotchke at the location with the amount of media, rank, and Hex. Costs about one Charged Amethyst and the media used for the battery."
+  },
+  {
+    "mod": "hexical",
+    "name": "write_tchotchke",
+    "fullname": "Tchotchke Gambit",
+    "signature": "any →",
+    "pattern": "waqqqqqedeqdqdqdqdqe",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Writes an iota to the Tchotchke's inner iota storage, which can be read back on future casts. Subject to the Transgress Others mishap and unreadable from any external source."
+  },
+  {
+    "mod": "hexical",
+    "name": "read_tchotchke",
+    "fullname": "Tchotchke Reflection",
+    "signature": "→ any",
+    "pattern": "waqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the iota from the Tchotchke's inner iota storage."
+  },
+  {
+    "mod": "hexical",
+    "name": "displace",
+    "fullname": "Displace",
+    "signature": "entity, vector →",
+    "pattern": "qaqqqqeedaqqqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Teleports an entity within the circle to any other point inside within the same circle. Unlike Greater Teleport, this spell takes in world coordinates rather than an offset. Free."
+  },
+  {
+    "mod": "hexical",
+    "name": "internalize_hex",
+    "fullname": "Inculcate",
+    "signature": "list of patterns →",
+    "pattern": "wwaqqqqqeqdedwwqwqwwdedwwqwqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Etches a Hex, allowing me to cast it by holding Evoke for one second. Costs about one Charged Amethyst."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_evoking",
+    "fullname": "Evoker Reflection",
+    "signature": "→ number",
+    "pattern": "wwaqqqqqeeaqawwewewwaqawwewew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how long since a player has been evoking. Is -1 if they are not currently evoking."
+  },
+  {
+    "mod": "hexical",
+    "name": "simulate_firework",
+    "fullname": "Simulate Firework",
+    "signature": "vector, vector, number →",
+    "pattern": "dedwaqwqqwqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Analyzes the Firework Star in my other hand and conjures a firework of that star, with the position, velocity, and gunpowder amount specified. Costs about one Amethyst Shard."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_firework",
+    "fullname": "Conjure Firework",
+    "signature": "vec, vec, num, num, list of dyes, list of dyes, bool, bool →",
+    "pattern": "dedwaqwwawwqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "<br />Conjures a firework of my *exact* specifications. It may be one of the most complex spells in existence. Costs equivalently to the other firework spell."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_clear",
+    "fullname": "Clear Vision",
+    "signature": "",
+    "pattern": "eeeeeqaqeeeee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Breaks any shader spell currently applied to me. Useful for \"bleaching\" my eyes after too much experimentation."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_owl",
+    "fullname": "Pierce Darkness",
+    "signature": "",
+    "pattern": "edewawede",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Greatly augments my ability to see in the dark, although the light resultingly becomes extremely blinding."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_lines",
+    "fullname": "Visualize Forms",
+    "signature": "",
+    "pattern": "eedwwawwdee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Transforms the world into a thin outline of black and white. Possibly useful for identifying subtle contrasts."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_tv",
+    "fullname": "Broadcast Vision",
+    "signature": "",
+    "pattern": "wewdwewwawwewdwew",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Alters my vision to contain strange lines and make objects towards the center of my vision bulge \"towards\" me. Seems to be in reference to something..."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_media",
+    "fullname": "Identify Importance",
+    "signature": "",
+    "pattern": "eewdweqaqewdwee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Transforms my vision to perceive only the most important things..."
+  },
+  {
+    "mod": "hexical",
+    "name": "shader_spider",
+    "fullname": "Split Vision",
+    "signature": "",
+    "pattern": "qaqdedaedqqdedaqaedeqd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Splits my vision into multiple sections, similar to what a spider might see. I am unsure whether it actually grants me more vision..."
+  },
+  {
+    "mod": "hexical",
+    "name": "block_hardness",
+    "fullname": "Miner's Purification",
+    "signature": "identifier → number",
+    "pattern": "qaqqqqqeeeeedq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how difficult blocks of that block type are to mine."
+  },
+  {
+    "mod": "hexical",
+    "name": "block_blast_resistance",
+    "fullname": "Demoman's Purification",
+    "signature": "identifier → number",
+    "pattern": "qaqqqqqewaawaawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how resistant blocks of that block type are to explosions."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_waterlogged",
+    "fullname": "Plumber's Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "edeeeeeqwqqqqw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the block is waterlogged, or Null if the block can not be waterlogged."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_rotation",
+    "fullname": "Orientation Purification",
+    "signature": "vector → vector/null",
+    "pattern": "qaqqqqqwadeeed",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the vector of the block's facing direction, or Null if the block does not have a facing direction."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_crop",
+    "fullname": "Farmer's Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqwaea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a number 0 to 1, corresponding to how grown that crop is, as well as beehives, composters, and cauldrons. Strangely works on cakes too."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_glow",
+    "fullname": "Glowing Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqqqwaeaeaeaeaea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether the block is in a \"lit\" state, for example furnaces, Redstone torches, lamps, and campfires."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_lock",
+    "fullname": "Lock Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqeaqwdewd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether the block is currently in a \"open\" state, for example doors, trapdoors, fence gates, and open barrels."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_turn",
+    "fullname": "Angle Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqwqqwqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a number corresponding to the rotation of signs, skulls, and banners."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_bunch",
+    "fullname": "Bunching Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqweeeeedeeqaqdeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how many are in a bunch block, or Null otherwise. Useful only for candles, sea pickles, and turtle eggs."
+  },
+  {
+    "mod": "hexical",
+    "name": "blockstate_book",
+    "fullname": "Book Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqqqeawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether lecterns or jukeboxes have a book/music disc in them respectively. I read that it may work for some kind of bookshelf involved in a great work too."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_enchantments",
+    "fullname": "Thaumaturgist's Purif.",
+    "signature": "item entity →",
+    "pattern": "waqeaeqawqwawaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Gets a list of enchantments the item has."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_enchantment_strength",
+    "fullname": "Charm Distillation",
+    "signature": "item entity, identifier → number",
+    "pattern": "waqwwqaweede",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Gets the strength of the specific enchantment on the item."
+  },
+  {
+    "mod": "hexical",
+    "name": "entity_width",
+    "fullname": "Caliper's Purification",
+    "signature": "entity → number",
+    "pattern": "dwe",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Similar to Stadiometer's Purification but pushes the width of an entity rather than its height."
+  },
+  {
+    "mod": "hexical",
+    "name": "theodolite",
+    "fullname": "Theodolite Purif.",
+    "signature": "entity → vector",
+    "pattern": "wqaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Similar to Alidade's Purification but pushes the vector that points upwards from their head rather than the entity's facing vector."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_health",
+    "fullname": "Vitality Purification",
+    "signature": "entity → number",
+    "pattern": "wddwaqqwawq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how close an entity is to death. I can think of these in terms of half-hearts."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_max_health",
+    "fullname": "Fitness Purification",
+    "signature": "entity → number",
+    "pattern": "wddwwawaeqwawq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how much health an entity can have at its prime. I can think of these in terms of half-hearts."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_air",
+    "fullname": "Suffocation Purification",
+    "signature": "entity → number",
+    "pattern": "wwaade",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the number of seconds before an entity will start to suffocate. This applies to marine creatures out of water as well as land creatures in water."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_max_air",
+    "fullname": "Lung Purification",
+    "signature": "entity → number",
+    "pattern": "wwaadee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the number of seconds an entity can last outside their normal breathing environment before they start suffocating."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_player_hunger",
+    "fullname": "Hunger Purification",
+    "signature": "player entity → number",
+    "pattern": "qqqadaddw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes how full a player is. I can imagine this as half-hunger-hunches."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_player_saturation",
+    "fullname": "Stamina Purification",
+    "signature": "entity entity → number",
+    "pattern": "qqqadaddq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes my saturation, which roughly correlates to how long the player will remain full."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_burning",
+    "fullname": "Inferno Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqwaqda",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether the entity is burning. Also applies to entities that are visually on fire, even if they are immune to fire, such as blazes attacking."
+  },
+  {
+    "mod": "hexical",
+    "name": "burning_time",
+    "fullname": "Inferno Purification II",
+    "signature": "entity → number",
+    "pattern": "eewdead",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes how long in seconds the entity will continue burning if not put out."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_wet",
+    "fullname": "Enderman's Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqqqwaadq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is touching rain, water, or in a bubble column."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_baby",
+    "fullname": "Youth Purification",
+    "signature": "entity → boolean",
+    "pattern": "awaqdwaaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether a living creature is in its baby form. Also works on armor stands oddly."
+  },
+  {
+    "mod": "hexical",
+    "name": "breedable",
+    "fullname": "Reproduction Purif.",
+    "signature": "entity → boolean/null",
+    "pattern": "awaaqdqaawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether an animal creature is in love and ready to mate, or Null if that creature is not capable of that type of reproduction."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_sleeping",
+    "fullname": "Sloth's Purification",
+    "signature": "entity → boolean",
+    "pattern": "aqaew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is sleeping. Applies to players, cats, foxes, and a variety of other creatures."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_sprinting",
+    "fullname": "Racer's Purification",
+    "signature": "entity → boolean",
+    "pattern": "eaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is sprinting. Includes if I am swimming or if I have left the ground since sprinting and extends to cats, foxes, and more."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_ambit",
+    "fullname": "Ambit Purification",
+    "signature": "entity/vector → boolean",
+    "pattern": "wawaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether a location or entity is in ambit."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_staff",
+    "fullname": "Staff Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a staff is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_packaged_hex",
+    "fullname": "Device Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqwwaqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether any form of casting device is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_tchotchke",
+    "fullname": "Tchotchke Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqwwaqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a tchotchke is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_evocation",
+    "fullname": "Evocation Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqeaqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether pure mental effort is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_hand_lamp",
+    "fullname": "Wish Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqdqdded",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a genie lamp is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_arch_lamp",
+    "fullname": "Grand Wish Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqqqaqwdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether an arch genie lamp is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_circle",
+    "fullname": "Constructed Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqdeaqwqae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether some form of grand work is being used to cast this pattern."
+  },
+  {
+    "mod": "hexical",
+    "name": "env_offhand",
+    "fullname": "Dexterity Reflection",
+    "signature": "→ boolean",
+    "pattern": "qaqqqwaaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the most dominant hand of the caster is being used to cast this pattern. May work strangely for casters without hands..."
+  },
+  {
+    "mod": "hexical",
+    "name": "edible",
+    "fullname": "Edibility Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqdd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether I can eat it."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_hunger",
+    "fullname": "Calorie Purification",
+    "signature": "identifier → number",
+    "pattern": "adaqqqddqe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes the amount it will fill me."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_saturation",
+    "fullname": "Satiation Purification",
+    "signature": "identifier → number",
+    "pattern": "adaqqqddqw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes the saturation value, which roughly affects how long it will fill me."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_meat",
+    "fullname": "Flesh Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqddaed",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether it's considered a meat, meaning wolves can eat it."
+  },
+  {
+    "mod": "hexical",
+    "name": "is_snack",
+    "fullname": "Dessert Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqddaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether it's a snack, meaning I can eat it really quickly."
+  },
+  {
+    "mod": "hexical",
+    "name": "identify",
+    "fullname": "Detective's Purif.",
+    "signature": "identifiable → identifier",
+    "pattern": "qqqqqe",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the identifier of an entity or block at a vector."
+  },
+  {
+    "mod": "hexical",
+    "name": "recognize",
+    "fullname": "Recognizer's Purif.",
+    "signature": "entity → identifier",
+    "pattern": "eeeeeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes extra identifier information of an entity, mainly the item type of an item entity or the item type inside an item frame entity."
+  },
+  {
+    "mod": "hexical",
+    "name": "classify",
+    "fullname": "Classifier's Purif.",
+    "signature": "any → identifier",
+    "pattern": "edqdeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of an iota's type. Can be used to determine whether two iota are the same type."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_mainhand_stack",
+    "fullname": "Tool Purification",
+    "signature": "player entity → identifier",
+    "pattern": "qaqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns the type of item in my mainhand."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_offhand_stack",
+    "fullname": "Accessory Purification",
+    "signature": "player entity → identifier",
+    "pattern": "edeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Returns the type of item in my offhand."
+  },
+  {
+    "mod": "hexical",
+    "name": "count_stack",
+    "fullname": "Storage Purification",
+    "signature": "item entity → number",
+    "pattern": "qaqqwqqqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how many items are in it."
+  },
+  {
+    "mod": "hexical",
+    "name": "count_max_stack",
+    "fullname": "Warehouse Purification",
+    "signature": "identifier → number",
+    "pattern": "edeeweeew",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how many items that can stack in it."
+  },
+  {
+    "mod": "hexical",
+    "name": "damage_stack",
+    "fullname": "Deterioration Purif.",
+    "signature": "item entity → number",
+    "pattern": "eeweeewdeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how much damage the item has sustained."
+  },
+  {
+    "mod": "hexical",
+    "name": "damage_max_stack",
+    "fullname": "Fragility Purification",
+    "signature": "identifier → number",
+    "pattern": "qqwqqqwaqe",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how much durability the item can have at its peak."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_effects_entity",
+    "fullname": "Diagnosis Purification",
+    "signature": "entity → list of identifiers",
+    "pattern": "wqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes a list of status effects the entity is afflicted with."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_effects_item",
+    "fullname": "Prescription Purif.",
+    "signature": "item entity → list of identifiers",
+    "pattern": "wqqqadee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes a list of status effects the food or potion will bestow."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_effect_category",
+    "fullname": "Condition Purification",
+    "signature": "identifier → number",
+    "pattern": "wqqqaawd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the general \"goodness\" of the effect towards the afflicted. -1 for harmful, 0 for neutral, and 1 for beneficial."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_effect_amplifier",
+    "fullname": "Concentration Dstl.",
+    "signature": "entity, identifier → number",
+    "pattern": "wqqqaqwa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the potency of the specific effect acting on the entity or Null if the entity doesn't have it."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_effect_duration",
+    "fullname": "Clearance Distillation",
+    "signature": "entity, identifier → number",
+    "pattern": "wqqqaqwdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how long the effect will last in seconds or Null if the entity doesn't have it."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_light",
+    "fullname": "Luminance Purification",
+    "signature": "vector → number",
+    "pattern": "wqwqwqwqwqwaeqqqqaeqaeaeaeaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the light level at the position as a number 0 to 15. If inside a nontransparent block, it returns zero."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_weather",
+    "fullname": "Meterologist's Refl.",
+    "signature": "→ number",
+    "pattern": "eweweweweweeeaedqdqde",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes a number corresponding to the weather. 0 for clear, 1 for rain, and 2 for thundering."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_power",
+    "fullname": "Battery Purification",
+    "signature": "vector → number",
+    "pattern": "qwqwqwqwqwqqwwaadwdaaww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the Redstone power that a position receives."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_comparator",
+    "fullname": "Peripheral Purification",
+    "signature": "vector → number/null",
+    "pattern": "eweweweweweewwddawaddww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the power level a comparator would output if pressed against a position."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_day",
+    "fullname": "Circadian Reflection",
+    "signature": "→ number",
+    "pattern": "wwawwawwqqawwdwwdwwaqwqwqwqwq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the progress of the day as a number between 0 (start) and 1 (end) of the day."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_time",
+    "fullname": "Temporal Reflection",
+    "signature": "→ number",
+    "pattern": "wddwaqqwqaddaqqwddwaqqwqaddaq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the age of the world for timekeeping, unaffected by events such as sleeping. Divided by 20, it returns seconds."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_biome",
+    "fullname": "Geographical Purif.",
+    "signature": "→ identifier",
+    "pattern": "qwqwqawdqqaqqdwaqwqwq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of the biome type that the vector is within."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_dimension",
+    "fullname": "Plane Reflection",
+    "signature": "→ identifier",
+    "pattern": "qwqwqwqwqwqqaedwaqd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of the dimension the Hex is being cast in."
+  },
+  {
+    "mod": "hexical",
+    "name": "get_einstein",
+    "fullname": "Distortion Reflection",
+    "signature": "→ boolean",
+    "pattern": "aqwawqwqqwqwqwqwqwq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether this dimension is bounded by standard rules of space and time: compasses and clocks will work here."
+  },
+  {
+    "mod": "hexical",
+    "name": "greater_blink",
+    "fullname": "Greater Blink",
+    "signature": "vector →",
+    "pattern": "wqawawaqwqwqawawaqw",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Teleports me up to 128 blocks away, relative to my position and rotation. Costs about two Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_mesh",
+    "fullname": "Conjure Mesh",
+    "signature": "vector → entity",
+    "pattern": "qaqqqqqwqqqdeeweweeaeewewee",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "hexical",
+    "name": "weave_mesh",
+    "fullname": "Weave Mesh",
+    "signature": "entity, list of vectors →",
+    "pattern": "qaqqqqqwqqqdeewewee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Takes a list of vectors, with constraints defined on the prior page, and weaves the mesh into that shape. Free."
+  },
+  {
+    "mod": "hexical",
+    "name": "read_mesh",
+    "fullname": "Tangle Purification",
+    "signature": "entity → list of vectors",
+    "pattern": "edeeeeeweeeaqqwqwqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the shape of a mesh as a list of vectors."
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/new",
+    "fullname": "Clerk's Vacant Reflection",
+    "signature": "→ dict",
+    "pattern": "qaqwaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes a new empty dictionary to the stack"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/from",
+    "fullname": "Clerk's Distillation",
+    "signature": "[key],[any] → dict",
+    "pattern": "qaqwaqeqdweeew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Turns two list into a dictionary, same rules apply (invalid keys get their values dropped)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/break",
+    "fullname": "Clerk's Decomposition",
+    "signature": "dict → [key],[any]",
+    "pattern": "qaqwaqdwqqqwae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Breaks a dictionary into list of keys and values"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/break/single",
+    "fullname": "Clerk's Decomposition II",
+    "signature": "dict → key,value",
+    "pattern": "qaqwaqdwqqqwq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Breaks only the first value (and drops the others)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/size",
+    "fullname": "Clerk's Abacus Purification",
+    "signature": "dict → num",
+    "pattern": "qaqwaqeewaqaeaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "consumes a dictionary and return it's size (cannot be more then 32 (default)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/set",
+    "fullname": "Clerk's Integration Exaltation",
+    "signature": "dict, key, any → dict",
+    "pattern": "qaqwaqdqedqde",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Adds the key/value pair to the dictionary (dictionary remains on stack)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/get",
+    "fullname": "Clerk's Surgeon's Exaltation",
+    "signature": "dict, key → dict, any",
+    "pattern": "qaqwaqdadeeed",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Gets the value from the dictionary using key (dictionary remains on stack)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/remove",
+    "fullname": "Clerk's Excisor's Distillation",
+    "signature": "dict, key → dict",
+    "pattern": "qaqwaqeqdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Removes a key from the dictionary (dictionary remains on stack)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "dict/thoths",
+    "fullname": "Clerk's Thoths Gambit",
+    "signature": "[patterns],dict → [any]",
+    "pattern": "qaqwaqedadad",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Thoths, but dictionary, pushes key,value to the top of the stack instead of a single value (value highest)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "page/right",
+    "fullname": "Progress Gambit",
+    "signature": "",
+    "pattern": "qqaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Turns the spellbook that your are holding one page to the right"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "page/left",
+    "fullname": "Regress Gambit",
+    "signature": "",
+    "pattern": "eedw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Turns the spellbook that your are holding one page to the left"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "itter",
+    "fullname": "Iterators Purification",
+    "signature": "Number → [Number]",
+    "pattern": "wdwaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a number and returns all number 0 to n-1 (produces n values)"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "nausea",
+    "fullname": "Nadir of Nausea",
+    "signature": "entity, number, number →",
+    "pattern": "weed",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Inflicts nausea. Base cost is one Amethyst Dust per 4 seconds."
+  },
+  {
+    "mod": "hextweaks",
+    "name": "craft/grandscroll",
+    "fullname": "Natural Search",
+    "signature": "Entity, Vec →",
+    "pattern": "wqqewawqwqedawdweewaeqwawdaqwdewawdadwawqwawdadwaw",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Takes a Ancient Scroll and a Budding amethyst and searches for a random Grand spell"
+  },
+  {
+    "mod": "hextweaks",
+    "name": "suicide",
+    "fullname": "Suspicious Glyph",
+    "signature": "",
+    "pattern": "dewdeqwwedaqedwadweqewwd",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "It appears to be a pattern, I wonder what happens if I cast it"
+  },
+  {
+    "mod": "oneironaut",
+    "name": "applymindrender",
+    "fullname": "Empower Mind Render",
+    "signature": "entity →",
+    "pattern": "qweqadeqadeqadqqqwdaqedaqedaqeqaqdwawdwawdwaqawdwawdwawddwwwwwqdeddw",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Accepts an item or item frame bearing the Sharpness enchantment, and converts it into Mind Render of the same level. Cost is based on enchantment level, and increases by 50% if the item is a book."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "craftrod",
+    "fullname": "Conduct Rod",
+    "signature": "entity, list of patterns →",
+    "pattern": "eqqqqqawweqqqqqawweqqqqqawwdeqewwwwweqeeeqewwwwweqe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Acts just like the spells used to program conventional casting items. Costs 10 Charged Amethyst."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getrodlook",
+    "fullname": "Baton Reflection",
+    "signature": "→ vector",
+    "pattern": "qwqqqwqawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "When cast with a Reverberation Rod, returns my look vector from when I started the current cast loop."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getrodpos",
+    "fullname": "Baton Reflection II",
+    "signature": "→ vector",
+    "pattern": "qwqqqwqawaa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "When cast with a Reverberation Rod, returns my eye position from when I started the current cast loop."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getrodstamp",
+    "fullname": "Metronome Reflection",
+    "signature": "→ number",
+    "pattern": "qwqqqwqawaaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "When cast with a Reverberation Rod, returns the timestamp from when I started the current cast loop."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "delayrod",
+    "fullname": "Metronome Gambit",
+    "signature": "number →",
+    "pattern": "qwqqqwqaqddq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a positive integer. When cast with a Reverberation Rod, delays the current cast loop's next cast until that many twentieths of a second have passed."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "haltrod",
+    "fullname": "Finale",
+    "signature": "",
+    "pattern": "aqdeeweeew",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "When cast with a Reverberation Rod, forcibly halts the current cast loop."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "resetrod",
+    "fullname": "Encore",
+    "signature": "number →",
+    "pattern": "deaqqwqqqw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a positive integer. Halts the current cast loop but also reduces the cooldown period from 1 second to ((1/20) * number) seconds. Cooldown due to mishap is unaffected."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readsentinel",
+    "fullname": "Scrutinize Sentinel",
+    "signature": "vec, player → num | NULL",
+    "pattern": "waeawaeddwwd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a vector and a player, and returns either the distance from the vector to the target player's sentinel or NULL. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getdim1",
+    "fullname": "Spatial Reflection",
+    "signature": "→ Imprint",
+    "pattern": "wqwqwqwqwqwaeqqe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns a Spatial Imprint representing the dimension I am currently in. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getdim2",
+    "fullname": "Spatial Reflection II",
+    "signature": "→ Imprint | NULL",
+    "pattern": "wqwqwqwqwqwaqeeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns a Spatial Imprint representing the dimension my sentinel is currently in. Costs a slightly-less-negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readframerotation",
+    "fullname": "Decorator's Purification",
+    "signature": "item frame → number",
+    "pattern": "wwawwqwwawwaeae",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an item frame entity, and returns its rotation, from 0 to 7."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "setframerotation",
+    "fullname": "Decorator's Gambit",
+    "signature": "item frame, number →",
+    "pattern": "wwawwqwwawwaqdq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an item frame entity and an integer from 0 to 7, and sets its rotation to the number. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getstatus",
+    "fullname": "Apothecary's Prfn.",
+    "signature": "entity → [status]",
+    "pattern": "qqqqqedwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts a living entity, and returns a list status iotas representing all effects on the target."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getstatuscategory",
+    "fullname": "Apothecary's Prfn. II",
+    "signature": "status → num",
+    "pattern": "eeeeeqawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, and returns a number based on whether the effect is likely to be helpful, harmful, or neutral to a creature."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getstatusduration",
+    "fullname": "Pharmacist's Prfn.",
+    "signature": "entity, status → num",
+    "pattern": "qqqqqedwdwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and returns the effect on the target's duration in seconds."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getstatuslevel",
+    "fullname": "Pharmacist's Prfn. II",
+    "signature": "entity, status → num",
+    "pattern": "eeeeeqawawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and returns the effect on the target's potency."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getbystatussingle",
+    "fullname": "Entity Distillation: Status",
+    "signature": "status, vector → entity | NULL",
+    "pattern": "eaeeeeeae",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type and a vector, and returns an entity at that position which has that effect."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getbystatus",
+    "fullname": "Zone Exltn.: Status",
+    "signature": "status, vec, num → [entity]",
+    "pattern": "ewqqqqqwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which have that effect."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "getbystatusinverse",
+    "fullname": "Zone Exltn.: Not-Status",
+    "signature": "status, vec, num → [entity]",
+    "pattern": "qweeeeewq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which do not have that effect."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "removestatus",
+    "fullname": "Cleanse Status",
+    "signature": "entity, status →",
+    "pattern": "eeeeedaqdewed",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "writeidea",
+    "fullname": "Inscribe Idea",
+    "signature": "key, any →",
+    "pattern": "eweweweweweeewqaqwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a valid key and any iota, and stores it in the corresponding location. Costs about 1 amethyst dust."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readidea",
+    "fullname": "Retrieve Idea",
+    "signature": "key → any",
+    "pattern": "qwqwqwqwqwqqqwedewq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts a valid key, and returns the corresponding iota. Costs about 1 amethyst dust."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readideatime",
+    "fullname": "Metadata Purification",
+    "signature": "key → number | NULL",
+    "pattern": "qwqwqwqwqwqqqeqaqeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts a valid key, and returns when the corresponding iota was inscribed, or NULL. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readideawriter",
+    "fullname": "Metadata Distillation",
+    "signature": "key, player → bool",
+    "pattern": "qwqwqwqwqwqaeqedeqe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts a valid key and a player, and returns whether the corresponding iota was inscribed by that player. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "paintconjured",
+    "fullname": "Externalize Pigment",
+    "signature": "Vector, itemtype →",
+    "pattern": "eqdweeqdwweeqddqdwwwdeww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts a vector and an itemtype representing a pigment. Costs a negligible amount of media if targeting my own block, or 1 Amethyst Dust if not."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "particleburst",
+    "fullname": "Particle Burst",
+    "signature": "vec, vec, num, num →",
+    "pattern": "deeeewaaddwqqqqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "infusemedia",
+    "fullname": "Media Infusion",
+    "signature": "Vector →",
+    "pattern": "wwaqqqqqeqqqwwwqqeqqwwwqqweqadadadaqeqeqadadadaqe",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Accepts a vector and infuses media into the corresponding block in order to transmute it. Cost and exact effect vary depending on target."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "dimteleport",
+    "fullname": "Noetic Gateway",
+    "signature": "Entity, Imprint →",
+    "pattern": "qeewwwweeqeqeewwwweeqdqqdwwwdqeqdwwwdqdadwwdqdwwddadaqadaawww",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the corresponding dimension. Costs 20 Charged Amethyst."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "swapspace",
+    "fullname": "Spatial Interchange",
+    "signature": "[vec, vec], [vec, vec], Imprint →",
+    "pattern": "wqqqwwwwwqqqwwwqdaqadwqqwdaqadweqeqqqqeqeqaqeqedeqeqa",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Accepts two lists of two vectors, to define two cuboids, and a Spatial Imprint. These cuboids must have the exact same dimensions and rotation."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "resistdetection",
+    "fullname": "Stealth Shroud",
+    "signature": "entity, number →",
+    "pattern": "wawwwdwdwwaqqqqqe",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Accepts a living entity and a number (*n*), and shields the entity from hex-based detection for *n* seconds. Costs two amethyst dust per second."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "detectshroud",
+    "fullname": "Discern Shroud",
+    "signature": "vector, number → [vector]",
+    "pattern": "qqqqqwwaawewaawdww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a vector and a number, and returns a list of unit vectors pointing from the initial vector to shrouded entities within a radius defined by the number."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "invisibility",
+    "fullname": "Hidden Sun's Zenith",
+    "signature": "entity, number →",
+    "pattern": "qqqqqaewawaweqa",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "I've also discovered a spell which applies normal Invisibility. Functions just like the normal Zeniths, and costs one amethyst dust per three seconds."
+  }
+]
