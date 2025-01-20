@@ -5,6 +5,7 @@ def get_data [url: string] {
   let data = $page 
     | str replace --all "\n" "" 
     | str replace --all --regex "='([^']*?)'" '="$1"'
+    | str replace --all --regex '</p>[^<>]*?(</div>[^<>]*?)?(<br />[^<>]*?)?<p>' ' '
     | parse --regex '<div id="[^"]*?@[^"]*?:([^"]*?)"[^>]*?>.*?<h4[^>]*?>([^<\(]*?) ?(?:\((.*?)\))?<.*?data-string="([^"]*?)".*?data-start="([^"]*?)".*?data-per-world="?([^"]*?)"?\s*>.*?<p>(.*?)</p>'
     | rename name fullname signature pattern direction perworld description
     | update fullname {str replace --all '&#39;' "'"}
