@@ -32,7 +32,7 @@ let urls = [
   [hexdebug "https://hexdebug.hexxy.media/v/0.2.2+1.20.1/1.0/en_us/"] # 4 (100%)
   [hexical "https://hexical.hexxy.media/v/1.5.0/1.0.0/en_us/"] # 194
   [hextweaks "https://walksanatora.github.io/HexTweaks/"] # 15
-  [oneironaut "https://oneironaut.hexxy.media/v/0.2.0/1.0/en_us/#patterns"] # 33
+  [oneironaut "https://oneironaut.hexxy.media/v/0.4.0/1.0/en_us/#patterns"] # 33
 ]
 
 let full_data = $urls | each {|req| get_data $req.url | insert mod $req.modname | move mod --before name} | flatten

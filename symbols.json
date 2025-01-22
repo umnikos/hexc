@@ -5011,6 +5011,86 @@
   },
   {
     "mod": "oneironaut",
+    "name": "writerodram",
+    "fullname": "Williams' Gambit",
+    "signature": "non-list →",
+    "pattern": "eqqwqqqwaaw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Accepts a non-list iota, and stores it inside the current cast loop. It will be lost when the cast loop ends."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readrodram",
+    "fullname": "Williams' Reflection",
+    "signature": "→ non-list",
+    "pattern": "qeeweeewddw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns the iota stored in the current cast loop. Defaults to NULL."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "queryrod",
+    "fullname": "Conductor's Reflection",
+    "signature": "→ bool",
+    "pattern": "qwqqqwqaeaqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Returns a boolean corresponding to whether the current cast is making use of a rod."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "writerodramremote",
+    "fullname": "Williams' Gambit II",
+    "signature": "non-list →",
+    "pattern": "ewdedwqwqwdedwqwaaw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "As Williams' Gambit, but can be cast from non-rod sources while a rod is in use."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "readrodramremote",
+    "fullname": "Williams' Reflection II",
+    "signature": "→ non-list",
+    "pattern": "qwaqawewewaqawewddw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "As Williams' Reflection, but can be cast from non-rod sources while a rod is in use."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "rodloopactive",
+    "fullname": "Conductor's Reflection II",
+    "signature": "→ bool",
+    "pattern": "qwqqqwqaqded",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Returns whether the caster is currently using a rod, regardless of the current cast is from that rod."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "reviveflayed",
+    "fullname": "Instill Psyche",
+    "signature": "entity →",
+    "pattern": "qeqwqqedeeeeeaqwqeqaqedqde",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Accepts a flayed mob, and creates an artifical pseudo-mind to inhabit its body. Costs 16 charged amethyst when used on a villager, or 10 amethyst shards for anything else. While these pseudo-minds are capable of moving their bodies around as if they were their original inhabitants, they are too simple to be called truly sapient, even with the rather loose definition of the term that must be used when applying it to villagers. As such, any villager \"restored\" in this manner loses any professional experience it had before, and cannot gain such experience ever again. They do, however, regain their ability to reproduce, with any children they produce being untainted by my craft. I'm not sure why the restored villagers suddenly gain an affinity for green clothing, but at least it serves as a good indicator of which villagers will be of little further use."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "craftbottomlesstrinket",
+    "fullname": "Craft Bottomless Trinket",
+    "signature": "list of patterns →",
+    "pattern": "wwqeeeeewqqqqqewwaqeqwqeqqqeqwqeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Writes a hex to the bottomless trinket in my other hand. Costs ten charged amethyst."
+  },
+  {
+    "mod": "oneironaut",
     "name": "readsentinel",
     "fullname": "Scrutinize Sentinel",
     "signature": "vec, player → num | NULL",
@@ -5037,107 +5117,77 @@
     "pattern": "wqwqwqwqwqwaqeeq",
     "direction": "WEST",
     "perworld": false,
-    "description": "Returns a Spatial Imprint representing the dimension my sentinel is currently in. Costs a slightly-less-negligible amount of media."
+    "description": "Returns a Spatial Imprint representing the dimension my sentinel is currently in. Costs one-tenth of an amethyst dust."
   },
   {
     "mod": "oneironaut",
-    "name": "readframerotation",
-    "fullname": "Decorator's Purification",
-    "signature": "item frame → number",
-    "pattern": "wwawwqwwawwaeae",
-    "direction": "SOUTH_WEST",
+    "name": "getdimoverworld",
+    "fullname": "Homeland Reflection",
+    "signature": "→ Imprint",
+    "pattern": "wqwqwqwqwqwawedewdwedew",
+    "direction": "NORTH_EAST",
     "perworld": false,
-    "description": "Accepts an item frame entity, and returns its rotation, from 0 to 7."
+    "description": "Returns a Spatial Imprint representing the overworld. Costs one-tenth of an amethyst dust."
   },
   {
     "mod": "oneironaut",
-    "name": "setframerotation",
-    "fullname": "Decorator's Gambit",
-    "signature": "item frame, number →",
-    "pattern": "wwawwqwwawwaqdq",
-    "direction": "SOUTH_WEST",
+    "name": "getdimnether",
+    "fullname": "Inferno Reflection",
+    "signature": "→ Imprint",
+    "pattern": "wqwqwqwqwqwaqaaqaw",
+    "direction": "NORTH_EAST",
     "perworld": false,
-    "description": "Accepts an item frame entity and an integer from 0 to 7, and sets its rotation to the number. Costs a negligible amount of media."
+    "description": "Returns a Spatial Imprint representing the nether. Costs one-tenth of an amethyst dust.<br />There seems to be some resistance when I cast this. Perhaps I'll be able to overcome it with greater skill..."
   },
   {
     "mod": "oneironaut",
-    "name": "getstatus",
-    "fullname": "Apothecary's Prfn.",
-    "signature": "entity → [status]",
-    "pattern": "qqqqqedwd",
-    "direction": "SOUTH_WEST",
+    "name": "getdimheight",
+    "fullname": "Atlas' Decomposition",
+    "signature": "Imprint → num, num",
+    "pattern": "awqqqwqwqwqwqwq",
+    "direction": "NORTH_EAST",
     "perworld": false,
-    "description": "Accepts a living entity, and returns a list status iotas representing all effects on the target."
+    "description": "Accepts a Spatial Imprint, and returns the lowest and highest altitudes at which blocks can exist in the corresponding dimension."
   },
   {
     "mod": "oneironaut",
-    "name": "getstatuscategory",
-    "fullname": "Apothecary's Prfn. II",
-    "signature": "status → num",
-    "pattern": "eeeeeqawa",
-    "direction": "SOUTH_EAST",
+    "name": "getdimscale",
+    "fullname": "Ratio Purification",
+    "signature": "Imprint → num",
+    "pattern": "wawawqwqwqwqwqw",
+    "direction": "NORTH_WEST",
     "perworld": false,
-    "description": "Accepts a status effect type, and returns a number based on whether the effect is likely to be helpful, harmful, or neutral to a creature."
+    "description": "Accepts a Spatial Imprint, and returns how many blocks you'd have to travel in the overworld to travel the equivalent of one block in the input dimension."
   },
   {
     "mod": "oneironaut",
-    "name": "getstatusduration",
-    "fullname": "Pharmacist's Prfn.",
-    "signature": "entity, status → num",
-    "pattern": "qqqqqedwdwd",
-    "direction": "SOUTH_WEST",
-    "perworld": false,
-    "description": "Accepts an entity and a status effect type, and returns the effect on the target's duration in seconds."
-  },
-  {
-    "mod": "oneironaut",
-    "name": "getstatuslevel",
-    "fullname": "Pharmacist's Prfn. II",
-    "signature": "entity, status → num",
-    "pattern": "eeeeeqawawa",
-    "direction": "SOUTH_EAST",
-    "perworld": false,
-    "description": "Accepts an entity and a status effect type, and returns the effect on the target's potency."
-  },
-  {
-    "mod": "oneironaut",
-    "name": "getbystatussingle",
-    "fullname": "Entity Distillation: Status",
-    "signature": "status, vector → entity | NULL",
-    "pattern": "eaeeeeeae",
+    "name": "getsoulprint",
+    "fullname": "Soulprint Reflection",
+    "signature": "→ soulprint",
+    "pattern": "qqaqwedee",
     "direction": "EAST",
     "perworld": false,
-    "description": "Accepts a status effect type and a vector, and returns an entity at that position which has that effect."
+    "description": "Returns my soulprint, mishapping if cast using anything other than a staff. Costs a negligible amount of media."
   },
   {
     "mod": "oneironaut",
-    "name": "getbystatus",
-    "fullname": "Zone Exltn.: Status",
-    "signature": "status, vec, num → [entity]",
-    "pattern": "ewqqqqqwe",
+    "name": "signitem",
+    "fullname": "Sign Item",
+    "signature": "",
+    "pattern": "qqaqwedeea",
     "direction": "EAST",
     "perworld": false,
-    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which have that effect."
+    "description": "Invisibly engraves my soulprint onto the item in my other hand, or erases it if it is already there. Costs 1 amethyst dust.<br />I should be careful to seal any focuses or similar that I sign, as acquiring an unsealed signed focus may allow someone to impersonate me, and Erase Item gets rid of the signature."
   },
   {
     "mod": "oneironaut",
-    "name": "getbystatusinverse",
-    "fullname": "Zone Exltn.: Not-Status",
-    "signature": "status, vec, num → [entity]",
-    "pattern": "qweeeeewq",
+    "name": "checksignature",
+    "fullname": "Signature Purification",
+    "signature": "soulprint → bool",
+    "pattern": "qqaqwedeed",
     "direction": "EAST",
     "perworld": false,
-    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which do not have that effect."
-  },
-  {
-    "mod": "oneironaut",
-    "name": "removestatus",
-    "fullname": "Cleanse Status",
-    "signature": "entity, status →",
-    "pattern": "eeeeedaqdewed",
-    "direction": "SOUTH_WEST",
-    "perworld": false,
-    "description": "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration. Costs more if attempting to remove a positive effect from an entity other than myself. All of the patterns which deal with a specific status effect on an entity have the side effect that if the entity does not currently have the specified effect, the pattern will fail and inflict nausea upon me."
+    "description": "Accepts a soulprint, and checks if the item in my other hand is engraved with it. Returns true if so, false otherwise. Costs a negligible amount of media."
   },
   {
     "mod": "oneironaut",
@@ -5147,7 +5197,7 @@
     "pattern": "eweweweweweeewqaqwe",
     "direction": "EAST",
     "perworld": false,
-    "description": "Accepts a valid key and any iota, and stores it in the corresponding location. Costs about 1 amethyst dust."
+    "description": "Accepts a valid key and any iota, and stores it in the corresponding location. Costs a quarter of an amethyst dust."
   },
   {
     "mod": "oneironaut",
@@ -5157,17 +5207,17 @@
     "pattern": "qwqwqwqwqwqqqwedewq",
     "direction": "WEST",
     "perworld": false,
-    "description": "Accepts a valid key, and returns the corresponding iota. Costs about 1 amethyst dust."
+    "description": "Accepts a valid key, and returns the corresponding iota. Costs one-eigth of an amethyst dust."
   },
   {
     "mod": "oneironaut",
     "name": "readideatime",
     "fullname": "Metadata Purification",
-    "signature": "key → number | NULL",
+    "signature": "key → number",
     "pattern": "qwqwqwqwqwqqqeqaqeq",
     "direction": "WEST",
     "perworld": false,
-    "description": "Accepts a valid key, and returns when the corresponding iota was inscribed, or NULL. Costs a negligible amount of media."
+    "description": "Accepts a valid key, and returns when the corresponding iota was inscribed, or -1. Costs no media."
   },
   {
     "mod": "oneironaut",
@@ -5177,27 +5227,7 @@
     "pattern": "qwqwqwqwqwqaeqedeqe",
     "direction": "WEST",
     "perworld": false,
-    "description": "Accepts a valid key and a player, and returns whether the corresponding iota was inscribed by that player. Costs a negligible amount of media."
-  },
-  {
-    "mod": "oneironaut",
-    "name": "paintconjured",
-    "fullname": "Externalize Pigment",
-    "signature": "Vector, itemtype →",
-    "pattern": "eqdweeqdwweeqddqdwwwdeww",
-    "direction": "WEST",
-    "perworld": false,
-    "description": "Accepts a vector and an itemtype representing a pigment. Costs a negligible amount of media if targeting my own block, or 1 Amethyst Dust if not. Sets the colors of the conjured block corresponding to the vector to the colorset represented by the passed pigment, or mine if passed a NULL iota. Not guaranteed to work with unconventional forms of conjured matter.  Feels strangely celebratory, as if something similar was once used in grand festivals where teams would splatter their colors all over their opponents' territory in a bid for ideological dominance."
-  },
-  {
-    "mod": "oneironaut",
-    "name": "particleburst",
-    "fullname": "Particle Burst",
-    "signature": "vec, vec, num, num →",
-    "pattern": "deeeewaaddwqqqqa",
-    "direction": "EAST",
-    "perworld": false,
-    "description": "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media. The first vector determines the burst's origin position, and the second vector determines its direction and speed. The first number determines the scale of random numbers added to each position component, and the second does the same for the direction vector."
+    "description": "Accepts a valid key and a player, and returns whether the corresponding iota was inscribed by that player. Costs no media."
   },
   {
     "mod": "oneironaut",
@@ -5217,7 +5247,7 @@
     "pattern": "qeewwwweeqeqeewwwweeqdqqdwwwdqeqdwwwdqdadwwdqdwwddadaqadaawww",
     "direction": "NORTH_EAST",
     "perworld": true,
-    "description": "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the corresponding dimension. Costs 20 Charged Amethyst. Also triggers some sort of safety net once the target reaches its destination, in case it arrives somewhere inherently dangerous. Will fail if supplied a player other than myself. I get a strange sense of acceleration when subjected to this spell, but somehow it isn't along any axis I can comprehend."
+    "description": "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the proper dimension. Generally costs 20 Charged Amethyst.<br />Will fail if supplied a player other than myself. If I use this to return to a dimension that I previously left within the same instant, the cost drops to five amethyst dust, as the spell can take advantage of a lingering strand of media leading back to my original position. Otherwise, it will attempt to find a safe spot to deposit me, potentially conjuring a block to prevent me from falling to my doom. Strangely, I feel an odd sense of acceleration when transporting myself this way, along some incomprehensible axis."
   },
   {
     "mod": "oneironaut",
@@ -5227,7 +5257,7 @@
     "pattern": "wqqqwwwwwqqqwwwqdaqadwqqwdaqadweqeqqqqeqeqaqeqedeqeqa",
     "direction": "EAST",
     "perworld": true,
-    "description": "Accepts two lists of two vectors, to define two cuboids, and a Spatial Imprint. These cuboids must have the exact same dimensions and rotation. I'm not quite sure what this one is supposed to do, it's always yelling at me about special dimensions. Perhaps it needs to use this special dimension as an intermediary? Exchanges the blocks within the first cuboid in your current dimension (which must be within ambit) for the blocks within the second cuboid in the dimension corresponding to the Spatial Imprint. Costs 5 Charged Amethyst, plus half an Amethyst dust per cubic meter in the cuboid.<br />Will not exchange any unbreakable blocks, or blocks with significant data.<br />One or both of the endpoint dimensions must be the noosphere."
+    "description": "Accepts two lists of two vectors, to define two cuboids, and a Spatial Imprint. These cuboids must have the exact same dimensions and rotation. I'm not quite sure what this one is supposed to do, it's always yelling at me about special dimensions. Perhaps it needs to use this special dimension as an intermediary? Exchanges the blocks within the first cuboid in your current dimension (which must be within ambit) for the blocks within the second cuboid in the dimension corresponding to the Spatial Imprint. Costs 5 Charged Amethyst, plus half an Amethyst dust per cubic meter in the cuboid.<br />Will not exchange any unbreakable blocks.<br />One or both of the endpoint dimensions must be the noosphere."
   },
   {
     "mod": "oneironaut",
@@ -5237,7 +5267,7 @@
     "pattern": "wawwwdwdwwaqqqqqe",
     "direction": "EAST",
     "perworld": true,
-    "description": "Accepts a living entity and a number (*n*), and shields the entity from hex-based detection for *n* seconds. Costs two amethyst dust per second. Also drains media from the entity at a rate of 1/10 of a dust per second, as the shielding effect collects it to produce the chaff. I should be careful with what I apply this to, as creatures with no loose media of their own will have their very minds fractured in order to provide this media. While this is very effective at blocking effects such as Scout's Distillation and the various forms of Zone Distillation, it has no effect on Entity Distillation variants, as those already have a fairly precise idea of where you are. What's more, the chaff itself produces an energy signautre, which, while dim, is detectable by a specialized pattern."
+    "description": "Accepts a living entity and a number (*n*), and shields the entity from hex-based detection for *n* seconds. Costs two amethyst dust per second. Also drains media from the entity at a rate of 1/10 of a dust per second, as the shielding effect collects it to produce the chaff. I should be careful with what I apply this to, as creatures with no loose media of their own will have their very minds fractured in order to provide this media. While this is very effective at blocking effects such as Scout's Distillation and the various forms of Zone Distillation, it has no effect on Entity Purification variants, as those already have a fairly precise idea of where you are. What's more, the chaff itself produces an energy signautre, which, while dim, is detectable by a specialized pattern."
   },
   {
     "mod": "oneironaut",
@@ -5251,12 +5281,12 @@
   },
   {
     "mod": "oneironaut",
-    "name": "invisibility",
-    "fullname": "Hidden Sun's Zenith",
-    "signature": "entity, number →",
-    "pattern": "qqqqqaewawaweqa",
+    "name": "applynotmissing",
+    "fullname": "Uplifting Resonance",
+    "signature": "entity →",
+    "pattern": "qdaeqeawaeqeadqqdeed",
     "direction": "SOUTH_WEST",
     "perworld": true,
-    "description": "I've also discovered a spell which applies normal Invisibility. Functions just like the normal Zeniths, and costs one amethyst dust per three seconds."
+    "description": "Accepts a living entity, and allows it to be accessed from anywhere for one minute. Has a base cost of one amethyst shard, plus one additional shard per application before allowing it to expire. It seems that this effect functions by causing the target to emit some sort of psionic resonance, strong enough to cause its outline to be \"visible\" through all manner of barriers (perhaps hexcasters naturally produce this same resonance, but much subtler?). However, this glow is distinct from that induced by spectral arrows and similar, so don't bet on things to detect that working for this."
   }
 ]
