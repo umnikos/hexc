@@ -1,0 +1,85 @@
+: me get_caster ;
+	: my me ;
+
+: entity/eyes entity_pos/eye ;
+	: eyes entity/eyes ;
+: entity/feet entity_pos/foot 
+	: feet entity/feet ;
+: entity/gaze get_entity_look ;
+	: entity/look entity/gaze ;
+	: gaze entity/gaze ;
+: entity/height get_entity_height ;
+: entity/velocity get_entity_velocity ;
+
+: raycast/block raycast ;
+: raycast/face raycast/axis ;
+
+: drop pseudo-novice ;
+: rot rotate ;
+: -rot rotate_reverse ;
+: dup duplicate ;
+
+: + add ;
+: - sub ;
+: * mul_dot ;
+: / div_cross ;
+: x div_cross ;
+: abs abs_len ;
+: len abs_len ;
+	: length abs_len ;
+
+: . print ;
+
+: explode explosion ;
+: block/break break_block ;
+: block/place place_block ;
+: block/smelt smelt ;
+: block/freeze freeze ;
+: block/ignite ignite ;
+: block/fall falling_block ;
+: conjure/water create_water ;
+: conjure/lava create_lava ;
+: conjure/block conjure_block ;
+: conjure/light conjure_light ;
+: flight/anchored flight/range ;
+	: flight/anchor flight/anchored ;
+: flight/timed flight/time ;
+: flight/winged flight ;
+	: flight/wings flight/winged ;
+	: flight/altiora flight/winged ;
+	: flight/elytra flight/winged ;
+
+: call eval ;
+	: exec call ;
+: choose if ;
+: if choose call ;
+
+: read/raven read/local ;
+	: raven/read read/raven
+: write/raven write/local ;
+	: raven/write write/raven ;
+: soroban/inc soroban_increment ;
+: soroban/dec soroban_decrement ;
+
+: zone/extinguish extinguish ;
+	: area/extinguish zone/extinguish ;
+: zone zone_entity ;
+: zone/animal zone_entity/animal ;
+: zone/not_animal zone_entity/not_animal ;
+: zone/monster zone_entity/monster ;
+: zone/not_monster zone_entity/not_monster ;
+: zone/item zone_entity/item ;
+: zone/not_item zone_entity/not_item ;
+: zone/player zone_entity/player ;
+: zone/not_player zone_entity/not_player ;
+: zone/living zone_entity/living ;
+: zone/not_living zone_entity/not_living ;
+: zone/type zone_entity/type ;
+: zone/not_type zone_entity/not_type ;
+: zone/wisp zone_entity/wisp;
+: zone/not_wisp zone_entity/not_wisp;
+: zone/construct  zone_entity/construct ;
+: zone/not_construct  zone_entity/not_construct ;
+
+
+
