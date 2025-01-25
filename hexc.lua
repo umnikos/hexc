@@ -5,7 +5,7 @@ local function isImported()
 end
 
 local function is_numeric(s)
-  return string.find(s,"^[%d%.]+$")
+  return string.find(s,"^[%d%.%-]+$")
 end
 
 table.append = function(a,b)
@@ -109,6 +109,11 @@ local function compile(program, global_dictionary)
         res[#res] = nil
         local contents = fs.open(filename,"r").readAll()
         tokens.prepend(contents)
+      elseif token == "sleep!" then
+        -- TODO: turn this into a macro
+        local seconds = res[#res].value
+        res[#res] = nil
+        sleep(seconds)
       elseif token == "{" then
         table.insert(res, {
           literal = false,
@@ -179,6 +184,14 @@ local function translateHexTweaks(compiled)
       table.insert(res,convert_symbol(symbols["open_paren"]))
       table.append(res,translateHexTweaks(v.value))
       table.insert(res,convert_symbol(symbols["close_paren"]))
+    elseif v.type == "property" then
+      table.insert(res,convert_symbol(symbols["open_paren"]))
+      table.insert(res,{
+        ["iota$serde"]="null",
+        name = v.name
+      })
+      table.insert(res,convert_symbol(symbols["close_paren"]))
+      table.insert(res,convert_symbol(symbols["splat"]))
     else
       error("unhandled type: "..v.type)
     end

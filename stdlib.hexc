@@ -13,6 +13,7 @@
 
 : raycast/block raycast ;
 : raycast/face raycast/axis ;
+: raycast/entity raycast/entity ;
 
 : drop pseudo-novice ;
 : rot rotate ;
@@ -25,8 +26,34 @@
 : / div ;
 : len abs ;
 	: length len ;
+: list/push append ;
+: list/pop unappend ;
+: list/new empty_list ;
+: list/singleton singleton ;
+: list/index index ;
+	: list/select list/index ;
+: list/slice slice ;
+: list/concat + ;
+: list/length length ;
+
+: that/block my eyes my gaze raycast/block ;
+	: this/block that/block ;
+: that/face my eyes my gaze raycast/face ;
+	: this/face that/face ;
+: that/spot that/block that/face + ;
+	: that/place that/spot ;
+	: this/spot that/spot ;
+	: this/place that/place ;
+: that/entity my eyes my gaze raycast/entity ;
+	: this/entity that/entity ;
 
 : . print ;
+
+: scale/get interop/pehkui/get ;
+: scale/set interop/pehkui/set ;
+
+: property/read observe_property ;
+: property/write set_property ;
 
 : explode explode ;
 	: explosion explode ;
@@ -47,6 +74,7 @@
 	: flight/wings flight/winged ;
 	: flight/altiora flight/winged ;
 	: flight/elytra flight/winged ;
+	: wings flight/winged ;
 
 : call eval ;
 	: exec call ;
@@ -79,4 +107,10 @@
 : zone/not_wisp zone_entity/not_wisp ;
 
 
+: mind/flay brainsweep ;
+: mind/instill reviveflayed ;
 
+: gate/new gate/make ;
+: gate/open gate/mark ;
+: gate/close gate/close ;
+: tp dup me gate/open gate/close ;
