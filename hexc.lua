@@ -9,7 +9,7 @@ local function is_numeric(s)
 end
 
 table.append = function(a,b)
-  for _,i in pairs(b) do
+  for _,i in ipairs(b) do
     table.insert(a,i)
   end
 end
@@ -41,9 +41,7 @@ for _,s in pairs(symbol_registry) do
   end
 end
 for _,s in pairs(symbol_overrides) do
-  if not s.perworld then
-    symbols[s.name] = s
-  end
+  symbols[s.name] = s
 end
 
 local function tokenizer(program)
@@ -152,7 +150,7 @@ local function compile(program, global_dictionary)
     end
   end
 
-  return res
+  return res, dictionary
 end
 
 local function translateHexTweaks(compiled)
@@ -160,6 +158,9 @@ local function translateHexTweaks(compiled)
     ["iota$serde"]="hextweaks:list"
   }
   local function convert_symbol(symbol)
+    if not symbol.pattern then
+      error("symbol '"..symbol.name.."' has an unknown pattern")
+    end
     return {
       ["iota$serde"]="hextweaks:pattern",
       angles=symbol.pattern,
@@ -185,12 +186,14 @@ local function translateHexTweaks(compiled)
   return res
 end
 
+local global_dictionary = {}
 local function run(program)
-  local compiled = compile(program)
+  local compiled, new_dictionary = compile(program,global_dictionary)
   local translated = translateHexTweaks(compiled)
   local wand = peripheral.find("wand")
   wand.pushStack(translated)
   wand.runPattern("","deaqq") -- hermes
+  global_dictionary = new_dictionary
 end
 
 if isImported() then
