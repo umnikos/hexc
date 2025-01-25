@@ -3,7 +3,7 @@
 
 : entity/eyes entity_pos/eye ;
 	: eyes entity/eyes ;
-: entity/feet entity_pos/foot 
+: entity/feet entity_pos/foot ;
 	: feet entity/feet ;
 : entity/gaze get_entity_look ;
 	: entity/look entity/gaze ;
@@ -21,16 +21,15 @@
 
 : + add ;
 : - sub ;
-: * mul_dot ;
-: / div_cross ;
-: x div_cross ;
-: abs abs_len ;
-: len abs_len ;
-	: length abs_len ;
+: * mul ;
+: / div ;
+: len abs ;
+	: length len ;
 
 : . print ;
 
-: explode explosion ;
+: explode explode ;
+	: explosion explode ;
 : block/break break_block ;
 : block/place place_block ;
 : block/smelt smelt ;
@@ -55,8 +54,8 @@
 : if choose call ;
 
 : read/raven read/local ;
-	: raven/read read/raven
-: write/raven write/local ;
+	: raven/read read/raven ;
+: write/raven local ;
 	: raven/write write/raven ;
 : soroban/inc soroban_increment ;
 : soroban/dec soroban_decrement ;
@@ -76,10 +75,8 @@
 : zone/not_living zone_entity/not_living ;
 : zone/type zone_entity/type ;
 : zone/not_type zone_entity/not_type ;
-: zone/wisp zone_entity/wisp;
-: zone/not_wisp zone_entity/not_wisp;
-: zone/construct  zone_entity/construct ;
-: zone/not_construct  zone_entity/not_construct ;
+: zone/wisp zone_entity/wisp ;
+: zone/not_wisp zone_entity/not_wisp ;
 
 
 

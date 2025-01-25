@@ -31,10 +31,13 @@ end
 
 local symbols = {}
 for _,s in pairs(symbol_registry) do
-  if not s.perworld then
-    -- direction: start dir
-    -- pattern: angles to turn
-    symbols[s.name] = s
+  -- direction: start dir
+  -- pattern: angles to turn
+  symbols[s.name] = s
+  if s.perworld then
+    -- TODO: cause an error when translating not when compiling
+    s.direction = nil
+    s.pattern = nil
   end
 end
 for _,s in pairs(symbol_overrides) do
@@ -44,11 +47,16 @@ for _,s in pairs(symbol_overrides) do
 end
 
 local function tokenizer(program)
-  return function()
+  local next = function()
     local definition, rest = string.match(program,"^%s*(:%s.-%s;)%s(.*)")
     if definition then
       program = rest
       return definition, "definition"
+    end
+    local literal, rest = string.match(program, '^%s*"([^"]*)"(.*)')
+    if literal then
+      program = rest
+      return literal, "string_literal"
     end
     local word, rest = string.match(program, "^%s*(%S+)(.*)")
     if word then
@@ -56,23 +64,54 @@ local function tokenizer(program)
       return word, "word"
     end
   end
+
+  local prepend = function(other_program)
+    program = other_program .. " " .. program
+  end
+
+  local exports = {
+    next = next,
+    prepend = prepend
+  }
+  setmetatable(exports, {
+    _G=_G,
+    __call=function(self,args) return self.next(args) end
+  })
+  return exports
 end
 
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
-local function compile(program)
+local function compile(program, global_dictionary)
   local res = {}
 
   local dictionary = {}
+  for k,v in pairs(global_dictionary or {}) do
+    dictionary[k]=v
+  end
+
   local tokens = tokenizer(program)
   for token, type in tokens do
+    print(token)
     if type == "definition" then
       local name, body = string.match(token, "^:%s(%S+)%s*(.-)%s;$")
-      local compiled = compile(body)
+      local compiled = compile(body,dictionary)
       dictionary[name] = compiled
+    elseif type == "string_literal" then
+      table.insert(res, {
+        literal = true,
+        type = "string",
+        value = token
+      })
     elseif type == "word" then
-      if token == "{" then
+      if token == "loadfile!" then
+        -- TODO: turn this into a macro
+        local filename = res[#res].value
+        res[#res] = nil
+        local contents = fs.open(filename,"r").readAll()
+        tokens.prepend(contents)
+      elseif token == "{" then
         table.insert(res, {
           literal = false,
           type = "{",
@@ -106,7 +145,7 @@ local function compile(program)
           value = tonumber(token)
         })
       else
-        error("unknown word: "..token)
+        error("unknown word: '"..token.."'")
       end
     else
       error("unknown token type: "..type)
@@ -120,7 +159,8 @@ if isImported() then
   return compile
 else
   local args = {...}
-  error("TODO")
+  --error("TODO")
+  compile('"stdlib.hexc" loadfile!')
 end
 
 
