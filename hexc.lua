@@ -155,8 +155,49 @@ local function compile(program, global_dictionary)
   return res
 end
 
+local function translateHexTweaks(compiled)
+  local res = {
+    ["iota$serde"]="hextweaks:list"
+  }
+  local function convert_symbol(symbol)
+    return {
+      ["iota$serde"]="hextweaks:pattern",
+      angles=symbol.pattern,
+      startDir=symbol.direction
+    }
+  end
+  for _,v in pairs(compiled) do
+    if v.type == "symbol" then
+      table.insert(res,convert_symbol(v))
+    elseif v.type == "number" then
+      table.insert(res,convert_symbol(symbols["open_paren"]))
+      table.insert(res,v.value)
+      table.insert(res,convert_symbol(symbols["close_paren"]))
+      table.insert(res,convert_symbol(symbols["splat"]))
+    elseif v.type == "code" then
+      table.insert(res,convert_symbol(symbols["open_paren"]))
+      table.append(res,translateHexTweaks(v.value))
+      table.insert(res,convert_symbol(symbols["close_paren"]))
+    else
+      error("unhandled type: "..v.type)
+    end
+  end
+  return res
+end
+
+local function run(program)
+  local compiled = compile(program)
+  local translated = translateHexTweaks(compiled)
+  local wand = peripheral.find("wand")
+  wand.pushStack(translated)
+  wand.runPattern("","deaqq") -- hermes
+end
+
 if isImported() then
-  return compile
+  return {
+    compile=compile,
+    run=run
+  }
 else
   local args = {...}
   --error("TODO")
