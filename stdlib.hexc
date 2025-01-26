@@ -145,6 +145,11 @@
 # TODO: expansion for this once you make boolean literals
 : if choose call ;
 
+: compose list/concat ;
+# takes a thing on the stack and makes a quotation that pushes it to the stack
+: quote [ [ me ] splat ] 1 rot replace ;
+: curry swap quote swap compose ;
+
 : read/raven read/local ;
 	: raven/read read/raven ;
 : write/raven local ;
@@ -178,3 +183,6 @@
 : gate/open gate/mark ;
 : gate/close gate/close ;
 : tp dup me gate/open gate/close ;
+
+# clear the whole stack
+: clear stack_len last_n_list drop ;
