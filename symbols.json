@@ -5288,5 +5288,405 @@
     "direction": "SOUTH_WEST",
     "perworld": true,
     "description": "Accepts a living entity, and allows it to be accessed from anywhere for one minute. Has a base cost of one amethyst shard, plus one additional shard per application before allowing it to expire. It seems that this effect functions by causing the target to emit some sort of psionic resonance, strong enough to cause its outline to be \"visible\" through all manner of barriers (perhaps hexcasters naturally produce this same resonance, but much subtler?). However, this glow is distinct from that induced by spectral arrows and similar, so don't bet on things to detect that working for this."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/complex/i",
+    "fullname": "Constant Imagination",
+    "signature": "→ complex",
+    "pattern": "wqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes 0 + 1i to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/complex/1",
+    "fullname": "Constant Realisation",
+    "signature": "→ complex",
+    "pattern": "wqqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes 1 + 0i to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "add",
+    "fullname": "Additive Distillation",
+    "signature": "complex, complex/num → complex",
+    "pattern": "waaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Preforms Addition, num will be treated as num + 0i."
+  },
+  {
+    "mod": "complexhex",
+    "name": "sub",
+    "fullname": "Subtractive Distillation",
+    "signature": "complex, complex/num → complex",
+    "pattern": "wddw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Preforms Subtraction, num will be treated as num + 0i."
+  },
+  {
+    "mod": "complexhex",
+    "name": "mul",
+    "fullname": "Multiplicative Dstl.",
+    "signature": "complex, num | complex, complex → complex",
+    "pattern": "waqaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Preforms Scalar Multiplication or Complex Multiplication, depending on the given arguments."
+  },
+  {
+    "mod": "complexhex",
+    "name": "div",
+    "fullname": "Division Dstl.",
+    "signature": "complex, num | complex, complex → complex",
+    "pattern": "wdedw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Preforms Scalar Division or Complex Division, depending on the given arguments."
+  },
+  {
+    "mod": "complexhex",
+    "name": "abs",
+    "fullname": "Length Purification",
+    "signature": "complex → num",
+    "pattern": "wqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the Argument (the length)."
+  },
+  {
+    "mod": "complexhex",
+    "name": "real",
+    "fullname": "Realising Complexities",
+    "signature": "complex → num",
+    "pattern": "wqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the real coefficient."
+  },
+  {
+    "mod": "complexhex",
+    "name": "imaginary",
+    "fullname": "Imagining Complexities",
+    "signature": "complex → num",
+    "pattern": "wqqe",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the imaginary coefficient."
+  },
+  {
+    "mod": "complexhex",
+    "name": "conjugate",
+    "fullname": "Conjugation Prfn.",
+    "signature": "complex → num",
+    "pattern": "wqqd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Negates the imaginary coefficient of the topmost iota"
+  },
+  {
+    "mod": "complexhex",
+    "name": "qmake",
+    "fullname": "Quaternionic Exal.",
+    "signature": "num, vec → quaternion",
+    "pattern": "waqqqqqe",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes a Quaternion with num as the real coefficient and the vector's x, y, &amp; z as the coefficients of i, j &amp; k respectively."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qunmake",
+    "fullname": "Quaternionic Dntg.",
+    "signature": "quaternion → num, vec",
+    "pattern": "wdeeeeeq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the real coefficient and a vector where the x, y, &amp; z components are the coefficients of i, j, &amp; k respectively."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/quaternion/1",
+    "fullname": "Quaternionic Rfln.: 1",
+    "signature": "→ quaternion",
+    "pattern": "waqqqqqea",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes 1 + 0i + 0j + 0k to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/quaternion/i",
+    "fullname": "Quaternionic Rfln.: i",
+    "signature": "→ quaternion",
+    "pattern": "waqqqqqeq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes 0 + 1i + 0j + 0k to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/quaternion/j",
+    "fullname": "Quaternionic Rfln: j",
+    "signature": "→ quaternion",
+    "pattern": "waqqqqqee",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes 0 + 0i + 1j + 0k to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "const/quaternion/k",
+    "fullname": "Quaternionic Rfln: k",
+    "signature": "→ quaternion",
+    "pattern": "waqqqqqed",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes 0 + 0i + 0j + 1k to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "add",
+    "fullname": "Additive Distillation",
+    "signature": "qtrn, qtrn → quaternion",
+    "pattern": "waaw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Preforms Addition"
+  },
+  {
+    "mod": "complexhex",
+    "name": "sub",
+    "fullname": "Subtractive Distillation",
+    "signature": "qrtn, qtrn → quaternion",
+    "pattern": "wddw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Preforms Subtraction"
+  },
+  {
+    "mod": "complexhex",
+    "name": "mul",
+    "fullname": "Multiplicative Dstl.",
+    "signature": "quat, num | quat, quat → quaternion",
+    "pattern": "waqaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "<br />Preforms Scalar Multiplication or Hamiltonian Multiplication, depending on the given arguments."
+  },
+  {
+    "mod": "complexhex",
+    "name": "div",
+    "fullname": "Division Dstl.",
+    "signature": "quaternion, num → quaternion",
+    "pattern": "wdedw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Preforms Scalar Division."
+  },
+  {
+    "mod": "complexhex",
+    "name": "abs",
+    "fullname": "Length Purification",
+    "signature": "quaternion → num",
+    "pattern": "wqaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the Argument (the length)."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qw",
+    "fullname": "Quaterionic Prfn.: 1",
+    "signature": "quaternion → num",
+    "pattern": "wdeeeeeqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the coefficient of 1."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qx",
+    "fullname": "Quaterionic Prfn.: i",
+    "signature": "quaternion → num",
+    "pattern": "wdeeeeeqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the coefficient of i."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qy",
+    "fullname": "Quaterionic Prfn.: j",
+    "signature": "quaternion → num",
+    "pattern": "wdeeeeeqe",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the coefficient of j."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qz",
+    "fullname": "Quaterionic Prfn: k",
+    "signature": "quaternion → num",
+    "pattern": "wdeeeeeqd",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the coefficient of k."
+  },
+  {
+    "mod": "complexhex",
+    "name": "qinvert",
+    "fullname": "Quaternionic Inverse",
+    "signature": "quaternion → num",
+    "pattern": "waqqqqqew",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Negates the coefficients of i, j, &amp; k"
+  },
+  {
+    "mod": "complexhex",
+    "name": "quattomat",
+    "fullname": "Matrixification",
+    "signature": "quaternion → matrix",
+    "pattern": "wdeeeeeqeawwaeaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes a matrix that (should) represent the same rotation as the quaternion"
+  },
+  {
+    "mod": "complexhex",
+    "name": "mattoquat",
+    "fullname": "Quaterniation",
+    "signature": "matrix → quaternion",
+    "pattern": "waqqqqqeeawwaeaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes a quaternion that (should) reperesent the same rotation as the matrix"
+  },
+  {
+    "mod": "complexhex",
+    "name": "axisangle",
+    "fullname": "Axis Angle Distillation",
+    "signature": "vec, num → quaternion",
+    "pattern": "waqqqqqedaqqqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes a quaternion that reperesents a rotation by the given angle num radias around the given vector."
+  },
+  {
+    "mod": "complexhex",
+    "name": "bubble",
+    "fullname": "Bubbles' Purification",
+    "signature": "any → {any}",
+    "pattern": "qdqdqdqdqdq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes a Bubbled Iota, which when popped via execution (by hermes or the likes), will push the contained iota to the stack."
+  },
+  {
+    "mod": "complexhex",
+    "name": "summonblockdisplay",
+    "fullname": "Summon Block Display",
+    "signature": "vector, string →",
+    "pattern": "wqwqwqwqwqwawqaqqqqqe",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Summons a Block Display entity at the given position, displaying the given block. (The string must be the internal name i.e \"minecraft:dirt\", not \"Dirt\").<br />Costs about a Charged Amethyst"
+  },
+  {
+    "mod": "complexhex",
+    "name": "summonitemdisplay",
+    "fullname": "Summon Item Display",
+    "signature": "vector, string →",
+    "pattern": "wqwqwqwqwqwaqedeaaedeq",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Summons an Item Display entity at the given position, displaying the given item (The string must be the internal name i.e \"minecraft:stick\", not \"Stick\").<br />Costs about a Charged Amethyst"
+  },
+  {
+    "mod": "complexhex",
+    "name": "summontextdisplay",
+    "fullname": "Summon Text Display",
+    "signature": "vector, string →",
+    "pattern": "wqwqwqwqwqwawaaqawdeddw",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Summons a Text Display entity at the given position, displaying the given string. Costs about a Charged Amethyst"
+  },
+  {
+    "mod": "complexhex",
+    "name": "get_entity/bit",
+    "fullname": "Entity Purification: BIT",
+    "signature": "vector → entity",
+    "pattern": "qqwwewewewewewwqqdaqaaww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Transform the position on the stack into the BIT at that location (or Null if there isn't one)"
+  },
+  {
+    "mod": "complexhex",
+    "name": "zone_entity/bit",
+    "fullname": "Zone Distillation: BIT",
+    "signature": "vector, number → [entity]",
+    "pattern": "qqwwewewewewewwqqwdeddww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Take a position and a maximum distance on the stack, and combine them into a list of BIT's near the position."
+  },
+  {
+    "mod": "complexhex",
+    "name": "zone_entity/not_bit",
+    "fullname": "Zone Distillation: Not BIT",
+    "signature": "vector, number → [entity]",
+    "pattern": "eewwqwqwqwqwqwweewaqaaww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Take a position and a maximum distance on the stack, and combine them into a list of non-BIT's near the position."
+  },
+  {
+    "mod": "complexhex",
+    "name": "translatebit",
+    "fullname": "Translate BIT",
+    "signature": "BIT, vec →",
+    "pattern": "wqwqwqwqwqwawwaqaeaqe",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Moves the BIT by the given offset.<br />(Compounds with multiple uses!)<br />Costs an amount of Amethyst Dust equal to the length of the offset vector."
+  },
+  {
+    "mod": "complexhex",
+    "name": "rotatebit",
+    "fullname": "Rotate BIT",
+    "signature": "BIT, quat →",
+    "pattern": "wqwqwqwqwqwaqeeeeedww",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Rotates the BIT by the given Quaternion.<br />(Does not compound with multiple uses!)<br />Costs about one Amethyst Dust."
+  },
+  {
+    "mod": "complexhex",
+    "name": "scalebit",
+    "fullname": "Scale BIT",
+    "signature": "BIT, vec →",
+    "pattern": "wqwqwqwqwqwawwaawaawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Scales the BIT by the given vector.<br />(Does not Compound with multiple uses!)<br />Costs an amount of Amethyst Dust equal to the length of the scale vector"
+  },
+  {
+    "mod": "complexhex",
+    "name": "killbit",
+    "fullname": "Kill BIT",
+    "signature": "BIT →",
+    "pattern": "wqwqwqwqwqwaqdwddwdq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Kills &amp; removes the given BIT. Costs about one Amethyst Dust."
   }
 ]
