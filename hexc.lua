@@ -125,7 +125,6 @@ local function compile(program, global_dictionary)
   end
 
   local function trigger_expansions(i)
-    -- FIXME: figure out why expansions are buggy and enable them again
     while true do -- for multiple rounds of expansion
       while res[i] and res[i].literal do
         i = i + 1
