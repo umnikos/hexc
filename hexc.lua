@@ -127,7 +127,8 @@ local function compile(program, global_dictionary)
   end
 
   local function trigger_expansions(i)
-    while true do -- for multiple rounds of expansion
+    -- FIXME: figure out why expansions are buggy and enable them again
+    while false do -- for multiple rounds of expansion
       while res[i] and res[i].literal do
         i = i + 1
       end
@@ -183,7 +184,7 @@ local function compile(program, global_dictionary)
         error("cannot make an expansion for '"..name.." as there's no such symbol")
       end
       local f = load(body)
-      f = setfenv(f, { -- TODO: put things in the environment
+      f = setfenv(f, {
         push=expansion_push,
         pop=expansion_pop,
         fail=expansion_fail,
