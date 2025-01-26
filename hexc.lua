@@ -108,13 +108,12 @@ local empty_dictionary = {
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
+local expansion_stack = {} -- this should not be here but crazy things happen if it's inside `compile`
 local function compile(program, global_dictionary)
   local res = {}
 
   local dictionary = deepcopy(global_dictionary or empty_dictionary)
 
-
-  local expansion_stack = {}
   local function expansion_pop()
     return table.remove(expansion_stack)
   end
@@ -127,7 +126,7 @@ local function compile(program, global_dictionary)
 
   local function trigger_expansions(i)
     -- FIXME: figure out why expansions are buggy and enable them again
-    while false do -- for multiple rounds of expansion
+    while true do -- for multiple rounds of expansion
       while res[i] and res[i].literal do
         i = i + 1
       end
