@@ -22,6 +22,18 @@ local function len(x)
   return res
 end
 
+local function deepcopy(t)
+  if type(t) == "table" then
+    local copy = {}
+    for k,v in pairs(t) do
+      copy[k]=deepcopy(v)
+    end
+    return copy
+  else
+    return t
+  end
+end
+
 local symbol_registry = textutils.unserializeJSON(fs.open("symbols.json","r").readAll())
 local symbol_overrides_file = fs.open("symbol-overrides.json","r")
 local symbol_overrides = {}
@@ -45,6 +57,7 @@ for _,s in pairs(symbol_overrides) do
 end
 
 local function tokenizer(program)
+  program = program .. "\n"
   local next = function()
     local comment, rest = string.match(program,"^%s*(#[^\n]*)\n(.*)")
     if comment then
@@ -55,6 +68,11 @@ local function tokenizer(program)
     if definition then
       program = rest
       return definition, "definition"
+    end
+    local expansion, rest = string.match(program,"^%s*(EXPAND:%s.-%s;)%s(.*)")
+    if expansion then
+      program = rest
+      return expansion, "expansion"
     end
     local literal, rest = string.match(program, '^%s*"([^"]*)"(.*)')
     if literal then
@@ -83,15 +101,70 @@ local function tokenizer(program)
   return exports
 end
 
+-- make a deep copy of this to define a new dictionary
+local empty_dictionary = {
+  words={},
+  expansions={}
+}
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
 local function compile(program, global_dictionary)
   local res = {}
 
-  local dictionary = {}
-  for k,v in pairs(global_dictionary or {}) do
-    dictionary[k]=v
+  local dictionary = deepcopy(global_dictionary or empty_dictionary)
+
+
+  local expansion_stack = {}
+  local function expansion_pop()
+    return table.remove(expansion_stack)
+  end
+  local function expansion_push(x)
+    return table.insert(expansion_stack, x)
+  end
+  local function expansion_fail()
+    expansion_stack = nil
+  end
+
+  local function trigger_expansions(i)
+    while true do -- for multiple rounds of expansion
+      while res[i] and res[i].literal do
+        i = i + 1
+      end
+      if not res[i] then return end
+      if not res[i].type == "symbol" then return end
+      local expansion = dictionary.expansions[res[i].name]
+      if not expansion then return end
+      local j = 0 -- literals count
+      while res[i-(j+1)] and res[i-(j+1)].literal do
+        j = j + 1
+      end
+      if j < expansion.arity then return end
+      local symbol = table.remove(res,i)
+      expansion_stack = {}
+      for _=1,j do
+        expansion_push(table.remove(res,i-j))
+      end
+      local expansion_stack_backup = deepcopy(expansion_stack)
+      expansion.call()
+      if expansion_stack then
+        -- success
+        while #expansion_stack > 0 do
+          table.insert(res,i-j,expansion_pop())
+        end
+
+        -- prepare for another round of expansion
+        i = i - j
+      else
+        -- failure
+        expansion_stack = expansion_stack_backup
+        table.insert(res,i-j,symbol)
+        while #expansion_stack > 0 do
+          table.insert(res,i-j,expansion_pop())
+        end
+        return
+      end
+    end
   end
 
   local tokens = tokenizer(program)
@@ -100,9 +173,29 @@ local function compile(program, global_dictionary)
     if type == "comment" then
       -- ignore it
     elseif type == "definition" then
-      local name, body = string.match(token, "^:%s(%S+)%s*(.-)%s;$")
+      local name, body = string.match(token, "^:%s(%S+)%s+(.-)%s;$")
       local compiled = compile(body,dictionary)
-      dictionary[name] = compiled
+      dictionary.words[name] = compiled
+    elseif type == "expansion" then
+      local arity, name, body = string.match(token, "^EXPAND:%s(%d+)%s+(%S+)%s+(.-)%s;$")
+      arity = tonumber(arity)
+      if not symbols[name] then
+        error("cannot make an expansion for '"..name.." as there's no such symbol")
+      end
+      local f = load(body)
+      f = setfenv(f, { -- TODO: put things in the environment
+        push=expansion_push,
+        pop=expansion_pop,
+        fail=expansion_fail,
+        print=print,
+        error=error,
+        pairs=pairs,
+        ipairs=ipairs
+      })
+      dictionary.expansions[name] = {
+        arity = arity,
+        call = f
+      }
     elseif type == "string_literal" then
       table.insert(res, {
         literal = true,
@@ -138,8 +231,6 @@ local function compile(program, global_dictionary)
           type = "code",
           value = quotation
         })
-      elseif dictionary[token] then
-        table.append(res,dictionary[token])
       elseif symbols[token] then
         table.insert(res, {
           literal = false,
@@ -148,6 +239,11 @@ local function compile(program, global_dictionary)
           pattern = symbols[token].pattern,
           direction = symbols[token].direction
         })
+        trigger_expansions(#res)
+      elseif dictionary.words[token] then
+        local previous_end = #res
+        table.append(res,dictionary.words[token])
+        trigger_expansions(previous_end + 1)
       elseif is_numeric(token) then
         table.insert(res, {
           literal = true,
@@ -206,7 +302,7 @@ local function translateHexTweaks(compiled)
   return res
 end
 
-local global_dictionary = {}
+local global_dictionary = deepcopy(empty_dictionary)
 local function run(program)
   local compiled, new_dictionary = compile(program,global_dictionary)
   local translated = translateHexTweaks(compiled)

@@ -15,15 +15,68 @@
 : raycast/face raycast/axis ;
 : raycast/entity raycast/entity ;
 
+: swap swap ;
+	EXPAND: 2 swap 
+		local x = pop()
+		local y = pop()
+		push(x)
+		push(y) ;
 : drop pseudo-novice ;
+	EXPAND: 1 pseudo-novice pop() ;
 : rot rotate ;
+	EXPAND: 3 rotate
+		local z = pop()
+		local y = pop()
+		local x = pop()
+		push(y)
+		push(z)
+		push(x) ;
 : -rot rotate_reverse ;
+	EXPAND: 3 rotate_reverse
+		local z = pop()
+		local y = pop()
+		local x = pop()
+		push(z)
+		push(x)
+		push(y) ;
 : dup duplicate ;
+	EXPAND: 1 duplicate
+		local x = pop()
+		push(x)
+		push(x) ;
 
 : + add ;
+	EXPAND: 2 add
+		local y = pop()
+		if y.type ~= "number" then fail() return end
+		local x = pop()
+		if x.type ~= "number" then fail() return end
+		x.value = x.value + y.value
+		push(x) ;
 : - sub ;
+	EXPAND: 2 sub
+		local y = pop()
+		if y.type ~= "number" then fail() return end
+		local x = pop()
+		if x.type ~= "number" then fail() return end
+		x.value = x.value - y.value
+		push(x) ;
 : * mul ;
+	EXPAND: 2 mul
+		local y = pop()
+		if y.type ~= "number" then fail() return end
+		local x = pop()
+		if x.type ~= "number" then fail() return end
+		x.value = x.value * y.value
+		push(x) ;
 : / div ;
+	EXPAND: 2 div
+		local y = pop()
+		if y.type ~= "number" then fail() return end
+		local x = pop()
+		if x.type ~= "number" then fail() return end
+		x.value = x.value / y.value
+		push(x) ;
 : len abs ;
 	: length len ;
 : list/push append ;
@@ -46,6 +99,8 @@
 	: this/place that/place ;
 : that/entity my eyes my gaze raycast/entity ;
 	: this/entity that/entity ;
+
+: impulse add_motion ;
 
 : . print ;
 
@@ -78,7 +133,16 @@
 
 : call eval ;
 	: exec call ;
+	EXPAND: 1 eval
+		local code = pop()
+		if code.type ~= "code" then
+			error("can only eval a quotation")
+		end
+		for _,v in ipairs(code.value) do
+			push(v)
+		end ;
 : choose if ;
+# TODO: expansion for this once you make boolean literals
 : if choose call ;
 
 : read/raven read/local ;
