@@ -46,6 +46,11 @@ end
 
 local function tokenizer(program)
   local next = function()
+    local comment, rest = string.match(program,"^%s*(#[^\n]*)\n(.*)")
+    if comment then
+      program = rest
+      return comment, "comment"
+    end
     local definition, rest = string.match(program,"^%s*(:%s.-%s;)%s(.*)")
     if definition then
       program = rest
@@ -92,7 +97,9 @@ local function compile(program, global_dictionary)
   local tokens = tokenizer(program)
   for token, type in tokens do
     print(token)
-    if type == "definition" then
+    if type == "comment" then
+      -- ignore it
+    elseif type == "definition" then
       local name, body = string.match(token, "^:%s(%S+)%s*(.-)%s;$")
       local compiled = compile(body,dictionary)
       dictionary[name] = compiled

@@ -107,10 +107,10 @@
 : zone/not_wisp zone_entity/not_wisp ;
 
 
-: mind/flay brainsweep ;
-: mind/instill reviveflayed ;
+: mind/flay brainsweep ; # 100 dust
+: mind/instill reviveflayed ; # 160 dust for a villager
 
-: gate/new gate/make ;
+: gate/new gate/make ; # 320 dust
 : gate/open gate/mark ;
 : gate/close gate/close ;
 : tp dup me gate/open gate/close ;
