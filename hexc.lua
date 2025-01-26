@@ -120,6 +120,11 @@ local function compile(program, global_dictionary)
   local function expansion_push(x)
     return table.insert(expansion_stack, x)
   end
+  local function expansion_append(l)
+    for _,x in ipairs(l) do
+      expansion_push(x)
+    end
+  end
   local function expansion_fail()
     expansion_stack = nil
   end
@@ -183,6 +188,7 @@ local function compile(program, global_dictionary)
       local f = load(body)
       f = setfenv(f, {
         push=expansion_push,
+        append=expansion_append,
         pop=expansion_pop,
         fail=expansion_fail,
         print=print,

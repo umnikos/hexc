@@ -39,7 +39,7 @@
 		push(z)
 		push(x)
 		push(y) ;
-: dup duplicate ;
+: dup duplicate ; # TODO: dup_n
 	EXPAND: 1 duplicate
 		local x = pop()
 		push(x)
@@ -138,19 +138,37 @@
 		if code.type ~= "code" then
 			error("can only eval a quotation")
 		end
-		for _,v in ipairs(code.value) do
-			push(v)
-		end ;
+		append(code.value) ;
 : choose if ;
 # TODO: expansion for this once you make boolean literals
 : if choose call ;
 : dip nephthys ; # TODO: 2dip, 3dip, ndip...
+	EXPAND: 2 nephthys 
+		local code = pop()
+		if code.type ~= "code" then
+			error("can only dip a quotation")
+		end
+		local preserved = pop()
+		append(code.value)
+		push(preserved) ;
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
-# "bubble" is shorter and easier but cannot be composed
-# FIXME: write this in a way that won't break with optimization
-: quote [ [ tutu ] splat ] 1 rot replace ;
-: curry swap quote swap compose ;
+# TODO: "bubble" data type for when bubble is given a literal
+# should compile to "literal then bubble" when in doubt
+# and otherwise treated exactly like numeric symbols
+# but expansion of list/singleton will know to get rid of the bubble
+# IDEA: code literally is just a list of symbols
+# there is no difference between lists and quotations
+# so I should rethink literals
+# (\4 instead of 4)
+# PROBLEM: (typos) and optimizations will mess with lists
+# RESOLUTION: lists and code should be separate types
+# and specifically here it should be list/singleton
+# doing the coersion when it sees a symbol or bubble
+# (with the coerse function being provided by hexc.lua)
+# PROBLEM: when a list and a closure are concatenated what do we do? is it a list or a closure?
+: quote bubble list/singleton ;
+: curry [ quote ] dip compose ;
 
 : read/raven read/local ;
 	: raven/read read/raven ;
