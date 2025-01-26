@@ -214,14 +214,14 @@ local function compile(program, global_dictionary)
         local seconds = res[#res].value
         res[#res] = nil
         sleep(seconds)
-      elseif token == "{" then
+      elseif token == "[" then
         table.insert(res, {
           literal = false,
-          type = "{",
+          type = "[",
         })
-      elseif token == "}" then
+      elseif token == "]" then
         local quotation = {}
-        while res[#res].type ~= "{" do
+        while res[#res].type ~= "[" do
           table.insert(quotation, 1, res[#res])
           res[#res] = nil
         end
