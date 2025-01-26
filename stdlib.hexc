@@ -21,7 +21,7 @@
 		local y = pop()
 		push(x)
 		push(y) ;
-: drop pseudo-novice ;
+: drop pseudo-novice ; # TODO: drop_n, both as macro for bookkeepers and as its own word
 	EXPAND: 1 pseudo-novice pop() ;
 : rot rotate ;
 	EXPAND: 3 rotate
@@ -144,10 +144,12 @@
 : choose if ;
 # TODO: expansion for this once you make boolean literals
 : if choose call ;
-
+: dip nephthys ; # TODO: 2dip, 3dip, ndip...
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
-: quote [ [ me ] splat ] 1 rot replace ;
+# "bubble" is shorter and easier but cannot be composed
+# FIXME: write this in a way that won't break with optimization
+: quote [ [ tutu ] splat ] 1 rot replace ;
 : curry swap quote swap compose ;
 
 : read/raven read/local ;
@@ -185,4 +187,13 @@
 : tp dup me gate/open gate/close ;
 
 # clear the whole stack
-: clear stack_len last_n_list drop ;
+: stack/clear stack_len last_n_list drop ;
+	: clear stack/clear ;
+# only leaves the top iota of the stack
+: stack/top sekhmet ; # TODO: stack/top_n
+
+# TODO: loops?
+# using sisyphus
+# using heket (hextweaks utility)
+	# FIXME: this not in the online book.
+	# apparently mod author has started 5.0.0 on a separate branch and that isn't being uploaded to the github pages
