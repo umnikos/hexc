@@ -47,7 +47,6 @@ for _,s in pairs(symbol_registry) do
   -- pattern: angles to turn
   symbols[s.name] = s
   if s.perworld then
-    -- TODO: cause an error when translating not when compiling
     s.direction = nil
     s.pattern = nil
   end
@@ -215,6 +214,9 @@ local function compile(program, global_dictionary)
         local seconds = res[#res].value
         res[#res] = nil
         sleep(seconds)
+      elseif token == "swizzle!" then
+        -- TODO: a macro
+        error("swizzle! isn't implemented yet")
       elseif token == "[" then
         table.insert(res, {
           literal = false,
