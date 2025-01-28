@@ -256,6 +256,14 @@ local function compile(program, global_dictionary)
           type = "code",
           value = quotation
         })
+      elseif token == "t" or token == "f" then
+        local value = false
+        if token == "t" then value = true end
+        table.insert(res, {
+          literal = true,
+          type = "bool",
+          value = value
+        })
       -- words before symbols so that they can overwrite the symbol
       elseif dictionary.words[token] then
         local previous_end = #res
@@ -313,10 +321,21 @@ local function translateHexTweaks(compiled)
         table.insert(res,convert_symbol(symbols["close_paren"]))
         table.insert(res,convert_symbol(symbols["splat"]))
       end
+    elseif v.type == "bool" then
+      if v.value then
+        table.insert(res,convert_symbol(symbols["const/true"]))
+      else
+        table.insert(res,convert_symbol(symbols["const/false"]))
+      end
     elseif v.type == "code" then
-      table.insert(res,convert_symbol(symbols["open_paren"]))
-      table.append(res,translateHexTweaks(v.value))
-      table.insert(res,convert_symbol(symbols["close_paren"]))
+      if #(v.value) == 0 then
+        -- one symbol shorter
+        table.insert(res,convert_symbol(symbols["empty_list"]))
+      else
+        table.insert(res,convert_symbol(symbols["open_paren"]))
+        table.append(res,translateHexTweaks(v.value))
+        table.insert(res,convert_symbol(symbols["close_paren"]))
+      end
     else
       error("unhandled type: "..v.type)
     end

@@ -50,14 +50,17 @@
 : 2dup 2dup ;
 # dups n items, unlike gemini that dups 1 item n times
 : ndup dup_many ;
+# dups an item enough times for there to be n of it at the top (so n-1 dups)
+: dupn duplicate_n ;
 : dupd over swap ;
 : tuck tuck ;
 : swapd swap_two_three ;
 # FIXME: give this a better name
 : 13swap swap_one_three ;
 
-: t const/true ;
-: f const/false ;
+# t for true
+# f for false
+# TODO: turn these into literals
 : null const/null ;
 	: nil null ;
 # TODO: const vectors
@@ -273,3 +276,11 @@ dupd [ call ] 2dip 1 sub
 # stack, quot -> stack
 # only 6 symbols if given a literal quotation
 : preserving [ drop ] swap compose [ clear ] compose null list/singleton thoth drop ; 
+
+# takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
+: implode 5 dupn
+block/break
+conjure/lava # TODO: use this only in the nether, not always (costs 10 dust when the explosion is 30)
+10 explode
+conjure/block
+block/break ;
