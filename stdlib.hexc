@@ -21,8 +21,11 @@
 		local y = pop()
 		push(x)
 		push(y) ;
-: drop pseudo-novice ; # TODO: drop_n, both as macro for bookkeepers and as its own word
+: drop pseudo-novice ;
 	EXPAND: 1 pseudo-novice pop() ;
+: 2drop "SOUTH_EAST" "ada" symbol! ;
+: 3drop "SOUTH_EAST" "adada" symbol! ;
+# TODO: ndrop!
 : rot rotate ;
 	EXPAND: 3 rotate
 		local z = pop()
@@ -39,20 +42,47 @@
 		push(z)
 		push(x)
 		push(y) ;
-: dup duplicate ; # TODO: dup_n
+: dup duplicate ;
 	EXPAND: 1 duplicate
 		local x = pop()
 		push(x)
 		push(x) ;
+: 2dup 2dup ;
+# dups n items, unlike gemini that dups 1 item n times
+: ndup dup_many ;
+: dupd over swap ;
+: tuck tuck ;
+: swapd swap_two_three ;
+# FIXME: give this a better name
+: 13swap swap_one_three ;
+
+: t const/true ;
+: f const/false ;
+: null const/null ;
+	: nil null ;
+# TODO: const vectors
 
 : + add ;
 	EXPAND: 2 add
 		local y = pop()
-		if y.type ~= "number" then fail() return end
 		local x = pop()
-		if x.type ~= "number" then fail() return end
-		x.value = x.value + y.value
-		push(x) ;
+		print(x.type)
+		print(y.type)
+		if x.type ~= y.type then fail() return end
+		if x.type == "number" then
+			x.value = x.value + y.value
+			push(x)
+			return
+		end
+		if x.type == "code" then
+			for _,v in ipairs(y.value) do
+				x.value[#x.value+1] = v
+			end
+			push(x)
+			return
+		end
+		fail()
+		return ;
 : - sub ;
 	EXPAND: 2 sub
 		local y = pop()
@@ -143,7 +173,7 @@
 # TODO: expansion for this once you make boolean literals
 : ifelse choose call ;
 : if [ ] ifelse ;
-: dip nephthys ; # TODO: 2dip, 3dip, ndip...
+: dip nephthys ;
 	EXPAND: 2 nephthys 
 		local code = pop()
 		if code.type ~= "code" then
@@ -152,6 +182,13 @@
 		local preserved = pop()
 		append(code.value)
 		push(preserved) ;
+: 2dip "SOUTH_EAST" "deaqqdq" symbol! ;
+: 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
+# TODO: ndip!
+
+: min 2dup greater [ swap ] if drop ;
+: max 2dup less [ swap ] if drop ;
+
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
 # TODO: "bubble" data type for when bubble is given a literal
@@ -205,14 +242,34 @@
 : gate/close gate/close ;
 : tp dup me gate/open gate/close ;
 
+: stack/size stack_len ;
 # clear the whole stack
-: stack/clear stack_len last_n_list drop ;
+: stack/clear sekhmet ;
 	: clear stack/clear ;
 # only leaves the top iota of the stack
-: stack/top sekhmet ; # TODO: stack/top_n
+# TODO: stack/top_n
+: stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
+: heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities
+
 
 # TODO: loops?
 # using sisyphus
 # using heket (hextweaks utility)
 	# FIXME: this not in the online book.
 	# apparently mod author has started 5.0.0 on a separate branch and that isn't being uploaded to the github pages
+
+: thoth for_each ;
+
+# start end quotation -> executes quotation on values of range, preserving the stack between iterations
+: ranged -rot over sub floor 0 max [
+[ 2dup [ swap call ] 2dip 1 add ] dip 1 sub
+] heket 3drop ; 
+
+# num quotation -> executes quotation that many times, preserving the stack between iterations
+: times swap floor 0 max [
+dupd [ call ] 2dip 1 sub
+] heket 2drop ; 
+
+# stack, quot -> stack
+# only 6 symbols if given a literal quotation
+: preserving [ drop ] swap compose [ clear ] compose null list/singleton thoth drop ; 

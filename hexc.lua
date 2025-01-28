@@ -227,6 +227,18 @@ local function compile(program, global_dictionary)
       elseif token == "swizzle!" then
         -- TODO: a macro
         error("swizzle! isn't implemented yet")
+      elseif token == "symbol!" then
+        -- TODO: a macro
+        local pattern = res[#res].value
+        res[#res] = nil
+        local direction = res[#res].value
+        res[#res] = {
+          literal = "false",
+          type = "symbol",
+          name = nil,
+          pattern = pattern,
+          direction = direction
+        }
       elseif token == "[" then
         table.insert(res, {
           literal = false,
@@ -244,6 +256,11 @@ local function compile(program, global_dictionary)
           type = "code",
           value = quotation
         })
+      -- words before symbols so that they can overwrite the symbol
+      elseif dictionary.words[token] then
+        local previous_end = #res
+        table.append(res,dictionary.words[token])
+        trigger_expansions(previous_end + 1)
       elseif symbols[token] then
         table.insert(res, {
           literal = false,
@@ -253,10 +270,6 @@ local function compile(program, global_dictionary)
           direction = symbols[token].direction
         })
         trigger_expansions(#res)
-      elseif dictionary.words[token] then
-        local previous_end = #res
-        table.append(res,dictionary.words[token])
-        trigger_expansions(previous_end + 1)
       elseif is_numeric(token) then
         table.insert(res, {
           literal = true,
@@ -292,10 +305,14 @@ local function translateHexTweaks(compiled)
     if v.type == "symbol" then
       table.insert(res,convert_symbol(v))
     elseif v.type == "number" then
-      table.insert(res,convert_symbol(symbols["open_paren"]))
-      table.insert(res,v.value)
-      table.insert(res,convert_symbol(symbols["close_paren"]))
-      table.insert(res,convert_symbol(symbols["splat"]))
+      if symbols[v.value] then
+        table.insert(res,convert_symbol(symbols[v.value]))
+      else
+        table.insert(res,convert_symbol(symbols["open_paren"]))
+        table.insert(res,v.value)
+        table.insert(res,convert_symbol(symbols["close_paren"]))
+        table.insert(res,convert_symbol(symbols["splat"]))
+      end
     elseif v.type == "code" then
       table.insert(res,convert_symbol(symbols["open_paren"]))
       table.append(res,translateHexTweaks(v.value))
