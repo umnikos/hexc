@@ -239,6 +239,20 @@ local function compile(program, global_dictionary)
           pattern = pattern,
           direction = direction
         }
+      elseif token == "readfile!" then
+        -- TODO: macro
+        -- reads a iota from a json file and pushes it to the stack
+        -- presumed to be in a hextweaks format
+        local filename = res[#res].value
+        local f = fs.open(filename,"r")
+        local s = f.readAll()
+        f.close()
+        local iota = textutils.unserializeJSON(s)
+        res[#res] = {
+          literal=true,
+          type="hextweaks",
+          value=iota
+        }
       elseif token == "[" then
         table.insert(res, {
           literal = false,
@@ -336,6 +350,12 @@ local function translateHexTweaks(compiled)
         table.append(res,translateHexTweaks(v.value))
         table.insert(res,convert_symbol(symbols["close_paren"]))
       end
+    elseif v.type == "hextweaks" then
+      -- life is easy
+      table.insert(res,convert_symbol(symbols["open_paren"]))
+      table.insert(res, v.value)
+      table.insert(res,convert_symbol(symbols["close_paren"]))
+      table.insert(res,convert_symbol(symbols["splat"]))
     else
       error("unhandled type: "..v.type)
     end

@@ -243,7 +243,9 @@
 : gate/new gate/make ; # 320 dust
 : gate/open gate/mark ;
 : gate/close gate/close ;
-: tp dup me gate/open gate/close ;
+# gate, entity -> tp entity to gate
+: tp/entity dupd gate/open gate/close ;
+: tp me tp/entity ;
 
 : stack/size stack_len ;
 # clear the whole stack
@@ -279,8 +281,8 @@ dupd [ call ] 2dip 1 sub
 
 # takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
 : implode 5 dupn
-block/break
-conjure/lava # TODO: use this only in the nether, not always (costs 10 dust when the explosion is 30)
-10 explode
-conjure/block
-block/break ;
+	block/break
+	conjure/lava # TODO: use this only in the nether, not always (costs 10 dust when the explosion is 30)
+	10 explode
+	conjure/block
+	block/break ;
