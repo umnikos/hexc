@@ -141,7 +141,8 @@
 		append(code.value) ;
 : choose if ;
 # TODO: expansion for this once you make boolean literals
-: if choose call ;
+: ifelse choose call ;
+: if [ ] ifelse ;
 : dip nephthys ; # TODO: 2dip, 3dip, ndip...
 	EXPAND: 2 nephthys 
 		local code = pop()

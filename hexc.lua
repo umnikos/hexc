@@ -300,14 +300,6 @@ local function translateHexTweaks(compiled)
       table.insert(res,convert_symbol(symbols["open_paren"]))
       table.append(res,translateHexTweaks(v.value))
       table.insert(res,convert_symbol(symbols["close_paren"]))
-    elseif v.type == "property" then
-      table.insert(res,convert_symbol(symbols["open_paren"]))
-      table.insert(res,{
-        ["iota$serde"]="null",
-        name = v.name
-      })
-      table.insert(res,convert_symbol(symbols["close_paren"]))
-      table.insert(res,convert_symbol(symbols["splat"]))
     else
       error("unhandled type: "..v.type)
     end
