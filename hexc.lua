@@ -105,10 +105,16 @@ local empty_dictionary = {
   words={},
   expansions={}
 }
+
+-- this is the variable currently being used to pass data in and out of expansions
+-- it needs to be outside of compile()
+-- in order for the reference to persist across calls to compile()
+-- FIXME: just pass data as function arguments...
+local expansion_stack = {} 
+
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
-local expansion_stack = {} -- this should not be here but crazy things happen if it's inside `compile`
 local function compile(program, global_dictionary)
   local res = {}
 
