@@ -8,6 +8,8 @@ local function is_numeric(s)
   return string.find(s,"^[%d%.%-]+$")
 end
 
+local function curry(f,x) return function (...) return f(x,...) end end
+
 table.append = function(a,b)
   for _,i in ipairs(b) do
     table.insert(a,i)
@@ -106,12 +108,6 @@ local empty_dictionary = {
   expansions={}
 }
 
--- this is the variable currently being used to pass data in and out of expansions
--- it needs to be outside of compile()
--- in order for the reference to persist across calls to compile()
--- FIXME: just pass data as function arguments...
-local expansion_stack = {} 
-
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
@@ -120,20 +116,6 @@ local function compile(program, global_dictionary)
 
   local dictionary = deepcopy(global_dictionary or empty_dictionary)
 
-  local function expansion_pop()
-    return table.remove(expansion_stack)
-  end
-  local function expansion_push(x)
-    return table.insert(expansion_stack, x)
-  end
-  local function expansion_append(l)
-    for _,x in ipairs(l) do
-      expansion_push(x)
-    end
-  end
-  local function expansion_fail()
-    expansion_stack = nil
-  end
 
   local function trigger_expansions(i)
     while true do -- for multiple rounds of expansion
@@ -150,26 +132,29 @@ local function compile(program, global_dictionary)
       end
       if j < expansion.arity then return end
       local symbol = table.remove(res,i)
-      expansion_stack = {}
+      expansion.clear()
+      print(#expansion.get_stack())
       for _=1,j do
-        expansion_push(table.remove(res,i-j))
+        expansion.push(table.remove(res,i-j))
+        print(#expansion.get_stack())
       end
-      local expansion_stack_backup = deepcopy(expansion_stack)
+      local expansion_stack_backup = deepcopy(expansion.get_stack())
+      print(#expansion.get_stack())
       expansion.call()
-      if expansion_stack then
+      print(#expansion.get_stack())
+      if not expansion.get_stack().fail then
         -- success
-        while #expansion_stack > 0 do
-          table.insert(res,i-j,expansion_pop())
+        while #expansion.get_stack() > 0 do
+          table.insert(res,i-j,expansion.pop())
         end
 
         -- prepare for another round of expansion
         i = i - j
       else
         -- failure
-        expansion_stack = expansion_stack_backup
         table.insert(res,i-j,symbol)
-        while #expansion_stack > 0 do
-          table.insert(res,i-j,expansion_pop())
+        while #expansion_stack_backup > 0 do
+          table.insert(res,i-j,table.remove(expansion_stack_backup))
         end
         return
       end
@@ -192,20 +177,50 @@ local function compile(program, global_dictionary)
         error("cannot make an expansion for '"..name.." as there's no such symbol")
       end
       local f = load(body)
-      f = setfenv(f, {
-        push=expansion_push,
-        append=expansion_append,
-        pop=expansion_pop,
-        fail=expansion_fail,
-        print=print,
-        error=error,
-        pairs=pairs,
-        ipairs=ipairs
-      })
-      dictionary.expansions[name] = {
+      local expansion_stack = {}
+      local function get_stack()
+        return expansion_stack
+      end
+      local function pop()
+        return table.remove(expansion_stack)
+      end
+      local function push(x)
+        return table.insert(expansion_stack, x)
+      end
+      local function append(l)
+        for _,x in ipairs(l) do
+          table.insert(expansion_stack, x)
+        end
+      end
+      local function clear()
+        for k,_ in pairs(expansion_stack) do
+          expansion_stack[k] = nil
+        end
+      end
+      local function fail()
+        expansion_stack.fail = true
+      end
+      local expansion = {
         arity = arity,
-        call = f
+        call = f,
+        get_stack = get_stack,
+        pop = pop,
+        push = push,
+        append = append,
+        fail = fail,
+        clear = clear,
       }
+      setfenv(expansion.call, {
+        pop = expansion.pop,
+        push = expansion.push,
+        append = expansion.append,
+        fail = expansion.fail,
+        print = print,
+        error = error,
+        pairs = pairs,
+        ipairs = ipairs,
+      })
+      dictionary.expansions[name] = expansion
     elseif type == "string_literal" then
       table.insert(res, {
         literal = true,
@@ -259,6 +274,8 @@ local function compile(program, global_dictionary)
           type = "[",
         })
       elseif token == "]" then
+        -- TODO: can this be a macro as well?!?
+        -- (and should it be one???)
         local quotation = {}
         while res[#res].type ~= "[" do
           table.insert(quotation, 1, res[#res])

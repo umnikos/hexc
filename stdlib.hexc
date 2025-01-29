@@ -81,6 +81,8 @@
 			for _,v in ipairs(y.value) do
 				x.value[#x.value+1] = v
 			end
+			-- TODO: trigger expansions on the new boundary
+			-- this will require recursive expansions
 			push(x)
 			return
 		end
@@ -163,6 +165,7 @@
 	: flight/altiora flight/winged ;
 	: flight/elytra flight/winged ;
 	: wings flight/winged ;
+	: winged flight/winged ;
 
 : call eval ;
 	: exec call ;
