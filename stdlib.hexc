@@ -65,6 +65,12 @@
 	: nil null ;
 # TODO: const vectors
 
+: vec/new construct_vec ;
+	: 3vec vec/new ;
+
+: == equals ;
+: ~= not_equals ;
+	: != ~= ;
 : + add ;
 	EXPAND: 2 add
 		local y = pop()
@@ -137,8 +143,6 @@
 
 : impulse add_motion ;
 
-: . print ;
-
 : scale/get interop/pehkui/get ;
 : scale/set interop/pehkui/set ;
 
@@ -147,6 +151,7 @@
 
 : explode explode ;
 	: explosion explode ;
+: block/type type/block_item ;
 : block/break break_block ;
 : block/place place_block ;
 : block/smelt smelt ;
@@ -241,6 +246,7 @@
 
 
 : mind/flay brainsweep ; # 100 dust
+	: flay/mind mind/flay ;
 : mind/instill reviveflayed ; # 160 dust for a villager
 
 : gate/new gate/make ; # 320 dust
@@ -259,6 +265,10 @@
 : stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
 : heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities
 
+: . print ;
+# print the whole stack
+: .. stack/size last_n_list . splat ;
+
 
 # TODO: loops?
 # using sisyphus
@@ -268,19 +278,24 @@
 
 : thoth for_each ;
 
-# start end quotation -> executes quotation on values of range, preserving the stack between iterations
-: ranged -rot over sub floor 0 max [
-[ 2dup [ swap call ] 2dip 1 add ] dip 1 sub
-] heket 3drop ; 
-
-# num quotation -> executes quotation that many times, preserving the stack between iterations
+# num quotation -> executes quotation that many times, *preserving* the stack after each iteration
 : times swap floor 0 max [
 dupd [ call ] 2dip 1 sub
 ] heket 2drop ; 
 
 # stack, quot -> stack
+# calls the quotation while nullifying its stack effect
 # only 6 symbols if given a literal quotation
-: preserving [ drop ] swap compose [ clear ] compose null list/singleton thoth drop ; 
+: 0preserving [ drop ] swap compose [ clear ] compose null list/singleton thoth drop ; 
+# stack, quot -> stack, any
+# the same but pushes the last output of the quotation
+: 1preserving [ drop ] swap compose [ stack/top ] compose null list/singleton thoth splat ; 
+
+# start end quotation -> executes quotation on values of range, *restoring* the stack after each iteration
+: ranged -rot over sub floor 1 add 0 max [
+[ 2dup [ swap 0preserving drop ] 2dip 1 add ] dip 1 sub
+] heket 3drop ; 
+
 
 # takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
 : implode 5 dupn
@@ -289,3 +304,4 @@ dupd [ call ] 2dip 1 sub
 	10 explode
 	conjure/block
 	block/break ;
+
