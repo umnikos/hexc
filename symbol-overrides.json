@@ -1,0 +1,112 @@
+[
+  {
+    "name": 0,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaa"
+  },
+  {
+    "name": 1,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaw"
+  },
+  {
+    "mod": "hex",
+    "name": "craft/battery",
+    "fullname": "Craft Phial",
+    "signature": "entity →",
+    "pattern": "aeqwqeaadqwqdeweweedqqeedewqqeadd",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Infuse a bottle with media to form a Phial. Similarly to the spells for Crafting Casting Items, I must hold a Glass Bottle in my other hand, and provide the spell with a dropped stack of Amethyst. See this page for more information. Costs about one Charged Amethyst."
+  },
+  {
+    "mod": "hex",
+    "name": "create_lava",
+    "fullname": "Create Lava",
+    "signature": "vector →",
+    "pattern": "aedeqawqaqq",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Summon a block of lava (or insert up to a bucket's worth) into a block at the given position. Costs about one Charged Amethyst. It may be advisable to keep my knowledge of this spell secret. A certain faction of botanists get... touchy about it, or so I've heard. Well, no one said tracing the deep secrets of the universe was going to be an easy time."
+  },
+  {
+    "mod": "hex",
+    "name": "flight",
+    "fullname": "Altiora",
+    "signature": "player →",
+    "pattern": "eddwawawdwdq",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Summon a sheaf of media about me in the shape of wings, endowed with enough substance to allow gliding. Using them is identical to using Elytra; the target (which must be a player) is lofted into the air, after which pressing Jump will deploy the wings. The wings are fragile, and break upon touching any surface. Longer flights may benefit from Impulse or (for the foolhardy) Fireworks. Costs about one Charged Crystal."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "reviveflayed",
+    "fullname": "Instill Psyche",
+    "signature": "entity →",
+    "pattern": "weweweeeeedqeewewqdewdqdwe",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Accepts a flayed mob, and creates an artifical pseudo-mind to inhabit its body. Costs 16 charged amethyst when used on a villager, or 10 amethyst shards for anything else. While these pseudo-minds are capable of moving their bodies around as if they were their original inhabitants, they are too simple to be called truly sapient, even with the rather loose definition of the term that must be used when applying it to villagers. As such, any villager \"restored\" in this manner loses any professional experience it had before, and cannot gain such experience ever again. They do, however, regain their ability to reproduce, with any children they produce being untainted by my craft. I'm not sure why the restored villagers suddenly gain an affinity for green clothing, but at least it serves as a good indicator of which villagers will be of little further use."
+  },
+  {
+    "mod": "hexal",
+    "name": "gate/make",
+    "fullname": "Gate's Reflection",
+    "signature": "null | vec | vec, entity → gate",
+    "pattern": "ewewewewewedeaeaeaeaeae",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Adds a new gate iota to the stack. Any copy of this iota will point to the same numbered gate. Costs 32 Charged Amethyst. If passed null, makes a Drifting Gate. If passed a vector, makes a Location Anchored Gate, If passed a vector and an entity, makes an Entity Anchored Gate."
+  },
+  {
+    "mod": "hexal",
+    "name": "tick",
+    "fullname": "Accelerate",
+    "signature": "vec →",
+    "pattern": "qawdwdwaqqwqeqwqqawdwdwaq",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Causes the block at the passed vector to perform its normal actions faster in the instant that this spell is cast. Casting it costs a tenth of an Amethyst Dust, plus a thousandth of an Amethyst Dust for each time it has previously been cast on that block in this hex."
+  },
+  {
+    "mod": "hex",
+    "name": "sentinel/create/great",
+    "fullname": "Summon Greater Sentinel",
+    "signature": "vector →",
+    "pattern": "eedeqqqwqqwdeeeqd",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Summon a greater version of my Sentinel. Costs about two Amethyst Dust. The stronger sentinel acts like the normal one I can summon without the use of a Great Spell, if a little more visually interesting. However, the range in which my spells can work is extended to a small region around my greater sentinel, about 16 blocks. In other words, no matter where in the world I am, I can interact with things around my sentinel (the mysterious forces of chunkloading notwithstanding)."
+  },
+  {
+    "mod": "hex",
+    "name": "brainsweep",
+    "fullname": "Flay Mind",
+    "signature": "entity, vector →",
+    "pattern": "dweeeqeaqwqwqqqeqdewqdewdqdwe",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "I cannot make heads or tails of this spell... To be honest, I'm not sure I want to know what it does."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "infusemedia",
+    "fullname": "Media Infusion",
+    "signature": "Vector →",
+    "pattern": "qqeadadaqedeewwqdeqeqdaawqqqeeeeedwwaeaeaeddqqdwe",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Accepts a vector and infuses media into the corresponding block in order to transmute it. Cost and exact effect vary depending on target. Conceptually, this spell is quite similar to Edify Sapling.<br />However, the media that the target block receives is far more finely-tuned, and can thus achieve far more interesting results."
+  },
+  {
+    "mod": "oneironaut",
+    "name": "dimteleport",
+    "fullname": "Noetic Gateway",
+    "signature": "Entity, Imprint →",
+    "pattern": "eaeedwqawwwawdaqaawawwwaeaqedwdwdeqdaqeaeqqwwwwqqeqeqqwwwwqqe",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the proper dimension. Generally costs 20 Charged Amethyst.<br />Will fail if supplied a player other than myself. If I use this to return to a dimension that I previously left within the same instant, the cost drops to five amethyst dust, as the spell can take advantage of a lingering strand of media leading back to my original position. Otherwise, it will attempt to find a safe spot to deposit me, potentially conjuring a block to prevent me from falling to my doom. Strangely, I feel an odd sense of acceleration when transporting myself this way, along some incomprehensible axis."
+  }
+]
