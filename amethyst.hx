@@ -1,4 +1,4 @@
-"stdlib.hexc" loadfile!
+"stdlib.hx" loadfile!
 
 # takes "amethyst cluster" block type, returns closure that does the farming
 : amethyst [ 
