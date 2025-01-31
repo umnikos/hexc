@@ -26,6 +26,9 @@
 : 2drop "SOUTH_EAST" "ada" symbol! ;
 : 3drop "SOUTH_EAST" "adada" symbol! ;
 # TODO: ndrop!
+: dropd "SOUTH_EAST" "ae" symbol! ;
+# TODO: expansion for symbol! macros?
+# - probably by being able to define new named symbols in the symbol table instead of this
 : rot rotate ;
 	EXPAND: 3 rotate
 		local z = pop()
@@ -118,6 +121,10 @@
 		if x.type ~= "number" then fail() return end
 		x.value = x.value / y.value
 		push(x) ;
+: < less ;
+: <= less_eq ;
+: > greater ;
+: >= greater_eq ;
 : len abs ;
 	: length len ;
 : list/push append ;
@@ -171,6 +178,7 @@
 	: flight/elytra flight/winged ;
 	: wings flight/winged ;
 	: winged flight/winged ;
+	: altiora flight/winged ;
 
 : call eval ;
 	: exec call ;
@@ -196,9 +204,10 @@
 : 2dip "SOUTH_EAST" "deaqqdq" symbol! ;
 : 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
 # TODO: ndip!
+: calld [ call ] dip ;
 
-: min 2dup greater [ swap ] if drop ;
-: max 2dup less [ swap ] if drop ;
+: min 2dup > [ swap ] if drop ;
+: max 2dup < [ swap ] if drop ;
 
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
@@ -218,6 +227,8 @@
 # PROBLEM: when a list and a closure are concatenated what do we do? is it a list or a closure?
 : quote bubble list/singleton ;
 : curry [ quote ] dip compose ;
+# equivalent to `curry curry`
+: 2curry rot quote rot quote rot compose compose ;
 
 : read/raven read/local ;
 	: raven/read read/raven ;
@@ -270,11 +281,10 @@
 : .. stack/size last_n_list . splat ;
 
 
-# TODO: loops?
-# using sisyphus
-# using heket (hextweaks utility)
-	# FIXME: this not in the online book.
-	# apparently mod author has started 5.0.0 on a separate branch and that isn't being uploaded to the github pages
+# looping options:
+# - thoth
+# - sisyphus
+# - heket (hextweaks utility)
 
 : thoth for_each ;
 
@@ -295,6 +305,17 @@ dupd [ call ] 2dip 1 sub
 : ranged -rot over sub floor 1 add 0 max [
 [ 2dup [ swap 0preserving drop ] 2dip 1 add ] dip 1 sub
 ] heket 3drop ; 
+
+# takes a quotation, curries it with a fixed version of itself
+# the resulting quotation only contains the original one once
+: fix [ dupd [ dup call ] 2curry swap call ] [ dup call ] curry curry ;
+# a more understandable version, this one contains the original quotation twice so it's not to be used
+: fix/simple [ dup curry ] swap compose dup curry ;
+
+# takes and returns a number
+: fib 1 0 rot [ over add swap ] times dropd ;
+# recursion demo
+: fib/recursive [ over 1 > [ 2dup [ 1 - ] dip call -rot [ 2 - ] dip call + ] [ drop ] ifelse ] fix call ;
 
 
 # takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
