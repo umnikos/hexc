@@ -40,6 +40,16 @@
     "description": "Summon a sheaf of media about me in the shape of wings, endowed with enough substance to allow gliding. Using them is identical to using Elytra; the target (which must be a player) is lofted into the air, after which pressing Jump will deploy the wings. The wings are fragile, and break upon touching any surface. Longer flights may benefit from Impulse or (for the foolhardy) Fireworks. Costs about one Charged Crystal."
   },
   {
+    "mod": "hex",
+    "name": "dispel_rain",
+    "fullname": "Dispel Rain",
+    "signature": "",
+    "pattern": "qdwaawqeqqqwwwqqqwwe",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "A counterpart to summoning rain. This spell will dispel rain across the world I cast it upon. Costs about one Amethyst Shard. Does nothing if the skies are already clear."
+  },
+  {
     "mod": "oneironaut",
     "name": "reviveflayed",
     "fullname": "Instill Psyche",

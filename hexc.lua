@@ -348,6 +348,11 @@ local function translateHexTweaks(compiled)
         table.insert(res,convert_symbol(symbols["close_paren"]))
         table.insert(res,convert_symbol(symbols["splat"]))
       end
+    elseif v.type == "string" then
+      table.insert(res,convert_symbol(symbols["open_paren"]))
+      table.insert(res,v.value)
+      table.insert(res,convert_symbol(symbols["close_paren"]))
+      table.insert(res,convert_symbol(symbols["splat"]))
     elseif v.type == "bool" then
       if v.value then
         table.insert(res,convert_symbol(symbols["const/true"]))

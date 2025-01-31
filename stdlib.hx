@@ -68,8 +68,7 @@
 	: nil null ;
 # TODO: const vectors
 
-: vec/new construct_vec ;
-	: 3vec vec/new ;
+: 3vec construct_vec ;
 
 : == equals ;
 : ~= not_equals ;
@@ -129,10 +128,13 @@
 	: length len ;
 : list/push append ;
 : list/pop unappend ;
-: list/new empty_list ;
+: list/empty empty_list ; # TODO: this should just be { } and not a word
 : list/singleton singleton ;
+: nlist last_n_list ;
+: list/find index_of ;
 : list/index index ;
 	: list/select list/index ;
+: list/replace replace ;
 : list/slice slice ;
 : list/concat + ;
 : list/length length ;
@@ -179,6 +181,8 @@
 	: wings flight/winged ;
 	: winged flight/winged ;
 	: altiora flight/winged ;
+: weather/clear dispel_rain ; # 5 dust
+: weather/rain summon_rain ; # 5 dust
 
 : call eval ;
 	: exec call ;
