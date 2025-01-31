@@ -133,15 +133,11 @@ local function compile(program, global_dictionary)
       if j < expansion.arity then return end
       local symbol = table.remove(res,i)
       expansion.clear()
-      print(#expansion.get_stack())
       for _=1,j do
         expansion.push(table.remove(res,i-j))
-        print(#expansion.get_stack())
       end
       local expansion_stack_backup = deepcopy(expansion.get_stack())
-      print(#expansion.get_stack())
       expansion.call()
-      print(#expansion.get_stack())
       if not expansion.get_stack().fail then
         -- success
         while #expansion.get_stack() > 0 do
