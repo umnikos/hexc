@@ -118,5 +118,15 @@
     "direction": "WEST",
     "perworld": true,
     "description": "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the proper dimension. Generally costs 20 Charged Amethyst.<br />Will fail if supplied a player other than myself. If I use this to return to a dimension that I previously left within the same instant, the cost drops to five amethyst dust, as the spell can take advantage of a lingering strand of media leading back to my original position. Otherwise, it will attempt to find a safe spot to deposit me, potentially conjuring a block to prevent me from falling to my doom. Strangely, I feel an odd sense of acceleration when transporting myself this way, along some incomprehensible axis."
+  },
+  {
+    "mod": "hexical",
+    "name": "conjure_mesh",
+    "fullname": "Conjure Mesh",
+    "signature": "vector → entity",
+    "pattern": "qqwqdeeeaqqwqwqqeqqqaeqqqwq",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust. When initally conjured, the mesh is invisible and must be woven to gain form. The constraints for the list of vectors provided to a mesh are quite minimal. The list must be no more than 32 vectors long, and those vectors must have magnitudes less than 10. The mesh will then connect each of those points."
   }
 ]
