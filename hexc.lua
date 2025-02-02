@@ -60,6 +60,8 @@ end
 local function tokenizer(program)
   program = program .. "\n"
   local next = function()
+    -- TODO: make tokenizer faster by optimizing these regexes
+    -- (get rid of '(.*)' and remember an index for where to start reading from on the next iteration)
     local comment, rest = string.match(program,"^%s*(#[^\n]*)\n(.*)")
     if comment then
       program = rest
@@ -112,10 +114,20 @@ local empty_dictionary = {
 -- takes string
 -- returns internal representation of the program
 -- that needs to be translated to either ducky or hextweaks format
-local function compile(program, global_dictionary)
+local function compile(program, global_dictionary, no_copy)
   local res = {}
 
-  local dictionary = deepcopy(global_dictionary or empty_dictionary)
+  local dictionary = nil 
+  if global_dictionary then
+    if no_copy then
+      dictionary = global_dictionary
+    else
+      dictionary = deepcopy(global_dictionary)
+    end
+  else
+    dictionary = deepcopy(empty_dictionary)
+  end
+
   local debug_print
   local function update_debug()
     if dictionary.debug then
@@ -173,7 +185,10 @@ local function compile(program, global_dictionary)
       -- ignore it
     elseif type == "definition" then
       local name, body = string.match(token, "^:%s(%S+)%s+(.-)%s;$")
-      local compiled = compile(body,dictionary)
+      -- FIXME: no_copy is only fine here because you can't define inside a definition.
+      -- The correct solution would be to give it
+      -- a wrapped version of the dictionary that is layered.
+      local compiled = compile(body,dictionary,true)
       dictionary.words[name] = compiled
     elseif type == "expansion" then
       local arity, name, body = string.match(token, "^EXPAND:%s(%d+)%s+(%S+)%s+(.-)%s;$")
