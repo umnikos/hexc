@@ -412,7 +412,7 @@ end
 
 local global_dictionary = deepcopy(empty_dictionary)
 local function run(program)
-  local compiled, new_dictionary = compile(program,global_dictionary)
+  local compiled, new_dictionary = compile(program,global_dictionary,true)
   local translated = translateHexTweaks(compiled)
   local wand = peripheral.find("wand")
   wand.pushStack(translated)
