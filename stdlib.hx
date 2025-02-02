@@ -171,6 +171,11 @@
 : conjure/lava create_lava ;
 : conjure/block conjure_block ;
 : conjure/light conjure_light ;
+: conjure/mesh conjure_mesh ; # from hexical
+: craft/phial craft/battery ;
+: craft/cypher craft/cypher ;
+: craft/trinket craft/trinket ;
+: craft/artifact craft/artifact ;
 : flight/anchored flight/range ;
 	: flight/anchor flight/anchored ;
 : flight/timed flight/time ;

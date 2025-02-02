@@ -105,7 +105,8 @@ end
 -- make a deep copy of this to define a new dictionary
 local empty_dictionary = {
   words={},
-  expansions={}
+  expansions={},
+  debug=false
 }
 
 -- takes string
@@ -115,7 +116,15 @@ local function compile(program, global_dictionary)
   local res = {}
 
   local dictionary = deepcopy(global_dictionary or empty_dictionary)
-
+  local debug_print
+  local function update_debug()
+    if dictionary.debug then
+      debug_print = print
+    else
+      debug_print = function() end
+    end
+  end
+  update_debug()
 
   local function trigger_expansions(i)
     while true do -- for multiple rounds of expansion
@@ -159,7 +168,7 @@ local function compile(program, global_dictionary)
 
   local tokens = tokenizer(program)
   for token, type in tokens do
-    print(token)
+    debug_print(token)
     if type == "comment" then
       -- ignore it
     elseif type == "definition" then
@@ -211,7 +220,7 @@ local function compile(program, global_dictionary)
         push = expansion.push,
         append = expansion.append,
         fail = expansion.fail,
-        print = print,
+        print = debug_print,
         error = error,
         pairs = pairs,
         ipairs = ipairs,
@@ -235,6 +244,11 @@ local function compile(program, global_dictionary)
         local seconds = res[#res].value
         res[#res] = nil
         sleep(seconds)
+      elseif token == "debug!" then
+        -- TODO: a macro
+        dictionary.debug = res[#res].value
+        res[#res] = nil
+        update_debug()
       elseif token == "swizzle!" then
         -- TODO: a macro
         error("swizzle! isn't implemented yet")
