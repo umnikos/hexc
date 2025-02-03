@@ -15,6 +15,8 @@
 : raycast/face raycast/axis ;
 : raycast/entity raycast/entity ;
 
+: tostring "EAST" "wawqwawaw" symbol! ;
+
 : swap swap ;
 	EXPAND: 2 swap 
 		local x = pop()
@@ -197,7 +199,7 @@
 			error("can only eval a quotation")
 		end
 		append(code.value) ;
-: choose if ;
+: choose "SOUTH_EAST" "awdd" symbol! ; # FIXME: importing the stdlib twice fucks with shadowing
 # TODO: expansion for this once you make boolean literals
 : ifelse choose call ;
 : if [ ] ifelse ;
@@ -312,7 +314,8 @@ dupd [ call ] 2dip 1 sub
 
 # start end quotation -> executes quotation on values of range, *restoring* the stack after each iteration
 : ranged -rot over sub floor 1 add 0 max [
-[ 2dup [ swap 0preserving drop ] 2dip 1 add ] dip 1 sub
+	# stack is {quotation, iterator, steps left}
+	[ swap dup [ 0preserving ] dip swap 1 add ] dip 1 sub
 ] heket 3drop ; 
 
 # takes a quotation, curries it with a fixed version of itself

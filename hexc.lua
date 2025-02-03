@@ -273,7 +273,7 @@ local function compile(program, global_dictionary, no_copy)
         res[#res] = nil
         local direction = res[#res].value
         res[#res] = {
-          literal = "false",
+          literal = false,
           type = "symbol",
           name = nil,
           pattern = pattern,
