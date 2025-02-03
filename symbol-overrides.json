@@ -50,6 +50,16 @@
     "description": "A counterpart to summoning rain. This spell will dispel rain across the world I cast it upon. Costs about one Amethyst Shard. Does nothing if the skies are already clear."
   },
   {
+    "mod": "hex",
+    "name": "summon_rain",
+    "fullname": "Summon Rain",
+    "signature": "",
+    "pattern": "wwwddawdwadweewwwee",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "I control the clouds! This spell will summon rain across the world I cast it upon. Costs about one Charged Amethyst. Does nothing if it is already raining."
+  },
+  {
     "mod": "oneironaut",
     "name": "reviveflayed",
     "fullname": "Instill Psyche",

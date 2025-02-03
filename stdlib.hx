@@ -175,10 +175,15 @@
 : conjure/light conjure_light ;
 : conjure/lightning lightning ;
 : conjure/mesh conjure_mesh ; # from hexical
+: conjure/fireball ghast_fireball ;
 : craft/phial craft/battery ;
 : craft/cypher craft/cypher ;
 : craft/trinket craft/trinket ;
 : craft/artifact craft/artifact ;
+: craft/hexburst conjure_hexburst ; # edible iota, pushes to wand stack
+	: conjure/hexburst craft/hexburst ;
+: craft/hextito conjure_hextito ; # edible spell, CASTS AS WAND.
+	: conjure/hextito craft/hextito ;
 : flight/anchored flight/range ;
 	: flight/anchor flight/anchored ;
 : flight/timed flight/time ;
