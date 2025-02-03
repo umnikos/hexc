@@ -1,3 +1,7 @@
+-- for debugging only
+local pretty = require("cc.pretty")
+local pprint = pretty.pretty_print
+
 local hexc = require("hexc")
 hexc.run('"stdlib.hx" loadfile!')
 function main()
@@ -50,11 +54,10 @@ while true do
     end
     -- player = m.getMetaOwner()
     wand = peripheral.find("wand")
-    wand.clearStack()
-    local stack = hexc.run("me get_player_hunger me get_player_saturation me health")
-    local health = wand.popStack() -- player.health
-    local saturation = wand.popStack() -- player.food.saturation
-    local hunger = wand.popStack() -- player.food.hunger
+    local stack = hexc.run("me get_player_hunger me get_player_saturation me health", 3)
+    local hunger = stack[1] -- player.food.hunger
+    local saturation = stack[2] -- player.food.saturation
+    local health = stack[3] -- player.health
     local needs_saturation = health <= low_health and (saturation <= wanted_saturation) or hunger < 20
     local needs_hunger = hunger <= 20-foodiness
     if needs_saturation or needs_hunger then

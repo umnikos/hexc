@@ -503,18 +503,39 @@ local function translateDucky(compiled)
   return recurse(translateHexTweaks(compiled))
 end
 
-local function runCompiled(compiled)
+local function wandLock()
+  while _G.wand_lock do 
+    sleep(0) -- TODO: listen for an event instead
+  end
+  _G.wand_lock = true
+end
+local function wandUnlock()
+  _G.wand_lock = false
+end
+
+local function runCompiled(compiled, immediately_pop)
   local translated = translateHexTweaks(compiled)
+  wandLock()
   local wand = peripheral.find("wand")
+  -- TODO: save old stack and put in a new one if immediately_pop is set
   wand.pushStack(translated)
   wand.runPattern("","deaqq") -- hermes
+  local res = nil
+  if immediately_pop then
+    res = {}
+    for i=1,immediately_pop do
+      table.insert(res,1,wand.popStack())
+    end
+  end
+  wandUnlock()
+  return res
 end
 
 local global_dictionary = deepcopy(empty_dictionary)
-local function run(program)
+local function run(program, immediately_pop)
   local compiled, new_dictionary = compile(program,global_dictionary,true)
-  runCompiled(compiled)
   global_dictionary = new_dictionary
+  return runCompiled(compiled, immediately_pop)
 end
 
 if isImported() then
