@@ -1,3 +1,5 @@
+local hexc = require("hexc")
+hexc.run('"stdlib.hx" loadfile!')
 function main()
 -- how much your food of choice feeds in non-saturation (20 is fully fed)
 local foodiness_default = 8
@@ -18,6 +20,7 @@ local foodiness_db = {
   ["minecraft:melon_slice"] = 2,
   ["minecraft:golden_carrot"] = 6,
   ["minecraft:cooked_cod"] = 5,
+  ["minecraft:mushroom_stew"] = 6,
 }
 local m = peripheral.wrap("back")
 local canvas = nil
@@ -29,9 +32,9 @@ if m.canvas then
     text.setScale(0.5)
 end
 while true do
-    inv = m.getEnder()
-    local food_count = inv.list()[food_slot].count
-    local food_name = inv.list()[food_slot].name
+    -- inv = m.getEnder()
+    local food_count = 64 -- inv.list()[food_slot].count
+    local food_name = "minecraft:mushroom_stew" -- inv.list()[food_slot].name
     local foodiness = foodiness_db[food_name]
     if not foodiness then
         foodiness = foodiness_default
@@ -45,16 +48,19 @@ while true do
             text.setColor(255,255,0)
         end
     end
-    player = m.getMetaOwner()
-    if (player.health <= very_low_health and pot_slot) then
-        print("drinking!")
-        inv.consume(pot_slot)
-    end
-    local needs_saturation = player.health <= low_health and (player.food.saturation <= wanted_saturation) or player.food.hunger < 20
-    local needs_hunger = player.food.hunger <= 20-foodiness
+    -- player = m.getMetaOwner()
+    wand = peripheral.find("wand")
+    wand.clearStack()
+    local stack = hexc.run("me get_player_hunger me get_player_saturation me health")
+    local health = wand.popStack() -- player.health
+    local saturation = wand.popStack() -- player.food.saturation
+    local hunger = wand.popStack() -- player.food.hunger
+    local needs_saturation = health <= low_health and (saturation <= wanted_saturation) or hunger < 20
+    local needs_hunger = hunger <= 20-foodiness
     if needs_saturation or needs_hunger then
         print("eating!")
-        inv.consume(food_slot)
+        -- inv.consume(food_slot)
+        hexc.run("pocket/eat")
     else
         sleep(1)
     end

@@ -310,6 +310,7 @@
 # - thoth
 # - sisyphus
 # - heket (hextweaks utility)
+# - iris??? (cursed, semantically a jump but implemented as a continuation for "the rest of the program" that does not return)
 
 : thoth for_each ;
 
