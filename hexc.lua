@@ -410,6 +410,20 @@ local function translateHexTweaks(compiled)
   return res
 end
 
+local function translateDucky(compiled)
+  local function recurse(x)
+    if type(x) ~= "table" then
+      return x
+    end
+    x["iota$serde"] = nil
+    for k,v in pairs(x) do
+      x[k] = recurse(v)
+    end
+    return x
+  end
+  return recurse(translateHexTweaks(compiled))
+end
+
 local function runCompiled(compiled)
   local translated = translateHexTweaks(compiled)
   local wand = peripheral.find("wand")
@@ -433,7 +447,22 @@ if isImported() then
 else
   local args = {...}
   --error("TODO")
-  compile('"stdlib.hexc" loadfile!')
+  local command = args[1]
+  if command == "test" then
+    compile('t debug! "stdlib.hexc" loadfile!')
+  elseif command == "comp" or command == "compile" or command == "build" then
+    local f = fs.open(args[2],"r")
+    local program = f.readAll()
+    f.close()
+    local compiled = compile(program)
+    local focal_port = peripheral.find("focal_port")
+    if focal_port then
+      focal_port.writeIota(translateDucky(compiled))
+      print("written to local port")
+    else
+      error("could not find focal port")
+    end
+  end
 end
 
 
