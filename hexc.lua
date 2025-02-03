@@ -456,11 +456,16 @@ else
     f.close()
     local compiled = compile(program)
     local focal_port = peripheral.find("focal_port")
+    local wand = peripheral.find("wand")
     if focal_port then
       focal_port.writeIota(translateDucky(compiled))
       print("written to local port")
+    elseif wand then
+      wand.pushStack(translateHexTweaks(compiled))
+      wand.runPattern("","deeeee") -- write
+      print("written to focus (or at least attempted to)")
     else
-      error("could not find focal port")
+      error("could not find focal port nor wand")
     end
   end
 end
