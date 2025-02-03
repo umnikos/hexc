@@ -173,6 +173,7 @@
 : conjure/lava create_lava ;
 : conjure/block conjure_block ;
 : conjure/light conjure_light ;
+: conjure/lightning lightning ;
 : conjure/mesh conjure_mesh ; # from hexical
 : craft/phial craft/battery ;
 : craft/cypher craft/cypher ;
@@ -190,6 +191,14 @@
 	: altiora flight/winged ;
 : weather/clear dispel_rain ; # 5 dust
 : weather/rain summon_rain ; # 5 dust
+# wristpocket
+: pocket wristpocket ; # like /take but with your offhand
+: pocket/take sleight ; # takes an item entity
+: pocket/place sleight ; # places at a vector
+: pocket/eat mage_mouth ;
+: pocket/item wristpocket_item ;
+: pocket/count wristpocket_count ;
+: pocket/use mage_hand ;
 
 : call eval ;
 	: exec call ;
