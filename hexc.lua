@@ -1,3 +1,11 @@
+-- valid values: "consideration", "introretro"
+local quotation_style = "introretro"
+
+
+
+-- for debugging only
+local pretty = require("cc.pretty")
+local pprint = pretty.pretty_print
 
 local function isImported()
   -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
@@ -296,20 +304,46 @@ local function compile(program, global_dictionary, no_copy)
       elseif token == "[" then
         table.insert(res, {
           literal = false,
-          type = "[",
+          type = "paren",
+          value = "[",
+        })
+      elseif token == "{" then
+        table.insert(res, {
+          literal = false,
+          type = "paren",
+          value = "{",
         })
       elseif token == "]" then
-        -- TODO: can this be a macro as well?!?
-        -- (and should it be one???)
         local quotation = {}
-        while res[#res].type ~= "[" do
+        while res[#res].type ~= "paren" do
           table.insert(quotation, 1, res[#res])
           res[#res] = nil
+        end
+        if res[#res].value ~= "[" then
+          error("mismatched parentheses: "..res[#res].value.."...]")
         end
         res[#res] = nil
         table.insert(res, {
           literal = true,
           type = "code",
+          value = quotation
+        })
+      elseif token == "}" then
+        local quotation = {}
+        while res[#res].type ~= "paren" do
+          if not res[#res].literal then
+            error("cannot insert non-literals into list")
+          end
+          table.insert(quotation, 1, res[#res])
+          res[#res] = nil
+        end
+        if res[#res].value ~= "{" then
+          error("mismatched parentheses: "..res[#res].value.."...}")
+        end
+        res[#res] = nil
+        table.insert(res, {
+          literal = true,
+          type = "list",
           value = quotation
         })
       elseif token == "t" or token == "f" then
@@ -351,19 +385,68 @@ local function compile(program, global_dictionary, no_copy)
   return res, dictionary
 end
 
+local function convert_symbol(symbol)
+  if not symbol.pattern then
+    error("symbol '"..symbol.name.."' has an unknown pattern")
+  end
+  return {
+    ["iota$serde"]="hextweaks:pattern",
+    angles=symbol.pattern,
+    startDir=symbol.direction
+  }
+end
+local function quoteValue(x)
+  local out = {}
+  if quotation_style == "consideration" then
+    table.insert(out,convert_symbol(symbols["escape"]))
+    table.insert(out,x)
+  elseif quotation_style == "introretro" then
+    table.insert(out,convert_symbol(symbols["open_paren"]))
+    table.insert(out,x)
+    table.insert(out,convert_symbol(symbols["close_paren"]))
+    table.insert(out,convert_symbol(symbols["splat"]))
+  else
+    error("unknown quotation style: "..quotation_style)
+  end
+  return out
+end
+local function quoteList(l)
+  local out = {}
+  if quotation_style == "consideration" then
+    table.insert(out,convert_symbol(symbols["escape"]))
+    table.insert(out,l)
+  elseif quotation_style == "introretro" then
+    table.insert(out,convert_symbol(symbols["open_paren"]))
+    table.append(out,l)
+    table.insert(out,convert_symbol(symbols["close_paren"]))
+  else
+    error("unknown quotation style: "..quotation_style)
+  end
+  return out
+end
+
 local function translateHexTweaks(compiled)
   local res = {
     ["iota$serde"]="hextweaks:list"
   }
-  local function convert_symbol(symbol)
-    if not symbol.pattern then
-      error("symbol '"..symbol.name.."' has an unknown pattern")
+  -- for recursing through list literals
+  local function translateLiteral(v)
+    if v.type == "string" or v.type == "bool" or v.type == "number" then
+      return v.value
     end
-    return {
-      ["iota$serde"]="hextweaks:pattern",
-      angles=symbol.pattern,
-      startDir=symbol.direction
-    }
+    if v.type == "code" then
+      return translateHexTweaks(v.value)
+    end
+    if v.type == "list" then
+      local l = {
+        ["iota$serde"]="hextweaks:list"
+      }
+      for _,vv in ipairs(v.value) do
+        table.insert(l,translateLiteral(vv))
+      end
+      return l
+    end
+    error("don't know how to literalize "..v.type)
   end
   for _,v in pairs(compiled) do
     if v.type == "symbol" then
@@ -372,16 +455,10 @@ local function translateHexTweaks(compiled)
       if symbols[v.value] then
         table.insert(res,convert_symbol(symbols[v.value]))
       else
-        table.insert(res,convert_symbol(symbols["open_paren"]))
-        table.insert(res,v.value)
-        table.insert(res,convert_symbol(symbols["close_paren"]))
-        table.insert(res,convert_symbol(symbols["splat"]))
+        table.append(res,quoteValue(v.value))
       end
     elseif v.type == "string" then
-      table.insert(res,convert_symbol(symbols["open_paren"]))
-      table.insert(res,v.value)
-      table.insert(res,convert_symbol(symbols["close_paren"]))
-      table.insert(res,convert_symbol(symbols["splat"]))
+      table.append(res,quoteValue(v.value))
     elseif v.type == "bool" then
       if v.value then
         table.insert(res,convert_symbol(symbols["const/true"]))
@@ -393,16 +470,18 @@ local function translateHexTweaks(compiled)
         -- one symbol shorter
         table.insert(res,convert_symbol(symbols["empty_list"]))
       else
-        table.insert(res,convert_symbol(symbols["open_paren"]))
-        table.append(res,translateHexTweaks(v.value))
-        table.insert(res,convert_symbol(symbols["close_paren"]))
+        table.append(res,quoteList(translateHexTweaks(v.value)))
+      end
+    elseif v.type == "list" then
+      if #(v.value) == 0 then
+        -- one symbol shorter
+        table.insert(res,convert_symbol(symbols["empty_list"]))
+      else
+        table.append(res,quoteList(translateLiteral(v)))
       end
     elseif v.type == "hextweaks" then
       -- life is easy
-      table.insert(res,convert_symbol(symbols["open_paren"]))
-      table.insert(res, v.value)
-      table.insert(res,convert_symbol(symbols["close_paren"]))
-      table.insert(res,convert_symbol(symbols["splat"]))
+      table.append(res,quoteValue(v.value))
     else
       error("unhandled type: "..v.type)
     end
