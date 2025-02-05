@@ -7,9 +7,12 @@ local quotation_style = "introretro"
 local pretty = require("cc.pretty")
 local pprint = pretty.pretty_print
 
-local function isImported()
-  -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
-  return pcall(debug.getlocal, 4, 1)
+local function is_imported(args)
+  if #args == 2 and type(package.loaded[args[1]]) == "table" and not next(package.loaded[args[1]]) then
+    return true
+  else
+    return false
+  end
 end
 
 local function is_numeric(s)
@@ -538,7 +541,7 @@ local function run(program, immediately_pop)
   return runCompiled(compiled, immediately_pop)
 end
 
-if isImported() then
+if is_imported() then
   return {
     compile=compile,
     run=run,
