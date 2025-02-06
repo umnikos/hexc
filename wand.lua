@@ -7,9 +7,12 @@ hexc.run('"stdlib.hx" loadfile!')
 hexc.run('t debug!')
 local history = {}
 
+local function dumpStack()
+  print(textutils.serialize(w.getStack()))
+end
+
 local function main()
   while true do
-    print(textutils.serialize(w.getStack()))
     term.write(prompt)
     local input = read(nil,history)
     table.insert(history,input)
@@ -24,9 +27,11 @@ local function main()
     else
       hexc.run(input)
     end
+    dumpStack()
   end
 end
 
+dumpStack()
 while true do
   local _, err = pcall(main)
   print(err)
