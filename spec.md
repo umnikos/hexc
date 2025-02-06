@@ -23,9 +23,9 @@ Words that merely get compiled like this are ordinary words.
 ```
 Macros do not and cannot define new syntax.
 
-To prevent a macro from executing immediately, quote it with `[[ ]]` instead. The quotation can be expanded with either `call!` or just `call`
+To prevent a macro from executing immediately, quote it with `[[ ]]` instead. The quotation can then be expanded with `call!`
 ```
-5 [[ 3 print! ]] call
+5 [[ 3 print! ]] call!
 -! "3" is printed during comptime
 --> 5
 ```
