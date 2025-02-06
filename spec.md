@@ -42,6 +42,7 @@ New macros can be defined with the `defmacro!` macro, or with the equivalent `::
 ```
 :: print-twice! dup print! print! ;;
 ```
+All words are inlined and thus cannot have recursive definitions.
 
 A macro, when not given enough literal values to act, may force execution of regular words as well.
 ```
@@ -49,6 +50,7 @@ A macro, when not given enough literal values to act, may force execution of reg
 -! "11" is printed during comptime
 -->
 ```
+Macros are allowed to have recursive (even mutually recursive) definitions.
 
 This execution is done not through any actual execution (casting hexes), but through simulation instead.
 Such simulated effects are defined on a per-word basis with the `SIMULATE:` syntax.
