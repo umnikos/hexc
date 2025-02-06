@@ -64,6 +64,7 @@ while true do
         print("eating!")
         -- inv.consume(food_slot)
         hexc.run("pocket/eat")
+        sleep(0.1) -- prevent wand hogging
     else
         sleep(1)
     end
