@@ -30,19 +30,20 @@ To prevent a macro from executing immediately, quote it with `[[ ]]` instead. Th
 --> 5
 ```
 
-New words can be defined with the `def!` macro, or with the equivalent `: ... ;` syntactic sugar.
+New words can be defined with the `def!` macro, or with the equivalent `: ... ;` syntactic sugar. 
 ```
 [ 3 ] "a" def!
 : b 5 ;
 a b +
 --> 8
 ```
+Normal words are inlined and thus cannot have recursive definitions.
 
 New macros can be defined with the `defmacro!` macro, or with the equivalent `:: ... ;;` syntactic sugar.
 ```
 :: print-twice! dup print! print! ;;
 ```
-All words are inlined and thus cannot have recursive definitions.
+Macros are allowed to have recursive (even mutually recursive) definitions.
 
 A macro, when not given enough literal values to act, may force execution of regular words as well.
 ```
@@ -50,7 +51,6 @@ A macro, when not given enough literal values to act, may force execution of reg
 -! "11" is printed during comptime
 -->
 ```
-Macros are allowed to have recursive (even mutually recursive) definitions.
 
 Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
 Such simulated effects are defined on a per-word basis with the `SIMULATE:` syntax.
