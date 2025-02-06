@@ -2840,7 +2840,7 @@
     "description": "Creates a Debugger that casts a Hex, similar to certain other patterns I've used in the past. Costs about ten Charged Amethyst."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "write_grimoire",
     "fullname": "Write Grimoire",
     "signature": "pattern, list →",
@@ -2850,7 +2850,7 @@
     "description": "Associates a pattern to a list of patterns in the Grimoire in my offhand."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "erase_grimoire",
     "fullname": "Erase Grimoire",
     "signature": "pattern →",
@@ -2860,7 +2860,7 @@
     "description": "Erases any associations for a pattern that may exist in the Grimoire in my offhand."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "index_grimoire",
     "fullname": "Archivist Reflection",
     "signature": "→ list of patterns",
@@ -2870,7 +2870,7 @@
     "description": "Gets a list of all patterns modified by the Grimoire in my offhand."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "age_scroll",
     "fullname": "Age Scroll",
     "signature": "animated scroll entity →",
@@ -2880,7 +2880,7 @@
     "description": "Yellows the parchment of an Animated Scroll, making it bear striking semblance to some ancient scrolls I've been finding."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "color_scroll",
     "fullname": "Dye Ink",
     "signature": "animated scroll entity, vector →",
@@ -2890,7 +2890,7 @@
     "description": "Changes the color of an Animated Scroll's ink to the color specified by the vector, with the components being 0 to 1 values of red, green, and blue respectively."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "glow_scroll",
     "fullname": "Illuminate Ink",
     "signature": "animated scroll entity →",
@@ -2900,7 +2900,7 @@
     "description": "Causes the ink of an Animated Scroll to brightly glow, regardless of lighting conditions."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "vanish_scroll",
     "fullname": "Vanish Scroll",
     "signature": "animated scroll entity →",
@@ -2910,7 +2910,7 @@
     "description": "Causes the Animated Scroll to become invisible leaving only the pattern, making it appear as though the pattern were magically etched into the surface the scroll is on."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "wish",
     "fullname": "Wish",
     "signature": "list of patterns →",
@@ -2920,7 +2920,7 @@
     "description": "Wish the genie to cast a Hex for me. Because I am *teaching* a mind rather than *etching* a casting device, I can freely reteach the genie a new Hex any time without losing media. To say it casts is an understatement. It casts *<strong>EVERY INSTANT</strong>*. When holding the switch after wishing, I am treated to a splendid unceasing gush of media. I can only estimate it must be around twenty times every second. The genie performs the casting with incredible efficiency, producing little of the sounds and particles that accompany other casting methods. I have developed some useful patterns to communicate with the genie for information, documented on the next few pages. These patterns must only be cast by the genie within the lamp, lest I succumb to the Impersonate Genie mishap. *I am not a tool for your convenience.*<br />Strange murmuring occasionally emitted from the lamp. Likely disregardable."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_position",
     "fullname": "Genie Refl.: Spatial",
     "signature": "→ vector",
@@ -2930,7 +2930,7 @@
     "description": "Pushes my original position when I began using the lamp."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_rotation",
     "fullname": "Genie Refl.: Rotational",
     "signature": "→ vector",
@@ -2940,7 +2940,7 @@
     "description": "Pushes my original rotation when I began using the lamp."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_velocity",
     "fullname": "Genie Refl.: Kinetic",
     "signature": "→ vector",
@@ -2950,7 +2950,7 @@
     "description": "Pushes my original velocity when I began using the lamp."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_use_time",
     "fullname": "Genie Refl.: Temporal",
     "signature": "→ number",
@@ -2960,7 +2960,7 @@
     "description": "Pushes how many times the lamp has cast since I began using the lamp. I can divide by by 20 to convert to seconds."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_media",
     "fullname": "Genie Refl.: Media",
     "signature": "→ number",
@@ -2970,7 +2970,7 @@
     "description": "Pushes the remaining media of the lamp, in units of dust."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "set_hand_lamp_storage",
     "fullname": "Genie Gambit",
     "signature": "any →",
@@ -2980,7 +2980,7 @@
     "description": "Asks the genie to remember an iota for me. Strangely, the genie seems able to bypass the Transgress Others mishap, perhaps because it requires my active concentration to use this lamp."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hand_lamp_storage",
     "fullname": "Genie Refl.: Memory",
     "signature": "→ any",
@@ -2990,7 +2990,7 @@
     "description": "Requests the iota I had saved to the genie to be pushed to the top of the stack. If I had not previously saved anything, the genie pushes Null."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "lamp_finale",
     "fullname": "Finale Reflection",
     "signature": "→ boolean",
@@ -3000,7 +3000,7 @@
     "description": "The instant I let go of my lamp, it casts an additional time. I can use this pattern to recognize whether a cast is that finale, and react accordingly."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "recharge_lamp",
     "fullname": "Make Genie",
     "signature": "entity, number →",
@@ -3010,7 +3010,7 @@
     "description": "*Borrow* the experiences and memory of a villager and transforms it into a genie to serve the lamp in my offhand. The spell itself costs about one Charged Amethyst, plus the media I'm giving the lamp. Notably, this spell will *not* kill the villager. It splinters off a section of their mind to serve as the genie and as for the villager's main consciousness, it only results in amnesia. I have heard rumors of ancient Hexcasters *growing* villager minds like crops using this property: consume them to recharge lamps and allow the villagers to regenerate their lost knowledge in between. Not all villagers can be a genie. I estimate there is so little media potential in any villager lesser than Journeyman-grade that the spell would simply fail. Having most of its workings *optimized* purely for casting, I doubt an Expert villager will perform any better than a Journeyman."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "promote_lamp",
     "fullname": "Promote Lamp",
     "signature": "entity →",
@@ -3020,7 +3020,7 @@
     "description": "If just a sliver of a mind is capable of such power, how about the whole body? Hold the lamp in my other hand and cast. Costs about ten Charged Amethyst."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "has_arch_lamp",
     "fullname": "Archgenie Purification",
     "signature": "entity → boolean",
@@ -3030,7 +3030,7 @@
     "description": "Pushes whether a player currently has an active arch lamp."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_position",
     "fullname": "Arch. Refl.: Spatial",
     "signature": "→ vector",
@@ -3040,7 +3040,7 @@
     "description": "Pushes my original position when the arch lamp started casting."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_rotation",
     "fullname": "Arch. Refl.: Rotational",
     "signature": "→ vector",
@@ -3050,7 +3050,7 @@
     "description": "Pushes my original rotation when the arch lamp started casting."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_velocity",
     "fullname": "Arch. Refl.: Kinetic",
     "signature": "→ vector",
@@ -3060,7 +3060,7 @@
     "description": "Pushes my original velocity when the arch lamp started casting."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_use_time",
     "fullname": "Arch. Refl.: Temporal",
     "signature": "→ number",
@@ -3070,7 +3070,7 @@
     "description": "Pushes how many times the arch lamp has cast since its activation. I can divide by by 20 to convert to seconds."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_media",
     "fullname": "Arch. Refl.: Media",
     "signature": "→ number",
@@ -3080,7 +3080,7 @@
     "description": "Pushes the remaining amount of media left in the arch lamp, in units of dust."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "set_arch_lamp_storage",
     "fullname": "Archgenie Gambit",
     "signature": "any →",
@@ -3090,7 +3090,7 @@
     "description": "Can be cast by a casting device, Staff, or within the arch lamp to remember an iota. Unlike hand lamps, this is subject to Transgress Others mishap."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_arch_lamp_storage",
     "fullname": "Arch. Refl.: Memory",
     "signature": "→ any",
@@ -3100,7 +3100,7 @@
     "description": "Can be cast by a casting device, Staff, or within the arch lamp to push the stored iota."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "lamp_finale",
     "fullname": "Finale Reflection",
     "signature": "→ boolean",
@@ -3110,7 +3110,7 @@
     "description": "When an archgenie lamp is turned off, it casts an additional time. I can use this pattern to recognize when whether a cast is that last burst of energy."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "am_enlightened",
     "fullname": "Epiphany Purification",
     "signature": "player entity → boolean",
@@ -3120,7 +3120,7 @@
     "description": "Pushes whether the given player has achieved enlightenment like I have."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_brainswept",
     "fullname": "Sentience Purification",
     "signature": "entity → boolean",
@@ -3130,7 +3130,7 @@
     "description": "Pushes whether an entity \"has been magically relieved of its mind\". I feel this is strongly related to Flay Mind somehow..."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "garbage",
     "fullname": "Garbage Reflection",
     "signature": "→ garbage",
@@ -3140,7 +3140,7 @@
     "description": "Pushes Garbage to my stack. I am unsure why I would ever want this pattern but it exists."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "swap_one_three",
     "fullname": "Reflecting Gambit",
     "signature": "any, any, any → any, any, any",
@@ -3150,7 +3150,7 @@
     "description": "Reflects the order of the top three iota, turning A, B, C into C, B, A. Essentially swaps the top and the third-from-the-top iota."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "swap_two_three",
     "fullname": "Bubbling Gambit",
     "signature": "any, any, any → any, any, any",
@@ -3160,7 +3160,7 @@
     "description": "Causes the third-from-the-top iota to bubble up over the second-from-the-top iota, essentially swapping them."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "dup_many",
     "fullname": "Dioscuri Gambit II",
     "signature": "many, number → many",
@@ -3170,7 +3170,7 @@
     "description": "Takes a number and duplicates that many elements of the stack while preserving order."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "congruent",
     "fullname": "Congruence Distillation",
     "signature": "pattern, pattern → boolean",
@@ -3180,7 +3180,7 @@
     "description": "Pushes whether two patterns have the same shape and orientation."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "serialize_pattern",
     "fullname": "Chirographer's Purif.",
     "signature": "pattern → list of numbers",
@@ -3190,7 +3190,7 @@
     "description": "Turns a pattern into a list of numbers for my splitting, analysis, and dissection. The list of numbers returned by Chirographer's Purification are related to the strokes. The diagonal stroke that travels upwards and rightwards is labeled 0 and all other strokes are labelled incrementally in a counter-clockwise rotation. There are various properties of these lists that I can use. By adding or subtracting a constant, I can rotate the pattern. For cyclical patterns, rotating the list by moving the first element to the end or vice versa rotates the starting position. By carefully altering numbers with list manipulation, I can also make some kind of *backwards stroke*."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "deserialize_pattern",
     "fullname": "Calligrapher's Purif.",
     "signature": "list of numbers → pattern",
@@ -3200,7 +3200,7 @@
     "description": "Turns a list of numbers back into a pattern. Applies a strange remainder effect to numbers outside of the 0-5 range to coerce it into a useable form. This is the inverse of Chirographer's Purification."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "draw_pattern",
     "fullname": "Handwriting Distillation",
     "signature": "pattern → list of vectors",
@@ -3210,7 +3210,7 @@
     "description": "Takes a pattern and transforms it into a normalized list of vectors. I feel this may be useful for artistic spells."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shuffle_pattern",
     "fullname": "Glyphmaker's Dstl.",
     "signature": "pattern, number → pattern",
@@ -3220,7 +3220,7 @@
     "description": "Takes in a pattern and a number and produces a pattern of the same shape, but different stroke order. My notes reveal that ancient Hexcasters used this for some *grand library*."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "perlin",
     "fullname": "Perlin Distillation",
     "signature": "vector, number → number",
@@ -3230,7 +3230,7 @@
     "description": "Measures the concentration of ambient at that point in space and time, normalized between 0 and 1."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "fluid_raycast",
     "fullname": "Naval Distillation",
     "signature": "vector, vector → vector/null",
@@ -3240,7 +3240,7 @@
     "description": "Works similar to Archer's Distillation but targets only liquids, piercing through all other blocks."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "fluid_surface_raycast",
     "fullname": "Lilypad Distillation",
     "signature": "vector, vector → vector/null",
@@ -3250,7 +3250,7 @@
     "description": "Works similar to Architect's Distillation but targets only liquids, piercing through all other blocks."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "piercing_raycast",
     "fullname": "Railgun Exaltation",
     "signature": "vec, vec, id → vec/null",
@@ -3260,7 +3260,7 @@
     "description": "Works similar to Archer's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "piercing_surface_raycast",
     "fullname": "Laser Exaltation",
     "signature": "vec, vec, id → vec/null",
@@ -3270,7 +3270,7 @@
     "description": "Works similar to Architect's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_telepathy",
     "fullname": "Telepathic Reflection",
     "signature": "→ number",
@@ -3280,7 +3280,7 @@
     "description": "By focusing on a particular image, I can detect that concentration via this pattern. Pushes how many twentieths of a second I've been intending to Call Telepathy, or -1 if I am not."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "send_telepathy",
     "fullname": "Send Thought",
     "signature": "any →",
@@ -3290,7 +3290,7 @@
     "description": "Momentarily displays an iota above my hotbar. If cast repeatedly, each cast overwrites the previous instantly."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shout_telepathy",
     "fullname": "Shout Thought",
     "signature": "any →",
@@ -3300,7 +3300,7 @@
     "description": "Grandly flahes an iota across my vision. It obstructs my vision and takes some time to fade in, so I shall only use it sparingly."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "pling",
     "fullname": "Hallucinate Pling",
     "signature": "",
@@ -3310,7 +3310,7 @@
     "description": "Causes me to hear a pling that is inaudible to other players."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "click",
     "fullname": "Hallucinate Click",
     "signature": "",
@@ -3320,7 +3320,7 @@
     "description": "Causes me to hear a click that is inaudible to other players."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "moving_up",
     "fullname": "Charge Reflection",
     "signature": "→ number",
@@ -3330,7 +3330,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Walk Forwards, or -1 if I am not."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "moving_down",
     "fullname": "Retreat Reflection",
     "signature": "→ number",
@@ -3340,7 +3340,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Walk Backwards, or -1 if I am not."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "moving_left",
     "fullname": "Dodge Reflection",
     "signature": "→ number",
@@ -3350,7 +3350,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Strafe Left, or -1 if I am not. Can be differentiated from Evade Reflection because d comes to the left of e."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "moving_right",
     "fullname": "Evade Reflection",
     "signature": "→ number",
@@ -3360,7 +3360,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Strafe Right, or -1 if I am not. Can be differentiated from Dodge Reflection because e comes to the right of d."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "jumping",
     "fullname": "Leaping Reflection",
     "signature": "→ number",
@@ -3370,7 +3370,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Jump, or -1 if I am not."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "sneaking",
     "fullname": "Stealthy Reflection",
     "signature": "→ number",
@@ -3380,7 +3380,7 @@
     "description": "Pushes how many twentieths of a second I've been intending to Sneak, or -1 if I am not."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "soroban_increment",
     "fullname": "Soroban Reflection",
     "signature": "→ number",
@@ -3390,7 +3390,7 @@
     "description": "Pushes soroban's current value and then increases it. The soroban starts at 0."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "soroban_decrement",
     "fullname": "Soroban Reflection II",
     "signature": "→ number",
@@ -3400,7 +3400,7 @@
     "description": "Pushes soroban's current value and then decreases it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "soroban_reset",
     "fullname": "Soroban Gambit",
     "signature": "",
@@ -3410,7 +3410,7 @@
     "description": "Resets the soroban to 0."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "janus",
     "fullname": "Janus' Gambit",
     "signature": "",
@@ -3420,7 +3420,7 @@
     "description": "Instantly terminates the Hex regardless of current circumstances, breaking even through Thoth's and Hermes' Gambit unlike Charon's Gambit. It's useful to end a Hex early once it has reached some desired state, without the difficulty of using Charon's Gambit because Janus' can bypass the \"containment\" of Hermes' and Thoth's. *It is always important to know when something has reached its end.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "nephthys",
     "fullname": "Nephthys's Gambit",
     "signature": "pattern/list → varies",
@@ -3430,7 +3430,7 @@
     "description": "Pops a pattern or pattern list and dives down an amount corresponding to the tail length to cast the pattern list. Useful for surgery-like operations. It's extremely versatile and I can mend almost any error in my stack using Bookkeeper's Gambit, pushing iota after a dive, and transforming surfaced iota. It was named after a goddess of mourning and rivers, lending to how it buries/dives down into the stack. *... the unknowns of time travel... is akin to descending blindly into the depths of the freezing water and reappearing as an acorn.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "sekhmet",
     "fullname": "Sehkmet's Gambit",
     "signature": "→ varies",
@@ -3440,7 +3440,7 @@
     "description": "Voids the entire stack except for the top n iota, determined by tail length. In the examples above, zero, one, and two iota are left untouched respectively. *Not* a meta-evaluation on its own. This simple gambit can be accomplished via Flock's Reflection, Flock's Gambit, Selection Exaltation, and Flock's Disintegration but this serves as a handy short pattern for clearing up my stack. It also pairs extremely well with Thoth's Gambit, letting me clean up the pseudo-stack should I want to only operate on and return first few iota. *Everything is possible, but not everything is necessary.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "atalanta",
     "fullname": "Atalanta's Gambit",
     "signature": "",
@@ -3450,7 +3450,7 @@
     "description": "Should only be run inside Thoth's or Sisyphus' Gambit. Acts similarly to Charon's Gambit except does not end the iterator, only skips the rest of the current iteration. This pattern can be useful to implement \"guard clauses\" for multiconditional loops. For example, after getting a list of entities, I may want to only target entities based on some large list of conditions. Rather than a mess of deeply nested conditionals, I can simply *continue* to the next iteration if any of the conditions fail, skipping the action. *You shall not pass!*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "castor",
     "fullname": "Castor's Gambit",
     "signature": "any →",
@@ -3460,7 +3460,7 @@
     "description": "Should only be run within a Thoth's. Details on the next page. Beware of triggering the Delve Too Deep mishap. This pattern pops an iota and schedules a new iteration of Thoth's to come right after the current one, with the popped iota being the top of the stack. It may be helpful to imagine it as the iota being added to the front of the list that I provided for Thoth's to iterate over. *Do not go where the path may lead, go instead where there is no path... and leave a trail.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "pollux",
     "fullname": "Pollux's Gambit",
     "signature": "any →",
@@ -3470,7 +3470,7 @@
     "description": "Sibling pattern to Castor's Gambit, this pattern schedules the additional iteration for the end instead. Carries the same risk of encountering the Delve Too Deep mishap. Acts almost identically to its sibling pattern, but places the iteration at the end. I have read scrolls detailing techniques using these twin patterns called *depth-first search* and *breadth-first search*. *Explore the surface before diving deep.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "sisyphus",
     "fullname": "Sisyphus' Gambit",
     "signature": "list →",
@@ -3480,7 +3480,7 @@
     "description": "Takes a pattern list and casts it over and over forever until it encounters either a Charon's Gambit or a Janus' Gambit. While I have heard of self-producing Hexes called *quines* used to make infinite loops, they can be slightly unwieldy to work with. This gambit simplifies that process by just repeatedly casting a list until it runs out of evaluations or encounters a Charon's Gambit. The Ravenmind and stack are carried across iterations. *One always finds one's burden again... One must imagine Sisyphus happy.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "themis",
     "fullname": "Themis' Gambit",
     "signature": "list, pattern/list → list",
@@ -3490,7 +3490,7 @@
     "description": "Takes a list and a pattern or pattern list which is used to sort the list by casting over every iota similar to Thoth's Gambit. After each iteration, it demands a number at the top of the stack which will correspond to that iota. At the end of the gambit, a list is pushed with the iota sorted by that number in increasing order. The order of identically numbered iota are kept. If it encounters Charon's Gambit, it will create a sorted list with only the iota it has come across. *Shuffling is the only thing which Nature cannot undo.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "tutu",
     "fullname": "Tutu's Gambit",
     "signature": "",
@@ -3500,7 +3500,7 @@
     "description": "Does nothing."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "key_shelf",
     "fullname": "Librarian's Purification",
     "signature": "vector → pattern/null",
@@ -3510,7 +3510,7 @@
     "description": "Reads the pattern key of an akashic bookshelf."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "read_shelf",
     "fullname": "Librarian's Purif. II",
     "signature": "vector → any",
@@ -3520,7 +3520,7 @@
     "description": "Reads the iota from an akashic bookshelf."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "write_shelf",
     "fullname": "Librarian's Gambit",
     "signature": "vector, pattern, any →",
@@ -3530,7 +3530,7 @@
     "description": "Writes an iota under a pattern key to an akashic bookshelf."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "clear_shelf",
     "fullname": "Librarian's Gambit II",
     "signature": "vector →",
@@ -3540,7 +3540,7 @@
     "description": "Clears an akashic bookshelf."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_mage_block",
     "fullname": "Conjure Mage Block",
     "signature": "vector →",
@@ -3550,7 +3550,7 @@
     "description": "Conjures a mage block at the location. Costs about three Amethyst Dust. *I can create a city out of nothing, or I can cover it in volcanic rock.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_bouncy",
     "fullname": "Bouncy",
     "signature": "vector →",
@@ -3560,7 +3560,7 @@
     "description": "This modifier makes the block delightfully fun to bounce on! It returns more force to me than regular slime blocks and I notice even if I sneak, the block bounces me regardless."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_energized",
     "fullname": "Energized",
     "signature": "vector, number →",
@@ -3570,7 +3570,7 @@
     "description": "This modifier makes the block emit a Redstone signal, with the number corresponding to the power level of the output."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_ephemeral",
     "fullname": "Ephemeral",
     "signature": "vector, number →",
@@ -3580,7 +3580,7 @@
     "description": "This modifier takes in a number in addition to a position and shatters the block after many twentieths of a second. Subsequent casts can lengthen or shorten the duration."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_invisible",
     "fullname": "Invisible",
     "signature": "vector →",
@@ -3590,7 +3590,7 @@
     "description": "This modifier prevents the block from emitting the telltale particles that accompany my casting, even when being stood on."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_replaceable",
     "fullname": "Replaceable",
     "signature": "vector →",
@@ -3600,7 +3600,7 @@
     "description": "This modifier is useful for construction! With this modifier applied, I find I can easily place another block in the place of the mage block."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "modify_block_volatile",
     "fullname": "Volatile",
     "signature": "vector →",
@@ -3610,7 +3610,7 @@
     "description": "This modifier makes the block break other mage blocks it's touching. Notably, if it breaks another volatile block, that block breaks and so on until every volatile block shatters."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_dye",
     "fullname": "Chromatic Purification",
     "signature": "id/vector/entity → dye/null",
@@ -3620,7 +3620,7 @@
     "description": "Gets the dye of a block, entity, or block/item identifier."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "dye",
     "fullname": "Dye",
     "signature": "vector/entity, dye →",
@@ -3630,7 +3630,7 @@
     "description": "Dyes a dyeable block or entity. Costs about an eighth of one Amethyst Dust. The valid block targets for this spell include beds, candles, cakes with candles, carpets, concrete, concrete powder, glazed terracotta, sand into red sand and vice versa, sandstone and all blocks derived from it into its red variant and vice versa, shulker boxes, stained glass, stained glass panes, terracotta, tulips into their multiple colors, and wool blocks. As for entities, cat collars, dog collars, specklikes, shulkers, and item entities of all of the above blocks are valid."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "translate_dye",
     "fullname": "Vision Purification",
     "signature": "dye → vector",
@@ -3640,7 +3640,7 @@
     "description": "Translates a dye color into a vector, where each component is from 0 to 1 and represents the red, green, and blueness of the dye respectively."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "magic_missile",
     "fullname": "Magic Missile",
     "signature": "vector, vector →",
@@ -3650,7 +3650,7 @@
     "description": "Conjures a small silver of amethyst that always deals a full heart of damage and forces the target backwards. Costs about one Amethyst Dust. The projectile has a few interesting properties. It automatically disappears after roughly ten seconds or shatters upon hitting an entity or block. It pierces all forms of armor and protection. It is also unaffected by gravity and water drag. *A weak but enchanting sparkling projectile.* The conjuration location is quite esoteric: no wonder most Hexcasters conjure it in front of them. The basic gist is a vector, where my head's position is the origin, my facing is the Z+ axis, the vector pointing up from my head is the Y+ axis, and the vector from my head pointing rightwards is the X+ axis. For basic purposes, the zero vector conjures it inside my head and a vector resembling (0, 0, n) conjures it n blocks in front of me."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "to_pigment",
     "fullname": "Pigment Purification",
     "signature": "dye/entity → pigment",
@@ -3660,7 +3660,7 @@
     "description": "Takes a colored dye iota and transforms it into a pigment, takes a player and returns their pigment, or takes an item containing a pigment and returns its pigment."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "sample_pigment",
     "fullname": "Pigment Exaltation",
     "signature": "pigment, vec, num → vec",
@@ -3670,7 +3670,7 @@
     "description": "Samples the pigment at a certain place and time as a vector, where each component is from 0 to 1 and represents the red, green, and blueness respectively."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "take_on_pigment",
     "fullname": "Internalize Pigment II",
     "signature": "pigment →",
@@ -3680,7 +3680,7 @@
     "description": "Internalizes a pigment iota."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "prestidigitation",
     "fullname": "Prestidigitation",
     "signature": "entity/vector →",
@@ -3690,7 +3690,7 @@
     "description": "Causes a small magical effect on the block or entity, usually not too distinct from the original nature or function of the block or entity. Costs about a tenth of one Amethyst Dust. This spell differs from all others I've seen. Rather than a single specific effect, this spell seems to combine dozens of small effects into a single spell. It targets a vast array of blocks and entities, and I am constantly finding uses for it. I have documented them on the following pages. I can think of it as general basic magic tricks."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "can_prestidigitate",
     "fullname": "Alteration Purification",
     "signature": "entity/vector → boolean",
@@ -3700,7 +3700,7 @@
     "description": "Pushes whether an entity or location is able to be manipulated with Prestidigitation. I've compiled all of its recorded uses from my notes: opens and close fence gates, trapdoors, and doors of all materials; flicks levers and presses buttons; holds down and releases pressure plates; extinguishes fire and soul fire; lights and extinguishes candles and campfires; rings bells; strips wood; carves pumpkins; makes a note block play its sound; triggers dispensers and droppers; dries mud into clay; turns most soil blocks into path blocks and path blocks into tilled soil... toggles Redstone lamps; drain cauldrons; modifies the state of Redstone repeaters, comparators, and daylight sensors, ignites and deprimes TNT and creepers; shear sheep; give and take arms from armor stands; makes squid squirt ink; makes pandas sneeze; removes the helmet of a snow golem; make pufferfish instantly swell up; take honeycomb from beehives and nests, and activates some kind of \"great work\" whatever that is."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "wristpocket",
     "fullname": "Wristpocket",
     "signature": "",
@@ -3710,7 +3710,7 @@
     "description": "This spell vanishes the stack of items in my other hand, or conjures it back, swapping if my other hand is holding something. Costs about a eighth of one Amethyst Dust."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "wristpocket_item",
     "fullname": "Pocket Reflection",
     "signature": "→ identifier/null",
@@ -3720,7 +3720,7 @@
     "description": "Returns the identifier of the item in my wristpocket, or Null if it is empty."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "wristpocket_count",
     "fullname": "Pocket Reflection II",
     "signature": "→ number",
@@ -3730,7 +3730,7 @@
     "description": "Returns how many items I have in my wristpocket, or 0 if it is empty."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "sleight",
     "fullname": "Sleight",
     "signature": "item entity/vector →",
@@ -3740,7 +3740,7 @@
     "description": "Performs an act of magical sleight of hand to steal items into my wristpocket or expel my wristpocket back into the world. Costs about a fourth of one Amethyst Dust. If taking a vector, it conjures my wristpocketed item at that vector. If taking an item entity, if my wristpocket is empty, it is pulled into my wristpocket. If my wristpocket is not empty, the items are swapped. *If your sleight of hand causes you to break eye contact with your audience, it is too advanced for your skill level.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "mage_hand",
     "fullname": "Mage Hand",
     "signature": "entity/vector →",
@@ -3750,7 +3750,7 @@
     "description": "Conjures a magical hand that uses my wristpocketed item to interact with the world. If my wristpocket is empty, acts as though I had interacted with the world. If taking an entity, interacts with the entity with the item.<br />If taking a vector, interacts with the block with the item. *A spectral, floating hand appears at a point you choose within range.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "mage_mouth",
     "fullname": "Mage Mouth",
     "signature": "",
@@ -3760,7 +3760,7 @@
     "description": "Makes me eat my wristpocketed item, nourishing me or applying potions to me. Costs about one Amethyst Dust and mishaps if the item is not edible. Regardless of the time required to usually eat the item, its special effects, my own dietary restrictions, cooldowns on eating the item, or if I'm full, this spell makes me consume it instantly. *Let food be thy medicine and medicine be thy food.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_speck",
     "fullname": "Conjure Speck",
     "signature": "any, vector, vector → entity",
@@ -3770,7 +3770,7 @@
     "description": "Conjures a speck with the iota, position, and rotation. Costs a negligible amount of media. Pushes the speck iota to the stack."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "move_specklike",
     "fullname": "Move Speck",
     "signature": "speck entity, vector →",
@@ -3780,7 +3780,7 @@
     "description": "Moves a speck entity to the position."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "rotate_specklike",
     "fullname": "Rotate Speck",
     "signature": "speck entity, vector →",
@@ -3790,7 +3790,7 @@
     "description": "Rotates a speck entity to face the vector."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "roll_specklike",
     "fullname": "Roll Speck",
     "signature": "speck entity, number →",
@@ -3800,7 +3800,7 @@
     "description": "Accepts a number between 0 and 1, representing a fraction of a full rotation, and rotates the speck's image by that amount."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "iota_speck",
     "fullname": "Alter Speck",
     "signature": "speck entity, any →",
@@ -3810,7 +3810,7 @@
     "description": "Changes the speck's iota."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "lifetime_specklike",
     "fullname": "Time Speck",
     "signature": "speck entity, number →",
@@ -3820,7 +3820,7 @@
     "description": "Commands the speck to disappear after that many twentieths of a second."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "size_specklike",
     "fullname": "Resize Speck",
     "signature": "speck entity, number →",
@@ -3830,7 +3830,7 @@
     "description": "Scales the speck, can range from 0 to 10. Represents size in blocks and is zero by default."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "thickness_specklike",
     "fullname": "Thicken Speck",
     "signature": "speck entity, number →",
@@ -3840,7 +3840,7 @@
     "description": "Changes the stroke thickness of a pattern speck, can range from 0 to 10. Represents twentieths of a block, and is zero by default."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "pigment_specklike",
     "fullname": "Paint Speck",
     "signature": "speck entity, pigment →",
@@ -3850,7 +3850,7 @@
     "description": "Splashes a pigment iota onto the speck, changing its color after creation."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "kill_specklike",
     "fullname": "Dismiss Speck",
     "signature": "speck entity →",
@@ -3860,7 +3860,7 @@
     "description": "Forces a speck to disappear."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "zone_specklike",
     "fullname": "Zone Dstl.: Specklike",
     "signature": "vector, number → list of entities",
@@ -3870,7 +3870,7 @@
     "description": "Returns specks similarly to other zone distillation patterns."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "autograph",
     "fullname": "Autograph",
     "signature": "",
@@ -3880,7 +3880,7 @@
     "description": "Permanently autographs the item in my offhand with my name and pigment. Free and can only be done with my staff, as a proof of care. An autographed item holds a list of the names people who have casted this spell on it, in order and in shimmering pigmented text. It becomes unstackable with unautographed items, even of the same type, and the same person can sign it multiple times. It may be used as a secure method of ensuring an item was approved of by a person. *I disagree strongly with whatever work this quote is attached to.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_hexburst",
     "fullname": "Conjure Hexburst",
     "signature": "vector, any →",
@@ -3890,7 +3890,7 @@
     "description": "Conjures a Hexburst at the location with the given iota. Costs about one Amethyst Dust and is subject to the Transgress Others mishap. Hexbursts are edible items created by taking an iota and wrapping media around it, over and over until it gains size. When eaten, a Hexburst instantly adds its iota to the consumer's stack. I shall find this property considerably useful if I ever want to trade my entity reference. Should my stack have an unclosed Introspection, it pushes it into the forming list."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_hextito",
     "fullname": "Conjure Hextito",
     "signature": "vector, list of patterns →",
@@ -3900,7 +3900,7 @@
     "description": "Conjures a Hextito at the location with the given Hex. Costs about two Amethyst Dust and is subject to the Transgress Others mishap. Hextitos are triangular crunchy snacks I can conjure. When consumed, the consumer immediately casts its Hex, using their staff's stack unlike a regular casting device. I shall find them useful to make simple actions like raycasts or to give out limited uses of a Hex I have designed. If a consumer's stack has an unclosed Introspection, it will not cast, making it quite safe to hand out."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "ghast_fireball",
     "fullname": "Conjure Fireball",
     "signature": "vector →",
@@ -3910,7 +3910,7 @@
     "description": "Conjures an explosive fireball that can be punched and damages blocks and leaves an entity reference at the top of the stack. Costs about three Amethyst Dust. The conjured fireball simply hangs in the air. It must be propelled via punching it or Impulse. It can also be deflected via similar methods. *A fiery, explosive projectile.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "llama_spit",
     "fullname": "Spit",
     "signature": "vector →",
@@ -3920,7 +3920,7 @@
     "description": "Conjures a sticky low-damaging projectile. Costs about a fourth of one Amethyst Dust. The projectile does not have any velocity of its own when conjured and moves only due to gravity unless affected by Impulse. Its damage is negligible and likely unsuited for any combat but it is cheap... *A projectile that explodes into a sticky mess.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "gasp",
     "fullname": "Gasp",
     "signature": "entity →",
@@ -3930,7 +3930,7 @@
     "description": "Instantly replenishes a creature's air bubbles. Costs about one Amethyst Dust. Regardless of amount of breath restored, this spell costs exactly one dust so I should ideally wait as long as I safely can before casting this spell. I will find it useful while diving, being teleported into a block, or even keeping sea creatures alive on land. *The best way to observe a fish is to become a fish.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "myodesopsia",
     "fullname": "Myodesopsia",
     "signature": "list of patterns →",
@@ -3940,7 +3940,7 @@
     "description": "Conjures a swirl of patterns around me that I and nearby players can see, using the patterns from the list. Free. These patterns are similar to the \"floaters\" that appear when I cast using other methods. I can imagine this spell as conjuring what would have appeared had I casted the list. Interestingly, each pattern shows up exactly once no matter how many times it appears in the list."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_compass",
     "fullname": "Conjure Compass",
     "signature": "vector, vector →",
@@ -3950,7 +3950,7 @@
     "description": "Conjures a Conjured Compass at the location pointing towards the second vector, linked to the current dimension. Costs about three Amethyst Dust. If read with Scribe's Reflection, it returns a unit vector pointing towards the location inside it. In other dimensions, the Compass spins erratically and reading it yields only Null. Once I am done with a Compass, I can eat it as a light snack. *Aye, the compass doesn't point North. But we're not trying to find North, are we?*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "spike",
     "fullname": "Conjure Spike",
     "signature": "vector, vector, number →",
@@ -3960,7 +3960,7 @@
     "description": "Takes a non-air position, an axis vector, and a delay in seconds up to ten seconds long and conjures a spike at that location. Costs about one Amethyst Shard. Each spike takes about a half second to strike and deal a hefty three full hearts of damage before slowly sinking back into the ground. If I cast this spell where a spike has not yet disappeared, it will do nothing. Spikes will also throw back targets in the direction they were conjured."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_tchotchke",
     "fullname": "Conjure Tchotchke",
     "signature": "vec, num, num, list →",
@@ -3970,7 +3970,7 @@
     "description": "Conjures a Tchotchke at the location with the amount of media, rank, and Hex. Costs about one Charged Amethyst and the media used for the battery. I find ancient Hexcasters to be quite fond of these due to their versatility and the ability to conjure them as needed. Tchotchkes also feature an iota storage that can only be edited from the tchotchke itself, allowing each tchotchke to essentially act as a fully-contained magical trinket. *Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "write_tchotchke",
     "fullname": "Tchotchke Gambit",
     "signature": "any →",
@@ -3980,7 +3980,7 @@
     "description": "Writes an iota to the Tchotchke's inner iota storage, which can be read back on future casts. Subject to the Transgress Others mishap and unreadable from any external source."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "read_tchotchke",
     "fullname": "Tchotchke Reflection",
     "signature": "→ any",
@@ -3990,7 +3990,7 @@
     "description": "Pushes the iota from the Tchotchke's inner iota storage."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "displace",
     "fullname": "Displace",
     "signature": "entity, vector →",
@@ -4000,7 +4000,7 @@
     "description": "Teleports an entity within the circle to any other point inside within the same circle. Unlike Greater Teleport, this spell takes in world coordinates rather than an offset. Free."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "internalize_hex",
     "fullname": "Inculcate",
     "signature": "list of patterns →",
@@ -4010,7 +4010,7 @@
     "description": "Etches a Hex, allowing me to cast it by holding Evoke for one second. Costs about one Charged Amethyst. *Anthony thought at it, and it turned a flip-flop on the grass, and lay trembling, its eyes gleaming in small black terror.*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_evoking",
     "fullname": "Evoker Reflection",
     "signature": "→ number",
@@ -4020,7 +4020,7 @@
     "description": "Pushes how long since a player has been evoking. Is -1 if they are not currently evoking. The ancient texts I have learned this technique from reveals many other interesting trifles: Hexcasters used to perform evocation without any a Hex, as a greeting or group ritual by waving their arms and chanting in unison. Experiments have also been done to see if a villager could be granted the ability to shift media but the results of those experiments were either never documented or have been lost to time."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "simulate_firework",
     "fullname": "Simulate Firework",
     "signature": "vector, vector, number →",
@@ -4030,7 +4030,7 @@
     "description": "Analyzes the Firework Star in my other hand and conjures a firework of that star, with the position, velocity, and gunpowder amount specified. Costs about one Amethyst Shard."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_firework",
     "fullname": "Conjure Firework",
     "signature": "vec, vec, num, num, list of dyes, list of dyes, bool, bool →",
@@ -4040,7 +4040,7 @@
     "description": "<br />Conjures a firework of my *exact* specifications. It may be one of the most complex spells in existence. Costs equivalently to the other firework spell. *Basic Theory* The first two parameters of the spell are simple position and velocity. The third parameter dictates flight duration as a number from 1 to 3. I can imagine it as being the amount of Gunpowder I would add to a firework rocket. The remaining parameters can be imagined as specifications for a virtual firework star. *Shape* The fourth parameter controls the shape of the explosion, based off a number 0 to 3.<br />- 0 is a simple, small ball-shaped explosion.<br />- 1 is a large ball-shaped explosion.<br />- 2 is a star-shaped explosion.<br />- 3 is a large creeper face-shaped explosion. *Colors* The fifth and sixth parameters are lists of dyes. The first list controls the colors of the firework's initial burst, while the second controls the colors that the first particles fade into. There must be at least one dye specified for the first list, but the second list can be empty if I do not want any colors to fade into. *Special Effects* The seventh parameter controls whether the particles of the firework flicker, as if adding glowstone to the virtual Firework Star. The eighth parameter controls whether the particles of the firework leave trails, as if adding a diamond to the virtual Firework Star."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_clear",
     "fullname": "Clear Vision",
     "signature": "",
@@ -4050,7 +4050,7 @@
     "description": "Breaks any shader spell currently applied to me. Useful for \"bleaching\" my eyes after too much experimentation."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_owl",
     "fullname": "Pierce Darkness",
     "signature": "",
@@ -4060,7 +4060,7 @@
     "description": "Greatly augments my ability to see in the dark, although the light resultingly becomes extremely blinding."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_lines",
     "fullname": "Visualize Forms",
     "signature": "",
@@ -4070,7 +4070,7 @@
     "description": "Transforms the world into a thin outline of black and white. Possibly useful for identifying subtle contrasts."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_tv",
     "fullname": "Broadcast Vision",
     "signature": "",
@@ -4080,7 +4080,7 @@
     "description": "Alters my vision to contain strange lines and make objects towards the center of my vision bulge \"towards\" me. Seems to be in reference to something..."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_media",
     "fullname": "Identify Importance",
     "signature": "",
@@ -4090,7 +4090,7 @@
     "description": "Transforms my vision to perceive only the most important things..."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "shader_spider",
     "fullname": "Split Vision",
     "signature": "",
@@ -4100,7 +4100,7 @@
     "description": "Splits my vision into multiple sections, similar to what a spider might see. I am unsure whether it actually grants me more vision..."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "block_hardness",
     "fullname": "Miner's Purification",
     "signature": "identifier → number",
@@ -4110,7 +4110,7 @@
     "description": "Pushes how difficult blocks of that block type are to mine."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "block_blast_resistance",
     "fullname": "Demoman's Purification",
     "signature": "identifier → number",
@@ -4120,7 +4120,7 @@
     "description": "Pushes how resistant blocks of that block type are to explosions."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_waterlogged",
     "fullname": "Plumber's Purification",
     "signature": "vector → boolean/null",
@@ -4130,7 +4130,7 @@
     "description": "Pushes whether the block is waterlogged, or Null if the block can not be waterlogged."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_rotation",
     "fullname": "Orientation Purification",
     "signature": "vector → vector/null",
@@ -4140,7 +4140,7 @@
     "description": "Pushes the vector of the block's facing direction, or Null if the block does not have a facing direction."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_crop",
     "fullname": "Farmer's Purification",
     "signature": "vector → number/null",
@@ -4150,7 +4150,7 @@
     "description": "Pushes a number 0 to 1, corresponding to how grown that crop is, as well as beehives, composters, and cauldrons. Strangely works on cakes too."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_glow",
     "fullname": "Glowing Purification",
     "signature": "vector → boolean/null",
@@ -4160,7 +4160,7 @@
     "description": "Pushes a boolean for whether the block is in a \"lit\" state, for example furnaces, Redstone torches, lamps, and campfires."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_lock",
     "fullname": "Lock Purification",
     "signature": "vector → boolean/null",
@@ -4170,7 +4170,7 @@
     "description": "Pushes a boolean for whether the block is currently in a \"open\" state, for example doors, trapdoors, fence gates, and open barrels."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_turn",
     "fullname": "Angle Purification",
     "signature": "vector → number/null",
@@ -4180,7 +4180,7 @@
     "description": "Pushes a number corresponding to the rotation of signs, skulls, and banners."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_bunch",
     "fullname": "Bunching Purification",
     "signature": "vector → number/null",
@@ -4190,7 +4190,7 @@
     "description": "Pushes how many are in a bunch block, or Null otherwise. Useful only for candles, sea pickles, and turtle eggs."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "blockstate_book",
     "fullname": "Book Purification",
     "signature": "vector → boolean/null",
@@ -4200,7 +4200,7 @@
     "description": "Pushes a boolean for whether lecterns or jukeboxes have a book/music disc in them respectively. I read that it may work for some kind of bookshelf involved in a great work too."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_enchantments",
     "fullname": "Thaumaturgist's Purif.",
     "signature": "item entity →",
@@ -4210,7 +4210,7 @@
     "description": "Gets a list of enchantments the item has."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_enchantment_strength",
     "fullname": "Charm Distillation",
     "signature": "item entity, identifier → number",
@@ -4220,7 +4220,7 @@
     "description": "Gets the strength of the specific enchantment on the item."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "entity_width",
     "fullname": "Caliper's Purification",
     "signature": "entity → number",
@@ -4230,7 +4230,7 @@
     "description": "Similar to Stadiometer's Purification but pushes the width of an entity rather than its height."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "theodolite",
     "fullname": "Theodolite Purif.",
     "signature": "entity → vector",
@@ -4240,7 +4240,7 @@
     "description": "Similar to Alidade's Purification but pushes the vector that points upwards from their head rather than the entity's facing vector."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_health",
     "fullname": "Vitality Purification",
     "signature": "entity → number",
@@ -4250,7 +4250,7 @@
     "description": "Pushes how close an entity is to death. I can think of these in terms of half-hearts."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_max_health",
     "fullname": "Fitness Purification",
     "signature": "entity → number",
@@ -4260,7 +4260,7 @@
     "description": "Pushes how much health an entity can have at its prime. I can think of these in terms of half-hearts."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_air",
     "fullname": "Suffocation Purification",
     "signature": "entity → number",
@@ -4270,7 +4270,7 @@
     "description": "Pushes the number of seconds before an entity will start to suffocate. This applies to marine creatures out of water as well as land creatures in water."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_max_air",
     "fullname": "Lung Purification",
     "signature": "entity → number",
@@ -4280,7 +4280,7 @@
     "description": "Pushes the number of seconds an entity can last outside their normal breathing environment before they start suffocating."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_player_hunger",
     "fullname": "Hunger Purification",
     "signature": "player entity → number",
@@ -4290,7 +4290,7 @@
     "description": "Pushes how full a player is. I can imagine this as half-hunger-hunches."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_player_saturation",
     "fullname": "Stamina Purification",
     "signature": "entity entity → number",
@@ -4300,7 +4300,7 @@
     "description": "Pushes my saturation, which roughly correlates to how long the player will remain full."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_burning",
     "fullname": "Inferno Purification",
     "signature": "entity → boolean",
@@ -4310,7 +4310,7 @@
     "description": "Pushes whether the entity is burning. Also applies to entities that are visually on fire, even if they are immune to fire, such as blazes attacking."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "burning_time",
     "fullname": "Inferno Purification II",
     "signature": "entity → number",
@@ -4320,7 +4320,7 @@
     "description": "Pushes how long in seconds the entity will continue burning if not put out."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_wet",
     "fullname": "Enderman's Purification",
     "signature": "entity → boolean",
@@ -4330,7 +4330,7 @@
     "description": "Pushes whether the entity is touching rain, water, or in a bubble column."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_baby",
     "fullname": "Youth Purification",
     "signature": "entity → boolean",
@@ -4340,7 +4340,7 @@
     "description": "Pushes whether a living creature is in its baby form. Also works on armor stands oddly."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "breedable",
     "fullname": "Reproduction Purif.",
     "signature": "entity → boolean/null",
@@ -4350,7 +4350,7 @@
     "description": "Pushes whether an animal creature is in love and ready to mate, or Null if that creature is not capable of that type of reproduction."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_sleeping",
     "fullname": "Sloth's Purification",
     "signature": "entity → boolean",
@@ -4360,7 +4360,7 @@
     "description": "Pushes whether the entity is sleeping. Applies to players, cats, foxes, and a variety of other creatures."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_sprinting",
     "fullname": "Racer's Purification",
     "signature": "entity → boolean",
@@ -4370,7 +4370,7 @@
     "description": "Pushes whether the entity is sprinting. Includes if I am swimming or if I have left the ground since sprinting and extends to cats, foxes, and more."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_ambit",
     "fullname": "Ambit Purification",
     "signature": "entity/vector → boolean",
@@ -4380,7 +4380,7 @@
     "description": "Pushes whether a location or entity is in ambit."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_staff",
     "fullname": "Staff Reflection",
     "signature": "→ boolean",
@@ -4390,7 +4390,7 @@
     "description": "Pushes whether a staff is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_packaged_hex",
     "fullname": "Device Reflection",
     "signature": "→ boolean",
@@ -4400,7 +4400,7 @@
     "description": "Pushes whether any form of casting device is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_tchotchke",
     "fullname": "Tchotchke Reflection",
     "signature": "→ boolean",
@@ -4410,7 +4410,7 @@
     "description": "Pushes whether a tchotchke is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_evocation",
     "fullname": "Evocation Reflection",
     "signature": "→ boolean",
@@ -4420,7 +4420,7 @@
     "description": "Pushes whether pure mental effort is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_hand_lamp",
     "fullname": "Wish Reflection",
     "signature": "→ boolean",
@@ -4430,7 +4430,7 @@
     "description": "Pushes whether a genie lamp is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_arch_lamp",
     "fullname": "Grand Wish Reflection",
     "signature": "→ boolean",
@@ -4440,7 +4440,7 @@
     "description": "Pushes whether an arch genie lamp is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_circle",
     "fullname": "Constructed Reflection",
     "signature": "→ boolean",
@@ -4450,7 +4450,7 @@
     "description": "Pushes whether some form of grand work is being used to cast this pattern."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "env_offhand",
     "fullname": "Dexterity Reflection",
     "signature": "→ boolean",
@@ -4460,7 +4460,7 @@
     "description": "Pushes whether the most dominant hand of the caster is being used to cast this pattern. May work strangely for casters without hands..."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "edible",
     "fullname": "Edibility Purification",
     "signature": "identifier → boolean",
@@ -4470,7 +4470,7 @@
     "description": "Takes in an item identifier and pushes whether I can eat it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_hunger",
     "fullname": "Calorie Purification",
     "signature": "identifier → number",
@@ -4480,7 +4480,7 @@
     "description": "Takes in an item identifier and pushes the amount it will fill me."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_saturation",
     "fullname": "Satiation Purification",
     "signature": "identifier → number",
@@ -4490,7 +4490,7 @@
     "description": "Takes in an item identifier and pushes the saturation value, which roughly affects how long it will fill me."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_meat",
     "fullname": "Flesh Purification",
     "signature": "identifier → boolean",
@@ -4500,7 +4500,7 @@
     "description": "Takes in an item identifier and pushes whether it's considered a meat, meaning wolves can eat it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "is_snack",
     "fullname": "Dessert Purification",
     "signature": "identifier → boolean",
@@ -4510,7 +4510,7 @@
     "description": "Takes in an item identifier and pushes whether it's a snack, meaning I can eat it really quickly."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "identify",
     "fullname": "Detective's Purif.",
     "signature": "identifiable → identifier",
@@ -4520,7 +4520,7 @@
     "description": "Pushes the identifier of an entity or block at a vector. I notice that if I were to use Detective's Purification on an item, it returns that it's an item entity, but if I were to use Recognizer's Purification on that same entity, it would return the type of item. This type of item matches with a block identifier returned by Detective's Purification. I can imagine Recognizer's as returning *additional* information if possible."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "recognize",
     "fullname": "Recognizer's Purif.",
     "signature": "entity → identifier",
@@ -4530,7 +4530,7 @@
     "description": "Pushes extra identifier information of an entity, mainly the item type of an item entity or the item type inside an item frame entity."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "classify",
     "fullname": "Classifier's Purif.",
     "signature": "any → identifier",
@@ -4540,7 +4540,7 @@
     "description": "Pushes the identifier of an iota's type. Can be used to determine whether two iota are the same type."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_mainhand_stack",
     "fullname": "Tool Purification",
     "signature": "player entity → identifier",
@@ -4550,7 +4550,7 @@
     "description": "Returns the type of item in my mainhand."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_offhand_stack",
     "fullname": "Accessory Purification",
     "signature": "player entity → identifier",
@@ -4560,7 +4560,7 @@
     "description": "Returns the type of item in my offhand."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "count_stack",
     "fullname": "Storage Purification",
     "signature": "item entity → number",
@@ -4570,7 +4570,7 @@
     "description": "Takes in an item entity and pushes how many items are in it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "count_max_stack",
     "fullname": "Warehouse Purification",
     "signature": "identifier → number",
@@ -4580,7 +4580,7 @@
     "description": "Takes in an item entity and pushes how many items that can stack in it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "damage_stack",
     "fullname": "Deterioration Purif.",
     "signature": "item entity → number",
@@ -4590,7 +4590,7 @@
     "description": "Takes in an item entity and pushes how much damage the item has sustained."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "damage_max_stack",
     "fullname": "Fragility Purification",
     "signature": "identifier → number",
@@ -4600,7 +4600,7 @@
     "description": "Takes in an item entity and pushes how much durability the item can have at its peak."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_effects_entity",
     "fullname": "Diagnosis Purification",
     "signature": "entity → list of identifiers",
@@ -4610,7 +4610,7 @@
     "description": "Pushes a list of status effects the entity is afflicted with."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_effects_item",
     "fullname": "Prescription Purif.",
     "signature": "item entity → list of identifiers",
@@ -4620,7 +4620,7 @@
     "description": "Pushes a list of status effects the food or potion will bestow."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_effect_category",
     "fullname": "Condition Purification",
     "signature": "identifier → number",
@@ -4630,7 +4630,7 @@
     "description": "Pushes the general \"goodness\" of the effect towards the afflicted. -1 for harmful, 0 for neutral, and 1 for beneficial."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_effect_amplifier",
     "fullname": "Concentration Dstl.",
     "signature": "entity, identifier → number",
@@ -4640,7 +4640,7 @@
     "description": "Pushes the potency of the specific effect acting on the entity or Null if the entity doesn't have it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_effect_duration",
     "fullname": "Clearance Distillation",
     "signature": "entity, identifier → number",
@@ -4650,7 +4650,7 @@
     "description": "Pushes how long the effect will last in seconds or Null if the entity doesn't have it."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_light",
     "fullname": "Luminance Purification",
     "signature": "vector → number",
@@ -4660,7 +4660,7 @@
     "description": "Pushes the light level at the position as a number 0 to 15. If inside a nontransparent block, it returns zero."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_weather",
     "fullname": "Meterologist's Refl.",
     "signature": "→ number",
@@ -4670,7 +4670,7 @@
     "description": "Pushes a number corresponding to the weather. 0 for clear, 1 for rain, and 2 for thundering."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_power",
     "fullname": "Battery Purification",
     "signature": "vector → number",
@@ -4680,7 +4680,7 @@
     "description": "Pushes the Redstone power that a position receives."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_comparator",
     "fullname": "Peripheral Purification",
     "signature": "vector → number/null",
@@ -4690,7 +4690,7 @@
     "description": "Pushes the power level a comparator would output if pressed against a position."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_day",
     "fullname": "Circadian Reflection",
     "signature": "→ number",
@@ -4700,7 +4700,7 @@
     "description": "Pushes the progress of the day as a number between 0 (start) and 1 (end) of the day."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_time",
     "fullname": "Temporal Reflection",
     "signature": "→ number",
@@ -4710,7 +4710,7 @@
     "description": "Pushes the age of the world for timekeeping, unaffected by events such as sleeping. Divided by 20, it returns seconds."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_biome",
     "fullname": "Geographical Purif.",
     "signature": "→ identifier",
@@ -4720,7 +4720,7 @@
     "description": "Pushes the identifier of the biome type that the vector is within."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_dimension",
     "fullname": "Plane Reflection",
     "signature": "→ identifier",
@@ -4730,7 +4730,7 @@
     "description": "Pushes the identifier of the dimension the Hex is being cast in."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "get_einstein",
     "fullname": "Distortion Reflection",
     "signature": "→ boolean",
@@ -4740,7 +4740,7 @@
     "description": "Pushes whether this dimension is bounded by standard rules of space and time: compasses and clocks will work here."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "greater_blink",
     "fullname": "Greater Blink",
     "signature": "vector →",
@@ -4750,7 +4750,7 @@
     "description": "Teleports me up to 128 blocks away, relative to my position and rotation. Costs about two Amethyst Dust. A vector of (0, 0, 1) would teleport me one block in the direction I'm facing. A vector of (0, 1, 0) would teleport me one block \"up\" in the direction of the top of my head. A vector of (0, 1, 10) would teleport me ten blocks forward in the direction I'm facing and one block upwards from the top of my head. Peculiarly, it moves my feet to the location, perhaps so that a raycast teleports my feet onto the target block rather than my eyes submerged into the floor. If I want to do multiple jumps for long distances, this property must be accounted for. *Long Jaunt! Longer than you think-*"
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "conjure_mesh",
     "fullname": "Conjure Mesh",
     "signature": "vector → entity",
@@ -4760,7 +4760,7 @@
     "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust. When initally conjured, the mesh is invisible and must be woven to gain form. The constraints for the list of vectors provided to a mesh are quite minimal. The list must be no more than 32 vectors long, and those vectors must have magnitudes less than 10. The mesh will then connect each of those points."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
     "name": "weave_mesh",
     "fullname": "Weave Mesh",
     "signature": "entity, list of vectors →",
@@ -4770,7 +4770,1867 @@
     "description": "Takes a list of vectors, with constraints defined on the prior page, and weaves the mesh into that shape. Free."
   },
   {
-    "mod": "hexical",
+    "mod": "hexical1.5",
+    "name": "read_mesh",
+    "fullname": "Tangle Purification",
+    "signature": "entity → list of vectors",
+    "pattern": "edeeeeeweeeaqqwqwqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the shape of a mesh as a list of vectors."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "write_grimoire",
+    "fullname": "Write Grimoire",
+    "signature": "pattern, list →",
+    "pattern": "aqwqaeaqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Associates a pattern to a list of patterns in the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "erase_grimoire",
+    "fullname": "Erase Grimoire",
+    "signature": "pattern →",
+    "pattern": "aqwqaqded",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Erases any associations for a pattern that may exist in the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "index_grimoire",
+    "fullname": "Archivist Reflection",
+    "signature": "→ list of patterns",
+    "pattern": "aqaeaqwqa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Gets a list of all patterns modified by the Grimoire in my offhand."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "age_scroll",
+    "fullname": "Age Scroll",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqeqqqwqeaeaeaeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Yellows the parchment of an Animated Scroll, making it bear striking semblance to some ancient scrolls I've been finding."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "color_scroll",
+    "fullname": "Dye Ink",
+    "signature": "animated scroll entity, vector →",
+    "pattern": "waeqqqqewqqwqqeqeqqwqqeq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Changes the color of an Animated Scroll's ink to the color specified by the vector, with the components being 0 to 1 values of red, green, and blue respectively."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "glow_scroll",
+    "fullname": "Illuminate Ink",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqedeqdqdqdqeqdwwd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Causes the ink of an Animated Scroll to brightly glow, regardless of lighting conditions."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "vanish_scroll",
+    "fullname": "Vanish Scroll",
+    "signature": "animated scroll entity →",
+    "pattern": "waeqqqqedeqeeweeqewee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Causes the Animated Scroll to become invisible leaving only the pattern, making it appear as though the pattern were magically etched into the surface the scroll is on."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "wish",
+    "fullname": "Wish",
+    "signature": "list of patterns →",
+    "pattern": "eweweweweweewedeaqqqd",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Wish the genie to cast a Hex for me. Because I am *teaching* a mind rather than *etching* a casting device, I can freely reteach the genie a new Hex any time without losing media. To say it casts is an understatement. It casts *<strong>EVERY INSTANT</strong>*. When holding the switch after wishing, I am treated to a splendid unceasing gush of media. I can only estimate it must be around twenty times every second. The genie performs the casting with incredible efficiency, producing little of the sounds and particles that accompany other casting methods. I have developed some useful patterns to communicate with the genie for information, documented on the next few pages. These patterns must only be cast by the genie within the lamp, lest I succumb to the Impersonate Genie mishap. *I am not a tool for your convenience.*<br />Strange murmuring occasionally emitted from the lamp. Likely disregardable."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_position",
+    "fullname": "Genie Refl.: Spatial",
+    "signature": "→ vector",
+    "pattern": "qwddedqdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original position when I began using the lamp."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_rotation",
+    "fullname": "Genie Refl.: Rotational",
+    "signature": "→ vector",
+    "pattern": "qwddedadw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original rotation when I began using the lamp."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_velocity",
+    "fullname": "Genie Refl.: Kinetic",
+    "signature": "→ vector",
+    "pattern": "qwddedqew",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes my original velocity when I began using the lamp."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_use_time",
+    "fullname": "Genie Refl.: Temporal",
+    "signature": "→ number",
+    "pattern": "qwddedqwddwa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many times the lamp has cast since I began using the lamp. I can divide by by 20 to convert to seconds."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_media",
+    "fullname": "Genie Refl.: Media",
+    "signature": "→ number",
+    "pattern": "qwddedaeeeee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the remaining media of the lamp, in units of dust."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "set_hand_lamp_storage",
+    "fullname": "Genie Gambit",
+    "signature": "any →",
+    "pattern": "qwddedqedeeeee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Asks the genie to remember an iota for me. Strangely, the genie seems able to bypass the Transgress Others mishap, perhaps because it requires my active concentration to use this lamp."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hand_lamp_storage",
+    "fullname": "Genie Refl.: Memory",
+    "signature": "→ any",
+    "pattern": "qwddedqwaqqqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Requests the iota I had saved to the genie to be pushed to the top of the stack. If I had not previously saved anything, the genie pushes Null."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "lamp_finale",
+    "fullname": "Finale Reflection",
+    "signature": "→ boolean",
+    "pattern": "aaddaddad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "The instant I let go of my lamp, it casts an additional time. I can use this pattern to recognize whether a cast is that finale, and react accordingly."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "recharge_lamp",
+    "fullname": "Make Genie",
+    "signature": "entity, number →",
+    "pattern": "qaqwawqwqqwqwqwqwqwqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "*Borrow* the experiences and memory of a villager and transforms it into a genie to serve the lamp in my offhand. The spell itself costs about one Charged Amethyst, plus the media I'm giving the lamp. Notably, this spell will *not* kill the villager. It splinters off a section of their mind to serve as the genie and as for the villager's main consciousness, it only results in amnesia. I have heard rumors of ancient Hexcasters *growing* villager minds like crops using this property: consume them to recharge lamps and allow the villagers to regenerate their lost knowledge in between. Not all villagers can be a genie. I estimate there is so little media potential in any villager lesser than Journeyman-grade that the spell would simply fail. Having most of its workings *optimized* purely for casting, I doubt an Expert villager will perform any better than a Journeyman."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "promote_lamp",
+    "fullname": "Promote Lamp",
+    "signature": "entity →",
+    "pattern": "qweedeqeedeqdqdwewewwewewwewe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "If just a sliver of a mind is capable of such power, how about the whole body? Hold the lamp in my other hand and cast. Costs about ten Charged Amethyst."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "has_arch_lamp",
+    "fullname": "Archgenie Purification",
+    "signature": "entity → boolean",
+    "pattern": "qaqwddedqeed",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a player currently has an active arch lamp."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_position",
+    "fullname": "Arch. Refl.: Spatial",
+    "signature": "→ vector",
+    "pattern": "qaqwddedqdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original position when the arch lamp started casting."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_rotation",
+    "fullname": "Arch. Refl.: Rotational",
+    "signature": "→ vector",
+    "pattern": "qaqwddedadw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original rotation when the arch lamp started casting."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_velocity",
+    "fullname": "Arch. Refl.: Kinetic",
+    "signature": "→ vector",
+    "pattern": "qaqwddedqew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes my original velocity when the arch lamp started casting."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_use_time",
+    "fullname": "Arch. Refl.: Temporal",
+    "signature": "→ number",
+    "pattern": "qaqwddedqwddwa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many times the arch lamp has cast since its activation. I can divide by by 20 to convert to seconds."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_media",
+    "fullname": "Arch. Refl.: Media",
+    "signature": "→ number",
+    "pattern": "qaqwddedaeeeee",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the remaining amount of media left in the arch lamp, in units of dust."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "set_arch_lamp_storage",
+    "fullname": "Archgenie Gambit",
+    "signature": "any →",
+    "pattern": "qaqwddedqedeeeee",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Can be cast by a casting device, Staff, or within the arch lamp to remember an iota. Unlike hand lamps, this is subject to Transgress Others mishap."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_arch_lamp_storage",
+    "fullname": "Arch. Refl.: Memory",
+    "signature": "→ any",
+    "pattern": "qaqwddedqwaqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Can be cast by a casting device, Staff, or within the arch lamp to push the stored iota."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "lamp_finale",
+    "fullname": "Finale Reflection",
+    "signature": "→ boolean",
+    "pattern": "aaddaddad",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "When an archgenie lamp is turned off, it casts an additional time. I can use this pattern to recognize when whether a cast is that last burst of energy."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "turret_lamp_normal",
+    "fullname": "Trajectory Reflection",
+    "signature": "→ vector",
+    "pattern": "qaqwddedweaqwqae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes what direction the Pedestal this Lamp resides on is facing."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "am_enlightened",
+    "fullname": "Epiphany Purification",
+    "signature": "player entity → boolean",
+    "pattern": "awqaqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the given player has achieved enlightenment like I have."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_brainswept",
+    "fullname": "Sentience Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqqaqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether an entity \"has been magically relieved of its mind\". I feel this is strongly related to Flay Mind somehow..."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "garbage",
+    "fullname": "Garbage Reflection",
+    "signature": "→ garbage",
+    "pattern": "aqawde",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes Garbage to my stack. I am unsure why I would ever want this pattern but it exists."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_media",
+    "fullname": "Media Purification",
+    "signature": "entity | vector → number",
+    "pattern": "ddew",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the amount of media inside an item, that a creature contains or holds, or that a specialized media-holding block contains."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "congruent",
+    "fullname": "Congruence Distillation",
+    "signature": "pattern, pattern → boolean",
+    "pattern": "aaqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether two patterns have the same shape and orientation."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "serialize_pattern",
+    "fullname": "Chirographer's Purif.",
+    "signature": "pattern → list of numbers",
+    "pattern": "wqaedeqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Turns a pattern into a list of numbers for my splitting, analysis, and dissection. The list of numbers returned by Chirographer's Purification are related to the strokes. The diagonal stroke that travels upwards and rightwards is labeled 0 and all other strokes are labelled incrementally in a counter-clockwise rotation. There are various properties of these lists that I can use. By adding or subtracting a constant, I can rotate the pattern. For cyclical patterns, rotating the list by moving the first element to the end or vice versa rotates the starting position. By carefully altering numbers with list manipulation, I can also make some kind of *backwards stroke*."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "deserialize_pattern",
+    "fullname": "Calligrapher's Purif.",
+    "signature": "list of numbers → pattern",
+    "pattern": "wqqqaqwd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Turns a list of numbers back into a pattern. Applies a strange remainder effect to numbers outside of the 0-5 range to coerce it into a useable form. This is the inverse of Chirographer's Purification."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "draw_pattern",
+    "fullname": "Handwriting Distillation",
+    "signature": "pattern → list of vectors",
+    "pattern": "eadqqqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a pattern and transforms it into a normalized list of vectors. I feel this may be useful for artistic spells."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shuffle_pattern",
+    "fullname": "Glyphmaker's Dstl.",
+    "signature": "pattern, number → pattern",
+    "pattern": "aqqqdae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes in a pattern and a number and produces a pattern of the same shape, but different stroke order. My notes reveal that ancient Hexcasters used this for some *grand library*."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "perlin",
+    "fullname": "Perlin Distillation",
+    "signature": "vector, number → number",
+    "pattern": "qawedqdq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Measures the concentration of ambient at that point in space and time, normalized between 0 and 1."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "fluid_raycast",
+    "fullname": "Naval Distillation",
+    "signature": "vector, vector → vector/null",
+    "pattern": "wqqaqwede",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Archer's Distillation but targets only liquids, piercing through all other blocks."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "fluid_surface_raycast",
+    "fullname": "Lilypad Distillation",
+    "signature": "vector, vector → vector/null",
+    "pattern": "weedewqaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Architect's Distillation but targets only liquids, piercing through all other blocks."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "piercing_raycast",
+    "fullname": "Railgun Exaltation",
+    "signature": "vec, vec, id → vec/null",
+    "pattern": "wqqddqeqddq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Archer's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "piercing_surface_raycast",
+    "fullname": "Laser Exaltation",
+    "signature": "vec, vec, id → vec/null",
+    "pattern": "weeaaeqeaae",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Works similar to Architect's Distillation but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_telepathy",
+    "fullname": "Telepathic Reflection",
+    "signature": "→ number",
+    "pattern": "wqqadaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "By focusing on a particular image, I can detect that concentration via this pattern. Pushes how many twentieths of a second I've been intending to Call Telepathy, or -1 if I am not."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "send_telepathy",
+    "fullname": "Send Thought",
+    "signature": "any →",
+    "pattern": "qqqqwaqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Momentarily displays an iota above my hotbar. If cast repeatedly, each cast overwrites the previous instantly."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shout_telepathy",
+    "fullname": "Shout Thought",
+    "signature": "any →",
+    "pattern": "daqqqqwa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Grandly flahes an iota across my vision. It obstructs my vision and takes some time to fade in, so I shall only use it sparingly."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "pling",
+    "fullname": "Hallucinate Pling",
+    "signature": "",
+    "pattern": "eqqqada",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes me to hear a pling that is inaudible to other players."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "click",
+    "fullname": "Hallucinate Click",
+    "signature": "",
+    "pattern": "eqqadaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes me to hear a click that is inaudible to other players."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "moving_up",
+    "fullname": "Charge Reflection",
+    "signature": "→ number",
+    "pattern": "aqaddq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Walk Forwards, or -1 if I am not."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "moving_down",
+    "fullname": "Retreat Reflection",
+    "signature": "→ number",
+    "pattern": "dedwdq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Walk Backwards, or -1 if I am not."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "moving_left",
+    "fullname": "Dodge Reflection",
+    "signature": "→ number",
+    "pattern": "edead",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Strafe Left, or -1 if I am not. Can be differentiated from Evade Reflection because d comes to the left of e."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "moving_right",
+    "fullname": "Evade Reflection",
+    "signature": "→ number",
+    "pattern": "qaqda",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Strafe Right, or -1 if I am not. Can be differentiated from Dodge Reflection because e comes to the right of d."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "jumping",
+    "fullname": "Leaping Reflection",
+    "signature": "→ number",
+    "pattern": "qaqdaqqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Jump, or -1 if I am not."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "sneaking",
+    "fullname": "Stealthy Reflection",
+    "signature": "→ number",
+    "pattern": "wede",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes how many twentieths of a second I've been intending to Sneak, or -1 if I am not."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "key_shelf",
+    "fullname": "Librarian's Purification",
+    "signature": "vector → pattern/null",
+    "pattern": "qaqqadaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Reads the pattern key of an akashic bookshelf."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "read_shelf",
+    "fullname": "Librarian's Purif. II",
+    "signature": "vector → any",
+    "pattern": "qaqqqada",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Reads the iota from an akashic bookshelf."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "write_shelf",
+    "fullname": "Librarian's Gambit",
+    "signature": "vector, pattern, any →",
+    "pattern": "edeeedad",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Writes an iota under a pattern key to an akashic bookshelf."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "clear_shelf",
+    "fullname": "Librarian's Gambit II",
+    "signature": "vector →",
+    "pattern": "edeedade",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Clears an akashic bookshelf."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_mage_block",
+    "fullname": "Conjure Mage Block",
+    "signature": "vector →",
+    "pattern": "dee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Conjures a mage block at the location. Costs about three Amethyst Dust. *I can create a city out of nothing, or I can cover it in volcanic rock.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_bouncy",
+    "fullname": "Bouncy",
+    "signature": "vector →",
+    "pattern": "deeqa",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block delightfully fun to bounce on! It returns more force to me than regular slime blocks and I notice even if I sneak, the block bounces me regardless."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_energized",
+    "fullname": "Energized",
+    "signature": "vector, number →",
+    "pattern": "deewad",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block emit a Redstone signal, with the number corresponding to the power level of the output."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_ephemeral",
+    "fullname": "Ephemeral",
+    "signature": "vector, number →",
+    "pattern": "deewwaawd",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier takes in a number in addition to a position and shatters the block after many twentieths of a second. Subsequent casts can lengthen or shorten the duration."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_invisible",
+    "fullname": "Invisible",
+    "signature": "vector →",
+    "pattern": "deeqedeaqqqwqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier prevents the block from emitting the telltale particles that accompany my casting, even when being stood on."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_replaceable",
+    "fullname": "Replaceable",
+    "signature": "vector →",
+    "pattern": "deewqaqqqqq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier is useful for construction! With this modifier applied, I find I can easily place another block in the place of the mage block."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "modify_block_volatile",
+    "fullname": "Volatile",
+    "signature": "vector →",
+    "pattern": "deewedeeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "This modifier makes the block break other mage blocks it's touching. Notably, if it breaks another volatile block, that block breaks and so on until every volatile block shatters."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_dye",
+    "fullname": "Chromatic Purification",
+    "signature": "id/vector/entity → dye/null",
+    "pattern": "weedwa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Gets the dye of a block, entity, or block/item identifier."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "dye",
+    "fullname": "Dye",
+    "signature": "vector/entity, dye →",
+    "pattern": "dwaqqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Dyes a dyeable block or entity. Costs about an eighth of one Amethyst Dust. The valid block targets for this spell include beds, candles, cakes with candles, carpets, concrete, concrete powder, glazed terracotta, sand into red sand and vice versa, sandstone and all blocks derived from it into its red variant and vice versa, shulker boxes, stained glass, stained glass panes, terracotta, tulips into their multiple colors, and wool blocks. As for entities, cat collars, dog collars, specklikes, shulkers, and item entities of all of the above blocks are valid."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "translate_dye",
+    "fullname": "Vision Purification",
+    "signature": "dye → vector",
+    "pattern": "wdwwaawwewdwwewwdwwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Translates a dye color into a vector, where each component is from 0 to 1 and represents the red, green, and blueness of the dye respectively."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "magic_missile",
+    "fullname": "Magic Missile",
+    "signature": "vector, vector →",
+    "pattern": "qaqww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Conjures a small silver of amethyst that always deals a full heart of damage and forces the target backwards. Costs about one Amethyst Dust. The projectile has a few interesting properties. It automatically disappears after roughly ten seconds or shatters upon hitting an entity or block. It pierces all forms of armor and protection. It is also unaffected by gravity and water drag. *A weak but enchanting sparkling projectile.* The conjuration location is quite esoteric: no wonder most Hexcasters conjure it in front of them. The basic gist is a vector, where my head's position is the origin, my facing is the Z+ axis, the vector pointing up from my head is the Y+ axis, and the vector from my head pointing rightwards is the X+ axis. For basic purposes, the zero vector conjures it inside my head and a vector resembling (0, 0, n) conjures it n blocks in front of me."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "to_pigment",
+    "fullname": "Pigment Purification",
+    "signature": "dye/entity → pigment",
+    "pattern": "aqwedeweeeewweeew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes a colored dye iota and transforms it into a pigment, takes a player and returns their pigment, or takes an item containing a pigment and returns its pigment."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "sample_pigment",
+    "fullname": "Pigment Exaltation",
+    "signature": "pigment, vec, num → vec",
+    "pattern": "edewqaqqqqqwqqq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Samples the pigment at a certain place and time as a vector, where each component is from 0 to 1 and represents the red, green, and blueness respectively."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "take_on_pigment",
+    "fullname": "Internalize Pigment II",
+    "signature": "pigment →",
+    "pattern": "weeeweeqeeeewqaqweeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Internalizes a pigment iota."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "prestidigitation",
+    "fullname": "Prestidigitation",
+    "signature": "entity/vector →",
+    "pattern": "wedewedew",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Causes a small magical effect on the block or entity, usually not too distinct from the original nature or function of the block or entity. Costs about a tenth of one Amethyst Dust. This spell differs from all others I've seen. Rather than a single specific effect, this spell seems to combine dozens of small effects into a single spell. It targets a vast array of blocks and entities, and I am constantly finding uses for it. I have documented them on the following pages. I can think of it as general basic magic tricks."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "can_prestidigitate",
+    "fullname": "Alteration Purification",
+    "signature": "entity/vector → boolean",
+    "pattern": "wqaqwqaqw",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether an entity or location is able to be manipulated with Prestidigitation. I've compiled all of its recorded uses from my notes: opens and close fence gates, trapdoors, and doors of all materials; flicks levers and presses buttons; holds down and releases pressure plates; extinguishes fire and soul fire; lights and extinguishes candles and campfires; rings bells; strips wood; carves pumpkins; makes a note block play its sound; triggers dispensers and droppers; dries mud into clay; turns most soil blocks into path blocks and path blocks into tilled soil... toggles Redstone lamps; drain cauldrons; modifies the state of Redstone repeaters, comparators, and daylight sensors, ignites and deprimes TNT and creepers; shear sheep; give and take arms from armor stands; makes squid squirt ink; makes pandas sneeze; removes the helmet of a snow golem; make pufferfish instantly swell up; take honeycomb from beehives and nests, and activates some kind of \"great work\" whatever that is."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "wristpocket",
+    "fullname": "Wristpocket",
+    "signature": "",
+    "pattern": "aaqqa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "This spell vanishes the stack of items in my other hand, or conjures it back, swapping if my other hand is holding something. Costs about a eighth of one Amethyst Dust."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "wristpocket_item",
+    "fullname": "Pocket Reflection",
+    "signature": "→ identifier/null",
+    "pattern": "aaqqada",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns the identifier of the item in my wristpocket, or Null if it is empty."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "wristpocket_count",
+    "fullname": "Pocket Reflection II",
+    "signature": "→ number",
+    "pattern": "aaqqaaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Returns how many items I have in my wristpocket, or 0 if it is empty."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "sleight",
+    "fullname": "Sleight",
+    "signature": "item entity/vector →",
+    "pattern": "aaqqadeeeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Performs an act of magical sleight of hand to steal items into my wristpocket or expel my wristpocket back into the world. Costs about a fourth of one Amethyst Dust. If given a vector, it conjures my wristpocketed item at that vector. If given an item entity, my wristpocket either pulls in or swaps with the item, depending on whether it is empty. This spell can also be cast by spell circles to manipulate a pedestal sitting above the impetus. *If your sleight of hand causes you to break eye contact with your audience, it is too advanced for your skill level.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "mage_hand",
+    "fullname": "Mage Hand",
+    "signature": "entity/vector →",
+    "pattern": "aaqqaeea",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Projects my mind's hand forward to use my wristpocketed item and interact with the world. If my wristpocket is empty, acts as though a plain hand had reached out. Costs about one Amethyst Dust. If given an entity, it interacts with the entity using the wristpocketed item. If given a vector, it interacts with the block or *space* with the item. Because it's my mind's hand, it will not work for casting methods not attached to a player. *A spectral, floating hand appears at a point you choose within range.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "mage_mouth",
+    "fullname": "Mage Mouth",
+    "signature": "",
+    "pattern": "aaqqadaa",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Makes me eat my wristpocketed item, nourishing me or applying potions to me. Costs about one Amethyst Dust and mishaps if the item is not edible. Regardless of the time required to usually eat the item, its special effects, my own dietary restrictions, cooldowns on eating the item, or if I'm full, this spell makes me consume it instantly. *Let food be thy medicine and medicine be thy food.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_speck",
+    "fullname": "Conjure Speck",
+    "signature": "any, vector, vector → entity",
+    "pattern": "ade",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Conjures a speck with the iota, position, and rotation. Costs a negligible amount of media. Pushes the speck iota to the stack."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "move_specklike",
+    "fullname": "Move Speck",
+    "signature": "speck entity, vector →",
+    "pattern": "adeqaa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Moves a speck entity to the position."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "rotate_specklike",
+    "fullname": "Rotate Speck",
+    "signature": "speck entity, vector →",
+    "pattern": "adeaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Rotates a speck entity to face the vector."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "roll_specklike",
+    "fullname": "Roll Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeqqqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts a number between 0 and 1, representing a fraction of a full rotation, and rotates the speck's image by that amount."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "iota_speck",
+    "fullname": "Alter Speck",
+    "signature": "speck entity, any →",
+    "pattern": "adeeaqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Changes the speck's iota."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "lifetime_specklike",
+    "fullname": "Time Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeqqaawdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Commands the speck to disappear after that many twentieths of a second."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "size_specklike",
+    "fullname": "Resize Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeeqed",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Scales the speck, can range from 0 to 10. Represents size in blocks and is zero by default."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "thickness_specklike",
+    "fullname": "Thicken Speck",
+    "signature": "speck entity, number →",
+    "pattern": "adeeqw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Changes the stroke thickness of a pattern speck, can range from 0 to 10. Represents twentieths of a block, and is zero by default."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "pigment_specklike",
+    "fullname": "Paint Speck",
+    "signature": "speck entity, pigment →",
+    "pattern": "adeqqaq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Splashes a pigment iota onto the speck, changing its color after creation."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "kill_specklike",
+    "fullname": "Dismiss Speck",
+    "signature": "speck entity →",
+    "pattern": "adeaqde",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Forces a speck to disappear."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "zone_specklike",
+    "fullname": "Zone Dstl.: Specklike",
+    "signature": "vector, number → list of entities",
+    "pattern": "qqqqqwdeddwqde",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Returns specks similarly to other zone distillation patterns."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "place_block_type",
+    "fullname": "Construct",
+    "signature": "identifier, vec, vec, vec →",
+    "pattern": "wewewewewewdwew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Places a specific type of block from my inventory at a position, orientation, and horizontal orientation. Costs about one-fourth of one Amethyst Dust. The identifier can be found in the identifier scrying chapter. The orientation is an axis vector representing the direction I would face when placing the block. For blocks like doors and stairs, orientation should be either up or down and horizontal orientation determines direction. *In the psychology of the modern civilized human being, it is difficult to overstate the significance of the house.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "autograph",
+    "fullname": "Autograph",
+    "signature": "",
+    "pattern": "wwqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Permanently autographs the item in my offhand with my name and Pigment. Free and can only be done with my <span style=\"color: #b0b\">Staff</span>, as a proof of care. An autographed item holds a list of the names people who have casted this spell on it, in order and in shimmering pigmented text. It becomes unstackable with other items of the same type, and if the same person signs it multiple times, their name shifts to the bottom. It may be used as a secure method of ensuring an item was approved of by a person. *I disagree strongly with whatever work this quote is attached to.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_hexburst",
+    "fullname": "Conjure Hexburst",
+    "signature": "vector, any →",
+    "pattern": "aadaadqaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a Hexburst at the location with the given iota. Costs about one Amethyst Dust and is subject to the Transgress Others mishap. Hexbursts are edible items created by taking an iota and wrapping media around it, over and over until it gains size. When eaten, a Hexburst instantly adds its iota to the consumer's stack. I shall find this property considerably useful if I ever want to trade my entity reference. Should my stack have an unclosed Introspection, it pushes it into the forming list."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_hextito",
+    "fullname": "Conjure Hextito",
+    "signature": "vector, list of patterns →",
+    "pattern": "qaqdqaqdwawaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a Hextito at the location with the given Hex. Costs about two Amethyst Dust and is subject to the Transgress Others mishap. Hextitos are triangular crunchy snacks I can conjure. When consumed, the consumer immediately casts its Hex, using their <span style=\"color: #b0b\">Staff</span>'s stack unlike a regular casting device. I shall find them useful to make simple actions like raycasts or to give out limited uses of a Hex I have designed. If a consumer's stack has an unclosed Introspection, it will not cast, making it quite safe to hand out."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "ghast_fireball",
+    "fullname": "Conjure Fireball",
+    "signature": "vector →",
+    "pattern": "wqqqqqwaeaeaeaeae",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Conjures an explosive fireball that can be punched and damages blocks and leaves an entity reference at the top of the stack. Costs about three Amethyst Dust. The conjured fireball simply hangs in the air. It must be propelled via punching it or Impulse. It can also be deflected via similar methods. *A fiery, explosive projectile.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "llama_spit",
+    "fullname": "Spit",
+    "signature": "vector →",
+    "pattern": "dwqaqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Conjures a sticky low-damaging projectile. Costs about a fourth of one Amethyst Dust. The projectile does not have any velocity of its own when conjured and moves only due to gravity unless affected by Impulse. Its damage is negligible and likely unsuited for any combat but it is cheap... *A projectile that explodes into a sticky mess.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "gasp",
+    "fullname": "Gasp",
+    "signature": "entity →",
+    "pattern": "aweeeeewaweeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Instantly replenishes a creature's air bubbles. Costs about one Amethyst Dust. Regardless of amount of breath restored, this spell costs exactly one dust so I should ideally wait as long as I safely can before casting this spell. I will find it useful while diving, being teleported into a block, or even keeping sea creatures alive on land. *The best way to observe a fish is to become a fish.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "parrot",
+    "fullname": "Squawk",
+    "signature": "vector, identifier →",
+    "pattern": "wweedadw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Emits a sound associated with a mob near a location, as though a parrot had imitated that mob. Costs about a half of an Amethyst Dust. This spell does nothing but still consumes my media if a parrot can not replicate the sound. I can already imagine this spell's use for playing practical jokes on my friends and enemies. Perhaps Nature does permit me to have fun occasionally with my Hexes, creating such a cheap spell begging to be used for jokes. *Hisss...*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "myodesopsia",
+    "fullname": "Myodesopsia",
+    "signature": "list of patterns →",
+    "pattern": "wadawadawawaaw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Conjures a swirl of patterns around me that I and nearby players can see, using the patterns from the list. Free. These patterns are similar to the \"floaters\" that appear when I cast using other methods. I can imagine this spell as conjuring what would have appeared had I casted the list. Interestingly, each pattern shows up exactly once no matter how many times it appears in the list."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_compass",
+    "fullname": "Conjure Compass",
+    "signature": "vector, vector →",
+    "pattern": "aqwawqwqqwqwq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Conjures a Conjured Compass at the location pointing towards the second vector, linked to the current dimension. Costs about three Amethyst Dust. If read with Scribe's Reflection, it returns a unit vector pointing towards the location inside it. In other dimensions, the Compass spins erratically and reading it yields only Null. Once I am done with a Compass, I can eat it as a light snack. *Aye, the compass doesn't point North. But we're not trying to find North, are we?*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "spike",
+    "fullname": "Conjure Spike",
+    "signature": "vector, vector, number →",
+    "pattern": "qdqdqdqdww",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes a non-air position, an axis vector, and a delay in seconds up to ten seconds long and conjures a spike at that location. Costs about one Amethyst Shard. Each spike takes about a half second to strike and deal a hefty three full hearts of damage before slowly sinking back into the ground. If I cast this spell where a spike has not yet disappeared, it will do nothing. Spikes will also throw back targets in the direction they were conjured."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_tchotchke",
+    "fullname": "Conjure Tchotchke",
+    "signature": "vec, num, num, list →",
+    "pattern": "wwwwwaqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Conjures a Tchotchke at the location with the amount of media, rank, and Hex. Costs about one Charged Amethyst and the media used for the battery. I find ancient Hexcasters to be quite fond of these due to their versatility and the ability to conjure them as needed. Tchotchkes also feature an iota storage that can only be edited from the tchotchke itself, allowing each tchotchke to essentially act as a fully-contained magical trinket. *Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "write_tchotchke",
+    "fullname": "Tchotchke Gambit",
+    "signature": "any →",
+    "pattern": "waqqqqqedeqdqdqdqdqe",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Writes an iota to the Tchotchke's inner iota storage, which can be read back on future casts. Subject to the Transgress Others mishap and unreadable from any external source."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "read_tchotchke",
+    "fullname": "Tchotchke Reflection",
+    "signature": "→ any",
+    "pattern": "waqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the iota from the Tchotchke's inner iota storage."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "displace",
+    "fullname": "Displace",
+    "signature": "entity, vector →",
+    "pattern": "qaqqqqeedaqqqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Teleports an entity within the circle to any other point inside within the same circle. Unlike Greater Teleport, this spell takes in world coordinates rather than an offset. Free."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "internalize_hex",
+    "fullname": "Inculcate",
+    "signature": "list of patterns →",
+    "pattern": "wwaqqqqqeqdedwwqwqwwdedwwqwqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Etches a Hex, allowing me to cast it by holding Evoke for one second. Costs about one Charged Amethyst. *Anthony thought at it, and it turned a flip-flop on the grass, and lay trembling, its eyes gleaming in small black terror.*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_evoking",
+    "fullname": "Evoker Reflection",
+    "signature": "→ number",
+    "pattern": "wwaqqqqqeeaqawwewewwaqawwewew",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how long since a player has been evoking. Is -1 if they are not currently evoking. The ancient texts I have learned this technique from reveals many other interesting trifles: Hexcasters used to perform evocation without any a Hex, as a greeting or group ritual by waving their arms and chanting in unison. Experiments have also been done to see if a villager could be granted the ability to shift media but the results of those experiments were either never documented or have been lost to time."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "simulate_firework",
+    "fullname": "Simulate Firework",
+    "signature": "vector, vector, number →",
+    "pattern": "dedwaqwqqwqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Analyzes the Firework Star in my other hand and conjures a firework of that star, with the position, velocity, and gunpowder amount specified. Costs about one Amethyst Shard."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_firework",
+    "fullname": "Conjure Firework",
+    "signature": "vec, vec, num, num, list of dyes, list of dyes, bool, bool →",
+    "pattern": "dedwaqwwawwqa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "<br />Conjures a firework of my *exact* specifications. It may be one of the most complex spells in existence. Costs equivalently to the other firework spell. *Basic Theory* The first two parameters of the spell are simple position and velocity. The third parameter dictates flight duration as a number from 1 to 3. I can imagine it as being the amount of Gunpowder I would add to a firework rocket. The remaining parameters can be imagined as specifications for a virtual firework star. *Shape* The fourth parameter controls the shape of the explosion, based off a number 0 to 3.<br />- 0 is a simple, small ball-shaped explosion.<br />- 1 is a large ball-shaped explosion.<br />- 2 is a star-shaped explosion.<br />- 3 is a large creeper face-shaped explosion. *Colors* The fifth and sixth parameters are lists of dyes. The first list controls the colors of the firework's initial burst, while the second controls the colors that the first particles fade into. There must be at least one dye specified for the first list, but the second list can be empty if I do not want any colors to fade into. *Special Effects* The seventh parameter controls whether the particles of the firework flicker, as if adding glowstone to the virtual Firework Star. The eighth parameter controls whether the particles of the firework leave trails, as if adding a diamond to the virtual Firework Star."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_clear",
+    "fullname": "Clear Vision",
+    "signature": "",
+    "pattern": "eeeeeqaqeeeee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Breaks any shader spell currently applied to me. Useful for \"bleaching\" my eyes after too much experimentation."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_owl",
+    "fullname": "Pierce Darkness",
+    "signature": "",
+    "pattern": "edewawede",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Greatly augments my ability to see in the dark, although the light resultingly becomes extremely blinding."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_lines",
+    "fullname": "Visualize Forms",
+    "signature": "",
+    "pattern": "eedwwawwdee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Transforms the world into a thin outline of black and white. Possibly useful for identifying subtle contrasts."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_tv",
+    "fullname": "Broadcast Vision",
+    "signature": "",
+    "pattern": "wewdwewwawwewdwew",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Alters my vision to contain strange lines and make objects towards the center of my vision bulge \"towards\" me. Seems to be in reference to something..."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_media",
+    "fullname": "Identify Importance",
+    "signature": "",
+    "pattern": "eewdweqaqewdwee",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Transforms my vision to perceive only the most important things..."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "shader_spider",
+    "fullname": "Split Vision",
+    "signature": "",
+    "pattern": "qaqdedaedqqdedaqaedeqd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Splits my vision into multiple sections, similar to what a spider might see. I am unsure whether it actually grants me more vision..."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "block_hardness",
+    "fullname": "Miner's Purification",
+    "signature": "identifier → number",
+    "pattern": "qaqqqqqeeeeedq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how difficult blocks of that block type are to mine."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "block_blast_resistance",
+    "fullname": "Demoman's Purification",
+    "signature": "identifier → number",
+    "pattern": "qaqqqqqewaawaawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how resistant blocks of that block type are to explosions."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_waterlogged",
+    "fullname": "Plumber's Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "edeeeeeqwqqqqw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the block is waterlogged, or Null if the block can not be waterlogged."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_rotation",
+    "fullname": "Orientation Purification",
+    "signature": "vector → vector/null",
+    "pattern": "qaqqqqqwadeeed",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the vector of the block's facing direction, or Null if the block does not have a facing direction."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_crop",
+    "fullname": "Farmer's Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqwaea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a number 0 to 1, corresponding to how grown that crop is, as well as beehives, composters, and cauldrons. Strangely works on cakes too."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_glow",
+    "fullname": "Glowing Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqqqwaeaeaeaeaea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether the block is in a \"lit\" state, for example furnaces, Redstone torches, lamps, and campfires."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_lock",
+    "fullname": "Lock Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqeaqwdewd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether the block is currently in a \"open\" state, for example doors, trapdoors, fence gates, and open barrels."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_turn",
+    "fullname": "Angle Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqwqqwqd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a number corresponding to the rotation of signs, skulls, and banners."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_bunch",
+    "fullname": "Bunching Purification",
+    "signature": "vector → number/null",
+    "pattern": "qaqqqqqweeeeedeeqaqdeee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes how many are in a bunch block, or Null otherwise. Useful only for candles, sea pickles, and turtle eggs."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "blockstate_book",
+    "fullname": "Book Purification",
+    "signature": "vector → boolean/null",
+    "pattern": "qaqqqqqeawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes a boolean for whether lecterns or jukeboxes have a book/music disc in them respectively. I read that it may work for some kind of bookshelf involved in a great work too."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_enchantments",
+    "fullname": "Thaumaturgist's Purif.",
+    "signature": "item entity →",
+    "pattern": "waqeaeqawqwawaw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Gets a list of enchantments the item has."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_enchantment_strength",
+    "fullname": "Charm Distillation",
+    "signature": "item entity, identifier → number",
+    "pattern": "waqwwqaweede",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Gets the strength of the specific enchantment on the item."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "entity_width",
+    "fullname": "Caliper's Purification",
+    "signature": "entity → number",
+    "pattern": "dwe",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Similar to Stadiometer's Purification but pushes the width of an entity rather than its height."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "theodolite",
+    "fullname": "Theodolite Purif.",
+    "signature": "entity → vector",
+    "pattern": "wqaa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Similar to Alidade's Purification but pushes the vector that points upwards from their head rather than the entity's facing vector."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_health",
+    "fullname": "Vitality Purification",
+    "signature": "entity → number",
+    "pattern": "wddwaqqwawq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how close an entity is to death. I can think of these in terms of half-hearts."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_max_health",
+    "fullname": "Fitness Purification",
+    "signature": "entity → number",
+    "pattern": "wddwwawaeqwawq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes how much health an entity can have at its prime. I can think of these in terms of half-hearts."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_air",
+    "fullname": "Suffocation Purification",
+    "signature": "entity → number",
+    "pattern": "wwaade",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the number of seconds before an entity will start to suffocate. This applies to marine creatures out of water as well as land creatures in water."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_max_air",
+    "fullname": "Lung Purification",
+    "signature": "entity → number",
+    "pattern": "wwaadee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the number of seconds an entity can last outside their normal breathing environment before they start suffocating."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_player_hunger",
+    "fullname": "Hunger Purification",
+    "signature": "player entity → number",
+    "pattern": "qqqadaddw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes how full a player is. I can imagine this as half-hunger-hunches."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_player_saturation",
+    "fullname": "Stamina Purification",
+    "signature": "entity entity → number",
+    "pattern": "qqqadaddq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes my saturation, which roughly correlates to how long the player will remain full."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_burning",
+    "fullname": "Inferno Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqwaqda",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether the entity is burning. Also applies to entities that are visually on fire, even if they are immune to fire, such as blazes attacking."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "burning_time",
+    "fullname": "Inferno Purification II",
+    "signature": "entity → number",
+    "pattern": "eewdead",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes how long in seconds the entity will continue burning if not put out."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_wet",
+    "fullname": "Enderman's Purification",
+    "signature": "entity → boolean",
+    "pattern": "qqqqwaadq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is touching rain, water, or in a bubble column."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_baby",
+    "fullname": "Youth Purification",
+    "signature": "entity → boolean",
+    "pattern": "awaqdwaaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether a living creature is in its baby form. Also works on armor stands oddly."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "breedable",
+    "fullname": "Reproduction Purif.",
+    "signature": "entity → boolean/null",
+    "pattern": "awaaqdqaawa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether an animal creature is in love and ready to mate, or Null if that creature is not capable of that type of reproduction."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_sleeping",
+    "fullname": "Sloth's Purification",
+    "signature": "entity → boolean",
+    "pattern": "aqaew",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is sleeping. Applies to players, cats, foxes, and a variety of other creatures."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_sprinting",
+    "fullname": "Racer's Purification",
+    "signature": "entity → boolean",
+    "pattern": "eaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes whether the entity is sprinting. Includes if I am swimming or if I have left the ground since sprinting and extends to cats, foxes, and more."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_ambit",
+    "fullname": "Ambit Purification",
+    "signature": "entity/vector → boolean",
+    "pattern": "wawaw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes whether a location or entity is in ambit."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_staff",
+    "fullname": "Staff Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a Staff is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_offhand",
+    "fullname": "Dexterity Reflection",
+    "signature": "→ boolean",
+    "pattern": "qaqqqwaaq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether the most dominant hand of the caster is being used to cast this pattern. May work strangely for casters without hands..."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_media",
+    "fullname": "Media Reflection",
+    "signature": "→ number",
+    "pattern": "dde",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the media available to this current cast."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_packaged_hex",
+    "fullname": "Device Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqwwaqqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether any form of casting device is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_hand_lamp",
+    "fullname": "Wish Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqdqdded",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a Hand Genie Lamp is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_arch_lamp",
+    "fullname": "Grand Wish Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqqqaqwdd",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether an Archgenie Lamp is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_turret",
+    "fullname": "Turret Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqeqdewedq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether an Archgenie Lamp on a Pedestal is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_circle",
+    "fullname": "Constructed Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqdeaqwqae",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether some form of <a href=\"https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#greatwork/spellcircles\"><span style=\"color: #8d6acc\">*grand work*</span></a> is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_evocation",
+    "fullname": "Evocation Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqeaqa",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether pure mental effort is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "env_tchotchke",
+    "fullname": "Tchotchke Reflection",
+    "signature": "→ boolean",
+    "pattern": "waaqwwaqqqqqeaqeaeaeaeaeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes whether a Tchotchke is being used to cast this pattern."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "edible",
+    "fullname": "Edibility Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqdd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether I can eat it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_hunger",
+    "fullname": "Calorie Purification",
+    "signature": "identifier → number",
+    "pattern": "adaqqqddqe",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes the amount it will fill me."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_saturation",
+    "fullname": "Satiation Purification",
+    "signature": "identifier → number",
+    "pattern": "adaqqqddqw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes the saturation value, which roughly affects how long it will fill me."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_meat",
+    "fullname": "Flesh Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqddaed",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether it's considered a meat, meaning wolves can eat it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "is_snack",
+    "fullname": "Dessert Purification",
+    "signature": "identifier → boolean",
+    "pattern": "adaqqqddaq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item identifier and pushes whether it's a snack, meaning I can eat it really quickly."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "identify",
+    "fullname": "Detective's Purif.",
+    "signature": "identifiable → identifier",
+    "pattern": "qqqqqe",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Pushes the identifier of an entity or block at a vector. I notice that if I were to use Detective's Purification on an item, it returns that it's an item entity, but if I were to use Recognizer's Purification on that same entity, it would return the type of item. This type of item matches with a block identifier returned by Detective's Purification. I can imagine Recognizer's as returning *additional* information if possible."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "recognize",
+    "fullname": "Recognizer's Purif.",
+    "signature": "entity → identifier",
+    "pattern": "eeeeeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes extra identifier information of an entity, mainly the item type of an item entity or the item type inside an item frame entity."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "classify",
+    "fullname": "Classifier's Purif.",
+    "signature": "any → identifier",
+    "pattern": "edqdeq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of an iota's type. Can be used to determine whether two iota are the same type."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_mainhand_stack",
+    "fullname": "Tool Purification",
+    "signature": "player entity → identifier",
+    "pattern": "qaqqqq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns the type of item in my mainhand."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_offhand_stack",
+    "fullname": "Accessory Purification",
+    "signature": "player entity → identifier",
+    "pattern": "edeeee",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Returns the type of item in my offhand."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "count_stack",
+    "fullname": "Storage Purification",
+    "signature": "item entity → number",
+    "pattern": "qaqqwqqqw",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how many items are in it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "count_max_stack",
+    "fullname": "Warehouse Purification",
+    "signature": "identifier → number",
+    "pattern": "edeeweeew",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how many items that can stack in it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "damage_stack",
+    "fullname": "Deterioration Purif.",
+    "signature": "item entity → number",
+    "pattern": "eeweeewdeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how much damage the item has sustained."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "damage_max_stack",
+    "fullname": "Fragility Purification",
+    "signature": "identifier → number",
+    "pattern": "qqwqqqwaqe",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Takes in an item entity and pushes how much durability the item can have at its peak."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_effects_entity",
+    "fullname": "Diagnosis Purification",
+    "signature": "entity → list of identifiers",
+    "pattern": "wqqq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes a list of status effects the entity is afflicted with."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_effects_item",
+    "fullname": "Prescription Purif.",
+    "signature": "item entity → list of identifiers",
+    "pattern": "wqqqadee",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes a list of status effects the food or potion will bestow."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_effect_category",
+    "fullname": "Condition Purification",
+    "signature": "identifier → number",
+    "pattern": "wqqqaawd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the general \"goodness\" of the effect towards the afflicted. -1 for harmful, 0 for neutral, and 1 for beneficial."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_effect_amplifier",
+    "fullname": "Concentration Dstl.",
+    "signature": "entity, identifier → number",
+    "pattern": "wqqqaqwa",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the potency of the specific effect acting on the entity or Null if the entity doesn't have it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_effect_duration",
+    "fullname": "Clearance Distillation",
+    "signature": "entity, identifier → number",
+    "pattern": "wqqqaqwdd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes how long the effect will last in seconds or Null if the entity doesn't have it."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_light",
+    "fullname": "Luminance Purification",
+    "signature": "vector → number",
+    "pattern": "wqwqwqwqwqwaeqqqqaeqaeaeaeaw",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes the light level at the position as a number 0 to 15. If inside a nontransparent block, it returns zero."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_weather",
+    "fullname": "Meterologist's Refl.",
+    "signature": "→ number",
+    "pattern": "eweweweweweeeaedqdqde",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes a number corresponding to the weather. 0 for clear, 1 for rain, and 2 for thundering."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_power",
+    "fullname": "Battery Purification",
+    "signature": "vector → number",
+    "pattern": "qwqwqwqwqwqqwwaadwdaaww",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Pushes the Redstone power that a position receives."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_comparator",
+    "fullname": "Peripheral Purification",
+    "signature": "vector → number/null",
+    "pattern": "eweweweweweewwddawaddww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the power level a comparator would output if pressed against a position."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_day",
+    "fullname": "Circadian Reflection",
+    "signature": "→ number",
+    "pattern": "wwawwawwqqawwdwwdwwaqwqwqwqwq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the progress of the day as a number between 0 (start) and 1 (end) of the day."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_time",
+    "fullname": "Temporal Reflection",
+    "signature": "→ number",
+    "pattern": "wddwaqqwqaddaqqwddwaqqwqaddaq",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Pushes the age of the world for timekeeping, unaffected by events such as sleeping. Divided by 20, it returns seconds."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_biome",
+    "fullname": "Geographical Purif.",
+    "signature": "→ identifier",
+    "pattern": "qwqwqawdqqaqqdwaqwqwq",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of the biome type that the vector is within."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_dimension",
+    "fullname": "Plane Reflection",
+    "signature": "→ identifier",
+    "pattern": "qwqwqwqwqwqqaedwaqd",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the identifier of the dimension the Hex is being cast in."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_moon",
+    "fullname": "Lunar Reflection",
+    "signature": "→ number",
+    "pattern": "eweweweweweeweeedadw",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Pushes the current phase of the moon as a fraction of its size."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "get_einstein",
+    "fullname": "Distortion Reflection",
+    "signature": "→ boolean",
+    "pattern": "aqwawqwqqwqwqwqwqwq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Pushes whether this dimension is bounded by standard rules of space and time: compasses and clocks will work here."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "greater_blink",
+    "fullname": "Greater Blink",
+    "signature": "vector →",
+    "pattern": "wqawawaqwqwqawawaqw",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Teleports me up to 128 blocks away, relative to my position and rotation. Costs about two Amethyst Dust. A vector of (0, 0, 1) would teleport me one block in the direction I'm facing. A vector of (0, 1, 0) would teleport me one block \"up\" in the direction of the top of my head. A vector of (0, 1, 10) would teleport me ten blocks forward in the direction I'm facing and one block upwards from the top of my head. A vector of (1, 0, 0) teleports me one block to my right. *Long Jaunt! Longer than you think-*"
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "conjure_mesh",
+    "fullname": "Conjure Mesh",
+    "signature": "vector → entity",
+    "pattern": "qaqqqqqwqqqdeeweweeaeewewee",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust. When initally conjured, the mesh is invisible and must be woven to gain form. The constraints for the list of vectors provided to a mesh are quite minimal. The list must be no more than 32 vectors long, and those vectors must have magnitudes less than 10. The mesh will then connect each of those points."
+  },
+  {
+    "mod": "hexicallatest",
+    "name": "weave_mesh",
+    "fullname": "Weave Mesh",
+    "signature": "entity, list of vectors →",
+    "pattern": "qaqqqqqwqqqdeewewee",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Takes a list of vectors, with constraints defined on the prior page, and weaves the mesh into that shape. Free."
+  },
+  {
+    "mod": "hexicallatest",
     "name": "read_mesh",
     "fullname": "Tangle Purification",
     "signature": "entity → list of vectors",
