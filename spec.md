@@ -23,11 +23,24 @@ Words that merely get compiled like this are ordinary words.
 ```
 Macros do not and cannot define new syntax.
 
-To prevent a macro from executing immediately, quote it with `[[ ]]` instead. The quotation can then be expanded with `call`
+A macro, when not given enough literal values to act, may force execution of regular words as well.
 ```
-5 [[ 3 print! ]] call
--! "3" is printed during comptime
---> 5
+2 3 * 5 + print!
+-! "11" is printed during comptime
+-->
+```
+
+To prevent a macro from executing immediately, quote it with `[[ ]]` instead.
+```
+5 [[ 3 print! ]]
+-! compilation error
+```
+Macros cannot be compiled down to hex patterns, and for that reason macro quotations also cannot be compiled down to hex patterns.
+Thus when a top-level macro quotation is found it forces execution of words after itself like `call` and `if` to eventually expand the quotation.
+```
+5 2 > [[ "yes" print! ]] [[ "no" print! ]] ifelse
+-! "no" is printed during comptime
+-->
 ```
 
 New words can be defined with the `def!` macro, or with the equivalent `: ... ;` syntactic sugar. 
@@ -45,16 +58,9 @@ New macros can be defined with the `defmacro!` macro, or with the equivalent `::
 ```
 Macros are allowed to have recursive (even mutually recursive) definitions.
 
-A macro, when not given enough literal values to act, may force execution of regular words as well.
-```
-2 3 * 5 + print!
--! "11" is printed during comptime
--->
-```
-
 Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
 Such simulated effects are defined on a per-word basis with the `SIMULATE:` syntax.
-The following simulation is a (partial) simulation of the `+` word:
+The following simulation is a (partial) simulation of the `+` word (simulations are written in lua):
 ```
 SIMULATE: add
   local y = pop()
