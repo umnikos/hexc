@@ -35,6 +35,7 @@ let urls = [
   [hextweaks "https://walksanatora.github.io/HexTweaks/"] # 15
   [oneironaut "https://oneironaut.hexxy.media/v/0.4.0/1.0/en_us/#patterns"] # 33
   [complexhex "https://complexhex.hexxy.media/v/latest/main/en_us/"]
+  [moreiotas "https://talia-12.github.io/MoreIotas/"]
 ]
 
 let full_data = $urls | each {|req| get_data $req.url | insert mod $req.modname | move mod --before name} | flatten

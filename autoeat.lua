@@ -74,6 +74,7 @@ end
 
 while true do
     pcall(main)
+    -- TODO: print the actual error
     print("errored!")
     sleep(1)
 end

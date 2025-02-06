@@ -10,12 +10,14 @@
 	: gaze entity/gaze ;
 : entity/height get_entity_height ;
 : entity/velocity get_entity_velocity ;
+: entity/name/get string/name/get ;
+: entity/name/set string/name/set ;
 
 : raycast/block raycast ;
 : raycast/face raycast/axis ;
 : raycast/entity raycast/entity ;
 
-: tostring "EAST" "wawqwawaw" symbol! ;
+: tostring string/iota ;
 
 : swap swap ;
 	EXPAND: 2 swap 
@@ -169,6 +171,10 @@
 : block/freeze freeze ;
 : block/ignite ignite ;
 : block/fall falling_block ;
+: block/read string/block/get ;
+	: read/block block/read ;
+: block/write string/block/set ;
+	: write/block block/write ;
 : conjure/water create_water ;
 : conjure/lava create_lava ;
 : conjure/block conjure_block ;
@@ -255,10 +261,10 @@
 # equivalent to `curry curry`
 : 2curry rot quote rot quote rot compose compose ;
 
-: read/raven read/local ;
-	: raven/read read/raven ;
-: write/raven local ;
-	: raven/write write/raven ;
+: raven/read read/local ;
+	: read/raven raven/read ;
+: raven/write local ;
+	: write/raven raven/write ;
 : soroban/inc soroban_increment ;
 : soroban/dec soroban_decrement ;
 
@@ -301,7 +307,8 @@
 : stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
 : heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities
 
-: . print ;
+: . "NORTH_EAST" "de" symbol! ;
+: print . drop ;
 # print the whole stack
 : .. stack/size last_n_list . splat ;
 
