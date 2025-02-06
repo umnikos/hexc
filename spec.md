@@ -52,7 +52,7 @@ A macro, when not given enough literal values to act, may force execution of reg
 ```
 Macros are allowed to have recursive (even mutually recursive) definitions.
 
-This execution is done not through any actual execution (casting hexes), but through simulation instead.
+Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
 Such simulated effects are defined on a per-word basis with the `SIMULATE:` syntax.
 The following simulation is a (partial) simulation of the `+` word:
 ```
