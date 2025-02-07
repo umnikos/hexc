@@ -232,6 +232,7 @@
 		local preserved = pop()
 		append(code.value)
 		push(preserved) ;
+	: 1dip dip ;
 : 2dip "SOUTH_EAST" "deaqqdq" symbol! ;
 : 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
 # TODO: ndip!
@@ -260,6 +261,7 @@
 : curry [ quote ] dip compose ;
 # equivalent to `curry curry`
 : 2curry rot quote rot quote rot compose compose ;
+: 3curry 2curry curry ;
 
 : raven/read read/local ;
 	: read/raven raven/read ;
@@ -312,12 +314,12 @@
 # print the whole stack
 : .. stack/size last_n_list . splat ;
 
-
 # looping options:
 # - thoth
 # - sisyphus
 # - heket (hextweaks utility)
 # - iris??? (cursed, semantically a jump but implemented as a continuation for "the rest of the program" that does not return)
+# - cassettes
 
 : thoth for_each ;
 
@@ -359,4 +361,19 @@ dupd [ call ] 2dip 1 sub
 	10 explode
 	conjure/block
 	block/break ;
+
+# code, delay, identifier ->
+: cassette/enqueue enqueue ;
+# identifier ->
+: cassette/dequeue dequeue ;
+# ->
+: cassette/disqueue killall ;
+
+# code, delay, identifier ->
+# will make the spell enqueue itself automatically after running
+# first iteration runs immediately
+: cassette/loop [ 
+	# stack is {self, action, delay, identifier}
+	rot 3dip cassette/enqueue
+] 3curry fix call ;
 

@@ -3,7 +3,11 @@ local w = peripheral.find("wand")
 
 local prompt = string.char(16).." "
 
-hexc.run('"stdlib.hx" loadfile!')
+if fs.exists("usrlib.hx") then
+  hexc.run('"usrlib.hx" loadfile!')
+else
+  hexc.run('"stdlib.hx" loadfile!')
+end
 hexc.run('t debug!')
 local history = {}
 
