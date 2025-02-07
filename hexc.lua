@@ -541,14 +541,14 @@ local function run(program, immediately_pop)
   return runCompiled(compiled, immediately_pop)
 end
 
-if is_imported() then
+local args = {...}
+if is_imported(args) then
   return {
     compile=compile,
     run=run,
     runCompiled=runCompiled
   }
 else
-  local args = {...}
   --error("TODO")
   local command = args[1]
   if command == "test" then
