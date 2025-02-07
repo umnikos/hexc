@@ -168,7 +168,7 @@ local function compile(program, global_dictionary, no_copy)
       for _=1,j do
         expansion.push(table.remove(res,i-j))
       end
-      local expansion_stack_backup = deepcopy(expansion.get_stack())
+      local expansion_stack_backup = expansion.duplicate()
       expansion.call()
       if not expansion.get_stack().fail then
         -- success
@@ -209,6 +209,12 @@ local function compile(program, global_dictionary, no_copy)
       end
       local f = load(body)
       local expansion_stack = {}
+      local function duplicate()
+        local copy = deepcopy(expansion_stack)
+        local original = expansion_stack
+        expansion_stack = copy
+        return original
+      end
       local function get_stack()
         return expansion_stack
       end
@@ -234,6 +240,7 @@ local function compile(program, global_dictionary, no_copy)
       local expansion = {
         arity = arity,
         call = f,
+        duplicate = duplicate,
         get_stack = get_stack,
         pop = pop,
         push = push,

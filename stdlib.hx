@@ -369,11 +369,15 @@ dupd [ call ] 2dip 1 sub
 # ->
 : cassette/disqueue killall ;
 
+# code ->
+# calls your code immediately through a cassette
+: cassette/call 0 random cassette/enqueue ;
+
 # code, delay, identifier ->
 # will make the spell enqueue itself automatically after running
 # first iteration runs immediately
 : cassette/loop [ 
 	# stack is {self, action, delay, identifier}
 	rot 3dip cassette/enqueue
-] 3curry fix 0preserving ;
+] 3curry fix cassette/call ;
 
