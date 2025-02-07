@@ -375,5 +375,5 @@ dupd [ call ] 2dip 1 sub
 : cassette/loop [ 
 	# stack is {self, action, delay, identifier}
 	rot 3dip cassette/enqueue
-] 3curry fix call ;
+] 3curry fix 0preserving ;
 
