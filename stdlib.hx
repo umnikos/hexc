@@ -262,6 +262,17 @@
 : 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
 # TODO: ndip!
 : calld [ call ] dip ;
+: keep over calld ; # like dip but the quotation also sees the value
+# apply p and q to x
+# calls p with x on the stack, pushes x back to the stack then calls q
+# x p q ->
+: bi [ keep ] dip call ;
+# apply p to x and q to y
+# x y p q ->
+: bi* [ dip ] dip call ;
+# apply p to x and then p to y
+# x y p ->
+: bi@ dup bi* ;
 
 : min 2dup > [ swap ] if drop ;
 : max 2dup < [ swap ] if drop ;
