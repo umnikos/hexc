@@ -28,13 +28,33 @@
 		push(x)
 		push(y) ;
 : drop pseudo-novice ;
-	EXPAND: 1 pseudo-novice pop() ;
+	EXPAND: 1 "a" pop() ;
+# TODO: expansions defined through other words?
 : 2drop "SOUTH_EAST" "ada" symbol! ;
+	EXPAND: 1 "ada"
+		pop() 
+		push({
+			type = "symbol",
+			name = "pseudo-novice",
+			pattern = "a",
+		}) ;
 : 3drop "SOUTH_EAST" "adada" symbol! ;
+	EXPAND: 1 "adada"
+		pop() 
+		push({
+			type = "symbol",
+			pattern = "ada",
+		}) ;
 # TODO: ndrop!
 : dropd "SOUTH_EAST" "ae" symbol! ;
-# TODO: expansion for symbol! macros?
-# - probably by being able to define new named symbols in the symbol table instead of this
+	EXPAND: 1 "ae"
+		local x = pop() 
+		push({
+			type = "symbol",
+			name = "pseudo-novice",
+			pattern = "a",
+		})
+		push(x) ;
 : rot rotate ;
 	EXPAND: 3 rotate
 		local z = pop()
@@ -70,9 +90,37 @@
 : dupn duplicate_n ;
 : dupd over swap ;
 : tuck tuck ;
+	EXPAND: 2 tuck
+		local y = pop()
+		local x = pop()
+		push(y)
+		push(x)
+		push(y) ;
+: over over ;
+	EXPAND: 2 over
+		local y = pop()
+		local x = pop()
+		push(x)
+		push(y)
+		push(x) ;
 : swapd swap_two_three ;
+	EXPAND: 1 swap_two_three
+		local x = pop()
+		push({
+			type = "symbol",
+			name = "swap",
+			pattern = "aawdd",
+		})
+		push(x) ;
 # other name suggestions: "flip", "mirror"
 : spin swap_one_three ;
+	EXPAND: 3 swap_one_three
+		local z = pop()
+		local y = pop()
+		local x = pop()
+		push(z)
+		push(y)
+		push(x) ;
 
 # t for true
 # f for false
