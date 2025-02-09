@@ -170,10 +170,41 @@
 # key -> iota
 : idea/read readidea ;
 
+: call eval ;
+	: exec call ;
+	EXPAND: 1 eval
+		local code = pop()
+		if code.type ~= "code" then
+			error("can only eval a quotation")
+		end
+		append(code.value) ;
+: choose "SOUTH_EAST" "awdd" symbol! ; # FIXME: importing the stdlib twice fucks with shadowing
+# TODO: expansion for this once you make boolean literals
+: ifelse choose call ;
+: if [ ] ifelse ;
+: dip nephthys ;
+	EXPAND: 2 nephthys 
+		local code = pop()
+		if code.type ~= "code" then
+			error("can only dip a quotation")
+		end
+		local preserved = pop()
+		append(code.value)
+		push(preserved) ;
+	: 1dip dip ;
+: 2dip "SOUTH_EAST" "deaqqdq" symbol! ;
+: 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
+# TODO: ndip!
+: calld [ call ] dip ;
+
+: min 2dup > [ swap ] if drop ;
+: max 2dup < [ swap ] if drop ;
+
 : explode explode ;
 	: explosion explode ;
 : block/type type/block_item ;
-: block/break break_block ;
+: block/break/raw break_block ;
+: block/break dup block/type tostring "Air" != [ block/break/raw ] [ drop ] ifelse ;
 : block/place place_block ;
 : block/smelt smelt ;
 : block/freeze freeze ;
@@ -218,36 +249,6 @@
 : pocket/item wristpocket_item ;
 : pocket/count wristpocket_count ;
 : pocket/use mage_hand ;
-
-: call eval ;
-	: exec call ;
-	EXPAND: 1 eval
-		local code = pop()
-		if code.type ~= "code" then
-			error("can only eval a quotation")
-		end
-		append(code.value) ;
-: choose "SOUTH_EAST" "awdd" symbol! ; # FIXME: importing the stdlib twice fucks with shadowing
-# TODO: expansion for this once you make boolean literals
-: ifelse choose call ;
-: if [ ] ifelse ;
-: dip nephthys ;
-	EXPAND: 2 nephthys 
-		local code = pop()
-		if code.type ~= "code" then
-			error("can only dip a quotation")
-		end
-		local preserved = pop()
-		append(code.value)
-		push(preserved) ;
-	: 1dip dip ;
-: 2dip "SOUTH_EAST" "deaqqdq" symbol! ;
-: 3dip "SOUTH_EAST" "deaqqdqe" symbol! ;
-# TODO: ndip!
-: calld [ call ] dip ;
-
-: min 2dup > [ swap ] if drop ;
-: max 2dup < [ swap ] if drop ;
 
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
@@ -374,10 +375,12 @@ dupd [ call ] 2dip 1 sub
 : fib/recursive [ over 1 > [ 2dup [ 1 - ] dip call -rot [ 2 - ] dip call + ] [ drop ] ifelse ] fix call ;
 
 
+# TODO: use lava only in the nether
+: conjure/liquid conjure/lava ;
 # takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
 : implode 5 dupn
 	block/break
-	conjure/lava # TODO: use this only in the nether, not always (costs 10 dust when the explosion is 30)
+	conjure/liquid
 	10 explode
 	conjure/block
 	block/break ;
@@ -388,18 +391,19 @@ dupd [ call ] 2dip 1 sub
 # identifier ->
 : cassette/dequeue dequeue ;
 	: tape/dequeue cassette/dequeue ;
+ 	: kill cassette/dequeue ;
 # ->
 : cassette/disqueue killall ;
 	: tape/disqueue cassette/disqueue ;
 
-# code ->
 # calls your code immediately through a cassette
+# code ->
 : cassette/call 0 random cassette/enqueue ;
 	: tape/call cassette/call ;
 
-# code, delay, identifier ->
 # will make the spell enqueue itself automatically after running
 # first iteration runs immediately
+# code, delay, identifier ->
 : cassette/loop [ 
 	# stack is {self, action, delay, identifier}
 	rot 3dip cassette/enqueue
