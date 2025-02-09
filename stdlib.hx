@@ -71,8 +71,8 @@
 : dupd over swap ;
 : tuck tuck ;
 : swapd swap_two_three ;
-# FIXME: give this a better name
-: 13swap swap_one_three ;
+# other name suggestions: "flip", "mirror"
+: spin swap_one_three ;
 
 # t for true
 # f for false
