@@ -75,3 +75,9 @@ SIMULATE: add
 ```
 
 Simulations can thus only be defined for pure words (words with no external effects).
+
+The third and final kind of parentheses is the one for list literals, and apart from being sugar for `nlist` it also forces immediate execution of words inside.
+```
+{ 1 2 3 + 10 }
+--> { 1 5 10 }
+```
