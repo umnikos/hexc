@@ -132,7 +132,9 @@
 	: length len ;
 : list/push append ;
 : list/pop unappend ;
-: list/empty empty_list ; # TODO: this should just be { } and not a word
+: list/empty { } ;
+	: {} { } ;
+	: [] [ ] ;
 : list/singleton singleton ;
 : nlist last_n_list ;
 : list/find index_of ;
@@ -307,7 +309,8 @@
 # only leaves the top iota of the stack
 # TODO: stack/top_n
 : stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
-: heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities
+: stack/wrap stack/size nlist ;
+: stack/unwrap splat ;
 
 : . "NORTH_EAST" "de" symbol! ;
 : print . drop ;
@@ -321,7 +324,17 @@
 # - iris??? (cursed, semantically a jump but implemented as a continuation for "the rest of the program" that does not return)
 # - cassettes
 
-: thoth for_each ;
+: thoth for_each ; # cursed
+: break halt ; # charon's, breaks out of current loop
+: continue atalanta ; # skips end of this iteration to go to the next one
+: sisyphus sisyphus ; # while true loop exited with `break`
+: heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities, loops while the top of the stack is truthy
+: iris eval/cc ; # the most cursed of them all
+: terminate janus ; # breaks through everything
+# FIXME: CHARON'S BREAKS HERMES
+# either find a new charon's, a new hermes, or just use iris
+: halt [ ] sisyphus ;
+
 
 # num quotation -> executes quotation that many times, *preserving* the stack after each iteration
 : times swap floor 0 max [
@@ -337,6 +350,7 @@ dupd [ call ] 2dip 1 sub
 : 1preserving [ drop ] swap compose [ stack/top ] compose null list/singleton thoth splat ; 
 
 # start end quotation -> executes quotation on values of range, *restoring* the stack after each iteration
+# TODO: implement this with thoth and pollux's/castor's to get rid of the 0preserving
 : ranged -rot over sub floor 1 add 0 max [
 	# stack is {quotation, iterator, steps left}
 	[ swap dup [ 0preserving ] dip swap 1 add ] dip 1 sub
@@ -381,3 +395,17 @@ dupd [ call ] 2dip 1 sub
 	rot 3dip cassette/enqueue
 ] 3curry fix cassette/call ;
 
+# uses a cassette to sleep a number of seconds
+# moves the entire stack and the rest of the spell
+# to the cassette when it does so
+# FIXME: this currently does not work inside loops
+# although there's not much I can do about it since it's an iris bug
+# secs ->
+: sleep 20 *
+	# desired state: 
+	# [ [ list/singleton {delay} random cassette/enqueue terminate ] iris {stack} stack/unwrap ] call
+	[ [ list/singleton ] dip random cassette/enqueue terminate ] curry [ iris ] curry
+	[ stack/wrap [ stack/unwrap ] curry ] dip
+	swap compose call
+;
+# TODO: the above code would very much benefit from fried quotations
