@@ -57,6 +57,13 @@
 		push(x)
 		push(x) ;
 : 2dup 2dup ;
+	EXPAND: 2 2dup
+		local x = pop()
+		local y = pop()
+		push(y)
+		push(x)
+		push(y)
+		push(x) ;
 # dups n items, unlike gemini that dups 1 item n times
 : ndup dup_many ;
 # dups an item enough times for there to be n of it at the top (so n-1 dups)
