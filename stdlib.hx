@@ -11,7 +11,9 @@
 : entity/height get_entity_height ;
 : entity/velocity get_entity_velocity ;
 : entity/name/get string/name/get ;
+	: name/get entity/name/get ;
 : entity/name/set string/name/set ;
+	: name/set entity/name/set ;
 
 : raycast/block raycast ;
 : raycast/face raycast/axis ;
@@ -179,7 +181,16 @@
 		end
 		append(code.value) ;
 : choose "SOUTH_EAST" "awdd" symbol! ; # FIXME: importing the stdlib twice fucks with shadowing
-# TODO: expansion for this once you make boolean literals
+	EXPAND: 3 "awdd"
+		local fcase = pop()
+		local tcase = pop()
+		local b = pop()
+		if b.type ~= "bool" then return fail() end
+		if b.value then
+			push(tcase)
+		else
+			push(fcase)
+		end ;
 : ifelse choose call ;
 : if [ ] ifelse ;
 : dip nephthys ;
@@ -391,7 +402,7 @@ dupd [ call ] 2dip 1 sub
 # identifier ->
 : cassette/dequeue dequeue ;
 	: tape/dequeue cassette/dequeue ;
- 	: kill cassette/dequeue ;
+	: kill cassette/dequeue ;
 # ->
 : cassette/disqueue killall ;
 	: tape/disqueue cassette/disqueue ;

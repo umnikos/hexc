@@ -156,7 +156,12 @@ local function compile(program, global_dictionary, no_copy)
       end
       if not res[i] then return end
       if not res[i].type == "symbol" then return end
+      -- search by name first
       local expansion = dictionary.expansions[res[i].name]
+      -- then try searching by angle signature surrounded by quotation marks
+      if res[i].pattern then
+        expansion = expansion or dictionary.expansions['"'..(res[i].pattern)..'"']
+      end
       if not expansion then return end
       local j = 0 -- literals count
       while res[i-(j+1)] and res[i-(j+1)].literal do
@@ -204,8 +209,9 @@ local function compile(program, global_dictionary, no_copy)
     elseif type == "expansion" then
       local arity, name, body = string.match(token, "^EXPAND:%s(%d+)%s+(%S+)%s+(.-)%s;$")
       arity = tonumber(arity)
-      if not symbols[name] then
-        error("cannot make an expansion for '"..name.." as there's no such symbol")
+      local is_anglesig = string.match(name,'^"[^"]*"$')
+      if not symbols[name] and not is_anglesig then
+        error("cannot make an expansion for '"..name.."' as there's no such symbol")
       end
       local f = load(body)
       local expansion_stack = {}
