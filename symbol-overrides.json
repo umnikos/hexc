@@ -101,6 +101,16 @@
   },
   {
     "mod": "hex",
+    "name": "teleport/great",
+    "fullname": "Greater Teleport",
+    "signature": "entity, vector →",
+    "pattern": "qqwwwqqwqqawdeeaeeeeedweeewwwee",
+    "direction": "NORTH_EAST",
+    "perworld": true,
+    "description": "Far more powerful than Blink, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is *much* greater than the normal radius of influence I am used to. The entity will be teleported by the given vector. Curiously, this vector seems to be an offset, not an absolute position in the world; for example, if I use Vector Reflection +X, the entity will end up precisely one block east of its original position. No matter the distance, it always seems to cost about ten Charged Amethyst. The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn't *quite* stay attached, and tends to splatter everywhere at the destination. In addition, the target will be forcibly removed from anything inanimate they are riding or sitting on ... but I've read scraps that suggest animals can come along for the ride, so to speak."
+  },
+  {
+    "mod": "hex",
     "name": "dispel_rain",
     "fullname": "Dispel Rain",
     "signature": "",
@@ -118,6 +128,16 @@
     "direction": "EAST",
     "perworld": true,
     "description": "I control the clouds! This spell will summon rain across the world I cast it upon. Costs about one Charged Amethyst. Does nothing if it is already raining."
+  },
+  {
+    "mod": "hex",
+    "name": "potion/regeneration",
+    "fullname": "White Sun's Zenith",
+    "signature": "entity, number, number →",
+    "pattern": "dwdqeeeeeddqa",
+    "direction": "SOUTH_EAST",
+    "perworld": true,
+    "description": "Bestows regeneration. Base cost is one Amethyst Dust per second."
   },
   {
     "mod": "oneironaut",
