@@ -387,6 +387,7 @@
 : tp me tp/entity ;
 
 : stack/size stack_len ;
+	: stack/len stack/size ;
 # clear the whole stack
 : stack/clear sekhmet ;
 	: clear stack/clear ;
@@ -394,7 +395,9 @@
 # TODO: stack/top_n
 : stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
 : stack/wrap stack/size nlist ;
+	: stack/pack stack/wrap ;
 : stack/unwrap splat ;
+	: stack/unpack stack/unwrap ;
 
 : . "NORTH_EAST" "de" symbol! ;
 : print . drop ;
@@ -501,3 +504,4 @@ dupd [ call ] 2dip 1 sub
 	swap compose call
 ;
 # TODO: the above code would very much benefit from fried quotations
+
