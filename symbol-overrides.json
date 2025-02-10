@@ -138,5 +138,19 @@
     "direction": "NORTH_EAST",
     "perworld": true,
     "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust. When initally conjured, the mesh is invisible and must be woven to gain form. The constraints for the list of vectors provided to a mesh are quite minimal. The list must be no more than 32 vectors long, and those vectors must have magnitudes less than 10. The mesh will then connect each of those points."
+  },
+  {
+    "mod": "hextweaks",
+    "name": "infusewill",
+    "pattern": "aadqedeqqawddeweddwaa",
+    "direction": "WEST",
+    "perworld": true
+  },
+  {
+    "mod": "hextweaks",
+    "name": "you_like_drinking_potions",
+    "pattern": "wdwawwwawwwawqwewewewew",
+    "direction": "SOUTH_WEST",
+    "perworld": true
   }
 ]
