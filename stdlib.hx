@@ -384,14 +384,18 @@ dupd [ call ] 2dip 1 sub
 
 # code, delay, identifier ->
 : cassette/enqueue enqueue ;
+	: tape/enqueue cassette/enqueue ;
 # identifier ->
 : cassette/dequeue dequeue ;
+	: tape/dequeue cassette/dequeue ;
 # ->
 : cassette/disqueue killall ;
+	: tape/disqueue cassette/disqueue ;
 
 # code ->
 # calls your code immediately through a cassette
 : cassette/call 0 random cassette/enqueue ;
+	: tape/call cassette/call ;
 
 # code, delay, identifier ->
 # will make the spell enqueue itself automatically after running
@@ -400,6 +404,7 @@ dupd [ call ] 2dip 1 sub
 	# stack is {self, action, delay, identifier}
 	rot 3dip cassette/enqueue
 ] 3curry fix cassette/call ;
+	: tape/loop cassette/loop ;
 
 # uses a cassette to sleep a number of seconds
 # moves the entire stack and the rest of the spell
