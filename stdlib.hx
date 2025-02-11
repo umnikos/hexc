@@ -394,6 +394,8 @@
 # only leaves the top iota of the stack
 # TODO: stack/top_n
 : stack/top "SOUTH_WEST" "qaqddq" symbol! ; # hexical metaeval
+# turns the entire stack into a single list
+# `[ stack/wrap ] dip` works as expected
 : stack/wrap stack/size nlist ;
 	: stack/pack stack/wrap ;
 : stack/unwrap splat ;
@@ -403,6 +405,8 @@
 : print . drop ;
 # print the whole stack
 : .. stack/size last_n_list . splat ;
+
+# TODO: Athena (advanced metaeval)
 
 # looping options:
 # - thoth
@@ -489,6 +493,13 @@ dupd [ call ] 2dip 1 sub
 	rot 3dip cassette/enqueue
 ] 3curry fix cassette/call ;
 	: tape/loop cassette/loop ;
+
+# identical to cassette/loop but does not stop looping on a mishap
+: cassette/loop/robust [ 
+	# stack is {self, action, delay, identifier}
+	rot [ cassette/enqueue ] dip call
+] 3curry fix cassette/call ;
+	: tape/loop/robust cassette/loop/robust ;
 
 # uses a cassette to sleep a number of seconds
 # moves the entire stack and the rest of the spell

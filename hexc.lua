@@ -566,6 +566,8 @@ else
   local command = args[1]
   if command == "test" then
     compile('t debug! "stdlib.hexc" loadfile!')
+  elseif command == "unlock" then
+    _G.wand_lock = false
   elseif command == "comp" or command == "compile" or command == "build" then
     local f = fs.open(args[2],"r")
     local program = f.readAll()
