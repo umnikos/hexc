@@ -10,6 +10,66 @@
     "pattern": "aqaaw"
   },
   {
+    "name": 2,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaawa"
+  },
+  {
+    "name": 3,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaedwd"
+  },
+  {
+    "name": 4,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaawaa"
+  },
+  {
+    "name": 5,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaq"
+  },
+  {
+    "name": 6,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaedw"
+  },
+  {
+    "name": 7,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaawaq"
+  },
+  {
+    "name": 8,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaawaqw"
+  },
+  {
+    "name": 9,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaawaaq"
+  },
+  {
+    "name": 10,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaae"
+  },
+  {
+    "name": 20,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaee"
+  },
+  {
+    "name": 30,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaeaqq"
+  },
+  {
+    "name": 40,
+    "direction": "SOUTH_EAST",
+    "pattern": "aqaaqqaa"
+  },
+  {
     "mod": "hex",
     "name": "craft/battery",
     "fullname": "Craft Phial",
