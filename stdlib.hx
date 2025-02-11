@@ -164,6 +164,12 @@
 : property/read observe_property ;
 : property/write set_property ;
 
+# valid keys are vectors and entities
+# key, iota ->
+: idea/write writeidea ;
+# key -> iota
+: idea/read readidea ;
+
 : explode explode ;
 	: explosion explode ;
 : block/type type/block_item ;
