@@ -5681,6 +5681,16 @@
   },
   {
     "mod": "hexicallatest",
+    "name": "confetti",
+    "fullname": "Confetti",
+    "signature": "vector, vector, number →",
+    "pattern": "awddeqaedd",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Creates a loud bang similar to that of fireworks and a burst of colorful particles at a position, velocity, and speed. Costs about half of one Amethyst Dust. The particles are harmless and flutter through the air for quite long until they reach the ground. If the given vector was the zero vector, the particles will explode out in all directions; otherwise, they will tend towards the given normalized direction. The speed value is a positive number up to 2. *The rest is confetti.*"
+  },
+  {
+    "mod": "hexicallatest",
     "name": "place_block_type",
     "fullname": "Construct",
     "signature": "identifier, vec, vec, vec →",
@@ -7898,5 +7908,275 @@
     "direction": "WEST",
     "perworld": false,
     "description": "Removes a string and a bool or null. If it was true, return the string in upper case. If false, lowercase. If null, toggle each character's case."
+  },
+  {
+    "mod": "ephemera",
+    "name": "hash",
+    "fullname": "Hashing Purification",
+    "signature": "any → hash",
+    "pattern": "qqawqaqw",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts any iota, and converts it into its hashed form."
+  },
+  {
+    "mod": "ephemera",
+    "name": "readframerotation",
+    "fullname": "Decorator's Prfn.",
+    "signature": "item frame → number",
+    "pattern": "wwawwqwwawwaeae",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an item frame entity, and returns its rotation, from 0 to 7."
+  },
+  {
+    "mod": "ephemera",
+    "name": "setframerotation",
+    "fullname": "Decorator's Gambit",
+    "signature": "item frame, number →",
+    "pattern": "wwawwqwwawwaqdq",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an item frame entity and an integer from 0 to 7, and sets its rotation to the number. Costs a negligible amount of media."
+  },
+  {
+    "mod": "ephemera",
+    "name": "filteredentityraycast",
+    "fullname": "Scout's Exaltation",
+    "signature": "[type], vec, vec → entity | NULL",
+    "pattern": "wqded",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "As Scout's Distillation, but also accepts a list of entity type iotas. Any entity whose type is not present in the list will be ignored. Costs an amount of media slightly less negligible than that of the aforementioned pattern."
+  },
+  {
+    "mod": "ephemera",
+    "name": "gaussianrand",
+    "fullname": "Entropy Reflection II",
+    "signature": "→ num",
+    "pattern": "eeeeq",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Returns a random number between 0 and 1, with a gaussian distribution."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getstatus",
+    "fullname": "Apothecary's Prfn.",
+    "signature": "entity → [status]",
+    "pattern": "qqqqqedwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts a living entity, and returns a list of status iotas representing all effects on the target."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getstatuscategory",
+    "fullname": "Apothecary's Prfn. II",
+    "signature": "status → num",
+    "pattern": "eeeeeqawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, and returns a number based on whether the effect is likely to be helpful, harmful, or neutral to a creature."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getstatusduration",
+    "fullname": "Pharmacist's Dstln.",
+    "signature": "entity, status → num",
+    "pattern": "qqqqqedwdwd",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and returns the effect on the target's duration in seconds."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getstatuslevel",
+    "fullname": "Pharmacist's Distillation II",
+    "signature": "entity, status → num",
+    "pattern": "eeeeeqawawa",
+    "direction": "SOUTH_EAST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and returns the effect on the target's potency."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getbystatussingle",
+    "fullname": "Entity Distillation: Status",
+    "signature": "status, vector → entity | NULL",
+    "pattern": "eaeeeeeae",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type and a vector, and returns an entity at that position which has that effect."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getbystatus",
+    "fullname": "Zone Exltn.: Status",
+    "signature": "status, vec, num → [entity]",
+    "pattern": "ewqqqqqwe",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which have that effect."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getbystatusinverse",
+    "fullname": "Zone Exltn.: Not-Status",
+    "signature": "status, vec, num → [entity]",
+    "pattern": "qweeeeewq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a status effect type, a vector, and a number (*n*), and returns a list of entities within radius *n* of the vector which do not have that effect."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getabsorption",
+    "fullname": "Ablation Purification",
+    "signature": "entity → num",
+    "pattern": "wqeawaqddaqw",
+    "direction": "NORTH_EAST",
+    "perworld": false,
+    "description": "Accepts a living entity, and returns how much damage it can Absorb before its health is affected."
+  },
+  {
+    "mod": "ephemera",
+    "name": "removestatus",
+    "fullname": "Cleanse Status",
+    "signature": "entity, status →",
+    "pattern": "eeeeedaqdewed",
+    "direction": "SOUTH_WEST",
+    "perworld": false,
+    "description": "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration. Costs more if attempting to remove a positive effect from an entity other than myself. All of the patterns which deal with a specific status effect on an entity have the side effect that if the entity does not currently have the specified effect, the pattern will fail and inflict nausea upon me."
+  },
+  {
+    "mod": "ephemera",
+    "name": "paintconjured",
+    "fullname": "Externalize Pigment",
+    "signature": "Vector, itemtype →",
+    "pattern": "eqdweeqdwweeqddqdwwwdeww",
+    "direction": "WEST",
+    "perworld": false,
+    "description": "Accepts a vector and an itemtype representing a pigment. Costs a negligible amount of media if targeting my own block, or 1 Amethyst Dust if not. Sets the colors of the conjured block corresponding to the vector to the colorset represented by the passed pigment, or mine if passed a NULL iota. Not guaranteed to work with unconventional forms of conjured matter.  Feels strangely celebratory, as if something similar was once used in grand festivals where teams would splatter their colors all over their opponents' territory in a bid for ideological dominance."
+  },
+  {
+    "mod": "ephemera",
+    "name": "revealtoother",
+    "fullname": "Postman's Gambit",
+    "signature": "Player, any →",
+    "pattern": "qde",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a player and any iota less than 256 characters long, and shows that iota to them as if they had cast Reveal, also telling them who sent the message. Cost is inversely proportional to the length of time since they were last targeted by this spell."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getrevealcost",
+    "fullname": "Postage Purification",
+    "signature": "Player → num",
+    "pattern": "qdeaaqqqqq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a player and returns how much amethyst dust it would cost to send them a message via Postman's Gambit, between 1/10 of a dust and 10 dust."
+  },
+  {
+    "mod": "ephemera",
+    "name": "clearrevealcost",
+    "fullname": "Postman's Gambit II",
+    "signature": "",
+    "pattern": "qdeqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Resets the cost of sending me a message via Postman's Gambit back to 1/10 of a dust. Costs 1/10 of a dust."
+  },
+  {
+    "mod": "ephemera",
+    "name": "particleburst",
+    "fullname": "Particle Burst",
+    "signature": "vec, vec, num, num →",
+    "pattern": "deeeewaaddwqqqqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media. The first vector determines the burst's origin position, and the second vector determines its direction and speed. The first number determines the scale of random numbers added to each position component, and the second does the same for the direction vector. Mod author's note for Forge users: This spell does not work on Forge. I do not know why. I've set the cost on Forge to zero so at least it won't waste media. Sorry. I'll try to get it working eventually."
+  },
+  {
+    "mod": "ephemera",
+    "name": "networkscan",
+    "fullname": "Network Dstln.",
+    "signature": "linkable, num → [linkable]",
+    "pattern": "eqqqqqaweqaeaq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Scans the link network connected to the input linkable up to a recursion depth equal to the input number (max 32), and returns a list of all connected linkables. Costs a negligible amount of media."
+  },
+  {
+    "mod": "ephemera",
+    "name": "networktp",
+    "fullname": "Network Gateway",
+    "signature": "entity, linkable, vec →",
+    "pattern": "qqqqqwdeddwdawqqqwaq",
+    "direction": "NORTH_WEST",
+    "perworld": false,
+    "description": "Accepts an entity to teleport, a linkable to use for access to its network, and a destination. If the entity is within 8 blocks of the linkable, and there is a network node within 4 blocks of the destination, the entity will be teleported. Cost varies based on what entity is teleported."
+  },
+  {
+    "mod": "ephemera",
+    "name": "networkindex",
+    "fullname": "Routing Dstln.",
+    "signature": "linkable, iota → vec",
+    "pattern": "eqqqqqaweqaeaqa",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Accepts a linkable to use for network access, and any iota. If a relay connected to the network has an adjacent Network Routing Index with the same iota, returns that relay's position. Costs half an amethyst dust."
+  },
+  {
+    "mod": "ephemera",
+    "name": "repair",
+    "fullname": "Induce Mending",
+    "signature": "entity →",
+    "pattern": "waqdqqwqqdqawwqqqqqaqedeq",
+    "direction": "WEST",
+    "perworld": true,
+    "description": "Accepts a raw media item on the ground, and attempts to use it to repair a tool in my other hand. Generally only works on items enchanted with Mending, which are already damaged. Restores twenty points of damage for each amethyst dust's worth of media."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getdurabilitymainhand",
+    "fullname": "Menderbug's Rfln.",
+    "signature": "→ num",
+    "pattern": "qwdea",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "Returns how many times the item in my other hand can be used without breaking, durability-manipulating effects notwithstanding."
+  },
+  {
+    "mod": "ephemera",
+    "name": "getdurabilityoffhand",
+    "fullname": "Menderbug's Rfln. II",
+    "signature": "→ num",
+    "pattern": "aedwq",
+    "direction": "EAST",
+    "perworld": false,
+    "description": "As previous, targeting the item in the hand I'm casting this with. Most useful with delayed casts of one form or another."
+  },
+  {
+    "mod": "ephemera",
+    "name": "magearmor",
+    "fullname": "Instant Aegis",
+    "signature": "entity, num, num, status, num →",
+    "pattern": "qaweqqwqqewaqeqqqqqad",
+    "direction": "NORTH_WEST",
+    "perworld": true,
+    "description": "Accepts a player to grant the armor to, the durability of the armor, the protection value of the armor (max 10), a status effect to apply, and that effect's level. The latter two can be replaced with any non-status iota to ignore them. Of course, this barrier is by no means indestructible, and its durability decays steadily in addition to any damage it takes from hits. The base rate of this decay can be described as one \"point\" per second, plus additional points equal to the squared strength of any effect imbued into it. Additionally, it will disappear instantly if removed from the wearer, so there is no way to repair it, short of recasting the spell to overwrite its current state. The media cost for this spell is a bit complicated: A base of one amethyst dust per 60 durability, multiplied by the armor's protection value raised to the power of 1.5, times the level+1 of any status effect. Thus, producing no-status strength 10 armor with one minute's worth of durability costs ~31.5 dust. Adding Regeneration 2 increases that media cost to ~94.5 dust, and causes it to only last 36 seconds. This explanation assumes I am wearing no other armor, in practice the cost can be reduced to as little as 25% of that formula's output if all but one of my armor slots is already occupied by more conventional armor."
+  },
+  {
+    "mod": "ephemera",
+    "name": "invisibility",
+    "fullname": "Hidden Sun's Zenith",
+    "signature": "entity, num →",
+    "pattern": "qqqqqaewawaweqa",
+    "direction": "SOUTH_WEST",
+    "perworld": true,
+    "description": "Functions just like the normal Zeniths, applying Invisibility. Costs one amethyst dust per three seconds."
   }
 ]
