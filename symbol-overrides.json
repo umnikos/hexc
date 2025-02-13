@@ -227,6 +227,16 @@
     "perworld": true
   },
   {
+    "mod": "hex",
+    "name": "lightning",
+    "fullname": "Summon Lightning",
+    "signature": "vector →",
+    "pattern": "ewqqeaaqwdwaddw",
+    "direction": "NORTH_WEST",
+    "perworld": true,
+    "description": "I command the heavens! This spell will summon a bolt of lightning to strike the earth where I direct it. Costs about three Amethyst Shards."
+  },
+  {
     "mod": "hextweaks",
     "name": "you_like_drinking_potions",
     "pattern": "wdwawwwawwwawqwewewewew",

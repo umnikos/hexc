@@ -181,6 +181,7 @@
 		if x.type ~= "number" then fail() return end
 		x.value = x.value / y.value
 		push(x) ;
+: % modulo ;
 : < less ;
 : <= less_eq ;
 : > greater ;
@@ -282,6 +283,8 @@
 : block/type type/block_item ;
 : block/break/raw break_block ;
 : block/break dup block/type tostring "Air" != [ block/break/raw ] [ drop ] ifelse ;
+	: break/block block/break ;
+	: dig block/break ;
 : block/place place_block ;
 : block/smelt smelt ;
 : block/freeze freeze ;
@@ -326,6 +329,10 @@
 : pocket/item wristpocket_item ;
 : pocket/count wristpocket_count ;
 : pocket/use mage_hand ;
+
+# does a bunch of different things
+# entity/vector ->
+: trick prestidigitation ;
 
 : compose list/concat ;
 # takes a thing on the stack and makes a quotation that pushes it to the stack
@@ -426,10 +433,19 @@
 # either find a new charon's, a new hermes, or just use iris
 : halt [ ] sisyphus ;
 
+# applies a hex to every value of a list, *resetting* the stack after each iteration
+# for every iteration only returns what is on the top of the stack instead of the whole stack
+# list quotation -> list
+: map [ stack/top ] compose swap thoth ;
 
-# num quotation -> executes quotation that many times, *preserving* the stack after each iteration
+# applies a qutation to every values of a list, keeps the ones for which the quotation returns true
+# list quotation -> list
+: filter [ keep swap [ stack/top ] [ stack/clear ] ifelse ] curry swap thoth ;
+
+# executes quotation that many times, *maintaining* the stack after each iteration
+# num quotation ->
 : times swap floor 0 max [
-dupd [ call ] 2dip 1 sub
+	dupd [ call ] 2dip 1 sub
 ] heket 2drop ; 
 
 # stack, quot -> stack
@@ -440,7 +456,7 @@ dupd [ call ] 2dip 1 sub
 # the same but pushes the last output of the quotation
 : 1preserving [ drop ] swap compose [ stack/top ] compose null list/singleton thoth splat ; 
 
-# start end quotation -> executes quotation on values of range, *restoring* the stack after each iteration
+# start end quotation -> executes quotation on values of range, *resetting* the stack after each iteration
 # TODO: implement this with thoth and pollux's/castor's to get rid of the 0preserving
 : ranged -rot over sub floor 1 add 0 max [
 	# stack is {quotation, iterator, steps left}
