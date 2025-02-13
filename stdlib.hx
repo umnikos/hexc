@@ -459,8 +459,7 @@ dupd [ call ] 2dip 1 sub
 : fib/recursive [ over 1 > [ 2dup [ 1 - ] dip call -rot [ 2 - ] dip call + ] [ drop ] ifelse ] fix call ;
 
 
-# TODO: use lava only in the nether
-: conjure/liquid conjure/lava ;
+: conjure/liquid dup conjure/water dup block/type tostring "Air" == [ conjure/lava ] [ drop ] ifelse ;
 # takes coords, makes a safe explosion there that only damages entities (still breaks item frames though)
 : implode 5 dupn
 	block/break
