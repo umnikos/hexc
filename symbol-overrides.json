@@ -220,6 +220,16 @@
     "description": "Conjures a mesh with the location and leaves a mesh entity on the stack. Costs about one Amethyst Dust. When initally conjured, the mesh is invisible and must be woven to gain form. The constraints for the list of vectors provided to a mesh are quite minimal. The list must be no more than 32 vectors long, and those vectors must have magnitudes less than 10. The mesh will then connect each of those points."
   },
   {
+    "mod": "hexical",
+    "name": "greater_blink",
+    "fullname": "Greater Blink",
+    "signature": "vector →",
+    "pattern": "dweaaeqwqaaedwwwaaw",
+    "direction": "EAST",
+    "perworld": true,
+    "description": "Teleports me up to 128 blocks away, relative to my position and rotation. Costs about two Amethyst Dust. A vector of (0, 0, 1) would teleport me one block in the direction I'm facing. A vector of (0, 1, 0) would teleport me one block \"up\" in the direction of the top of my head. A vector of (0, 1, 10) would teleport me ten blocks forward in the direction I'm facing and one block upwards from the top of my head. Peculiarly, it moves my feet to the location, perhaps so that a raycast teleports my feet onto the target block rather than my eyes submerged into the floor. If I want to do multiple jumps for long distances, this property must be accounted for. *Long Jaunt! Longer than you think-*"
+  },
+  {
     "mod": "hextweaks",
     "name": "infusewill",
     "pattern": "aadqedeqqawddeweddwaa",

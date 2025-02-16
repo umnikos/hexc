@@ -16,6 +16,7 @@ local function dumpStack()
 end
 
 local function cast(spell)
+  print(spell)
   tokens = hexc.tokenizer(spell)
   local open = 0
   for t,type in tokens do

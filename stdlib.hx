@@ -8,6 +8,7 @@
 : entity/gaze get_entity_look ;
 	: entity/look entity/gaze ;
 	: gaze entity/gaze ;
+: entity/up theodolite ;
 : entity/height get_entity_height ;
 : entity/velocity get_entity_velocity ;
 : entity/name/get string/name/get ;
@@ -124,13 +125,9 @@
 
 # t for true
 # f for false
-# TODO: turn these into literals
+# TODO: turn this into a literal
 : null const/null ;
 	: nil null ;
-# TODO: const vectors
-
-: 3vec construct_vec ;
-
 : == equals ;
 : ~= not_equals ;
 	: != ~= ;
@@ -202,6 +199,27 @@
 : list/slice slice ;
 : list/concat + ;
 : list/length length ;
+
+# TODO: const vectors
+: 3vec construct_vec ;
+: vec/dot mul ;
+: vec/cross div ;
+
+# num|vec|list -> mat
+: mat/make matrix/make ;
+	: mat/new mat/make ;
+# mat -> num|vec|list
+: mat/unmake matrix/unmake ;
+	: mat/split mat/unmake ;
+	: mat/old mat/unmake ;
+: mat/transpose "EAST" "qqqaede" symbol! ;
+	: mat/flip mat/transpose ;
+: mat/inv matrix/inverse ;
+: mat/+ + ;
+	: mat/add mat/+ ;
+: mat/* vec/dot ;
+	: mat/mul mat/* ;
+
 
 : that/block my eyes my gaze raycast/block ;
 	: this/block that/block ;
@@ -390,8 +408,29 @@
 : gate/open gate/mark ;
 : gate/close gate/close ;
 # gate, entity -> tp entity to gate
-: tp/entity dupd gate/open gate/close ;
-: tp me tp/entity ;
+: tp dupd gate/open gate/close ;
+: tp/me me tp ;
+
+# entity number ->
+: blink/lesser "SOUTH_WEST" "awqqqwaq" symbol! ;
+# vec ->
+: blink/greater greater_blink ;
+# blinks you a given distance, uses greater blink because it's cheaper
+# number ->
+: blink 0 0 rot 3vec blink/greater ;
+
+# vec entity -> vec
+: coordinate-transform 
+	[ entity/gaze ] [ entity/up ] bi 
+	2dup vec/cross 
+	spin 3 nlist mat/new mat/inv swap * mat/old ;
+
+# takes an offset vector (in xyz base) and blinks you according to that
+# vec ->
+: blink/rel me coordinate-transform blink/greater ;
+# takes an absolute position (in xyz base) and blinks you to that spot
+# vec ->
+: blink/abs my feet - blink/rel ;
 
 : stack/size stack_len ;
 	: stack/len stack/size ;

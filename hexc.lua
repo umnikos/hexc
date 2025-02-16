@@ -69,7 +69,7 @@ for _,s in pairs(symbol_overrides) do
 end
 
 local function tokenizer(program)
-  program = program .. "\n"
+  program = (program or "") .. "\n"
   local next = function()
     -- TODO: make tokenizer faster by optimizing these regexes
     -- (get rid of '(.*)' and remember an index for where to start reading from on the next iteration)
@@ -200,7 +200,7 @@ local function compile(program, global_dictionary, no_copy)
     if type == "comment" then
       -- ignore it
     elseif type == "definition" then
-      local name, body = string.match(token, "^:%s(%S+)%s+(.-)%s;$")
+      local name, body = string.match(token, "^:%s(%S+)(.-)%s;$")
       -- FIXME: no_copy is only fine here because you can't define inside a definition.
       -- The correct solution would be to give it
       -- a wrapped version of the dictionary that is layered.
