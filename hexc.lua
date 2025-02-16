@@ -559,7 +559,8 @@ if is_imported(args) then
   return {
     compile=compile,
     run=run,
-    runCompiled=runCompiled
+    runCompiled=runCompiled,
+    tokenizer=tokenizer,
   }
 else
   --error("TODO")
