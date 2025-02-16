@@ -414,16 +414,19 @@
 : .. stack/size last_n_list . splat ;
 
 # TODO: Athena (advanced metaeval)
+# TODO: blackboxes
+	# practically just sets of hashes, though
 
 # looping options:
 # - thoth
+	# seshat?
+	# pollux/castor's?
 # - sisyphus
 # - heket (hextweaks utility)
 # - iris??? (cursed, semantically a jump but implemented as a continuation for "the rest of the program" that does not return)
 # - cassettes
 
 : thoth for_each ; # cursed
-: break halt ; # charon's, breaks out of current loop
 : continue atalanta ; # skips end of this iteration to go to the next one
 : sisyphus sisyphus ; # while true loop exited with `break`
 : heket "NORTH_EAST" "wdwadad" symbol! ; # hextweaks utilities, loops while the top of the stack is truthy
