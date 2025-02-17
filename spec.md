@@ -80,6 +80,18 @@ And the following is a simulation of `2dup` in hexc:
 
 Simulations can only be defined for pure words (words with no external effects).
 
+Simulations are also to be used when the particular symbol used cannot be found in the symbol registry.
+
+Expansion of non-macro words when it's given enough literal values is also done as a form optimization, and this is called a reduction. A word that has a simulation defined can have reductions enabled for it using the `reduce!` macro, by passing the word name and how many literal arguments are needed. For example, here's a simulation of the `2drop` symbol that turns into `drop drop` when given one or more literal arguments:
+```
+"2drop"
+  [ drop drop ] simulate!
+  1 expand!
+drop
+```
+
+
+
 The third and final kind of parentheses is the one for list literals, and apart from being sugar for `nlist` it also forces immediate execution of words inside.
 ```
 { 1 2 3 + 10 }
