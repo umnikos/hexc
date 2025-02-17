@@ -38,7 +38,7 @@ To prevent a macro from executing immediately, quote it with `[[ ]]` instead.
 Macros cannot be compiled down to hex patterns, and for that reason macro quotations also cannot be compiled down to hex patterns.
 Thus when a top-level macro quotation is found it forces execution of words after itself like `call` and `if` to eventually expand the quotation.
 ```
-5 2 > [[ "yes" print! ]] [[ "no" print! ]] ifelse
+5 2 < [[ "yes" print! ]] [[ "no" print! ]] ifelse
 -! "no" is printed during comptime
 -->
 ```
@@ -59,8 +59,8 @@ New macros can be defined with the `defmacro!` macro, or with the equivalent `::
 Macros are allowed to have recursive (even mutually recursive) definitions.
 
 Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
-Such simulated effects are defined on a per-word basis with the `SIMULATE:` syntax.
-The following simulation is a (partial) simulation of the `+` word (simulations are written in lua):
+Such simulated effects are defined on a per-symbol basis, either in lua with the `SIMULATE:` syntax or in hexc itself with the `simulate!` macro.
+The following simulation is a (partial) simulation of the `+` word in lua:
 ```
 SIMULATE: add
   local y = pop()
@@ -73,8 +73,12 @@ SIMULATE: add
   fail()
 ;
 ```
+And the following is a simulation of `2dup` in hexc:
+```
+"2dup" [ over over ] simulate! drop
+```
 
-Simulations can thus only be defined for pure words (words with no external effects).
+Simulations can only be defined for pure words (words with no external effects).
 
 The third and final kind of parentheses is the one for list literals, and apart from being sugar for `nlist` it also forces immediate execution of words inside.
 ```
