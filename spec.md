@@ -12,7 +12,12 @@ of the functional kind.
 [ 3 + ] 2 swap call
 --> 5
 ```
-It is also a compiled language. All of the above does not execute during compile time but is instead translated into hex patterns.
+It is also a compiled language. All of the above does not execute during compile time but is instead translated into hex patterns, also called symbols.
+All symbols are words (functions), but beyond that words can be defined as a sequence of other words. The following code first defines an `inc` word before using it to increment the number 5:
+```
+: inc 1 + ; 5 inc
+--> 6
+```
 Words that merely get compiled like this are ordinary words.
 
 *Macros* are words that execute during compile time. They work exactly like regular words, but when encountered are immediately evaluated using whatever was previously read
