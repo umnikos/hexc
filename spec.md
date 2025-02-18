@@ -68,10 +68,10 @@ New macros can be defined with the `defmacro!` macro, or with the equivalent `::
 Macros are allowed to have recursive (even mutually recursive) definitions.
 
 Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
-Such simulated effects are defined on a per-symbol basis, either in lua with the `SIMULATE:` syntax or in hexc itself with the `simulate!` macro.
+Such simulated effects are defined on a per-symbol basis with the `simulate!` macro, either using other hexc words or using lua with `LUA:`.
 The following simulation is a (partial) simulation of the `+` word in lua:
 ```
-SIMULATE: add
+"add" LUA:
   local y = pop()
   local x = pop()
   if x.type == "number" and y.type == "number" then
@@ -80,7 +80,7 @@ SIMULATE: add
     return
   end
   fail()
-;
+; simulate! drop
 ```
 And the following is a simulation of `2dup` in hexc:
 ```
