@@ -26,7 +26,10 @@ Words that merely get compiled like this are ordinary words.
 -! "3" is printed during comptime
 --> 5
 ```
-Macros do not and cannot define new syntax.
+The macros in hexc have several limitations that might make them less powerful but also make them way easier to reason about:
+  1. Macros do not and cannot define new syntax
+  2. Macros only work on literal values passed to them beforehand
+  3. A quotation is defined purely by its action, not its source code or the list of symbols it compiles to. Hence macros cannot do (or at least should not do) inspection of any quotations' internals.
 
 A macro, when not given enough literal values to act, may force execution of regular words as well.
 ```
@@ -47,6 +50,7 @@ Thus when a top-level macro quotation is found it forces execution of words afte
 -! "no" is printed during comptime
 -->
 ```
+This mechanism is what allows hexc's very simple macros (which are basically just string replacement) to be way more powerful than an equivalent C preprocessor macro, allowing for conditional execution and looping.
 
 New words can be defined with the `def!` macro, or with the equivalent `: ... ;` syntactic sugar. 
 ```
