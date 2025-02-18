@@ -90,6 +90,14 @@ Expansion of non-macro words when it's given enough literal values is also done 
 drop
 ```
 
+Symbols that do not have a pattern in the symbol registry can be defined using the `symbol!` macro, which pushes said symbol as a literal. (`call` will work to turn it into a non-literal)
+```
+"SOUTH_WEST" "qaqddq" symbol!
+  "stack/top" alias!
+  [ [ stack/clear ] dip ] simulate!
+  1 expand!
+drop
+```
 
 
 The third and final kind of parentheses is the one for list literals, and apart from being sugar for `nlist` it also forces immediate execution of words inside.
