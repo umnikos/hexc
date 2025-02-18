@@ -95,7 +95,7 @@ Expansion of non-macro words when it's given enough literal values is also done 
 ```
 "2drop"
   [ drop drop ] simulate!
-  1 expand!
+  1 reduce!
 drop
 ```
 
@@ -104,7 +104,7 @@ Symbols that do not have a pattern in the symbol registry can be defined using t
 "SOUTH_WEST" "qaqddq" symbol!
   "stack/top" alias!
   [ [ stack/clear ] dip ] simulate!
-  1 expand!
+  1 reduce!
 drop
 ```
 
