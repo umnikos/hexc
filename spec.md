@@ -101,7 +101,7 @@ drop
 
 Symbols that do not have a pattern in the symbol registry can be defined using the `symbol!` macro, which pushes said symbol as a literal. (`call` will work to turn it into a non-literal)
 ```
-"SOUTH_WEST" "qaqddq" symbol!
+"qaqddq" symbol!
   "stack/top" alias!
   [ [ stack/clear ] dip ] simulate!
   1 reduce!
