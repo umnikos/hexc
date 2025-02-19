@@ -68,7 +68,7 @@ New macros can be defined with the `defmacro!` macro, or with the equivalent `::
 Macros are allowed to have recursive (even mutually recursive) definitions.
 
 Compile-time execution of regular words is done not through any actual execution (casting hexes), but through simulation instead.
-Such simulated effects are defined on a per-symbol basis with the `simulate!` macro, either using other hexc words or using lua with `LUA:`.
+Such simulated effects are defined on a per-symbol basis with the `simulation!` macro, either using other hexc words or using lua with `LUA:`.
 The following simulation is a (partial) simulation of the `+` word in lua:
 ```
 "add" LUA:
@@ -80,22 +80,22 @@ The following simulation is a (partial) simulation of the `+` word in lua:
     return
   end
   fail()
-; simulate! drop
+; simulation! drop
 ```
 And the following is a simulation of `2dup` in hexc:
 ```
-"2dup" [ over over ] simulate! drop
+"2dup" [ over over ] simulation! drop
 ```
 
 Simulations can only be defined for pure words (words with no external effects).
 
 Simulations are also to be used when the particular symbol used cannot be found in the symbol registry.
 
-Expansion of non-macro words when it's given enough literal values is also done as a form optimization, and this is called a reduction. A word that has a simulation defined can have reductions enabled for it using the `reduce!` macro, by passing the word name and how many literal arguments are needed. For example, here's a simulation of the `2drop` symbol that turns into `drop drop` when given one or more literal arguments:
+Expansion of non-macro words when it's given enough literal values is also done as a form optimization, and this is called a reduction. A word that has a simulation defined can have reductions enabled for it using the `reduction!` macro, by passing the word name and how many literal arguments are needed. For example, here's a simulation of the `2drop` symbol that turns into `drop drop` when given one or more literal arguments:
 ```
 "2drop"
-  [ drop drop ] simulate!
-  1 reduce!
+  [ drop drop ] simulation!
+  1 reduction!
 drop
 ```
 
@@ -103,8 +103,8 @@ Symbols that do not have a pattern in the symbol registry can be defined using t
 ```
 "qaqddq" symbol!
   "stack/top" alias!
-  [ [ stack/clear ] dip ] simulate!
-  1 reduce!
+  [ [ stack/clear ] dip ] simulation!
+  1 reduction!
 drop
 ```
 
