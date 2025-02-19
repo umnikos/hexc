@@ -54,7 +54,7 @@ This mechanism is what allows hexc's very simple macros (which are basically jus
 
 New words can be defined with the `def!` macro, or with the equivalent `: ... ;` syntactic sugar. 
 ```
-[ 3 ] "a" def!
+"a" [ 3 ] def!
 : b 5 ;
 a b +
 --> 8
