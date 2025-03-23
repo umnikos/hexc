@@ -202,6 +202,8 @@
 
 # TODO: const vectors
 : 3vec construct_vec ;
+: up const/vec/y ;
+: down 0 -1 0 3vec ; # FIXME
 : vec/dot mul ;
 : vec/cross div ;
 
@@ -431,6 +433,11 @@
 # takes an absolute position (in xyz base) and blinks you to that spot
 # vec ->
 : blink/abs my feet - blink/rel ;
+
+# pos, dir ->
+: missile/rel [ me coordinate-transform ] dip magic_missile ;
+# pos, dir ->
+: missile/abs [ my eyes - ] dip missile/rel ;
 
 : stack/size stack_len ;
 	: stack/len stack/size ;
